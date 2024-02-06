@@ -1,7 +1,7 @@
 ## Canvas / Slack group number (please check this carefully)
 Group 22
 ## names of the team members
-Alea Nablan, Grace Pan, Maadhav Kothuri, Raymond Wang
+Alea Nablan, Grace Pan, Maadhav Kothuri, Raymond Wang, Nathan Cheng
 ## name of the project (alphanumeric, no spaces, max 32 chars; this will also be your URL)
 FosterHope
 ## the proposed project
