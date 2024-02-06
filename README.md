@@ -50,7 +50,7 @@ Resources(Events/communities, financial aids, mental health)
 -   Location
 -   Type
 -   Cost
--   Target Audience (Kids or parents?)
+-   Target Audience (Kids vs. parents)
 
 Media
 -   Images of each resource
