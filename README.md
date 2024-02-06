@@ -16,7 +16,8 @@ https://developers.google.com/maps (RESTful API) Locations of Orgs
 https://cwoutcomes.acf.hhs.gov/cwodatasite/pdf/texas.html
 https://projects.propublica.org/nonprofits/search?q=foster+care(RESTful API)
 https://www.mediawiki.org/wiki/API:Main_page#API_documentation (RESTful API)
-https://data.texas.gov/See-Category-Tile/CPS-3-2-Children-in-Substitute-Care-by-Placement-T/kgpb-mxxd/about_data << num of fosters / county from https://data.texas.gov/ 
+https://data.texas.gov/See-Category-Tile/CPS-3-2-Children-in-Substitute-Care-by-Placement-T/kgpb-mxxd/about_data Foster Kids per county
+https://www.opendatanetwork.com/dataset/data.texas.gov/u4j8-y2ff Foster homes per county
 
 ## at least three models
 Counties
@@ -24,7 +25,7 @@ Counties
 -   Population
 -   Number of agencies / organizations
 -   Number of kids in foster care
--   Average familyhold Income
+-   Number of foster homes
 
 Media
 -   
