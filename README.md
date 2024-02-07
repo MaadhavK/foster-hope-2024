@@ -70,3 +70,8 @@ Counties link resources and organizations within the county. Each organization c
 - What is the distribution of children in foster care between different counties in Texas?
 - What organizations are in place to support foster children?
 - What resources can foster children and foster families draw upon to help them be successful?
+
+## Estimated time to completion
+15 hours
+
+## Actual time to completion
