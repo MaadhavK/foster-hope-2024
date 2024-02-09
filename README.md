@@ -72,6 +72,6 @@ Counties link resources and organizations within the county. Each organization c
 - What resources can foster children and foster families draw upon to help them be successful?
 
 ## Estimated time to completion
-15 hours
+16 hours
 
 ## Actual time to completion
