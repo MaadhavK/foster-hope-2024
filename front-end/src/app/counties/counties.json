@@ -1,0 +1,26 @@
+{
+    "counties": [
+      {
+        "name": "Travis",
+        "population": 30,
+        "agency_count": 50,
+        "foster_kid_count": 100,
+        "foster_home_count": 20
+      },
+      {
+        "name": "Hays",
+        "population": 30,
+        "agency_count": 50,
+        "foster_kid_count": 100,
+        "foster_home_count": 20
+      },
+      {
+        "name": "Bastrop",
+        "population": 30,
+        "agency_count": 50,
+        "foster_kid_count": 100,
+        "foster_home_count": 20
+      }
+    ]
+  }
+  

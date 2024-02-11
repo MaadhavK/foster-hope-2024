@@ -1,0 +1,26 @@
+{
+    "resources": [
+      {
+        "name": "place",
+        "location": "Austin",
+        "type": "Non-profit",
+        "cost": 4.5,
+        "target_audience": "adults"
+      },
+      {
+        "name": "Red Cross",
+        "location": "Austin",
+        "type": "Non-profit",
+        "cost": 4.5,
+        "target_audience": "adults"
+      },
+      {
+        "name": "Red Cross",
+        "location": "Austin",
+        "type": "Non-profit",
+        "cost": 4.5,
+        "target_audience": "adults"
+      }
+    ]
+  }
+  
