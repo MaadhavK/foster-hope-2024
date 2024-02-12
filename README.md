@@ -20,11 +20,12 @@ https://data.texas.gov/See-Category-Tile/CPS-3-2-Children-in-Substitute-Care-by-
 https://www.opendatanetwork.com/dataset/data.texas.gov/u4j8-y2ff Foster homes per county
 https://www.dfps.texas.gov/Child_Protection/Foster_Care/Resource_Directory.asp Resources for Foster Children
 https://developers.google.com/youtube/v3/docs YouTube API for any videos used
+https://data.texas.gov/dataset/CPI-1-1-Texas-Child-Population-ages-0-17-by-County/x5xb-idr6/about_data Child Population per county
 
 ## at least three models
 Counties
 -   Name
--   Population
+-   Population(Of Children)
 -   Number of agencies / organizations
 -   Number of kids in foster care
 -   Number of foster homes
