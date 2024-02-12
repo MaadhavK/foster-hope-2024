@@ -8,6 +8,7 @@ async function fetchCounties(){
 
 const Counties = async () => {
     const countylist = await fetchCounties();
+    console.log(countylist);
     return (
         <div className="counties">
             {countylist.counties.map(county => (
