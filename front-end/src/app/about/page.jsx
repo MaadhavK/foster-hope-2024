@@ -9,6 +9,45 @@ export const metadata = {
     title: "About Foster Hope"
 }
 
+const data = {
+    "members": [
+      {
+        "name": "Grace Pan",
+        "role": "idk",
+        "bio":  "idk",
+        "img": "/images/Grace.jpeg",
+        "username": "pan-grace"
+      },
+      {
+        "name": "Raymond Wang",
+        "role": "idk",
+        "bio":  "idk",
+        "img": "/images/Raymond.jpeg",
+        "username": "raymww"
+      },
+      {
+        "name": "Maadhav Kothuri",
+        "role": "idk",
+        "bio":  "idk",
+        "username": "maadhavskothuri"
+      },
+      {
+        "name": "Alea Nablan",
+        "role": "idk",
+        "bio":  "idk",
+        "username": "aleanadhiraa"
+      },
+      {
+        "name": "Nathan Cheng",
+        "role": "idk",
+        "bio":  "idk",
+        "username": "nathanchengus"
+      }
+    ]
+  }
+  
+
+
 export default function About() {
     return (
         <>
@@ -19,25 +58,18 @@ export default function About() {
 
             <Container style = {{padding: 15}}>
                 <Row style = {{padding: "2rem"}}>
-                    <Col xs> <AboutCard/> </Col>
-                    <Col xs> <AboutCard/> </Col>
-                    <Col xs> <AboutCard/> </Col>
+                    {data["members"].slice(0, 3).map((member) => (
+                        <Col xs> <AboutCard member={member}/> </Col>
+                    ))}
                 </Row>
                 <Row style = {{padding: "2rem"}}>
-                    
-                    <Col xs style = {{paddingLeft: "10rem"}}> <AboutCard/> </Col>
-                    <Col xs style = {{paddingRight: "2rem"}}> <AboutCard/> </Col>
+                    {data["members"].slice(3, 5).map((member) => (
+                        <Col xs> <AboutCard member={member}/> </Col>
+                    ))}
                 </Row>
                 
             </Container>
         </main>
-        
-            <Image
-                src={raymond}
-                width={300}
-                height={400}
-                alt="Raymond"
-            />
         </>
     )
 }

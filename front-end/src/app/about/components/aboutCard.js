@@ -2,18 +2,23 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-function AboutCard() {
+
+function AboutCard({member}) {
   return (
     <Card style = {{width: "20rem"}}>
-      <Card.Img variant="top" src="holder.js/100px180" />
+       <Card.Img variant="top" src={"http://localhost:3001" + member.img}/>
       <Card.Body>
-        <Card.Title>Name</Card.Title>
+        <Card.Title>{member.name}</Card.Title>
         <Card.Text>
-          Information about the person with picture
+          {member.id}
+          Role: {member.role}
+          Bio: {member.bio}
         </Card.Text>
       </Card.Body>
     </Card>
   );
 }
+
+
 
 export default AboutCard;
