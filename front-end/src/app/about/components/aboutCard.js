@@ -17,8 +17,6 @@ function AboutCard({member}) {
       </Card.Body>
     </Card>
   );
-}
-
-
+};
 
 export default AboutCard;

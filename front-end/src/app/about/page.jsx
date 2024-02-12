@@ -1,5 +1,4 @@
 import Image from "next/image"
-import raymond from "/public/images/Raymond.jpeg"
 import AboutCard from "./components/aboutCard";
 import { Row, Col, Container } from "react-bootstrap";
 import styles from "../page.module.css";
@@ -52,9 +51,9 @@ export default function About() {
     return (
         <>
             <main className= {styles.main}>
-            <div className= {styles.description}>
-            <h1>About Us</h1>
-            </div>
+                <div className= {styles.description}>
+                <h1>About Us</h1>
+                </div>
 
             <Container style = {{padding: 15}}>
                 <Row style = {{padding: "2rem"}}>
