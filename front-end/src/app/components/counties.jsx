@@ -1,5 +1,3 @@
-
-
 async function fetchCounties(){
     const res = await fetch("http://localhost:3000/api/counties");
     const counties = await res.json();
