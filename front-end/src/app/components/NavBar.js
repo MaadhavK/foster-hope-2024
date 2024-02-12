@@ -10,7 +10,6 @@ export default function NavBar(){
             <Container>
             <Navbar.Brand href="/">Foster Hope</Navbar.Brand>
             <Nav className="me-auto">
-                <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/about">About Us</Nav.Link>
                 <Nav.Link href="/counties">Counties</Nav.Link>
                 <Nav.Link href="/organizations">Organizations</Nav.Link>
