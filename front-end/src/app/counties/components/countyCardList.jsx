@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation'
 async function fetchCounties(hostName){
     
     try {
-        const res = await fetch("https://foster-hope.com/api/counties");
+        const res = await fetch("https://www.foster-hope.com/api/counties");
         const counties = await res.json();
         return counties;   
     } catch (error) {
