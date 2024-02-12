@@ -1,5 +1,13 @@
 import Image from "next/image"
 import raymond from "/public/images/Raymond.jpeg"
+import AboutCard from "./components/aboutCard";
+import { Row, Col, Container } from "react-bootstrap";
+import styles from "../page.module.css";
+
+
+export const metadata = {
+    title: "About Foster Hope"
+}
 
 export default function About() {
     return (
