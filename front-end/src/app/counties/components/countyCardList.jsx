@@ -1,14 +1,24 @@
+'use client'
 import { Card } from "react-bootstrap";
+import { usePathname } from 'next/navigation'
 
-async function fetchCounties(){
-    const res = await fetch("http://localhost:3000/api/counties");
-    const counties = await res.json();
-    return counties;
+async function fetchCounties(hostName){
+    
+    try {
+        const res = await fetch("https://foster-hope.com/api/counties");
+        const counties = await res.json();
+        return counties;   
+    } catch (error) {
+        const res = await fetch("https://localhost:3000/api/counties");
+        const counties = await res.json();
+        return counties;   
+    }
+     
 }
 
 const Counties = async () => {
+
     const countylist = await fetchCounties();
-    // console.log(countylist);
     return (
         <div>
             {countylist.counties.map(county => (
