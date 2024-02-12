@@ -29,7 +29,7 @@
   position: relative;
   margin: 0;
   padding: 1rem;
-  background-color: rgba(var(--callout-rgb), 0.5);
+  background-color: rgba(var(white), 0.5);
   border: 1px solid rgba(var(--callout-border-rgb), 0.3);
   border-radius: var(--border-radius);
 }
@@ -107,6 +107,11 @@
 
 .logo {
   position: relative;
+}
+
+.container{
+  border-radius: 20px;
+  border-bottom: black;
 }
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
