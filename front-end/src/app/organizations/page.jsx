@@ -1,3 +1,7 @@
+export const metadata = {
+    title: "Organizations"
+}
+
 export default function Organizations() {
     return (
         <h1>
