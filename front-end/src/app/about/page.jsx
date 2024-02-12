@@ -1,13 +1,10 @@
-import styles from "../page.module.css";
-import AboutCard from "./components/aboutCard";
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-
+import Image from "next/image"
+import raymond from "/public/images/Raymond.jpeg"
 
 export default function About() {
     return (
-        <main className= {styles.main}>
+        <>
+            <main className= {styles.main}>
             <div className= {styles.description}>
             <h1>About Us</h1>
             </div>
@@ -27,6 +24,12 @@ export default function About() {
             </Container>
         </main>
         
-        
+            <Image
+                src={raymond}
+                width={300}
+                height={400}
+                alt="Raymond"
+            />
+        </>
     )
 }
