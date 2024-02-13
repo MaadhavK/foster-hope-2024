@@ -6,7 +6,7 @@ import Card from 'react-bootstrap/Card';
 function AboutCard({member}) {
   return (
     <Card style = {{width: "20rem"}}>
-       <Card.Img variant="top" src={"http://localhost:3001" + member.img}/>
+       <Card.Img variant="top"/>
       <Card.Body>
         <Card.Title>{member.name}</Card.Title>
         <Card.Text>
