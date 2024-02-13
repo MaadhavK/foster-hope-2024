@@ -4,8 +4,12 @@ export const metadata = {
 
 export default function Organizations() {
     return (
-        <h1>
-            Organizations Page
-        </h1>
+        <>
+            <main className= {styles.main}>
+                <div className= {styles.description}>
+                <h1>Organizations</h1>
+                </div>
+            </main>
+        </>
     )
 }
