@@ -5,6 +5,15 @@ import Navbar from 'react-bootstrap/Navbar';
 import styles from "../page.module.css"
 
 
+/*
+                <Nav.Link href="/about">About Us</Nav.Link>
+                <Nav.Link href="/counties">Counties</Nav.Link>
+                <Nav.Link href="/organizations">Organizations</Nav.Link>
+                <Nav.Link href="/resources">Resources</Nav.Link>
+
+
+*/
+
 
 export default function NavBar(){
     return (
@@ -13,10 +22,7 @@ export default function NavBar(){
             <Container className={styles.container}>
             <Navbar.Brand href="/">Foster Hope</Navbar.Brand>
             <Nav className="me-auto">
-                <Nav.Link href="/about">About Us</Nav.Link>
-                <Nav.Link href="/counties">Counties</Nav.Link>
-                <Nav.Link href="/organizations">Organizations</Nav.Link>
-                <Nav.Link href="/resources">Resources</Nav.Link>
+
             </Nav>
             </Container>
         </Navbar>
