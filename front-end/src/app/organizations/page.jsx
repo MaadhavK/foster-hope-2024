@@ -1,3 +1,4 @@
+import styles from "./page.module.css";
 export const metadata = {
     title: "Organizations"
 }
@@ -9,6 +10,7 @@ export default function Organizations() {
                 <div className= {styles.description}>
                 <h1>Organizations</h1>
                 </div>
+                    
             </main>
         </>
     )
