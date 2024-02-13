@@ -31,7 +31,7 @@ const data = {
         "username": "maadhavskothuri"
       },
       {
-        "name": "Alea Nablan",
+        "name": "Alea N Nablan",
         "role": "idk",
         "bio":  "idk",
         "username": "aleanadhiraa"
