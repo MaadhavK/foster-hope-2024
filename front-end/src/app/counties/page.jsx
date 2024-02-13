@@ -8,6 +8,8 @@ import styles from "../page.module.css";
 // }
 
 export default function listCounties() {
+
+    //const Counties = dynamic(() => import("./components/countyCardList"));
     return (
         <main className= {styles.main}>
             <div className= {styles.description}>
