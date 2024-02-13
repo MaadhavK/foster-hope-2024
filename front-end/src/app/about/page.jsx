@@ -54,7 +54,7 @@ export default function About() {
                 <h1>About Us</h1>
                 </div>
 
-            <Container style = {{padding: 15}}>
+            {/* <Container style = {{padding: 15}}>
                 <Row style = {{padding: "2rem"}}>
                     {data["members"].slice(0, 3).map((member) => (
                         <Col xs> <AboutCard member={member}/> </Col>
@@ -66,7 +66,7 @@ export default function About() {
                     ))}
                 </Row>
                 
-            </Container>
+            </Container> */}
         </main>
         </>
     )

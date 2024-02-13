@@ -16,7 +16,7 @@ export default function listCounties() {
                 <h1>Counties Page</h1>
             </div>
 
-            <Container style = {{padding: 15}}>
+            {/* <Container style = {{padding: 15}}>
                 <Row>
                     <Col>
                          <Card style = {{width: "20rem"}}>
@@ -71,7 +71,7 @@ export default function listCounties() {
                     </Col>
                 </Row>
 
-            </Container>
+            </Container> */}
         </main>
     )
 }
