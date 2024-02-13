@@ -13,8 +13,8 @@ async function getMemberCommit(username) {
   if (username == "Raymond Wang") {
     username = "raymww"
   } else if (username == "Grace Pan") {
-    username = "pan-grace"
-  }
+    username = "gracep"
+  } 
   console.log(`https://gitlab.com/api/v4/projects/${id}/repository/commits?author=${username}`)
   const res = await fetch(`https://gitlab.com/api/v4/projects/${id}/repository/commits?author=${username}`,{ method: 'GET', headers} )
   if (!res.ok) {
@@ -37,7 +37,8 @@ export default async function AboutCard({member}) {
   const commit = await getMemberCommit(member.name)
   // const issue = await getMemberIssue(member.username)
   // console.log(issue)
-  console.log("Current Member: ", member.name)
+  // console.log("Current Member: ", member.name)
+  // console.log(commit)
   return (
     <Card style = {{width: "20rem"}}>
        <Card.Img variant="top" src={"http://localhost:3001" + member.img}/>
