@@ -18,27 +18,28 @@ async function getMemberCommit(username) {
   console.log(`https://gitlab.com/api/v4/projects/${id}/repository/commits?author=${username}`)
   const res = await fetch(`https://gitlab.com/api/v4/projects/${id}/repository/commits?author=${username}`,{ method: 'GET', headers} )
   if (!res.ok) {
-    console.log("No data")
+    console.log("No data for commits")
   }
 
   return await res.json()
 }
 
-// async function getMemberIssue({username}) {
-//   const res = await fetch(`https://gitlab.com/projects/${id}/issue_statistics?assignee_id=${username}`, {headers})
-//   if (!res.ok) {
-//     // throw new Error("No data")
-//     console.log("No Data")
-//   }
-//   return await res.json()
-// }
+async function getMemberIssue(username) {
+  const res = await fetch(`https://gitlab.com/api/v4/projects/${id}/issues?author_username=${username}`, {method: 'GET', headers})
+  if (!res.ok) {
+    // throw new Error("No data")
+    console.log("No Data for issues")
+  }
+  return await res.json()
+}
 
 export default async function AboutCard({member}) {
   const commit = await getMemberCommit(member.name)
-  // const issue = await getMemberIssue(member.username)
+  const issue = await getMemberIssue(member.username)
   // console.log(issue)
   // console.log("Current Member: ", member.name)
-  // console.log(commit)
+  // console.log(commit.length)
+  // console.log(issue.length)
   return (
     <Card style = {{width: "20rem"}}>
        <Card.Img variant="top" src={"http://localhost:3001" + member.img}/>
@@ -47,7 +48,7 @@ export default async function AboutCard({member}) {
         <Card.Text>
           {member.id}
           Commit: {commit.length}
-          {/* Issue: {issue} */}
+          Issue: {issue.length}
           Role: {member.role}
           Bio: {member.bio}
         </Card.Text>
