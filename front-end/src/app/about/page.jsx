@@ -4,9 +4,6 @@ import AboutCard from "./components/aboutCard";
 import { Row, Col, Container } from "react-bootstrap";
 import styles from "../page.module.css";
 
-export const metadata = { 
-    title: "About Foster Hope"
-}
 
 const data = {
     "members": [
