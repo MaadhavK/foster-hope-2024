@@ -1,4 +1,4 @@
-import Counties from "./components/countyCardList"
+//import Counties from "./components/countyCardList"
 import { Row, Col, Container } from "react-bootstrap";
 import styles from "../page.module.css";
 //import dynamic from 'next/dynamic';
