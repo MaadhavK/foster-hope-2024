@@ -14,7 +14,6 @@ export default function listCounties() {
             <div className= {styles.description}>
                 <h1>Counties Page</h1>
             </div>
-            <Counties/>
         </main>
     )
 }
