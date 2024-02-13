@@ -1,5 +1,5 @@
 "use client"
-import Inter from "next/font/google";
+import {Inter} from "next/font/google";
 import "./globals.css";
 import NavBar from "./components/NavBar";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
     <html lang = "en">
     <body>
       <NavBar/>
-      <main>{children}</main>
+      <main className={inter.className}>{children}</main>
     </body>
     </html>
   );
