@@ -24,11 +24,11 @@ export default function listCounties() {
                             <Card.Body>
                                 <Card.Title> Travis County</Card.Title>
                                 <Card.Text>
-                                Population: 30
+                                Population: 1,305,000
                                 <br></br>
-                                Number of Agencies: 50
+                                Number of Agencies: 
                                 <br></br>
-                                Number of Foster Children: 100
+                                Number of Foster Children: 186
                                 <br></br>
                                 Number of Foster Homes: 20
                                 </Card.Text>
