@@ -13,8 +13,14 @@ export default function Home() {
           What We Do
         </h1>
         <p className={styles.splashdesc}>
-          This website is intended to be a source of information and resources about foster care in Texas.
-          The intended audience are those curious about foster care and those in foster care needing resources.
+          Those in foster care face the difficult task of navigating the complexities of the foster care system. They face
+          many challenges, such as frequent changes in homes that breaks relationships, emotional struggles that are often overlooked, 
+          and a lack of resources and support.
+        </p>
+        <p className={styles.splashdesc}>
+          Foster Hope contains a wealth of information and resources about foster care in Texas. Those that are in foster care can easily
+          locate local resources and support organizations, and those that are curious about foster care can find further information about
+          foster care and can help contribute to the effort to support those in foster care through donations and charitable work.
         </p>
         <img className={styles.splashimage} src="/images/FrontPageImage.jpg" />
 
