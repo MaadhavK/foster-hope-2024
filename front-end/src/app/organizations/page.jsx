@@ -74,6 +74,5 @@ export default function listCounties() {
 
                 </Container>
             </main>
-        </>
     )
 }
