@@ -1,11 +1,9 @@
+"use client"
 import Image from "next/image"
 import AboutCard from "./components/aboutCard";
 import { Row, Col, Container } from "react-bootstrap";
 import styles from "../page.module.css";
 
-export const metadata = { 
-    title: "About Foster Hope"
-}
 
 const data = {
     "members": [
@@ -54,7 +52,7 @@ export default function About() {
                 <h1>About Us</h1>
                 </div>
 
-            <Container style = {{padding: 15}}>
+            {/* <Container style = {{padding: 15}}>
                 <Row style = {{padding: "2rem"}}>
                     {data["members"].slice(0, 3).map((member) => (
                         <Col xs> <AboutCard member={member}/> </Col>
@@ -66,7 +64,7 @@ export default function About() {
                     ))}
                 </Row>
                 
-            </Container>
+            </Container> */}
         </main>
         </>
     )
