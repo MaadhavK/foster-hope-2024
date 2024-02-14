@@ -21,8 +21,8 @@ export default function listCounties() {
             <Container style = {{padding: 15}}>
                 <Row>
                     <Col>
-                         <Card style = {{width: "20rem"}}>
-                            <Card.Img variant="bottom" />
+                         <Card style = {{width: "20rem", height: "35rem"}}>
+                            <Card.Img variant="bottom" src = "images/counties/travis.jpg" style={{padding: "1rem", background: "lightblue"}}/>
                             <Card.Body>
                                 <Card.Title> Travis County</Card.Title>
                                 <Card.Text>
@@ -40,8 +40,8 @@ export default function listCounties() {
                         </Card>
                     </Col>
                     <Col>
-                        <Card style = {{width: "20rem"}}>
-                            <Card.Img variant="top" />
+                        <Card style = {{width: "20rem", height: "35rem"}}>
+                            <Card.Img variant="top" src = "images/counties/hays.png" style={{padding: "2rem", background: "lightblue"}}/>
                             <Card.Body>
                                 <Card.Title> Hays County</Card.Title>
                                 <Card.Text>
@@ -58,8 +58,8 @@ export default function listCounties() {
                         </Card>
                     </Col>
                     <Col>
-                        <Card style = {{width: "20rem"}}>
-                            <Card.Img variant="top" />
+                        <Card style = {{width: "20rem", height: "35rem"}}>
+                            <Card.Img variant="top" src = "/images/counties/bastrop.jpg" style={{padding:"1rem", background: "lightblue"}}/>
                             <Card.Body>
                                 <Card.Title> Bastrop County</Card.Title>
                                 <Card.Text>
