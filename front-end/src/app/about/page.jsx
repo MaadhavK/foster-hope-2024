@@ -30,8 +30,8 @@ const data = {
       },
       {
         "name": "Alea Nablan",
-        "role": "idk",
-        "bio":  "idk",
+        "role": "Frontend",
+        "bio":  "I'm a fourth year studying computer science at UT Austin. I enjoy listening to music and watching various kinds of tv shows.",
         "img": "/images/Alea.jpg",
         "username": "aleanadhiraa"
       },
