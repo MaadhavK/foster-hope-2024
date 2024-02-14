@@ -1,6 +1,7 @@
 "use client"
+// import Counties from "./components/countyCardList"
+import { Row, Col, Container, Card, Button} from "react-bootstrap";
 import styles from "../page.module.css";
-import { Row, Col, Container } from "react-bootstrap";
 import {useState, useEffect} from 'react'
 import ResourceCard from "./components/resourceCard";
 export default function Resources() {
@@ -19,9 +20,8 @@ export default function Resources() {
     console.log(typeof resources)
     console.log(Array.isArray(resources))
     return (
-        <>
-            <main className= {styles.main}>
-                <div className= {styles.description}>
+        <main className= {styles.main}>
+            <div className= {styles.description}>
                 <h1>Resources</h1>
                 <Container style = {{padding: 15}}>
                 <Row style = {{padding: "2rem"}}>
@@ -32,6 +32,5 @@ export default function Resources() {
             </Container>
                 </div>
             </main>
-        </>
     )
 }
