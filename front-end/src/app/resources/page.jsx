@@ -3,7 +3,7 @@
 import { Row, Col, Container, Card, Button} from "react-bootstrap";
 import styles from "../page.module.css";
 import {useState, useEffect} from 'react'
-import ResourceCard from "./components/resourceCard";
+import ResourceCard from "./components/ResourceCard";
 export default function Resources() {
     const [resources, setResources] = useState([])
 
