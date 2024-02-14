@@ -11,7 +11,7 @@ const data = {
         "name": "Grace Pan",
         "role": "idk",
         "bio":  "idk",
-        "img": "/images/Grace.jpeg",
+        "img": "/images/Grace.jpg",
         "username": "pan-grace"
       },
       {
@@ -31,6 +31,7 @@ const data = {
         "name": "Alea Nablan",
         "role": "idk",
         "bio":  "idk",
+        "img": "/images/Alea.jpg",
         "username": "aleanadhiraa"
       },
       {
@@ -52,7 +53,7 @@ export default function About() {
                 <h1>About Us</h1>
                 </div>
 
-            {/* <Container style = {{padding: 15}}>
+            <Container style = {{padding: 15}}>
                 <Row style = {{padding: "2rem"}}>
                     {data["members"].slice(0, 3).map((member) => (
                         <Col xs> <AboutCard member={member}/> </Col>
@@ -64,7 +65,7 @@ export default function About() {
                     ))}
                 </Row>
                 
-            </Container> */}
+            </Container>
         </main>
         </>
     )
