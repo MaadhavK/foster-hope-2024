@@ -1,6 +1,6 @@
 'use client'
-import { Card } from "react-bootstrap";
-import { usePathname } from 'next/navigation'
+import Card from "react-bootstrap";
+import usePathname from 'next/navigation'
 
 // async function fetchCounties(hostName){
     
