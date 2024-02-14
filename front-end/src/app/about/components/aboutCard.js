@@ -13,6 +13,8 @@ async function getMemberCommit(username) {
     username = "gracep"
   } else if (username == "Alea Nablan") {
     username = "aleanadhiraa"
+  } else if (username == "Nathan Cheng") {
+    username = "nathanchengus"
   }
   const res = await fetch(`https://gitlab.com/api/v4/projects/${id}/repository/commits?author=${username}`,{ method: 'GET', headers} )
   if (!res.ok) {

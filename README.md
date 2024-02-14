@@ -48,8 +48,8 @@ Resources(Events/communities, mental health)
 -   Name
 -   Location
 -   Type
--   Cost
--   Target Audience (Kids vs. parents)
+-   Phone Number
+-   Website
 
 Media
 -   Images of each resource

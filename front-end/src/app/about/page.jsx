@@ -38,6 +38,7 @@ const data = {
         "name": "Nathan Cheng",
         "role": "idk",
         "bio":  "idk",
+        "img": "/images/Nathan.PNG",
         "username": "nathanchengus"
       }
     ]
