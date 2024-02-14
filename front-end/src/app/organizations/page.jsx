@@ -10,76 +10,70 @@ export default function listCounties() {
         <main className= {styles.main}>
             <div className= {styles.description}>
                 <h1>Organizations</h1>
-            </div>
+                </div>
+                <Container style = {{padding: 15}}>
+                    <Row>
+                        <Col>
+                            <Card style = {{width: "20rem"}}>
+                                <Card.Img variant="bottom" />
+                                <Card.Body>
+                                    <Card.Title> Austin Angels</Card.Title>
+                                    <Card.Text>
+                                    Location: Austin
+                                    <br></br>
+                                    Type: Non-profit
+                                    <br></br>
+                                    Review: 4.7
+                                    <br></br>
+                                    Hours: 8:30 - 5:00
+                                    <br></br>
+                                    </Card.Text>
+                                    <Button href = "organizations/instances/austin-angels/"> Read More </Button>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                        <Col>
+                            <Card style = {{width: "20rem"}}>
+                                <Card.Img variant="top" />
+                                <Card.Body>
+                                    <Card.Title> Foster Village Inc.</Card.Title>
+                                    <Card.Text>
+                                    Location: Dripping Springs
+                                    <br></br>
+                                    Type: Non-profit
+                                    <br></br>
+                                    Review: 4.7
+                                    <br></br>
+                                    Hours: 24/7
+                                    <br></br>
+                                    </Card.Text>
+                                    <Button href = "organizations/instances/foster-village/"> Read More </Button>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                        <Col>
+                            <Card style = {{width: "20rem"}}>
+                                <Card.Img variant="top" />
+                                <Card.Body>
+                                    <Card.Title> Houston Alumni and Youth</Card.Title>
+                                    <Card.Text>
+                                    Location: Houston
+                                    <br></br>
+                                    Type: Government Office
+                                    <br></br>
+                                    Review: 3.4
+                                    <br></br>
+                                    Hours: 9:00 - 6:00
+                                    <br></br>
+                                    </Card.Text>
+                                    <Button href = "organizations/instances/houston-alumni-youth/"> Read More </Button>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    </Row>
 
-            <Container style = {{padding: 15}}>
-                <Row>
-                    <Col>
-                         <Card style = {{width: "20rem", height: "35rem"}}>
-                            <Card.Img variant="bottom" src = "" style={{padding: "1rem", background: "lightblue"}}/>
-                            <Card.Body>
-                                <Card.Title> Organization 1</Card.Title>
-                                <Card.Text>
-                                Attribute 1: 
-                                <br></br>
-                                Attribute 2: 
-                                <br></br>
-                                Attribute 3:
-                                <br></br>
-                                Attribute 4:
-                                <br></br>
-                                Attribute 5:
-                                <br></br>
-                                </Card.Text>
-                                <Button href = "organizations/instances/org1"> Read More </Button>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card style = {{width: "20rem", height: "35rem"}}>
-                            <Card.Img variant="bottom" src = "" style={{padding: "1rem", background: "lightblue"}}/>
-                            <Card.Body>
-                                <Card.Title> Organization 2</Card.Title>
-                                <Card.Text>
-                                Attribute 1: 
-                                <br></br>
-                                Attribute 2: 
-                                <br></br>
-                                Attribute 3:
-                                <br></br>
-                                Attribute 4:
-                                <br></br>
-                                Attribute 5:
-                                <br></br>
-                                </Card.Text>
-                                <Button href = "organizations/instances/org2"> Read More </Button>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card style = {{width: "20rem", height: "35rem"}}>
-                            <Card.Img variant="bottom" src = "" style={{padding: "1rem", background: "lightblue"}}/>
-                            <Card.Body>
-                                <Card.Title> Organization 3</Card.Title>
-                                <Card.Text>
-                                Attribute 1: 
-                                <br></br>
-                                Attribute 2: 
-                                <br></br>
-                                Attribute 3:
-                                <br></br>
-                                Attribute 4:
-                                <br></br>
-                                Attribute 5:
-                                <br></br>
-                                </Card.Text>
-                                <Button href = "organizations/instances/org3"> Read More </Button>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                </Row>
-
-            </Container>
-        </main>
+                </Container>
+            </main>
+        </>
     )
 }

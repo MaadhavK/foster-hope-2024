@@ -1,25 +1,25 @@
 {
-    "agencies": [
+    "organizations": [
       {
-        "name": "Red_Cross",
+        "name": "Austin Angels",
         "location": "Austin",
         "type": "Non-profit",
-        "reviews": 4.5,
-        "hours": "2:00 - 4:00"
+        "reviews": 4.7,
+        "hours": "8:30 - 5:00"
       },
       {
-        "name": "Red Cross",
-        "location": "Austin",
+        "name": "Foster Village Inc.",
+        "location": "Dripping Springs",
         "type": "Non-profit",
-        "reviews": 4.5,
-        "hours": "2:00 - 4:00"
+        "reviews": 4.7,
+        "hours": "24/7"
       },
       {
-        "name": "Red Cross",
-        "location": "Austin",
-        "type": "Non-profit",
-        "reviews": 4.5,
-        "hours": "2:00 - 4:00"
+        "name": "Houston Alumni and Youth",
+        "location": "Houston",
+        "type": "Government Office",
+        "reviews": 3.4,
+        "hours": "9:00 - 6:00"
       }
     ]
   }
