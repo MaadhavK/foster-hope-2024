@@ -1,14 +1,16 @@
 "use client"
 // import Counties from "./components/countyCardList"
-import { Row, Col, Container, Card} from "react-bootstrap";
+import { Row, Col, Container, Card, Button} from "react-bootstrap";
 import styles from "../page.module.css";
+
+import Link from "next/link";
 
 // export const metadata = {
 //     title: "Counties"
 // }
 
 export default function listCounties() {
-
+    
     //const Counties = dynamic(() => import("./components/countyCardList"));
     return (
         <main className= {styles.main}>
@@ -31,7 +33,9 @@ export default function listCounties() {
                                 Number of Foster Children: 186
                                 <br></br>
                                 Number of Foster Homes: 20
+                                <br></br>
                                 </Card.Text>
+                                <Button href = "counties/instances/travis/"> Read More </Button>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -49,6 +53,7 @@ export default function listCounties() {
                                 <br></br>
                                 Number of Foster Homes: 20
                                 </Card.Text>
+                                <Button href = "counties/instances/hays/"> Read More </Button>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -66,6 +71,7 @@ export default function listCounties() {
                                 <br></br>
                                 Number of Foster Homes: 20
                                 </Card.Text>
+                                <Button href = "counties/instances/bastrop/"> Read More </Button>
                             </Card.Body>
                         </Card>
                     </Col>
