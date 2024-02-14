@@ -9,7 +9,7 @@ import styles from "../page.module.css"
 export default function NavBar(){
     return (
         <>
-            <Navbar bg="primary" data-bs-theme="dark" fixed = "top" border="black" >
+            <Navbar bg="light" data-bs-theme="light" fixed = "top" border="white" >
             <Container className={styles.container}>
             <Navbar.Brand href="/">Foster Hope</Navbar.Brand>
             <Nav className="me-auto">
