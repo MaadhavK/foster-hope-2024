@@ -4,28 +4,26 @@ Group 22
 Alea Nablan, Grace Pan, Maadhav Kothuri, Raymond Wang, Nathan Cheng
 ## name of the project (alphanumeric, no spaces, max 32 chars; this will also be your URL)
 FosterHope
-## the proposed project
+https://www.foster-hope.com/
+## The proposed project
 Our project is to bring awareness to foster care and consolidating resources to those in need for foster care in Texas. In this way, we can help support children in the foster care system so that they can have better experiences.
+## API Documentation
+
 ## URLs of at least three data sources that you will programmatically scrape (at least one must be a RESTful API) (be very sure about this)
 
-https://www.dfps.texas.gov/Child_Protection/Foster_Care/Resource_Directory.asp Foster Care Orgs
-https://www.tffa.org/resources/regional-directory-of-resources/ government agencies
-https://charity-navigator.stellate.io/ Foster Care Orgs with Reviews
-https://www.guidestar.org/search/ Foster Care Orgs
-https://developers.google.com/maps (RESTful API) Locations of Orgs
-https://cwoutcomes.acf.hhs.gov/cwodatasite/pdf/texas.html
-https://projects.propublica.org/nonprofits/search?q=foster+care(RESTful API)
-https://www.mediawiki.org/wiki/API:Main_page#API_documentation (RESTful API)
-https://data.texas.gov/See-Category-Tile/CPS-3-2-Children-in-Substitute-Care-by-Placement-T/kgpb-mxxd/about_data Foster Kids per county
-https://www.opendatanetwork.com/dataset/data.texas.gov/u4j8-y2ff Foster homes per county
-https://www.dfps.texas.gov/Child_Protection/Foster_Care/Resource_Directory.asp Resources for Foster Children
-https://developers.google.com/youtube/v3/docs YouTube API for any videos used
-https://data.texas.gov/dataset/CPI-1-1-Texas-Child-Population-ages-0-17-by-County/x5xb-idr6/about_data Child Population per county
-
+- https://charity-navigator.stellate.io/ Foster Care Orgs with Reviews
+- https://developers.google.com/maps (RESTful API) Locations of Orgs, children mental health institutions, Reviews, Hours of Operation
+- https://projects.propublica.org/nonprofits/search?q=foster+care(RESTful API) Nonprofit Foster Orgs
+- https://www.mediawiki.org/wiki/API:Main_page#API_documentation (RESTful API)
+- https://data.texas.gov/See-Category-Tile/CPS-3-2-Children-in-Substitute-Care-by-Placement-T/kgpb-mxxd/about_data Foster Kids per county
+- https://www.opendatanetwork.com/dataset/data.texas.gov/u4j8-y2ff Foster homes per county
+- https://developers.google.com/youtube/v3/docs YouTube API for any videos used
+- https://data.texas.gov/dataset/CPI-1-1-Texas-Child-Population-ages-0-17-by-County/x5xb-idr6/about_data Child Population per county
+- https://www.eventbrite.com/platform/api#/introduction/about-our-api Children events
 ## at least three models
 Counties
 -   Name
--   Population(Of Children)
+-   Population
 -   Number of agencies / organizations
 -   Number of kids in foster care
 -   Number of foster homes
@@ -46,7 +44,7 @@ Media
 -   Images of organizations
 -   Text about each organization
 
-Resources(Events/communities, financial aids, mental health)
+Resources(Events/communities, mental health)
 -   Name
 -   Location
 -   Type
