@@ -1,5 +1,4 @@
-{
-    "resources": [
+[
       {
         "name": "place",
         "location": "Austin",
@@ -22,5 +21,4 @@
         "target_audience": "adults"
       }
     ]
-  }
   
