@@ -64,8 +64,21 @@ export default function About() {
     return (
         <>
             <main className= {styles.main}>
-                <div className= {styles.description}>
-                <h1>About Us</h1>
+                <div>
+                  <h1>About Foster Hope</h1>
+                  <br></br>
+                  <span styles={{border: "2px solid rgb(134, 133, 133)"}}> This website aims to inform users about foster children in Texas by providing important statistics as well as organizations and resources that are in place
+                    to support these children. The intended users are people part of the foster care system (children or providers) who may be looking for information about their specific area
+                    or need support from the organizations or resources provided.
+                  </span>
+                  
+                  <h2>Data Sources</h2>
+                  
+                  <p>Our data comes from [...]. Integrating disparate data can be tricky, since additional sources may be needed to programmatically scrape the necessary information. However,
+                    using disparate data can allow for a holistic view of a situation or community that expands the user's perspective.
+                  </p>
+
+                  <h2 style={{paddingBottom:"2rem", paddingTop: "2rem"}}>Our Team</h2>
                 </div>
 
             <Container style = {{padding: 15}}>
