@@ -23,8 +23,9 @@ const data = {
       },
       {
         "name": "Maadhav Kothuri",
-        "role": "idk",
-        "bio":  "idk",
+        "role": "Frontend (so far)",
+        "bio":  "I'm a second-year computer science major at UT Austin and am interested in building full-stack applications that make an impact. In my spare time, I like to play the trumpet, spend time with friends, and participate in the UT fencing club.",
+        "img": "/images/Maadhav.jpg",
         "username": "maadhavskothuri"
       },
       {
