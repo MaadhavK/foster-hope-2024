@@ -1,0 +1,19 @@
+.image-card {
+    margin: 5px; /* Adjust the margin as needed for spacing between images */
+    object-fit: cover; 
+    height: 220px;
+    padding: 20px
+  }
+  
+  .image-card img {
+    width: 100%; /* Ensure the image takes the full width of the container */
+    height: 100%; /* Maintain the aspect ratio of the image */
+    border-radius: 8px; /* Optional: add border-radius for rounded corners */
+  }
+
+  .text-below-image {
+    text-align: center; /* Center the text horizontally */
+    font-size: 30px; /* Adjust the font size as needed */
+    font-weight: normal; /* Match the font weight of the React card */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Use a sans-serif font stack */
+  }

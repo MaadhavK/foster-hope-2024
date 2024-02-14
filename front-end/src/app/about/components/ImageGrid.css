@@ -1,0 +1,14 @@
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+}
+
+.image-grid img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto; /* Center images horizontally */
+}

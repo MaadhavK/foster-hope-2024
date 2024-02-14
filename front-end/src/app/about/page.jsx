@@ -1,8 +1,10 @@
 "use client"
 import Image from "next/image"
 import AboutCard from "./components/aboutCard";
+import ImageCard from "./components/ImageCard";
 import { Row, Col, Container } from "react-bootstrap";
 import styles from "../page.module.css";
+import './components/ImageGrid.css'
 
 
 const data = {
@@ -44,6 +46,17 @@ const data = {
       }
     ]
   }
+
+  const imageArray = [
+    // Add more image data as needed
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png', alt: 'Image 1', logo: "React" },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/800px-Bootstrap_logo.svg.png', alt: 'Image 2', logo: "Bootstrap" },
+    { src: 'https://yt3.googleusercontent.com/R6P5skGdZJeM1bebvt3ILeU8k-9tiqE5T198RmBH8SoGXH2gk_Lk-45uZoq6X6pW4a4c9Sqn=s900-c-k-c0x00ffffff-no-rj', alt: 'Image 3', logo: "GitLab" },
+    { src: 'https://yt3.googleusercontent.com/X-rhKMndFm9hT9wIaJns1StBfGbFdLTkAROwm4UZ3n9ucrBky5CFIeeZhSszFXBgQjItzCD0SA=s900-c-k-c0x00ffffff-no-rj', alt: 'Image 4', logo: "Postman" },
+    { src: 'https://www.docker.com/wp-content/uploads/2023/05/symbol_blue-docker-logo.png', alt: 'Image 5', logo: "Docker" },
+    { src: 'https://seeklogo.com/images/A/aws-amplify-logo-D68DDB5AB1-seeklogo.com.png', alt: 'Image 6', logo: "AWS Amplify" },
+  ];
+
   
 
 
@@ -68,6 +81,14 @@ export default function About() {
                 </Row>
                 
             </Container>
+
+            <h1 className="center">Tools Used</h1>
+            <div className="image-grid">
+            {imageArray.map((image, index) => (
+            <ImageCard key={index} src={image.src} alt={image.alt} textBelowImage={image.logo} />
+            ))}
+              </div>
+
         </main>
         </>
     )
