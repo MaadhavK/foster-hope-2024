@@ -11,7 +11,7 @@ const data = {
         "name": "Grace Pan",
         "role": "idk",
         "bio":  "idk",
-        "img": "/images/Grace.jpeg",
+        "img": "/images/Grace.jpg",
         "username": "pan-grace"
       },
       {
@@ -31,6 +31,7 @@ const data = {
         "name": "Alea Nablan",
         "role": "idk",
         "bio":  "idk",
+        "img": "/images/Alea.jpg",
         "username": "aleanadhiraa"
       },
       {
