@@ -10,9 +10,9 @@ export default function AustinAngels(){
     const YoutubeID = new URLSearchParams(new URL("https://www.youtube.com/watch?v=FOOvHdqBiJQ").search).get("v");
     return (
         <main className = {styles.main}>
-            <h1>Austin Angels</h1>
+            <h1 className="blacktext">Austin Angels</h1>
             <p><br/><br/></p>
-            <Container>
+            <Container className="blacktext">
                 <Row>
                     <Col>
                         <img className="halfimage" src="/images/orgs/AustinAngels.png"/>

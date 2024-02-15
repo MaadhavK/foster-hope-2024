@@ -8,9 +8,9 @@ export default function FosterVillage(){
     const YoutubeID = new URLSearchParams(new URL("https://www.youtube.com/watch?v=r6Qr442U6mg").search).get("v");
     return (
         <main className = {styles.main}>
-            <h1>Foster Village Inc.</h1>
+            <h1 className="blacktext">Foster Village Inc.</h1>
             <p><br/><br/></p>
-            <Container>
+            <Container className="blacktext">
                 <Row>
                     <Col>
                         <img className="halfimage" src="/images/orgs/foster-village.jpeg"/>

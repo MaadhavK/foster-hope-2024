@@ -20,3 +20,7 @@ instance pages
 .imagecont{
     flex: 1;
 }
+
+.blacktext{
+    color: black;
+}
