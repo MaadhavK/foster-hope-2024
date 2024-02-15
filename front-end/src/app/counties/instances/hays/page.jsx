@@ -3,6 +3,7 @@ import { Row, Col, Container } from "react-bootstrap";
 import YouTube from 'react-youtube';
 import styles from "../../../page.module.css";
 import "../counties.css";
+import Image from "next/image";
 
 export default function TravisCounty(){
     const videoId = new URLSearchParams(new URL("https://www.youtube.com/watch?v=8ymjC8Up-Rk&ab_channel=KVUE").search).get("v");

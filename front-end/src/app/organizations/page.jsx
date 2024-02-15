@@ -15,7 +15,7 @@ export default function listCounties() {
                     <Row>
                         <Col>
                             <Card style = {{width: "20rem"}}>
-                                <Card.Img variant="bottom" />
+                                <Card.Img variant="top" src="/images/orgs/AustinAngels.png" style={{padding: "1rem", background: "lightblue"}}/>
                                 <Card.Body>
                                     <Card.Title> Austin Angels</Card.Title>
                                     <Card.Text>
@@ -34,7 +34,7 @@ export default function listCounties() {
                         </Col>
                         <Col>
                             <Card style = {{width: "20rem"}}>
-                                <Card.Img variant="top" />
+                                <Card.Img variant="top" src="/images/orgs/foster-village.jpeg" style={{padding: "1rem", background: "lightblue"}}/>
                                 <Card.Body>
                                     <Card.Title> Foster Village Inc.</Card.Title>
                                     <Card.Text>
@@ -53,7 +53,7 @@ export default function listCounties() {
                         </Col>
                         <Col>
                             <Card style = {{width: "20rem"}}>
-                                <Card.Img variant="top" />
+                                <Card.Img variant="top" src="/images/orgs/houstonalumniyouth.jpeg" style={{padding: "1rem", background: "lightblue"}}/>
                                 <Card.Body>
                                     <Card.Title> Houston Alumni and Youth</Card.Title>
                                     <Card.Text>

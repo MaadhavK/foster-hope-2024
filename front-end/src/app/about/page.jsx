@@ -19,7 +19,7 @@ const data = {
       {
         "name": "Raymond Wang",
         "role": "idk",
-        "bio":  "idk",
+        "bio":  "I'm a second-year cs student at UT, and I'm interested in application and game programming, as well as data modeling / ml. In spare time, I game, play ultimate frisbee, and hang with my cat.",
         "img": "/images/Raymond.jpeg",
         "username": "raymww"
       },
@@ -64,14 +64,30 @@ export default function About() {
     return (
         <>
             <main className= {styles.main}>
-                <div className= {styles.description}>
-                <h1>About Us</h1>
-                </div>
+              <Container>
+                <div style={{padding:"1rem", color:"black"}}>
+                  <h1>About Foster Hope</h1>
+                  <br></br>
+                  <p> This website aims to inform users about foster children in Texas by providing important statistics as well as organizations and resources that are in place
+                    to support these children. The intended users are people part of the foster care system (children or providers) who may be looking for information about their specific area
+                    or need support from the organizations or resources provided.
+                  </p>
+                  <br></br>
+                  <br></br>
+                  <h2>Data Sources</h2>
+                  <br></br>
+                  <p>Our data comes from [...]. Integrating disparate data can be tricky, since additional sources may be needed to programmatically scrape the necessary information. However,
+                    using disparate data can allow for a holistic view of a situation or community that expands the user's perspective.
+                  </p>
 
-            <Container style = {{padding: 15}}>
-                <Row style = {{padding: "2rem"}}>
+                  <h2 style={{paddingBottom:"2rem", paddingTop: "2rem"}}>Our Team</h2>
+                </div>
+              </Container>
+
+            <Container style = {{padding: 15, alignContent: "center", justifyContent: "center"}}>
+                <Row style = {{padding: "2rem", display: "flex", justifyContent:"row"}}>
                     {data["members"].slice(0, 3).map((member) => (
-                        <Col xs> <AboutCard member={member}/> </Col>
+                        <Col xs style={{paddingBottom: "2rem"}}> <AboutCard member={member}/> </Col>
                     ))}
                 </Row>
                 <Row style = {{padding: "2rem"}}>
@@ -81,13 +97,15 @@ export default function About() {
                 </Row>
                 
             </Container>
-
-            <h1 className="center">Tools Used</h1>
-            <div className="image-grid">
-            {imageArray.map((image, index) => (
-            <ImageCard key={index} src={image.src} alt={image.alt} textBelowImage={image.logo} />
-            ))}
-              </div>
+            <Container style={{justifyContent:"space-around", color: "black"}}>
+              <h1 className="center">Tools Used</h1>
+              <div className="image-grid">
+              {imageArray.map((image, index) => (
+              <ImageCard key={index} src={image.src} alt={image.alt} textBelowImage={image.logo} style={{padding:"4rem", objectFit: "cover", height:"60%", width: "100%"}} />
+              ))}
+              <br></br>
+                </div>
+            </Container>
 
         </main>
         </>
