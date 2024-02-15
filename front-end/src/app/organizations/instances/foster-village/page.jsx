@@ -41,7 +41,9 @@ export default function FosterVillage(){
                 </div>
             </div>
             {/* Links */}
+            
             <div className="center">
+                <h1>Related Links</h1>
                 <h2>County</h2>
                 <div><a href="../../../counties/instances/hays">Hays County</a></div>
                 <h2>Resource</h2>

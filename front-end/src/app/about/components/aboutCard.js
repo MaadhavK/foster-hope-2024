@@ -45,7 +45,7 @@ export default async function AboutCard({member}) {
   return (
     <Card style = {{width: "20rem"}}>
        <Card.Img variant="top" src={member.img}/>
-      <Card.Body>
+      <Card.Body style={{padding: "1rem", background: "lightblue"}}>
         <Card.Title>{member.name}</Card.Title>
         <Card.Text>
           Commit: {commit.length} <br />

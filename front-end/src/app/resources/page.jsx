@@ -12,8 +12,8 @@ export default function Resources() {
                     <Row>
                         <Col>
                             <Card style = {{width: "20rem"}}>
-                                <Card.Img variant="top" src="/images/resources/storytime.jpeg" style={{padding: "1rem", background: "lightblue"}}/>
-                                <Card.Body>
+                                <Card.Img variant="top" src="/images/resources/storytime.jpeg"/>
+                                <Card.Body style={{padding: "1rem", background: "lightblue"}}>
                                     <Card.Title> Free Kids Event: Children's Book Story Time</Card.Title>
                                     <Card.Text>
                                     Location: Austin
@@ -33,8 +33,8 @@ export default function Resources() {
                         </Col>
                         <Col>
                             <Card style = {{width: "20rem"}}>
-                                <Card.Img variant="top" src="/images/resources/event2.jpg" style={{padding: "1rem", background: "lightblue"}}/>
-                                <Card.Body>
+                                <Card.Img variant="top" src="/images/resources/event2.jpg"/>
+                                <Card.Body style={{padding: "1rem", background: "lightblue"}}>
                                     <Card.Title> Recognizing & Reporting Child Abuse</Card.Title>
                                     <Card.Text>
                                     Location: Austin
@@ -54,8 +54,8 @@ export default function Resources() {
                         </Col>
                         <Col>
                             <Card style = {{width: "20rem"}}>
-                                <Card.Img variant="top" src="/images/resources/logo.png" style={{padding: "1rem", background: "lightblue"}}/>
-                                <Card.Body>
+                                <Card.Img variant="top" src="/images/resources/logo.png"/>
+                                <Card.Body style={{padding: "1rem", background: "lightblue"}}>
                                     <Card.Title> Children's Center of Austin</Card.Title>
                                     <Card.Text>
                                     Location: Austin
@@ -76,6 +76,9 @@ export default function Resources() {
                     </Row>
 
                 </Container>
+                <h3>
+                    Number of Instances: 3
+                </h3>
             </main>
     )
     // const [resources, setResources] = useState([])

@@ -9,7 +9,7 @@ import styles from "../page.module.css"
 export default function NavBar(){
     return (
         <>
-            <Navbar bg="light" data-bs-theme="light" fixed = "top" border="white" expand="lg">
+            <Navbar bg="dark" data-bs-theme="dark" fixed = "top" border="white" expand="lg">
                 <Container className={styles.container}>
                 <Navbar.Brand href="/">Foster Hope</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav"/>

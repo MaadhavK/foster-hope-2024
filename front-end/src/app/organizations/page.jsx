@@ -8,15 +8,15 @@ import Link from "next/link";
 export default function listCounties() {
     return (
         <main className= {styles.main}>
-            <div className= {styles.description}>
+            <div className= {styles.description} >
                 <h1 styles={{color: "black"}}>Organizations</h1>
                 </div>
                 <Container style = {{padding: 15}}>
                     <Row>
                         <Col>
                             <Card style = {{width: "20rem"}}>
-                                <Card.Img variant="top" src="/images/orgs/AustinAngels.png" style={{padding: "1rem", background: "lightblue"}}/>
-                                <Card.Body>
+                                <Card.Img variant="top" src="/images/orgs/AustinAngels.png"/>
+                                <Card.Body style={{padding: "1rem", background: "lightblue"}}>
                                     <Card.Title> Austin Angels</Card.Title>
                                     <Card.Text>
                                     Location: Austin
@@ -34,8 +34,8 @@ export default function listCounties() {
                         </Col>
                         <Col>
                             <Card style = {{width: "20rem"}}>
-                                <Card.Img variant="top" src="/images/orgs/foster-village.jpeg" style={{padding: "1rem", background: "lightblue"}}/>
-                                <Card.Body>
+                                <Card.Img variant="top" src="/images/orgs/foster-village.jpeg"/>
+                                <Card.Body style={{padding: "1rem", background: "lightblue"}}>
                                     <Card.Title> Foster Village Inc.</Card.Title>
                                     <Card.Text>
                                     Location: Dripping Springs
@@ -53,8 +53,8 @@ export default function listCounties() {
                         </Col>
                         <Col>
                             <Card style = {{width: "20rem"}}>
-                                <Card.Img variant="top" src="/images/orgs/houstonalumniyouth.jpeg" style={{padding: "1rem", background: "lightblue"}}/>
-                                <Card.Body>
+                                <Card.Img variant="top" src="/images/orgs/houstonalumniyouth.jpeg"/>
+                                <Card.Body style={{padding: "1rem", background: "lightblue"}}>
                                     <Card.Title> Houston Alumni and Youth</Card.Title>
                                     <Card.Text>
                                     Location: Houston
