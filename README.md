@@ -47,7 +47,7 @@ FosterHope
 - Maadhav Kothuri: Expected 12 hours, Actual 15 hours
 - Nathan Cheng:
 - Raymond Wang:
-- Grace Pan:
+- Grace Pan: Expected 15 hours, actual 15 hours
 - Alea Nablan:
  
 ## RFP (Project Proposal)
