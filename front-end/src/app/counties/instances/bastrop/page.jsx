@@ -10,6 +10,7 @@ export default function BastropCounty(){
     return (
         <main className={styles.main}>
             <div className="header">
+                {/* Info */}
                 <h1> Bastrop County Information</h1>
             </div>
             <Container>
@@ -28,6 +29,7 @@ export default function BastropCounty(){
                     </Col>
                 </Row>
                 <Row>
+                    {/* Youtube Video */}
                     <div className="col-md-12 text-center mt-5">
                         <YouTube videoId={videoId} />
                     </div>
@@ -36,7 +38,9 @@ export default function BastropCounty(){
             </Container>
 
             {/* Links */}
+            
             <div className="center">
+                <h1>Related Links</h1>
                 <h2>Organization</h2>
                 <div><a href="../../../organizations/instances/houston-alumni-youth">Houston Alumni Youth</a></div>
                 <h2>Resource</h2>
