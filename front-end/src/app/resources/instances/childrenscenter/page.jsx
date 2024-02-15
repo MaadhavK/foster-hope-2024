@@ -3,13 +3,14 @@ import styles from "../../../page.module.css";
 import YouTube from 'react-youtube';
 import { Row, Col, Container, Card } from "react-bootstrap";
 
-
+// create page for resoure instance 1 
 export default function Resource1(){
     const videoId = new URLSearchParams(new URL("https://www.youtube.com/watch?v=3s5ZUj2VUBc").search).get("v");
     
     return (
         <main className = {styles.main}>
             <div>
+                {/* list out nae description and picture*/}
                 <h1> Children's Center of Austin</h1>
                 <Row style = {{padding: "2rem", display: "flex", justifyContent:"row"}}>
                 <Col xs style={{paddingBottom: "2rem"}}>
@@ -23,6 +24,7 @@ export default function Resource1(){
                   fun activity areas for art, swimming, and extracurricular activities.</p>
                 </Col>
                 </Row>
+                {/* list out attributres and media  */}
                 <Row style = {{padding: "2rem", display: "flex", justifyContent:"row"}}>
                 <Col xs style={{paddingBottom: "2rem"}}>
                     <Container>
@@ -42,22 +44,13 @@ export default function Resource1(){
                         </Card.Text>
                     </Card.Body>
                     </Card>
-                {/* <p> Location: Austin
-                                    <br></br>
-                                    Type: Children's Institute
-                                    <br></br>
-                                    In person: yes
-                                    <br></br>
-                                    Website: 
-                                    <a href="https://www.childrenscenterofaustin.com/" target="_blank" rel="nofollow">
-                                    https://www.childrenscenterofaustin.com/</a>
-                                    <br></br></p> */}
                                     </Container>
                 </Col>
                 <Col xs style={{paddingBottom: "2rem"}}>
                     <YouTube videoId={videoId} />
                 </Col>
                 </Row>
+                
                 <h1>Related Links</h1>
                 <h2>County</h2>
                 <a href='../../../counties/instances/hays'>Hays County</a>

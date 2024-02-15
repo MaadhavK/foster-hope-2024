@@ -5,6 +5,7 @@ import styles from "../page.module.css";
 
 import Link from "next/link";
 
+// model page for counties
 export default function listCounties() {
     return (
         <main className= {styles.main}>
@@ -12,6 +13,7 @@ export default function listCounties() {
                 <h1 styles={{color: "black"}}>Organizations</h1>
                 </div>
                 <Container style = {{padding: 15}}>
+                    {/* creates cards for instances, uses bootstrap row and col to format it in rows*/}
                     <Row>
                         <Col>
                             <Card style = {{width: "20rem"}}>

@@ -5,7 +5,7 @@ import { Row, Col, Container } from "react-bootstrap";
 import YouTube from "react-youtube";
 
 
-
+// create page for austin angels instance
 export default function AustinAngels(){
     const YoutubeID = new URLSearchParams(new URL("https://www.youtube.com/watch?v=FOOvHdqBiJQ").search).get("v");
     return (
@@ -15,9 +15,11 @@ export default function AustinAngels(){
             <Container className="blacktext">
                 <Row>
                     <Col>
+                    {/* image media */}
                         <img className="halfimage" src="/images/orgs/AustinAngels.png"/>
                     </Col>
                     <Col>
+                    {/*  description and attributes and website*/}
                         <h2>About</h2>
                         <p> <br/>
                             Austin Angels is a nonprofit organization dedicated to supporting foster children and their caretakers in the Austin, Texas area.

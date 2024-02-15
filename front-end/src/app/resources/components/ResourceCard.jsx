@@ -1,4 +1,5 @@
 import {Card, Button} from 'react-bootstrap';
+// component create card to list data of resource instance on model page, use for phase 2
 export default function ResourceCard({resource}) {
     const path = "resources/instances/" + resource.name + '/'
     console.log(path)

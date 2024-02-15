@@ -2,6 +2,8 @@
 // import Counties from "./components/countyCardList"
 import { Row, Col, Container, Card, Button} from "react-bootstrap";
 import styles from "../page.module.css";
+
+// model page for resources
 export default function Resources() {
     return (
         <main className= {styles.main}>
@@ -11,6 +13,7 @@ export default function Resources() {
                 <Container style = {{padding: 15}}>
                     <Row>
                         <Col>
+                        {/* lists out cards of instances, style in rows using bootstrap row and col */}
                             <Card style = {{width: "20rem"}}>
                                 <Card.Img variant="top" src="/images/resources/storytime.jpeg" style={{padding: "1rem", background: "lightblue"}}/>
                                 <Card.Body>
@@ -78,32 +81,4 @@ export default function Resources() {
                 </Container>
             </main>
     )
-    // const [resources, setResources] = useState([])
-
-    // useEffect(() => {
-    //     const getResources = async () => {
-    //         const res = await fetch('/api/resources')
-    //         const data = await res.json()
-    //         setResources(data);
-    //     }
-
-    //     getResources()
-    // }, [])
-    // console.log(resources)
-    // console.log(typeof resources)
-    // console.log(Array.isArray(resources))
-    // return (
-    //     <main className= {styles.main}>
-    //         <div className= {styles.description}>
-    //             <h1>Resources</h1>
-    //             <Container style = {{padding: 15}}>
-    //             <Row style = {{padding: "2rem"}}>
-    //                 {resources && resources['resources'] && resources['resources'].map((resource) => (
-    //                     <Col xs><ResourceCard resource={resource}/> </Col>
-    //                 ))}
-    //             </Row>
-    //         </Container>
-    //             </div>
-    //         </main>
-    // )
 }

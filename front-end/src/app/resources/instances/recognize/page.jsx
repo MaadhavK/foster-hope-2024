@@ -3,6 +3,7 @@ import styles from "../../../page.module.css";
 import { Row, Col, Container, Card } from "react-bootstrap";
 import YouTube from 'react-youtube';
 
+// create page for resoure instance 2
 export default function Resource1(){
     const videoId = new URLSearchParams(new URL("https://www.youtube.com/watch?v=V_k9vdkpX40").search).get("v");
     
@@ -10,6 +11,7 @@ export default function Resource1(){
        
         <main className = {styles.main}>
             <div>
+                {/* list out nae description and picture*/}
                 <h1> Recognizing & Reporting Child Abuse</h1>
                 <Row style = {{padding: "2rem", display: "flex", justifyContent:"row"}}>
                 <Col xs style={{paddingBottom: "2rem"}}>
@@ -22,6 +24,7 @@ export default function Resource1(){
                     </p>
                 </Col>
                 </Row>
+                {/* list out attributres and media  */}
                 <Row style = {{padding: "2rem", display: "flex", justifyContent:"row"}}>
                 <Col xs style={{paddingBottom: "2rem"}}>
                     <Container>

@@ -4,6 +4,7 @@ import "../instancestyle.css";
 import { Row, Col, Container } from "react-bootstrap";
 import YouTube from "react-youtube";
 
+// page for houston alumni youth instance
 export default function HoustonAlumniYouth(){
     
     const YoutubeID = new URLSearchParams(new URL("https://www.youtube.com/watch?v=H03R1jUqrCQ").search).get("v");
@@ -15,9 +16,11 @@ export default function HoustonAlumniYouth(){
             <Container className="blacktext">
                 <Row>
                     <Col>
+                    {/* image */}
                         <img className="halfimage" src="/images/orgs/houstonalumniyouth.jpeg"/>
                     </Col>
                     <Col>
+                    {/* description and lis of attributes and website */}
                         <h2>About</h2>
                         <p> <br/>
                         The Hay Center's mission is "empowering current and former foster youth to be successful, productive adults
