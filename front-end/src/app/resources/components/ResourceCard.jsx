@@ -1,21 +1,25 @@
-import Card from 'react-bootstrap/Card';
-
+import {Card, Button} from 'react-bootstrap';
 export default function ResourceCard({resource}) {
+    const path = "resources/instances/" + resource.name + '/'
+    console.log(path)
     return (
-        <div>
+        <container>
             <Card style = {{width: "20rem"}}>
             <Card.Img variant="top" src={resource.img}/>
                 <Card.Body>
                     <Card.Title>{resource.name}</Card.Title>
                     <Card.Text>
                         Location: {resource.location}
+                        <br></br>
                         Type: {resource.type}
-                        Cost: {resource.type}
-                        Cost: {resource.cost}
-                        For: {resource.audience}
+                        <br></br>
+                        Phone: {resource.phone}
+                        <br></br>
+                        Website: {resource.website}
                     </Card.Text>
+                <Button href = {path}> Read More </Button>
                 </Card.Body>
             </Card>
-        </div>
+        </container>
     )
 }
