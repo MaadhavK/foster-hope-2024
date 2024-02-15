@@ -16,8 +16,9 @@ export default function Home() {
         </h1>
         
         <br></br>
-        <section style={{width:"100vw", height: "45vw", backgroundColor:"lightblue"}} >
-            <Container style={{width:"100vw", height: "40vw", backgroundColor:"lightblue"}}>
+        
+            <Container fill style={{width:"100vw", height: "40vw", backgroundColor:"lightblue"}}>
+              <section style={{width:"100vw", height: "45vw", backgroundColor:"lightblue"}} >
               <Container style={{display:"flex", justifyContent:"center", padding: "15px"}}>
                 <Col>
                   <HomeCarousel></HomeCarousel>
@@ -36,8 +37,9 @@ export default function Home() {
                   </p>
                 </Col>
               </Container>
+              </section>
             </Container>
-        </section>
+        
         
       </main>  
   );
