@@ -65,7 +65,7 @@ export default function About() {
         <>
             <main className= {styles.main}>
               <Container>
-                <div style={{padding:"1rem"}}>
+                <div style={{padding:"1rem", color:"black"}}>
                   <h1>About Foster Hope</h1>
                   <br></br>
                   <p> This website aims to inform users about foster children in Texas by providing important statistics as well as organizations and resources that are in place
@@ -97,7 +97,7 @@ export default function About() {
                 </Row>
                 
             </Container>
-            <Container style={{justifyContent:"space-around"}}>
+            <Container style={{justifyContent:"space-around", color: "black"}}>
               <h1 className="center">Tools Used</h1>
               <div className="image-grid">
               {imageArray.map((image, index) => (
