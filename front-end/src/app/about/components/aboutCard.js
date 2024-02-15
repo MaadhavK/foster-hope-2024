@@ -16,7 +16,9 @@ async function getMemberCommit(username) {
   } else if (username == "Nathan Cheng") {
     username = "nathanchengus"
   }
-  const res = await fetch(`https://gitlab.com/api/v4/projects/${id}/repository/commits?author=${username}`,{ method: 'GET', headers} )
+  const res = await fetch(`https://gitlab.com/api/v4/projects/${id}/repository/commits?author=${username}&all=true&per_page=100`,{ method: 'GET', headers} )
+  
+  // const res = await fetch(`https://gitlab.com/api/v4/projects/${id}/repository/contributors?author=${username}`,{ method: 'GET', headers} )
   if (!res.ok) {
     console.log("No data for commits")
   }
