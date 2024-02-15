@@ -1,7 +1,8 @@
 #start web application
 run:
-	cd ./front-end && npm run dev
-
+	cd ./front-end 
+	npm install
+	npm run dev
 
 #add all then show status
 add:
