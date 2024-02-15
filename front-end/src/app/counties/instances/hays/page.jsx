@@ -5,12 +5,12 @@ import styles from "../../../page.module.css";
 import "../counties.css";
 import Image from "next/image";
 
-export default function TravisCounty(){
+export default function HaysCounty(){
     const videoId = new URLSearchParams(new URL("https://www.youtube.com/watch?v=8ymjC8Up-Rk&ab_channel=KVUE").search).get("v");
     return (
         <main className={styles.main}>
             <div className="header">
-                <h1> Travis County Information</h1>
+                <h1> Hays County Information</h1>
             </div>
             <Container>
                 <Row>
@@ -34,6 +34,12 @@ export default function TravisCounty(){
                 </Row>
 
             </Container>
+
+            {/* Links */}
+            <div className="center">
+                <div><a href="../../../organizations/instances/foster-village">Foster Village</a></div>
+                <div><a href="../../../resources/instances/recognize">Recognizing and Reporting Child Abuse</a></div>
+            </div>
         </main>
     )
 }
