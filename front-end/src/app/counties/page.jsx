@@ -45,7 +45,7 @@ export default function listCounties() {
                             <Card.Body>
                                 <Card.Title> Hays County</Card.Title>
                                 <Card.Text>
-                                Population: 30
+                                Population: 241,067
                                 <br></br>
                                 Number of Agencies: 50
                                 <br></br>
@@ -63,7 +63,7 @@ export default function listCounties() {
                             <Card.Body style={{background:"lightgray"}}>
                                 <Card.Title> Bastrop County</Card.Title>
                                 <Card.Text>
-                                Population: 30
+                                Population: 97,216
                                 <br></br>
                                 Number of Agencies: 50
                                 <br></br>
