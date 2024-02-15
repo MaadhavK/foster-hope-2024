@@ -10,9 +10,9 @@ export default function HoustonAlumniYouth(){
     
     return (
         <main className = {styles.main}>
-            <h1>Houston Alumni Youth</h1>
+            <h1 className="blacktext">Houston Alumni Youth</h1>
             <p><br/><br/></p>
-            <Container>
+            <Container className="blacktext">
                 <Row>
                     <Col>
                         <img className="halfimage" src="/images/orgs/houstonalumniyouth.jpeg"/>
