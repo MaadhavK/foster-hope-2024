@@ -24,6 +24,13 @@ FosterHope
 | 3       |        |
 | 4       |        |
 
+| Phase | Gitlab Pipeline |
+| ------ | ------ |
+| 1       |        |
+| 2       |        |
+| 3       |        |
+| 4       |        |
+
 | Phase | Leader |
 | ------ | ------ |
 | 1       |        |
@@ -31,7 +38,9 @@ FosterHope
 | 3       |        |
 | 4       |        |
 
-##Expected vs Actual time
+
+
+##Phase 1 Expected vs. Actual Time
 
 - Maadhav Kothuri: Expected 12 hours, Actual 15 hours
 - Nathan Cheng:
