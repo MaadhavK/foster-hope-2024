@@ -37,8 +37,10 @@ export default function HaysCounty(){
 
             {/* Links */}
             <div className="center">
+                <h2>Organization</h2>
                 <div><a href="../../../organizations/instances/foster-village">Foster Village</a></div>
-                <div><a href="../../../resources/instances/recognize">Recognizing and Reporting Child Abuse</a></div>
+                <h2>Resource</h2>
+                <div><a href="../../../resources/instances/childrenscenter">Childrens Center</a></div>
             </div>
         </main>
     )

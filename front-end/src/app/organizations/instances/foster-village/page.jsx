@@ -25,7 +25,7 @@ export default function FosterVillage(){
                             children in the Austin community
                         </p>
                         <p><br/><b>
-                            Location: </b>Dripping Springs, <a href="../../../counties/instances/hays">Hays County</a><br/>
+                            Location: </b>Dripping Springs<br/>
                             <b>Type: </b>Non-profit<br/>
                             <b>Reviews: </b>4.7<br/>
                             <b>Hours: </b>24/7<br/>
@@ -39,6 +39,13 @@ export default function FosterVillage(){
                 <div styles={{alignContent: "center", alignItems: "center", justifyContent: "center"}}>
                     <YouTube videoId={YoutubeID}/>
                 </div>
+            </div>
+            {/* Links */}
+            <div className="center">
+                <h2>County</h2>
+                <div><a href="../../../counties/instances/hays">Hays County</a></div>
+                <h2>Resource</h2>
+                <div><a href="../../../resources/instances/childrenscenter">Childrens Center</a></div>
             </div>
         </main>
     )

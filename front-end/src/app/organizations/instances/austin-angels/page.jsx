@@ -27,7 +27,7 @@ export default function AustinAngels(){
                             ultimately fostering a sense of stability and belonging for those in need.
                         </p>
                         <p><br/><b>
-                            Location: </b> Austin,  <a href="../../../counties/instances/hays">Hays County</a> <br />
+                            Location: </b> Austin <br />
                             <b>Type: </b>Non-profit <br />
                             <b >Reviews: </b>4.7 <br />
                             <b >Hours: </b>8:30 - 5:00 <br />
@@ -42,6 +42,13 @@ export default function AustinAngels(){
                 <div styles={{alignContent: "center", alignItems: "center", justifyContent: "center"}}>
                     <YouTube videoId={YoutubeID}/>
                 </div>
+            </div>
+            {/* Links */}
+            <div className="center">
+                <h2>County</h2>
+                <div><a href="../../../counties/instances/travis">Travis County</a></div>
+                <h2>Resource</h2>
+                <div><a href="../../../resources/instances/recognize">Recognizing & Reporting Child Abuse</a></div>
             </div>
         </main>
     )

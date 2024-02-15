@@ -35,7 +35,9 @@ export default function TravisCounty(){
 
             {/* Links */}
             <div className="center">
+                <h2>Organization</h2>
                 <div><a href="../../../organizations/instances/austin-angels">Austin Angels</a></div>
+                <h2>Resource</h2>
                 <div><a href="../../../resources/instances/recognize">Recognizing and Reporting Child Abuse</a></div>
             </div>
         </main>

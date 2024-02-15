@@ -37,8 +37,10 @@ export default function BastropCounty(){
 
             {/* Links */}
             <div className="center">
+                <h2>Organization</h2>
                 <div><a href="../../../organizations/instances/houston-alumni-youth">Houston Alumni Youth</a></div>
-                <div><a href="../../../resources/instances/recognize">Recognizing and Reporting Child Abuse</a></div>
+                <h2>Resource</h2>
+                <div><a href="../../../resources/instances/storytime">Free Kids Event: Children's Book Story Time</a></div>
             </div>
         </main>
     )
