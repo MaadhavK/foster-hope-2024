@@ -26,7 +26,7 @@ export default function HoustonAlumniYouth(){
                         events. An example is that they offer are GED and job readiness courses.
                         </p>
                         <p><br/><b>
-                            Location: </b>Houston, <a href="../../../counties/instances/bastrop">Bastrop County</a><br />
+                            Location: </b>Houston<br />
                             <b>Type: </b>Government<br />
                             <b >Reviews: </b>3.4<br />
                             <b >Hours: </b>9:00 - 6:00<br />
@@ -40,6 +40,14 @@ export default function HoustonAlumniYouth(){
                 <div styles={{alignContent: "center", alignItems: "center", justifyContent: "center"}}>
                     <YouTube videoId={YoutubeID}/>
                 </div>
+            </div>
+
+            {/* Links */}
+            <div className="center">
+                <h2>County</h2>
+                <div><a href="../../../counties/instances/bastrop">Bastrop County</a></div>
+                <h2>Resource</h2>
+                <div><a href="../../../resources/instances/storytime">Free Kids Event: Children's Book Story Time</a></div>
             </div>
         </main>
     )

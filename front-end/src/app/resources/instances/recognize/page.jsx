@@ -37,9 +37,9 @@ export default function Resource1(){
                 </Col>
                 </Row>
                 <h2>County</h2>
-                <a href='../../counties/instances/hays'>Hays County</a>
+                <a href='../../../counties/instances/travis'>Travis County</a>
                 <h2>Organization</h2>
-                <a href='../../organizations/instances/foster-village'>Foster Village</a>
+                <a href='../../../organizations/instances/austin-angels'>Austin Angels</a>
             </div>
         </main>
     )
