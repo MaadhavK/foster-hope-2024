@@ -76,8 +76,7 @@ export default function About() {
                   <br></br>
                   <h2>Data Sources</h2>
                   <br></br>
-                  <p>Our data comes from [...]. Integrating disparate data can be tricky, since additional sources may be needed to programmatically scrape the necessary information. However,
-                    using disparate data can allow for a holistic view of a situation or community that expands the user's perspective.
+                  <p>Our data comes from the Google Places API, the Wikipedia API and the EventBrite API, as well as certain government websites with specific county data. Although the data shown in this phase is a small fraction of the actual data, it did seem that Travis County had resources that were much more readily available than the other counties. This is likely due to its comparitively large population, meaning that foster children in smaller counties, like Bastrop County, might be less supported.
                   </p>
 
                   <h2 style={{paddingBottom:"2rem", paddingTop: "2rem"}}>Our Team</h2>
