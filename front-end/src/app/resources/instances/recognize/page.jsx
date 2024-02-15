@@ -36,6 +36,10 @@ export default function Resource1(){
                 <img src="/images/resources/kid.jpg" style={{width: "450px", height: "auto", margin: "12px"}}></img>
                 </Col>
                 </Row>
+                <h2>County</h2>
+                <a href='../../counties/instances/hays'>Hays County</a>
+                <h2>Organization</h2>
+                <a href='../../organizations/instances/foster-village'>Foster Village</a>
             </div>
         </main>
     )

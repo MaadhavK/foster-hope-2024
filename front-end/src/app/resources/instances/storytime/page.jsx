@@ -41,6 +41,10 @@ export default function Resource1(){
                 </Col>
                 </Row>
             </div>
+            <h2>County</h2>
+                <a href='../../counties/instances/bastrop'>Bastrop County</a>
+                <h2>Organization</h2>
+                <a href='../../organizations/instances/houston-alumni-youth'>Houston Alumni</a>
         </main>
     )
 }

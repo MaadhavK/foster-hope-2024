@@ -37,6 +37,10 @@ export default function Resource1(){
                 <img src="https://wp02-media.cdn.ihealthspot.com/wp-content/uploads/sites/567/2020/01/09170756/preschool-img.png" style={{width: "300px", height: "auto", margin: "12px"}}></img>
                 </Col>
                 </Row>
+                <h2>County</h2>
+                <a href='../../counties/instances/Hays'>Hays County</a>
+                <h2>Organization</h2>
+                <a href='../../organizations/instances/austin-angels'>Austin Angels</a>
             </div>
         </main>
     )
