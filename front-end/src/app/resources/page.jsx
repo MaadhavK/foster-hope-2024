@@ -20,7 +20,7 @@ export default function Resources() {
                                     <br></br>
                                     Type: Event
                                     <br></br>
-                                    Review: 4.7
+                                    In person: yes
                                     <br></br>
                                     Website: 
                                     <a href="https://www.eventbrite.com/e/free-kids-event-childrens-book-story-time-tickets-817584907467?aff=ebdssbdestsearch" target="_blank" rel="nofollow">
@@ -41,7 +41,7 @@ export default function Resources() {
                                     <br></br>
                                     Type: Event
                                     <br></br>
-                                    Review: 4.7
+                                    In person: yes
                                     <br></br>
                                     Website: 
                                     <a href="https://www.eventbrite.com/e/recognizing-reporting-child-abuse-tickets-796979666637?aff=ebdssbdestsearch" target="_blank" rel="nofollow">
@@ -62,7 +62,7 @@ export default function Resources() {
                                     <br></br>
                                     Type: Children's Institute
                                     <br></br>
-                                    Review: 3.4
+                                    In person: yes
                                     <br></br>
                                     Website: 
                                     <a href="https://www.childrenscenterofaustin.com/" target="_blank" rel="nofollow">
