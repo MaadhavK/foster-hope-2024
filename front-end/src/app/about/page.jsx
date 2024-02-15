@@ -18,7 +18,7 @@ const data = {
       },
       {
         "name": "Raymond Wang",
-        "role": "idk",
+        "role": "Frontend",
         "bio":  "I'm a second-year cs student at UT, and I'm interested in application and game programming, as well as data modeling / ml. In spare time, I game, play ultimate frisbee, and hang with my cat.",
         "img": "/images/Raymond.jpeg",
         "username": "raymww"
@@ -39,8 +39,8 @@ const data = {
       },
       {
         "name": "Nathan Cheng",
-        "role": "idk",
-        "bio":  "idk",
+        "role": "Full Stack",
+        "bio":  "I'm a third year studying computer science at UT Austin. I like playing volleyball and watching anime",
         "img": "/images/Nathan.PNG",
         "username": "nathanchengus"
       }

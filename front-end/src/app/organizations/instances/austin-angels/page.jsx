@@ -27,7 +27,7 @@ export default function AustinAngels(){
                             ultimately fostering a sense of stability and belonging for those in need.
                         </p>
                         <p><br/><b>
-                            Location: </b> Austin,  <a href="../../../counties/instances/hays">Hays County</a> <br />
+                            Location: </b> Austin,  <a href="../../../counties/instances/travis">Travis County</a> <br />
                             <b>Type: </b>Non-profit <br />
                             <b >Reviews: </b>4.7 <br />
                             <b >Hours: </b>8:30 - 5:00 <br />
