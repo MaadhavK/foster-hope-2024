@@ -17,14 +17,14 @@ FosterHope
 | Team Members    | GitLab ID        | EID     |
 | --------------- | ---------------- | ------- |
 | Maadhav Kothuri | @maadhavskothuri | msk2789 |
-| Nathan Cheng    | @nathanchengus   |         |
+| Nathan Cheng    | @nathanchengus   | nyc278  |
 | Grace Pan       | @pan-grace       | gp22489 |
 | Alea Nablan     | @aleanadhiraa    | ann2246 |
-| Raymond Wang    | @raymww          | nyc278  |
+| Raymond Wang    | @raymww          |         |
 
 | Phase | GitSHA                                   |
 | ----- | ---------------------------------------- |
-| 1     | 185487252e9a12007c793c6d0163bf371015cb6a |
+| 1     | 42428369ca57bda5d00eab779c3d5462d838e9db |
 | 2     |                                          |
 | 3     |                                          |
 | 4     |                                          |
@@ -43,6 +43,7 @@ FosterHope
 | 3     |             |
 | 4     |             |
 
+Group leader helped coordinate and make sure we all had time to meet. Also helped divide tasks.
 ##Phase 1 Expected vs. Actual Time
 
 - Maadhav Kothuri: Expected 12 hours, Actual 15 hours
