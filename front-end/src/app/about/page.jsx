@@ -39,8 +39,8 @@ const data = {
       },
       {
         "name": "Nathan Cheng",
-        "role": "idk",
-        "bio":  "idk",
+        "role": "Full Stack",
+        "bio":  "I'm a third year cs major at UT Austin. I like playing v ball and I like thrifting.",
         "img": "/images/Nathan.PNG",
         "username": "nathanchengus"
       }
