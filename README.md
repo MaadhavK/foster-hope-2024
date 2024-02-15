@@ -22,19 +22,19 @@ FosterHope
 | Alea Nablan     | @aleanadhiraa    | ann2246 |
 | Raymond Wang    | @raymww          | nyc278  |
 
-| Phase | GitSHA |
-| ----- | ------ |
-| 1     |        |
-| 2     |        |
-| 3     |        |
-| 4     |        |
+| Phase | GitSHA                                   |
+| ----- | ---------------------------------------- |
+| 1     | 185487252e9a12007c793c6d0163bf371015cb6a |
+| 2     |                                          |
+| 3     |                                          |
+| 4     |                                          |
 
-| Phase | Gitlab Pipeline |
-| ----- | --------------- |
-| 1     |                 |
-| 2     |                 |
-| 3     |                 |
-| 4     |                 |
+| Phase | Gitlab Pipeline                                             |
+| ----- | ----------------------------------------------------------- |
+| 1     | https://gitlab.com/nathanchengus/cs373-group-22/-/pipelines |
+| 2     |                                                             |
+| 3     |                                                             |
+| 4     |                                                             |
 
 | Phase | Leader      |
 | ----- | ----------- |

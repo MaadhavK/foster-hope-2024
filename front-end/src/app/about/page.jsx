@@ -18,7 +18,7 @@ const data = {
       },
       {
         "name": "Raymond Wang",
-        "role": "idk",
+        "role": "Frontend",
         "bio":  "I'm a second-year cs student at UT, and I'm interested in application and game programming, as well as data modeling / ml. In spare time, I game, play ultimate frisbee, and hang with my cat.",
         "img": "/images/Raymond.jpeg",
         "username": "raymww"
