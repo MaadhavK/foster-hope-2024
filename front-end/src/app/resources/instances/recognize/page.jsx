@@ -1,6 +1,6 @@
 "use client"
 import styles from "../../../page.module.css";
-import { Row, Col, Container } from "react-bootstrap";
+import { Row, Col, Container, Card } from "react-bootstrap";
 import YouTube from 'react-youtube';
 
 export default function Resource1(){
@@ -25,7 +25,10 @@ export default function Resource1(){
                 <Row style = {{padding: "2rem", display: "flex", justifyContent:"row"}}>
                 <Col xs style={{paddingBottom: "2rem"}}>
                     <Container>
-                <p> Location: Austin
+                    <Card style = {{width: "20rem"}}>
+                    <Card.Body>
+                        <Card.Text>
+                        Location: Austin
                                     <br></br>
                                     Type: Event
                                     <br></br>
@@ -34,7 +37,10 @@ export default function Resource1(){
                                     Website: 
                                     <a href="https://www.eventbrite.com/e/recognizing-reporting-child-abuse-tickets-796979666637?aff=ebdssbdestsearch" target="_blank" rel="nofollow">
                                     https://www.eventbrite.com</a>
-                                    <br></br></p>
+                                    <br></br>
+                        </Card.Text>
+                    </Card.Body>
+                    </Card>
                                     </Container>
                 </Col>
                 <Col xs style={{paddingBottom: "2rem"}}>

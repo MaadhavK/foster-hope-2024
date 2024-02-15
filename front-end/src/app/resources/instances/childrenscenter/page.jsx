@@ -1,7 +1,8 @@
 "use client"
 import styles from "../../../page.module.css";
 import YouTube from 'react-youtube';
-import { Row, Col, Container } from "react-bootstrap";
+import { Row, Col, Container, Card } from "react-bootstrap";
+
 
 export default function Resource1(){
     const videoId = new URLSearchParams(new URL("https://www.youtube.com/watch?v=3s5ZUj2VUBc").search).get("v");
@@ -25,7 +26,10 @@ export default function Resource1(){
                 <Row style = {{padding: "2rem", display: "flex", justifyContent:"row"}}>
                 <Col xs style={{paddingBottom: "2rem"}}>
                     <Container>
-                <p> Location: Austin
+                    <Card style = {{width: "20rem"}}>
+                    <Card.Body>
+                        <Card.Text>
+                        Location: Austin
                                     <br></br>
                                     Type: Children's Institute
                                     <br></br>
@@ -34,7 +38,20 @@ export default function Resource1(){
                                     Website: 
                                     <a href="https://www.childrenscenterofaustin.com/" target="_blank" rel="nofollow">
                                     https://www.childrenscenterofaustin.com/</a>
-                                    <br></br></p>
+                                    <br></br>
+                        </Card.Text>
+                    </Card.Body>
+                    </Card>
+                {/* <p> Location: Austin
+                                    <br></br>
+                                    Type: Children's Institute
+                                    <br></br>
+                                    In person: yes
+                                    <br></br>
+                                    Website: 
+                                    <a href="https://www.childrenscenterofaustin.com/" target="_blank" rel="nofollow">
+                                    https://www.childrenscenterofaustin.com/</a>
+                                    <br></br></p> */}
                                     </Container>
                 </Col>
                 <Col xs style={{paddingBottom: "2rem"}}>
