@@ -25,12 +25,12 @@ export default function FosterVillage(){
                             children in the Austin community
                         </p>
                         <p><br/><b>
-                            Location: </b>Dripping Springs<br/>
+                            Location: </b>Dripping Springs, <a href="../../../counties/instances/hays">Hays County</a><br/>
                             <b>Type: </b>Non-profit<br/>
                             <b>Reviews: </b>4.7<br/>
                             <b>Hours: </b>24/7<br/>
                         </p>
-                        <p><br/><b> Website:</b><a href="https://www.fostervillageaustin.org/about">https://www.fostervillageaustin.org/about</a></p>
+                        <p><br/><b> Website:</b><a href="https://www.fostervillageaustin.org/about"> https://www.fostervillageaustin.org/about</a></p>
                     </Col>
                 </Row>
             </Container>

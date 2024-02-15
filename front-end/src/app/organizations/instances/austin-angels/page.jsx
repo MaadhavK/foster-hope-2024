@@ -27,12 +27,13 @@ export default function AustinAngels(){
                             ultimately fostering a sense of stability and belonging for those in need.
                         </p>
                         <p><br/><b>
-                            Location: </b>Austin <br />
+                            Location: </b> Austin,  <a href="../../../counties/instances/hays">Hays County</a> <br />
                             <b>Type: </b>Non-profit <br />
                             <b >Reviews: </b>4.7 <br />
                             <b >Hours: </b>8:30 - 5:00 <br />
                         </p>
-                        <p><br/><b> Website:</b><a href="https://www.austinangels.com/">https://www.austinangels.com/</a></p>
+                        <p><br/><b> Website:</b><a href="https://www.austinangels.com/"> https://www.austinangels.com/</a></p>
+
                     </Col>
                 </Row>
             </Container>
