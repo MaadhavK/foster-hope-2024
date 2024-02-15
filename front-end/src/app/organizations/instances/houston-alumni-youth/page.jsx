@@ -26,12 +26,12 @@ export default function HoustonAlumniYouth(){
                         events. An example is that they offer are GED and job readiness courses.
                         </p>
                         <p><br/><b>
-                            Location: </b>Houston <br />
+                            Location: </b>Houston, <a href="../../../counties/instances/bastrop">Harris County</a><br />
                             <b>Type: </b>Government<br />
                             <b >Reviews: </b>3.4<br />
                             <b >Hours: </b>9:00 - 6:00<br />
                         </p>
-                        <p><br/><b> Website:</b><a href="https://www.haycenter.org/">https://www.haycenter.org/</a></p>
+                        <p><br/><b> Website:</b><a href="https://www.haycenter.org/"> https://www.haycenter.org/</a></p>
                     </Col>
                 </Row>
             </Container>

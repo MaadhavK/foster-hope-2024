@@ -9,7 +9,7 @@ export default function listCounties() {
     return (
         <main className= {styles.main}>
             <div className= {styles.description}>
-                <h1>Organizations</h1>
+                <h1 styles={{color: "black"}}>Organizations</h1>
                 </div>
                 <Container style = {{padding: 15}}>
                     <Row>
@@ -73,6 +73,10 @@ export default function listCounties() {
                     </Row>
 
                 </Container>
+                <h3>
+                    Number of Instances: 3
+                </h3>
+
             </main>
     )
 }
