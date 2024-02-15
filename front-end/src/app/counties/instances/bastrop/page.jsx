@@ -10,6 +10,7 @@ export default function BastropCounty(){
     return (
         <main className={styles.main}>
             <div className="header">
+                {/* Info */}
                 <h1> Bastrop County Information</h1>
             </div>
             <Container>
@@ -28,6 +29,7 @@ export default function BastropCounty(){
                     </Col>
                 </Row>
                 <Row>
+                    {/* Youtube Video */}
                     <div className="col-md-12 text-center mt-5">
                         <YouTube videoId={videoId} />
                     </div>

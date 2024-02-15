@@ -5,6 +5,7 @@ import styles from "../../../page.module.css";
 import "../counties.css";
 
 export default function TravisCounty(){
+    // Youtube link
     const videoId = new URLSearchParams(new URL("https://www.youtube.com/watch?v=wo0m4Lk-Ylo&ab_channel=TravisCountyTX").search).get("v");
     return (
         <main className={styles.main}>
@@ -14,9 +15,11 @@ export default function TravisCounty(){
             <Container>
                 <Row>
                     <Col>
+                        {/* Image of travis county */}
                         <img className="countyimage" src="https://upload.wikimedia.org/wikipedia/commons/6/64/Travis_courthouse_2011.jpg" alt="Description of your image" />
                     </Col>
                     <Col>
+                        {/* Info */}
                         <p className="paragraph">Travis County is located in Central Texas. As of the 2020 census, the population was 1,290,188. It is the fifth-most populous county in Texas. Its county seat and most populous city is Austin, the capital of Texas.</p>
                         <ul className="bullet-point">
                             <li>Population: 1,290,188</li>
@@ -27,6 +30,7 @@ export default function TravisCounty(){
                     </Col>
                 </Row>
                 <Row>
+                    {/* Youtube video placement */}
                     <div className="col-md-12 text-center mt-5">
                         <YouTube videoId={videoId} />
                     </div>

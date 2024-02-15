@@ -6,6 +6,7 @@ import "../counties.css";
 import Image from "next/image";
 
 export default function HaysCounty(){
+    // Youtube
     const videoId = new URLSearchParams(new URL("https://www.youtube.com/watch?v=8ymjC8Up-Rk&ab_channel=KVUE").search).get("v");
     return (
         <main className={styles.main}>
@@ -15,6 +16,7 @@ export default function HaysCounty(){
             <Container>
                 <Row>
                     <Col>
+                        {/* Image */}
                         <img className="countyimage" src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Hays_courthouse.jpg" alt="Description of your image" />
                     </Col>
                     <Col>
@@ -28,6 +30,7 @@ export default function HaysCounty(){
                     </Col>
                 </Row>
                 <Row>
+                    {/* Youtube link */}
                     <div className="col-md-12 text-center mt-5">
                         <YouTube videoId={videoId} />
                     </div>

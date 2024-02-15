@@ -6,6 +6,7 @@ const headers = {
   'Authorization': `BEARER ${token}`
 };
 
+// Gets number of commits
 async function getMemberCommit(username) {
   if (username == "Raymond Wang") {
     username = "raymww"
@@ -16,6 +17,7 @@ async function getMemberCommit(username) {
   } else if (username == "Nathan Cheng") {
     username = "nathanchengus"
   }
+  // Get info from gitlab api
   const res = await fetch(`https://gitlab.com/api/v4/projects/${id}/repository/commits?author=${username}&all=true&per_page=100`,{ method: 'GET', headers} )
   
   // const res = await fetch(`https://gitlab.com/api/v4/projects/${id}/repository/contributors?author=${username}`,{ method: 'GET', headers} )
@@ -26,6 +28,7 @@ async function getMemberCommit(username) {
   return await res.json()
 }
 
+// Number of issues
 async function getMemberIssue(username) {
   const res = await fetch(`https://gitlab.com/api/v4/projects/${id}/issues?author_username=${username}`, {method: 'GET', headers})
   if (!res.ok) {
@@ -43,6 +46,7 @@ export default async function AboutCard({member}) {
   console.log(commit.length)
   // console.log(issue.length)
   return (
+    // About Cards
     <Card style = {{width: "20rem"}}>
        <Card.Img variant="top" src={member.img}/>
       <Card.Body style={{padding: "1rem", background: "lightblue"}}>
