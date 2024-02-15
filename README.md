@@ -4,8 +4,42 @@ Group 22
 Alea Nablan, Grace Pan, Maadhav Kothuri, Raymond Wang, Nathan Cheng
 ## name of the project (alphanumeric, no spaces, max 32 chars; this will also be your URL)
 FosterHope
-https://www.foster-hope.com/
-## The proposed project
+**Website:** https://www.foster-hope.com/
+**API Documentation:** https://documenter.getpostman.com/view/32909464/2sA2r3ZkjZ
+
+
+| Team Members | EID | GitLab ID|
+| ------ | ------ | ------ |
+| Maadhav Kothuri | @maadhavskothuri | msk2789 |
+| Nathan Cheng | @nathanchengus | |
+| Grace Pan | @pan-grace | |
+| Alea Nablan | @aleanadhiraa | |
+| Raymond Wang | @raymww       | |
+
+
+| Phase | GitSHA |
+| ------ | ------ |
+| 1       |        |
+| 2       |        |
+| 3       |        |
+| 4       |        |
+
+| Phase | Leader |
+| ------ | ------ |
+| 1       |        |
+| 2       |        |
+| 3       |        |
+| 4       |        |
+
+##Expected vs Actual time
+
+- Maadhav Kothuri: Expected 12 hours, Actual 15 hours
+- Nathan Cheng:
+- Raymond Wang:
+- Grace Pan:
+- Alea Nablan:
+ 
+## RFP (Project Proposal)
 Our project is to bring awareness to foster care and consolidating resources to those in need for foster care in Texas. In this way, we can help support children in the foster care system so that they can have better experiences.
 ## API Documentation
 https://documenter.getpostman.com/view/32909464/2sA2r3ZkjZ
