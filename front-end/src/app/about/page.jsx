@@ -11,8 +11,8 @@ const data = {
     "members": [
       {
         "name": "Grace Pan",
-        "role": "idk",
-        "bio":  "idk",
+        "role": "Frontend",
+        "bio":  "I'm a third year cs major at UT, and I'm interested in web and app development. I like dancing and reading in my free time",
         "img": "/images/Grace.jpg",
         "username": "pan-grace"
       },
