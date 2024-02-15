@@ -22,7 +22,7 @@ export default function listCounties() {
                 <Row>
                     <Col>
                          <Card style = {{width: "20rem", height: "35rem"}}>
-                            <Card.Img variant="bottom" src = "images/counties/travis.jpg" style={{padding: "1rem", background: "lightblue"}}/>
+                            <Card.Img variant="bottom" src = "images/counties/travis.jpg"/>
                             <Card.Body>
                                 <Card.Title> Travis County</Card.Title>
                                 <Card.Text>
@@ -41,11 +41,11 @@ export default function listCounties() {
                     </Col>
                     <Col>
                         <Card style = {{width: "20rem", height: "35rem"}}>
-                            <Card.Img variant="top" src = "images/counties/hays.png" style={{padding: "2rem", background: "lightblue"}}/>
+                            <Card.Img variant="top" src = "images/counties/hays.png"/>
                             <Card.Body>
                                 <Card.Title> Hays County</Card.Title>
                                 <Card.Text>
-                                Population: 30
+                                Population: 241,067
                                 <br></br>
                                 Number of Agencies: 50
                                 <br></br>
@@ -59,11 +59,11 @@ export default function listCounties() {
                     </Col>
                     <Col>
                         <Card style = {{width: "20rem", height: "35rem"}}>
-                            <Card.Img variant="top" src = "/images/counties/bastrop.jpg" style={{padding:"1rem", background: "lightblue"}}/>
-                            <Card.Body>
+                            <Card.Img variant="top" src = "/images/counties/bastrop.jpg"/>
+                            <Card.Body style={{background:"lightgray"}}>
                                 <Card.Title> Bastrop County</Card.Title>
                                 <Card.Text>
-                                Population: 30
+                                Population: 97,216
                                 <br></br>
                                 Number of Agencies: 50
                                 <br></br>

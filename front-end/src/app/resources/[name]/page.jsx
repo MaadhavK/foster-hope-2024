@@ -1,8 +1,7 @@
 "use client"
-export default function OrganizationPage({params: {name}}) {
+export default function ResourcePage({params: {name}}) {
     return (
         <div>
-            {name} Page
         </div>
     )
 }
