@@ -76,6 +76,9 @@ export default function Resources() {
                     </Row>
 
                 </Container>
+                <h3>
+                    Number of Instances: 3
+                </h3>
             </main>
     )
     // const [resources, setResources] = useState([])

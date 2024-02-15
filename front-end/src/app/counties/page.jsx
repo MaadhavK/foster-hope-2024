@@ -78,6 +78,9 @@ export default function listCounties() {
                 </Row>
 
             </Container>
+            <h3>
+                Number of Instances: 3
+            </h3>
         </main>
     )
 }
