@@ -1,0 +1,22 @@
+
+/*
+instance pages
+*/
+.halfimage{
+  object-fit: contain;
+  max-width: 35vw;
+  min-width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.halfcenter h3{
+  margin-top: 30px;
+}
+
+.imgcontcont{
+    flex-direction: row;
+}
+
+.imagecont{
+    flex: 1;
+}
