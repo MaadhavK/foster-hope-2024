@@ -84,10 +84,10 @@ export default function About() {
                 </div>
               </Container>
 
-            <Container style = {{padding: 15, alignContent: "center"}}>
-                <Row style = {{padding: "2rem"}}>
+            <Container style = {{padding: 15, alignContent: "center", justifyContent: "center"}}>
+                <Row style = {{padding: "2rem", display: "flex", justifyContent:"row"}}>
                     {data["members"].slice(0, 3).map((member) => (
-                        <Col xs> <AboutCard member={member}/> </Col>
+                        <Col xs style={{paddingBottom: "2rem"}}> <AboutCard member={member}/> </Col>
                     ))}
                 </Row>
                 <Row style = {{padding: "2rem"}}>
@@ -97,11 +97,11 @@ export default function About() {
                 </Row>
                 
             </Container>
-            <Container>
+            <Container style={{justifyContent:"space-around"}}>
               <h1 className="center">Tools Used</h1>
               <div className="image-grid">
               {imageArray.map((image, index) => (
-              <ImageCard key={index} src={image.src} alt={image.alt} textBelowImage={image.logo} />
+              <ImageCard key={index} src={image.src} alt={image.alt} textBelowImage={image.logo} style={{padding:"4rem", objectFit: "cover", height:"60%", width: "100%"}} />
               ))}
               <br></br>
                 </div>
