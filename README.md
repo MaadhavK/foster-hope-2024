@@ -4,7 +4,9 @@ Group 22
 Alea Nablan, Grace Pan, Maadhav Kothuri, Raymond Wang, Nathan Cheng
 ## name of the project (alphanumeric, no spaces, max 32 chars; this will also be your URL)
 FosterHope
+
 **Website:** https://www.foster-hope.com/
+
 **API Documentation:** https://documenter.getpostman.com/view/32909464/2sA2r3ZkjZ
 
 
