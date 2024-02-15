@@ -1,7 +1,10 @@
 "use client"
 import styles from "../../../page.module.css";
 import { Row, Col, Container } from "react-bootstrap";
+import YouTube from 'react-youtube';
 export default function Resource1(){
+    const videoId = new URLSearchParams(new URL("https://www.youtube.com/watch?v=kul-g_30HuU").search).get("v");
+    
     return (
         <main className = {styles.main}>
             <div>
@@ -37,14 +40,15 @@ export default function Resource1(){
                                     </Container>
                 </Col>
                 <Col xs style={{paddingBottom: "2rem"}}>
-                <img src="/images/resources/book.jpg" style={{width: "300px", height: "auto", margin: "12px"}}></img>
+                <YouTube videoId={videoId} />
                 </Col>
                 </Row>
+            <h1>Related Links</h1>
+            <h2>County</h2>
+            <a href='../../../counties/instances/bastrop'>Bastrop County</a>
+            <h2>Organization</h2>
+            <a href='../../../organizations/instances/houston-alumni-youth'>Houston Alumni</a>
             </div>
-                <h2>County</h2>
-                <a href='../../../counties/instances/bastrop'>Bastrop County</a>
-                <h2>Organization</h2>
-                <a href='../../../organizations/instances/houston-alumni-youth'>Houston Alumni</a>
         </main>
     )
 }

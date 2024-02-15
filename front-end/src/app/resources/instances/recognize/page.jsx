@@ -1,8 +1,13 @@
 "use client"
 import styles from "../../../page.module.css";
 import { Row, Col, Container } from "react-bootstrap";
+import YouTube from 'react-youtube';
+
 export default function Resource1(){
+    const videoId = new URLSearchParams(new URL("https://www.youtube.com/watch?v=V_k9vdkpX40").search).get("v");
+    
     return (
+       
         <main className = {styles.main}>
             <div>
                 <h1> Recognizing & Reporting Child Abuse</h1>
@@ -33,9 +38,10 @@ export default function Resource1(){
                                     </Container>
                 </Col>
                 <Col xs style={{paddingBottom: "2rem"}}>
-                <img src="/images/resources/kid.jpg" style={{width: "450px", height: "auto", margin: "12px"}}></img>
+                <YouTube videoId={videoId} />
                 </Col>
                 </Row>
+                <h1>Related Links</h1>
                 <h2>County</h2>
                 <a href='../../../counties/instances/travis'>Travis County</a>
                 <h2>Organization</h2>
