@@ -1,0 +1,959 @@
+commit c340872e406d4dd71b2ed759a526448f07b78de7
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Wed Feb 14 23:48:28 2024 -0600
+
+    Added some inline comments. Closes 15
+
+commit aaa4b8185f50bac14f0a384d5b5e7ffd42ed0ad6
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Wed Feb 14 23:42:36 2024 -0600
+
+    Reformatted. Closes 27, 24, 20
+
+commit d1ce8e23361adb90ad009b33e3054d6c9dab1e8b
+Author: gracep <gracepan@wireless-10-148-165-216.public.utexas.edu>
+Date:   Wed Feb 14 23:34:39 2024 -0600
+
+    hours
+
+commit 8528bfe9d7995d4fe9206dc9be9bf1366fb1e842
+Author: gracep <gracepan@wireless-10-148-165-216.public.utexas.edu>
+Date:   Wed Feb 14 23:28:49 2024 -0600
+
+    style for instance resource
+
+commit 3c2824479daef357a9396369be30b8743724cb61
+Author: gracep <gracepan@wireless-10-148-165-216.public.utexas.edu>
+Date:   Wed Feb 14 23:20:50 2024 -0600
+
+    two diff media for resource instances
+
+commit 78b4b77b2506ed0d6845a39288e457d38112f196
+Merge: 4475aef 3ec6c10
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Wed Feb 14 22:50:17 2024 -0600
+
+    Merge branch 'main' of https://gitlab.com/nathanchengus/cs373-group-22
+    Merge
+
+commit 4475aef928565922953147daff8ffa2917e33b2e
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Wed Feb 14 22:50:07 2024 -0600
+
+    Finished about page. Closes #25
+
+commit 3ec6c101e675f18851514328fe3e9e30d9902a13
+Author: Maadhav Kothuri <maadhavskothuri@gmail.com>
+Date:   Thu Feb 15 04:41:09 2024 +0000
+
+    "Added technical report. Closes #29 and #14"
+
+commit 3d1587862dd02c44eb0c6e231aa6f054a1789d07
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Wed Feb 14 22:40:01 2024 -0600
+
+    Updated bio
+
+commit fd75998c43d87f025a404781bbd2bcb1b16e4e7d
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Wed Feb 14 22:34:43 2024 -0600
+
+    Updated makefile for running web application
+
+commit 460749291ba20482924b9407ffff925b04db035e
+Author: sakura-lxver <aleanadhiraa@gmail.com>
+Date:   Wed Feb 14 22:26:18 2024 -0600
+
+    fixed gitlab commits
+
+commit 871d8abbca033f28af36c3906391141141c6dcf9
+Merge: bf36c49 f3c59e5
+Author: sakura-lxver <aleanadhiraa@gmail.com>
+Date:   Wed Feb 14 22:26:08 2024 -0600
+
+    Merge branch 'main' of https://gitlab.com/nathanchengus/cs373-group-22
+
+commit f3c59e58f3662bb731c77ed555bdf4cbaf92b641
+Author: Nathan Cheng <nyc278@cs.utexas.edu>
+Date:   Wed Feb 14 22:20:55 2024 -0600
+
+    Made MakeFile File
+
+commit fe3bb59a2c89ab6d14b6ac8e29bee49e4b573622
+Merge: 4398cee a041068
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Wed Feb 14 22:15:20 2024 -0600
+
+    Merge branch 'main' of gitlab.com:nathanchengus/cs373-group-22
+
+commit 4398cee3ce565feca40646e26973e69b8350cd9a
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Wed Feb 14 22:15:11 2024 -0600
+
+    Added make file
+
+commit bf36c49ce8c138add8feff45a7dbb3c6a314d572
+Merge: a22cd17 a041068
+Author: sakura-lxver <aleanadhiraa@gmail.com>
+Date:   Wed Feb 14 22:01:18 2024 -0600
+
+    Merge branch 'main' of https://gitlab.com/nathanchengus/cs373-group-22
+
+commit a0410684aa497b96080e48a014d4fc91b02ff9fb
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Wed Feb 14 21:59:00 2024 -0600
+
+    Tweaked some of the text. Also, Closes #16
+
+commit a22cd173bd2d35232b19c0ac69df894b7fed5719
+Merge: 38bc4f6 308c877
+Author: sakura-lxver <aleanadhiraa@gmail.com>
+Date:   Wed Feb 14 21:55:48 2024 -0600
+
+    Merge branch 'main' of https://gitlab.com/nathanchengus/cs373-group-22
+
+commit 308c87795389d124c28d1e7825eff5e5aab951c5
+Merge: e619e4f 3a77bab
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Wed Feb 14 21:54:12 2024 -0600
+
+    Merge branch 'main' of gitlab.com:nathanchengus/cs373-group-22
+
+commit e619e4fe35bc0cd38208d0ea5ea645f5529192ab
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Wed Feb 14 21:54:07 2024 -0600
+
+    Updated links between all instances
+
+commit 3a77bab93d53aba982b6d936eb9861a7e6e117eb
+Author: Maadhav Kothuri <maadhavskothuri@gmail.com>
+Date:   Thu Feb 15 03:50:01 2024 +0000
+
+    Update README.md
+
+commit 2482cf155a6552657322d74fede72bfeb4173fa7
+Author: Maadhav Kothuri <maadhavskothuri@gmail.com>
+Date:   Thu Feb 15 03:49:19 2024 +0000
+
+    Update README.md
+
+commit 779e25cbde35b36a00b6bba9c0077809610cbd54
+Author: Maadhav Kothuri <maadhavskothuri@gmail.com>
+Date:   Thu Feb 15 03:47:37 2024 +0000
+
+    Update README.md
+
+commit 38bc4f6ff63593cceadd845c1b89e20dd8bec612
+Merge: f904af5 9d45bdc
+Author: sakura-lxver <aleanadhiraa@gmail.com>
+Date:   Wed Feb 14 21:29:07 2024 -0600
+
+    Merge branch 'main' of https://gitlab.com/nathanchengus/cs373-group-22
+
+commit 9d45bdc136d1f500bc3f64d7144c3f110899e579
+Author: gracep <gracepan@wireless-10-148-165-216.public.utexas.edu>
+Date:   Wed Feb 14 21:25:49 2024 -0600
+
+    maybe text black?
+
+commit 509bdfdde1ccd458a0f7b3952d931fa2ddd1a409
+Merge: 43eed13 0957df8
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Wed Feb 14 21:06:44 2024 -0600
+
+    Merge branch 'main' of gitlab.com:nathanchengus/cs373-group-22
+
+commit 43eed13ad6e235688cfc9fc9de508d5a6b89fb26
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Wed Feb 14 21:05:43 2024 -0600
+
+    UPdated links between counties and resources
+
+commit f904af54b5cadbf42391affb5c79f28a9dc6f994
+Merge: 67cc9f2 0957df8
+Author: sakura-lxver <aleanadhiraa@gmail.com>
+Date:   Wed Feb 14 20:55:07 2024 -0600
+
+    Merge branch 'main' of https://gitlab.com/nathanchengus/cs373-group-22
+
+commit 0957df81d633cca6c5c7b876a3114d43d4e4ad31
+Author: gracep <gracepan@wireless-10-148-165-216.public.utexas.edu>
+Date:   Wed Feb 14 20:51:33 2024 -0600
+
+    links to other models
+
+commit bd70c0169e5d154984f464bd01faef9d03859650
+Merge: 14aa825 899044a
+Author: gracep <gracepan@wireless-10-148-165-216.public.utexas.edu>
+Date:   Wed Feb 14 20:46:42 2024 -0600
+
+    random
+
+commit 67cc9f2301439395edface5a10609e2073c20f9e
+Merge: b37d4dd 899044a
+Author: sakura-lxver <aleanadhiraa@gmail.com>
+Date:   Wed Feb 14 20:44:18 2024 -0600
+
+    Merge branch 'main' of https://gitlab.com/nathanchengus/cs373-group-22
+
+commit 14aa8251115dc3fd442784469ab89387503c8d1e
+Author: gracep <gracepan@wireless-10-148-165-216.public.utexas.edu>
+Date:   Wed Feb 14 20:43:59 2024 -0600
+
+    add connections for resources
+
+commit 899044a2d8158ddfd1f34997d4f0cd043a18e11c
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Wed Feb 14 20:42:12 2024 -0600
+
+    updates to Organizations
+
+commit 36f7f46341a869608f970be9d23c1200cfcef206
+Merge: 200cff5 8d5749b
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Wed Feb 14 20:39:00 2024 -0600
+
+    Merge branch 'main' of gitlab.com:nathanchengus/cs373-group-22
+
+commit 200cff5e0bad86633056386066e77921d44561b1
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Wed Feb 14 20:38:57 2024 -0600
+
+    Saved changes
+
+commit b37d4dd68c843179095ce2d3d89be49abbd80f8c
+Merge: fa92ac9 8d5749b
+Author: sakura-lxver <aleanadhiraa@gmail.com>
+Date:   Wed Feb 14 20:31:47 2024 -0600
+
+    Merge branch 'main' of https://gitlab.com/nathanchengus/cs373-group-22
+
+commit 8d5749b23b5a8d2b3297e39c235a6e750367683b
+Author: raymww <raymond.m.wang@gmail.com>
+Date:   Wed Feb 14 20:27:24 2024 -0600
+
+    org links to counties plus num of instances
+
+commit 4f89f30148558a9c1e2089f5a38b624f00fbf1b1
+Merge: ce57701 6b0172c
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Wed Feb 14 20:27:13 2024 -0600
+
+    Merge branch 'main' of gitlab.com:nathanchengus/cs373-group-22
+
+commit ce577010e5e2a1eee544bcc9d15002668be9e4fd
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Wed Feb 14 20:18:41 2024 -0600
+
+    Updated bio
+
+commit fa92ac9b7a26b4d76f25877b87835429e1127295
+Merge: 851b05e 6b0172c
+Author: sakura-lxver <aleanadhiraa@gmail.com>
+Date:   Wed Feb 14 20:09:16 2024 -0600
+
+    Merge branch 'main' of https://gitlab.com/nathanchengus/cs373-group-22
+
+commit 6b0172c3330d397c74c01152c148af1facce955c
+Merge: 9522908 2642d80
+Author: raymww <raymond.m.wang@gmail.com>
+Date:   Wed Feb 14 20:08:05 2024 -0600
+
+    Merge branch 'main' of https://gitlab.com/nathanchengus/cs373-group-22
+
+commit 95229082aed6545bff40e575eb17564e6833cdc2
+Author: raymww <raymond.m.wang@gmail.com>
+Date:   Wed Feb 14 20:08:03 2024 -0600
+
+    text color lol
+
+commit 851b05e2de3432bf6b5d9b2c6abf89055c703d50
+Merge: 280fb7d 2642d80
+Author: sakura-lxver <aleanadhiraa@gmail.com>
+Date:   Wed Feb 14 20:07:17 2024 -0600
+
+    merge changes
+
+commit 2642d8055ae7fa3ab88859ef3cdb9f83da430bed
+Author: gracep <gracepan@wireless-10-148-165-216.public.utexas.edu>
+Date:   Wed Feb 14 20:04:24 2024 -0600
+
+    resources instance pages
+
+commit d68c8e62a8ad944304200d2865e938436b531d4f
+Merge: 8477297 373208b
+Author: raymww <raymond.m.wang@gmail.com>
+Date:   Wed Feb 14 20:02:10 2024 -0600
+
+    Merge branch 'main' of https://gitlab.com/nathanchengus/cs373-group-22
+
+commit 8477297ae2be3a39e683adbaf7178b1654acefdf
+Author: raymww <raymond.m.wang@gmail.com>
+Date:   Wed Feb 14 20:02:06 2024 -0600
+
+    instance pages for orgs
+
+commit 280fb7d2aba8e8bfc88cd46268d54bee434f8d48
+Merge: 5d1b732 373208b
+Author: sakura-lxver <aleanadhiraa@gmail.com>
+Date:   Wed Feb 14 19:59:20 2024 -0600
+
+    Merge branch 'main' of https://gitlab.com/nathanchengus/cs373-group-22
+
+commit 373208ba0f8b4c015555e8160e21d1fb362eccd3
+Merge: fa410eb a7021b9
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Wed Feb 14 19:58:53 2024 -0600
+
+    Resolved conflicts with county instances
+
+commit fa410eb8361f8aa2153b2002522abd376537bf68
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Wed Feb 14 19:52:54 2024 -0600
+
+    Created instance pages for counties
+
+commit 5d1b73294795d6ce81123069974d722422b646ba
+Merge: 41ba5e9 a7021b9
+Author: sakura-lxver <aleanadhiraa@gmail.com>
+Date:   Wed Feb 14 19:47:12 2024 -0600
+
+    Merge branch 'main' of https://gitlab.com/nathanchengus/cs373-group-22
+
+commit a7021b9c5e0cee48656276945c7cfee7028fd550
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Wed Feb 14 19:46:11 2024 -0600
+
+    Tried to change text color in about
+
+commit 41ba5e99b97a18fc6d5d7586fda90a2b4da0cf1d
+Merge: a7c5247 6721678
+Author: sakura-lxver <aleanadhiraa@gmail.com>
+Date:   Wed Feb 14 19:16:33 2024 -0600
+
+    Merge branch 'main' of https://gitlab.com/nathanchengus/cs373-group-22
+
+commit 6721678068465ace30df2c64b71c065c6224dcd9
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Wed Feb 14 19:13:08 2024 -0600
+
+    Styled the splash page a bit
+
+commit a7c5247baddccb9f9b004c1c5830e1d027d3a19e
+Merge: c693a9c a9adacb
+Author: sakura-lxver <aleanadhiraa@gmail.com>
+Date:   Wed Feb 14 18:52:53 2024 -0600
+
+    Merge branch 'main' of https://gitlab.com/nathanchengus/cs373-group-22
+
+commit a9adacbe896db46266715768843b51147b0dac9f
+Merge: a271ed5 9e800fb
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Wed Feb 14 18:43:51 2024 -0600
+
+    Need to merge
+    
+    Merge branch 'main' of https://gitlab.com/nathanchengus/cs373-group-22
+
+commit a271ed537b0e30dc61d508b31b40128af1f87f18
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Wed Feb 14 18:43:44 2024 -0600
+
+    Added carousel
+
+commit c693a9cd8826ab258215da3742415e22091a7f6b
+Merge: 8aa3286 9e800fb
+Author: sakura-lxver <aleanadhiraa@gmail.com>
+Date:   Wed Feb 14 18:43:10 2024 -0600
+
+    Merge branch 'main' of https://gitlab.com/nathanchengus/cs373-group-22
+
+commit 9e800fbb14328d766723f3ad30eb5e310368dc60
+Merge: 06da234 012dc82
+Author: gracep <gracepan@wireless-10-148-165-216.public.utexas.edu>
+Date:   Wed Feb 14 17:41:57 2024 -0600
+
+    Merge branch 'main' of https://gitlab.com/nathanchengus/cs373-group-22
+    please commit
+
+commit 06da234e52eda933f0182b83f189b8fab0793fa4
+Author: gracep <gracepan@wireless-10-148-165-216.public.utexas.edu>
+Date:   Wed Feb 14 17:41:52 2024 -0600
+
+    resource model page
+
+commit 012dc8267fc0ff1e77c75c8c97ecfa3444cc7df4
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Wed Feb 14 17:11:34 2024 -0600
+
+    Made About page responsive
+
+commit ee31a1961c40a58b550b9ffd0dfa5f107dbddc5c
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Wed Feb 14 16:43:28 2024 -0600
+
+    Made Navbar responsive
+
+commit 8aa3286e9f7d8c1daf6c4c84f57f17a7fe673f9d
+Author: sakura-lxver <aleanadhiraa@gmail.com>
+Date:   Wed Feb 14 16:05:05 2024 -0600
+
+    added org pics to instance pages
+
+commit bfbd46585a539e46333431d38282b933922d3873
+Author: raymww <raymond.m.wang@gmail.com>
+Date:   Wed Feb 14 15:52:05 2024 -0600
+
+    org pictures + splash blurb
+
+commit 464fb67b95bbca73ead0120a0ebfb85d9a4c1f2b
+Merge: 5eed44e 4ea9bf6
+Author: raymww <raymond.m.wang@gmail.com>
+Date:   Wed Feb 14 15:18:49 2024 -0600
+
+    Merge branch 'main' of https://gitlab.com/nathanchengus/cs373-group-22
+
+commit 5eed44e0c3aa8e2a5702d2ce22f160772f30ced7
+Author: raymww <raymond.m.wang@gmail.com>
+Date:   Wed Feb 14 15:18:27 2024 -0600
+
+    what we do color was being weird
+
+commit 4ea9bf6961620711ac6441f4f54efe6a2a59e388
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Wed Feb 14 14:03:53 2024 -0600
+
+    Added some descriptions to about page and headers too
+
+commit 97507a4a177bf7d76f55fd0a4dde1e9552d3d261
+Author: gracep <gracepan@wireless-10-148-165-216.public.utexas.edu>
+Date:   Wed Feb 14 13:38:41 2024 -0600
+
+    fix import path
+
+commit b6412fde09dadcf55efa0bac4dcf5e3b53766310
+Merge: 11ac2a6 64a1866
+Author: gracep <gracepan@wireless-10-148-165-216.public.utexas.edu>
+Date:   Wed Feb 14 05:34:24 2024 -0600
+
+    resources model page
+
+commit 11ac2a60bebc6f4c0148495c249b8806ddcb69c4
+Author: gracep <gracepan@wireless-10-148-165-216.public.utexas.edu>
+Date:   Wed Feb 14 05:26:30 2024 -0600
+
+    resourced model page, not styled
+
+commit 64a186698fcbeab288087a954de4a457bf840a95
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Wed Feb 14 03:35:21 2024 -0600
+
+    Fixed syntax error in organizations model
+
+commit 9cb3bb7c03df7b4b2e586b53e5a3ae62743af76d
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Wed Feb 14 03:17:55 2024 -0600
+
+    Added Tools used
+
+commit 37ec9c7c94f7bbffb68fc6a4186880bb7bc3504d
+Merge: 4b1c827 671f9b5
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Wed Feb 14 01:48:31 2024 -0600
+
+    Added cards for resources and instance pages too. These are blank, should be updated with actual info.
+
+commit 4b1c8277781829bc384ed097bc29e7da44369ca1
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Wed Feb 14 01:44:17 2024 -0600
+
+    Added 3 model pages and 3 instance pages for each model
+
+commit 671f9b50a2ec2dc68d4b1f9dc51a6e8f84732dfa
+Author: sakura-lxver <aleanadhiraa@gmail.com>
+Date:   Wed Feb 14 01:38:27 2024 -0600
+
+    added instance pages for orgs
+
+commit c8b06e00e3a46d0c467860c1638201e730b4dbee
+Merge: ab1af2a 373071c
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Wed Feb 14 01:16:44 2024 -0600
+
+    Merge branch 'main' of gitlab.com:nathanchengus/cs373-group-22
+
+commit ab1af2a5dbac626358d8bea9cd937bc97964f3d1
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Wed Feb 14 01:16:12 2024 -0600
+
+    Created a gitlab ci file
+
+commit 373071cb6e29ae7994b5293e52b7fa3eac9df4ff
+Merge: 20cc397 26e410b
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Wed Feb 14 00:58:25 2024 -0600
+
+    Merge branch 'main' of https://gitlab.com/nathanchengus/cs373-group-22
+    
+    Need to merge splash page.
+
+commit 20cc397a7561aa4d080c9455805d67c4e1ef5b86
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Wed Feb 14 00:58:20 2024 -0600
+
+    Added Maadhav's image and bio to about
+
+commit 26e410b722f82ce807216a4f6385a5883db5b81d
+Merge: 2cf1637 ff6eb6e
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Wed Feb 14 00:41:13 2024 -0600
+
+    Merge branch 'main' of gitlab.com:nathanchengus/cs373-group-22
+
+commit 2cf1637f41140d2d12d91a8c1f6923917e072936
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Wed Feb 14 00:40:55 2024 -0600
+
+    Added splash page
+
+commit ff6eb6e326ab2d63228b89fb2e49af4468070aa4
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Wed Feb 14 00:29:25 2024 -0600
+
+    Added instance pages for counties and buttons to link to them
+
+commit 2104d429709f7c063e33569f4f8e6db2545df9a9
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Tue Feb 13 22:29:14 2024 -0600
+
+    Updated profile and updated attributes for resources model
+
+commit 49cd287908a5fccc98cc37ecb4fc8c2b16dd4a97
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Tue Feb 13 21:13:11 2024 -0600
+
+    Added API Documentation
+
+commit aa632811a1d02c4b6d51fcaac1066691b0cfd960
+Merge: ebdae0f 683c132
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Tue Feb 13 21:08:43 2024 -0600
+
+    Merge branch 'main' of gitlab.com:nathanchengus/cs373-group-22
+
+commit ebdae0f3d1fa5d6d747d5abec3143ae735a37f4a
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Tue Feb 13 21:08:15 2024 -0600
+
+    Updated resources
+
+commit 683c13289b98e253f2cec350115ae29ac56cf84a
+Merge: 7116942 221908d
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Tue Feb 13 19:53:49 2024 -0600
+
+    Merge branch 'main' of https://gitlab.com/nathanchengus/cs373-group-22
+
+commit 7116942a9c98bcfd6dc9e570a489d70c3fbf201e
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Tue Feb 13 19:52:58 2024 -0600
+
+    Added back other pages
+
+commit 221908d50fc03e1aa2b784ef981c39eab18bd561
+Author: sakura-lxver <aleanadhiraa@gmail.com>
+Date:   Tue Feb 13 19:47:24 2024 -0600
+
+    fixed about commits
+
+commit 55d51a7cf362874512dd2057ade8a300edb3b862
+Author: sakura-lxver <aleanadhiraa@gmail.com>
+Date:   Tue Feb 13 19:35:00 2024 -0600
+
+    gitlab commits and issues to about
+
+commit 94232e2ddf8c561f4a0663cec892e3ff9655c9bb
+Merge: ec24cab e04a36b
+Author: sakura-lxver <aleanadhiraa@gmail.com>
+Date:   Tue Feb 13 18:27:07 2024 -0600
+
+    merging
+
+commit ec24cabd52a5e43b9c540e7b5d62b1e90f4cb455
+Author: sakura-lxver <aleanadhiraa@gmail.com>
+Date:   Tue Feb 13 18:09:04 2024 -0600
+
+    trying to pull
+
+commit e04a36beb81d9c78bc3e1063cf8703c335f5b529
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Tue Feb 13 17:56:48 2024 -0600
+
+    Fixing font
+
+commit 0ea583122fec27325c5d7f4ead2b6c8795c3b5d2
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Tue Feb 13 17:53:56 2024 -0600
+
+    Added Navbar and fonts back in
+
+commit 1a15fa3c2419592e6310833131949c68cb1f078e
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Tue Feb 13 17:48:42 2024 -0600
+
+    Got rid of stuff in api/counties/route.js for now
+
+commit 2752d683e36219b7b3fa7fdaddc3264eb9f9a698
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Tue Feb 13 17:44:48 2024 -0600
+
+    Tried to fix all imports I could find
+
+commit d5405159c18d6c1fdde8258535fd035355745de0
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Tue Feb 13 17:34:32 2024 -0600
+
+    Added to layout.js
+
+commit 5edc0471629e295eb9cd78ec82f87d326cab5875
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Tue Feb 13 17:25:59 2024 -0600
+
+    Trying to add doctype html
+
+commit 764a097864497941b4246913690b2eedd7587906
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Tue Feb 13 17:16:01 2024 -0600
+
+    Added doctypehtml in .next/app/index.html
+
+commit 058a562befd8408dcd6e7f4e172147b960721bf7
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Tue Feb 13 13:50:00 2024 -0600
+
+    Got rid of metadata exports
+
+commit 9cb3053ffcfb73b9d0c3d88d1cd2b41ae7527dfe
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Tue Feb 13 13:45:29 2024 -0600
+
+    Changed everything to client rendering and removed font import
+
+commit 66cd3a7e3fe3a5a94e1f5ced59b1bcad8d61f103
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Tue Feb 13 13:40:36 2024 -0600
+
+    Made layout.js client side rendered
+
+commit 310c85bebc870e320502f8e7ca19f9828c66eed6
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Tue Feb 13 13:35:16 2024 -0600
+
+    Updated dependencies
+
+commit 72528ca4543999e3cb763a149f98de50bcbf349f
+Merge: 6d37e74 f91bb8a
+Author: sakura-lxver <aleanadhiraa@gmail.com>
+Date:   Tue Feb 13 13:07:04 2024 -0600
+
+    added commits from gitlab
+
+commit 759200cec87b9e853d3bb5c49804638e24a3a179
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Tue Feb 13 13:06:50 2024 -0600
+
+    Fixed import error
+
+commit 088fd3d449ba72995733d60bfbb0be7b6877b5bf
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Tue Feb 13 13:03:33 2024 -0600
+
+    Fixed compile error
+
+commit e879a5f61d33f2edc16b9c3ec534a250f45cacd3
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Tue Feb 13 12:58:52 2024 -0600
+
+    Commented out Navbar
+
+commit a384b6ad0ae069d576184d078caf4991611bc238
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Tue Feb 13 12:54:55 2024 -0600
+
+    Commented all bootstrap components except for navbar
+
+commit 3ac9ee68e50c140c7880958d602f0c1195e6df40
+Merge: 48161eb ac058c5
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Tue Feb 13 12:51:30 2024 -0600
+
+    Got rid of localhost calls
+
+commit 48161ebac3b6a79b882379e55c243a3f1c3ea699
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Tue Feb 13 12:49:00 2024 -0600
+
+    Got rid of all links to localhost
+
+commit ac058c5a8f67164383d5cc92eb5b77f5202596e9
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Tue Feb 13 00:40:23 2024 -0600
+
+    Testing connection
+
+commit 39cecfcb7853abedcd549ad4ffff94646d7f9db5
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Mon Feb 12 23:54:40 2024 -0600
+
+    Removed .vscode
+
+commit b11e704e10b16603241b29748d5259b7c6dd91cd
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Mon Feb 12 22:48:36 2024 -0600
+
+    Changed react and react-dom version
+
+commit a060064280ddcfa6bf0bc2253b96a9619dac6b7c
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Mon Feb 12 21:49:17 2024 -0600
+
+    Reverted dynamic fix in counties
+
+commit a37cd9e859da42cdea4aebb0ea5395969387bae0
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Mon Feb 12 21:11:48 2024 -0600
+
+    Implemented fix to hopefully fix flashing screen on amplify
+
+commit 0f7f607ccf3dc8737018a26699077c5a01a984f5
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Mon Feb 12 17:52:18 2024 -0600
+
+    Fixed pathname for workaround for county data
+
+commit 3346b61e4df16a306f2375e96121913f58692cdf
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Mon Feb 12 17:51:30 2024 -0600
+
+    Workaround for phase 1 for api call to county data.
+
+commit 6d37e748c205d90e775b8ba45a8ed071b2c3c534
+Author: gracep <gracepan@wireless-10-155-245-142.public.utexas.edu>
+Date:   Mon Feb 12 17:20:49 2024 -0600
+
+    testing
+
+commit f91bb8a091f05cf3710991a419e8ac2065b40317
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Mon Feb 12 16:56:11 2024 -0600
+
+    Made counties.jsx into a list of react bootstrap cards
+
+commit c61f84fa488a0aae431e85ef3bb94772565a5c74
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Mon Feb 12 16:40:16 2024 -0600
+
+    Added counties/[name] back
+
+commit 0201eaf881c3d2e47e639a22115330f21978dec3
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Mon Feb 12 16:36:17 2024 -0600
+
+    Deleted counties/[name] to see if it fixes export error
+
+commit df68a29a9d1c1527c4ec4bf9ceb6321620c7a758
+Merge: 5fbba09 4b9f505
+Author: gracep <gracepan@wireless-10-155-245-142.public.utexas.edu>
+Date:   Mon Feb 12 14:39:26 2024 -0600
+
+    Merge branch 'main' of https://gitlab.com/nathanchengus/cs373-group-22
+    
+    update about card
+    .
+
+commit 5fbba09c12b181f6ec0f28f169334ade1cddba77
+Merge: a1d89f6 de406db
+Author: gracep <gracepan@wireless-10-155-245-142.public.utexas.edu>
+Date:   Mon Feb 12 14:39:11 2024 -0600
+
+    fix image and merge
+
+commit 4b9f5054d96a8e8dbec9297ead43bdbc2ee3cdf3
+Author: raymww <raymond.m.wang@gmail.com>
+Date:   Mon Feb 12 20:38:17 2024 +0000
+
+    Revert "working cards for all 3, not stylized"
+    
+    This reverts commit cfeacacfc4872e6616e4ce11048ff89b83e0735a
+
+commit a1d89f6f89e14f8bbbd5dfc0bcdc4454f6940558
+Author: gracep <gracepan@wireless-10-155-245-142.public.utexas.edu>
+Date:   Mon Feb 12 14:33:19 2024 -0600
+
+    fix image on about
+
+commit de406db3960a6fa91ab1bc73b73bd6cedf8725a0
+Author: raymww <raymond.m.wang@gmail.com>
+Date:   Mon Feb 12 14:14:37 2024 -0600
+
+    tried to make image passing work...
+
+commit cfeacacfc4872e6616e4ce11048ff89b83e0735a
+Author: raymww <raymond.m.wang@gmail.com>
+Date:   Mon Feb 12 13:54:55 2024 -0600
+
+    working cards for all 3, not stylized
+
+commit 5754c10919c8bd200ba1ba0904653b9f07f7906d
+Author: raymww <raymond.m.wang@gmail.com>
+Date:   Mon Feb 12 13:30:38 2024 -0600
+
+    working api county call
+
+commit 819f96a431859aadc8cb292ba4601f5e51b9227e
+Merge: 5bb6a93 e013b09
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Mon Feb 12 10:42:58 2024 -0600
+
+    Added about page and made navbar fixed.
+
+commit 5bb6a935563e92d36e059c4e1db2e05badec528b
+Merge: e68f7a8 be60b68
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Mon Feb 12 10:39:35 2024 -0600
+
+    Added about page with cards for bios.
+
+commit e013b09b7901eeba679ae2938c027b4fa978d4d9
+Author: Maadhav Kothuri <maadhavskothuri@gmail.com>
+Date:   Mon Feb 12 16:34:41 2024 +0000
+
+    Delete page.jsx to fix merge conflict for about page.
+
+commit e68f7a8725d9276082478dc3fd1e7c2e44b6ab65
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Mon Feb 12 10:30:47 2024 -0600
+
+    Added an About page with cards for each person and bio. This is just a skeleton, we can make it look nice too.
+
+commit be60b6842bb584e7e70f6eef6910a5393c7a6313
+Merge: 34318fb ae19f66
+Author: raymww <raymond.m.wang@gmail.com>
+Date:   Mon Feb 12 02:35:11 2024 -0600
+
+    Merge branch 'main' of https://gitlab.com/nathanchengus/cs373-group-22
+
+commit 34318fb1095255e8e580dcce81dcce786d6cbb0a
+Author: raymww <raymond.m.wang@gmail.com>
+Date:   Mon Feb 12 02:35:07 2024 -0600
+
+    not working api call
+
+commit ae19f66b1d3c03fc79b354a345dab157a865c284
+Merge: 1c83eff 1423b20
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Mon Feb 12 01:27:29 2024 -0600
+
+    Merge branch 'main' of gitlab.com:nathanchengus/cs373-group-22
+
+commit 1c83eff422567dbe963eb6831d917ca03dfcfa7d
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Mon Feb 12 01:26:14 2024 -0600
+
+    Changed some api/data sources
+
+commit 1423b2078dfd8b14103bbb69e3ed572d35fa8aa8
+Author: raymww <raymond.m.wang@gmail.com>
+Date:   Mon Feb 12 00:58:59 2024 -0600
+
+    images
+
+commit 5b42764d1244f2a77038d9cec2e0959390bad928
+Author: AnanthKothuri <maadhavskothuri@gmail.com>
+Date:   Sun Feb 11 00:20:47 2024 -0600
+
+    Added react-bootstrap and a basic navigation bar. Closes #37 and #35
+
+commit 2776cdc96a45de0cbc23d4605d555450ae49541e
+Author: gracep <gracepan@wireless-10-148-16-235.public.utexas.edu>
+Date:   Sat Feb 10 20:39:51 2024 -0600
+
+    create model and instances pages
+
+commit 11d880207286110759cf7431a88dd58b05d72950
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Fri Feb 9 02:30:58 2024 -0600
+
+    Changed foster hope to fron end
+
+commit 5904456fe1b0abe8127ab6860402078e0b80a991
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Fri Feb 9 02:30:15 2024 -0600
+
+    Changed foster-hope to front-end
+
+commit dc78736267c0ab540956503d4a3de28a65970b4b
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Fri Feb 9 01:07:42 2024 -0600
+
+    Testing amplify
+
+commit 3f5ef77a0cb707abfeabbf704200865d78b59e2b
+Author: gracep <gracepan@wireless-10-155-245-142.public.utexas.edu>
+Date:   Thu Feb 8 15:12:05 2024 -0600
+
+    set up landing and about page
+
+commit 91e8338af8be22cde43b8704e805099b5678d534
+Author: gracep <gracepan@wireless-10-155-245-142.public.utexas.edu>
+Date:   Thu Feb 8 14:22:29 2024 -0600
+
+    nextjs setup
+
+commit 29ec87c7e815d215a82bbda81cac5c682eb92b03
+Author: Maadhav Kothuri <maadhavskothuri@gmail.com>
+Date:   Wed Feb 7 21:47:42 2024 +0000
+
+    Update file README.md
+
+commit 068f1fa82558921f607c028cb9930efe1728654a
+Author: Maadhav Kothuri <maadhavskothuri@gmail.com>
+Date:   Tue Feb 6 06:37:10 2024 +0000
+
+    Update README.md
+
+commit a44f3b7b34716db4b16b00c5ea2bd29e42c1e86f
+Author: Maadhav Kothuri <maadhavskothuri@gmail.com>
+Date:   Tue Feb 6 06:36:37 2024 +0000
+
+    Update README.md
+
+commit fbb5f246d0226974834eba42cf886680b047b15d
+Author: Maadhav Kothuri <maadhavskothuri@gmail.com>
+Date:   Tue Feb 6 06:36:03 2024 +0000
+
+    Update README.md
+
+commit 4c7dbbe0306866596c0a6adc1dd1a20a8b62e6fc
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Mon Feb 5 21:53:32 2024 -0600
+
+    Cleaned readme
+
+commit a68a0ca15f52d8c28e66baf6598fdbc5080f8016
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Mon Feb 5 21:40:11 2024 -0600
+
+    Added to the RFP
+
+commit 36fb0a752252214c086eb5a2cc69c1d60a3e5c11
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Sun Feb 4 20:22:47 2024 -0600
+
+    Changed readme
+
+commit 19c90531c95e9643f6ac3f819e7a8d7355148003
+Author: Nathan Cheng <nathanchengus@gmail.com>
+Date:   Mon Feb 5 02:01:00 2024 +0000
+
+    Initial commit

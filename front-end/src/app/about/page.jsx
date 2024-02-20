@@ -6,7 +6,7 @@ import { Row, Col, Container } from "react-bootstrap";
 import styles from "../page.module.css";
 import './components/ImageGrid.css'
 
-
+// Data for group members
 const data = {
     "members": [
       {
@@ -18,7 +18,7 @@ const data = {
       },
       {
         "name": "Raymond Wang",
-        "role": "idk",
+        "role": "Frontend",
         "bio":  "I'm a second-year cs student at UT, and I'm interested in application and game programming, as well as data modeling / ml. In spare time, I game, play ultimate frisbee, and hang with my cat.",
         "img": "/images/Raymond.jpeg",
         "username": "raymww"
@@ -62,10 +62,11 @@ const data = {
 
 export default function About() {
     return (
-        <>
+        <> 
             <main className= {styles.main}>
               <Container>
                 <div style={{padding:"1rem", color:"black"}}>
+                  {/* About us page */}
                   <h1>About Foster Hope</h1>
                   <br></br>
                   <p> This website aims to inform users about foster children in Texas by providing important statistics as well as organizations and resources that are in place
@@ -82,7 +83,7 @@ export default function About() {
                   <h2 style={{paddingBottom:"2rem", paddingTop: "2rem"}}>Our Team</h2>
                 </div>
               </Container>
-
+            {/* Group bio cards */}
             <Container style = {{padding: 15, alignContent: "center", justifyContent: "center"}}>
                 <Row style = {{padding: "2rem", display: "flex", justifyContent:"row"}}>
                     {data["members"].slice(0, 3).map((member) => (
@@ -96,6 +97,7 @@ export default function About() {
                 </Row>
                 
             </Container>
+            {/* Icons with tools used */}
             <Container style={{justifyContent:"space-around", color: "black"}}>
               <h1 className="center">Tools Used</h1>
               <div className="image-grid">

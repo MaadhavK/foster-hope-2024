@@ -8,6 +8,7 @@ import _default from "react-bootstrap/esm/Nav";
 import { Container, Row, Col } from "react-bootstrap";
 import HomeCarousel from "./components/carousel";
 
+// Splash Page
 export default function Home() {
   return (
       <main className={styles.main2}>
@@ -16,14 +17,16 @@ export default function Home() {
         </h1>
         
         <br></br>
-        
-            <Container fill style={{width:"100vw", height: "40vw", backgroundColor:"lightblue"}}>
-              <section style={{width:"100vw", height: "45vw", backgroundColor:"lightblue"}} >
+            {/* Container for the page to be responsive */}
+            <Container fill style={{width:"100vw", height: "45vw", backgroundColor:"lightblue", justifyContent:"center"}}>
+              
               <Container style={{display:"flex", justifyContent:"center", padding: "15px"}}>
                 <Col>
+                  {/* Carousel of images */}
                   <HomeCarousel></HomeCarousel>
                 </Col>
                 <Col>
+                {/* Information about foster children */}
                   <h3 style={{display: "flex", justifyContent:"center", color:"black"}}>Our Mission</h3>
                   <p className={styles.splashdesc}>
                     Those in foster care face the difficult task of navigating the complexities of the foster care system. They face
@@ -37,7 +40,7 @@ export default function Home() {
                   </p>
                 </Col>
               </Container>
-              </section>
+              
             </Container>
         
         

@@ -4,6 +4,7 @@ import "../instancestyle.css";
 import { Row, Col, Container } from "react-bootstrap";
 import YouTube from "react-youtube";
 
+// page for foster village instance
 export default function FosterVillage(){
     const YoutubeID = new URLSearchParams(new URL("https://www.youtube.com/watch?v=r6Qr442U6mg").search).get("v");
     return (
@@ -13,9 +14,11 @@ export default function FosterVillage(){
             <Container className="blacktext">
                 <Row>
                     <Col>
+                    {/* image */}
                         <img className="halfimage" src="/images/orgs/foster-village.jpeg"/>
                     </Col>
                     <Col>
+                    {/* description and list of attributes and website  */}
                         <h2>About</h2>
                         <p> <br/>
                             Foster Village, based in Austin, Texas, is dedicated to supporting foster families and children in the foster care system. 
@@ -41,7 +44,9 @@ export default function FosterVillage(){
                 </div>
             </div>
             {/* Links */}
+            
             <div className="center">
+                <h1>Related Links</h1>
                 <h2>County</h2>
                 <div><a href="../../../counties/instances/hays">Hays County</a></div>
                 <h2>Resource</h2>

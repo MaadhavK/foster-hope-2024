@@ -23,7 +23,7 @@ export default function listCounties() {
                     <Col>
                          <Card style = {{width: "20rem", height: "35rem"}}>
                             <Card.Img variant="bottom" src = "images/counties/travis.jpg"/>
-                            <Card.Body>
+                            <Card.Body  style={{padding: "1rem", background: "lightblue"}}>
                                 <Card.Title> Travis County</Card.Title>
                                 <Card.Text>
                                 Population: 1,305,000
@@ -41,8 +41,8 @@ export default function listCounties() {
                     </Col>
                     <Col>
                         <Card style = {{width: "20rem", height: "35rem"}}>
-                            <Card.Img variant="top" src = "images/counties/hays.png"/>
-                            <Card.Body>
+                            <Card.Img variant="top" src = "images/counties/haysCounty.jpg"/>
+                            <Card.Body  style={{padding: "1rem", background: "lightblue"}}>
                                 <Card.Title> Hays County</Card.Title>
                                 <Card.Text>
                                 Population: 241,067
@@ -60,7 +60,7 @@ export default function listCounties() {
                     <Col>
                         <Card style = {{width: "20rem", height: "35rem"}}>
                             <Card.Img variant="top" src = "/images/counties/bastrop.jpg"/>
-                            <Card.Body style={{background:"lightgray"}}>
+                            <Card.Body style={{padding: "1rem", background: "lightblue"}}>
                                 <Card.Title> Bastrop County</Card.Title>
                                 <Card.Text>
                                 Population: 97,216

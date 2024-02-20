@@ -3,6 +3,7 @@
 import React from 'react';
 import './ImageCard.css'; // Import your CSS file
 
+// image card
 const ImageCard = ({ src, alt, textBelowImage }) => {
   return (
     <div className="image-card">

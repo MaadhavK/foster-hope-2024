@@ -1,10 +1,16 @@
 "use client"
 import styles from "../../../page.module.css";
-import { Row, Col, Container } from "react-bootstrap";
+import YouTube from 'react-youtube';
+import { Row, Col, Container, Card } from "react-bootstrap";
+
+// create page for resoure instance 1 
 export default function Resource1(){
+    const videoId = new URLSearchParams(new URL("https://www.youtube.com/watch?v=3s5ZUj2VUBc").search).get("v");
+    
     return (
         <main className = {styles.main}>
             <div>
+                {/* list out nae description and picture*/}
                 <h1> Children's Center of Austin</h1>
                 <Row style = {{padding: "2rem", display: "flex", justifyContent:"row"}}>
                 <Col xs style={{paddingBottom: "2rem"}}>
@@ -18,10 +24,14 @@ export default function Resource1(){
                   fun activity areas for art, swimming, and extracurricular activities.</p>
                 </Col>
                 </Row>
+                {/* list out attributres and media  */}
                 <Row style = {{padding: "2rem", display: "flex", justifyContent:"row"}}>
                 <Col xs style={{paddingBottom: "2rem"}}>
                     <Container>
-                <p> Location: Austin
+                    <Card style = {{width: "20rem"}}>
+                    <Card.Body>
+                        <Card.Text>
+                        Location: Austin
                                     <br></br>
                                     Type: Children's Institute
                                     <br></br>
@@ -30,13 +40,18 @@ export default function Resource1(){
                                     Website: 
                                     <a href="https://www.childrenscenterofaustin.com/" target="_blank" rel="nofollow">
                                     https://www.childrenscenterofaustin.com/</a>
-                                    <br></br></p>
+                                    <br></br>
+                        </Card.Text>
+                    </Card.Body>
+                    </Card>
                                     </Container>
                 </Col>
                 <Col xs style={{paddingBottom: "2rem"}}>
-                <img src="https://wp02-media.cdn.ihealthspot.com/wp-content/uploads/sites/567/2020/01/09170756/preschool-img.png" style={{width: "300px", height: "auto", margin: "12px"}}></img>
+                    <YouTube videoId={videoId} />
                 </Col>
                 </Row>
+                
+                <h1>Related Links</h1>
                 <h2>County</h2>
                 <a href='../../../counties/instances/hays'>Hays County</a>
                 <h2>Organization</h2>

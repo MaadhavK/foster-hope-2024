@@ -1,10 +1,17 @@
 "use client"
 import styles from "../../../page.module.css";
-import { Row, Col, Container } from "react-bootstrap";
+import { Row, Col, Container, Card } from "react-bootstrap";
+import YouTube from 'react-youtube';
+
+// create page for resoure instance 3
 export default function Resource1(){
+    const videoId = new URLSearchParams(new URL("https://www.youtube.com/watch?v=kul-g_30HuU").search).get("v");
+    
+    
     return (
         <main className = {styles.main}>
             <div>
+                {/* list out nae description and picture*/}
                 <h1> Free Kids Event: Children's Book Story Time</h1>
                 <Row style = {{padding: "2rem", display: "flex", justifyContent:"row"}}>
                 <Col xs style={{paddingBottom: "2rem"}}>
@@ -21,10 +28,14 @@ export default function Resource1(){
                     </p>
                 </Col>
                 </Row>
+                {/* list out attributres and media  */}
                 <Row style = {{padding: "2rem", display: "flex", justifyContent:"row"}}>
                 <Col xs style={{paddingBottom: "2rem"}}>
                     <Container>
-                <p> Location: Austin
+                    <Card style = {{width: "20rem"}}>
+                    <Card.Body>
+                        <Card.Text>
+                        Location: Austin
                                     <br></br>
                                     Type: Event
                                     <br></br>
@@ -33,18 +44,22 @@ export default function Resource1(){
                                     Website: 
                                     <a href="https://www.eventbrite.com/e/free-kids-event-childrens-book-story-time-tickets-817584907467?aff=ebdssbdestsearch" target="_blank" rel="nofollow">
                                     https://www.eventbrite.com</a>
-                                    <br></br></p>
+                                    <br></br>
+                        </Card.Text>
+                    </Card.Body>
+                    </Card>
                                     </Container>
                 </Col>
                 <Col xs style={{paddingBottom: "2rem"}}>
-                <img src="/images/resources/book.jpg" style={{width: "300px", height: "auto", margin: "12px"}}></img>
+                <YouTube videoId={videoId} />
                 </Col>
                 </Row>
+            <h1>Related Links</h1>
+            <h2>County</h2>
+            <a href='../../../counties/instances/bastrop'>Bastrop County</a>
+            <h2>Organization</h2>
+            <a href='../../../organizations/instances/houston-alumni-youth'>Houston Alumni</a>
             </div>
-                <h2>County</h2>
-                <a href='../../../counties/instances/bastrop'>Bastrop County</a>
-                <h2>Organization</h2>
-                <a href='../../../organizations/instances/houston-alumni-youth'>Houston Alumni</a>
         </main>
     )
 }
