@@ -22,11 +22,12 @@ export default function Home() {
       <Container style={{ backgroundColor: "lightblue", padding: "15px"}}>
         <Row className="align-items-center">
           {/* Carousel of images */}
-          <Col xs={12} md={6} className="align-self-start">
+          <Col xs={12} lg={6} className="align-self-start">
             <HomeCarousel />
           </Col>
           {/* Information about foster children */}
-          <Col xs={12} md={6}>
+          <Col xs={12} lg={6} className="align-self-start">
+            <h3></h3>
             <h3 style={{ color: "black", textAlign: "center" }}>Our Mission</h3>
             <p className={styles.splashdesc}>
               Those in foster care face the difficult task of navigating the complexities of the foster care system. They face
