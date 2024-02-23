@@ -40,8 +40,9 @@ export default function Home() {
       <br/>
       <Container className={styles.splashcont2} styles={{height:"100vh", alignItems:"center", justifyContent:"center"}}>
         <Row styles={{alignItems:"center", justifyContent:"center", height:"100vh"}}>
-          <Col styles={{alignItems:"center", justifyContent:"center", height:"100vh"}}>
+          <Col styles={{alignItems:"center", justifyContent:"center", height:"100vh", paddingRight:"50px"}}>
             <h3 style={{textAlign:"center", color:"black"}}>Our Mission</h3>
+            <br/>
             <p className={styles.splashdesc}>
               Those in foster care face the difficult task of navigating the complexities of the foster care system. They face
               many challenges, such as frequent changes in homes that breaks relationships, emotional struggles that are often overlooked, 
