@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import NavBar from "./components/NavBar";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../../../front-end/src/app/globals.css'
+import './globals.css'
 import _default from "react-bootstrap/esm/Nav";
 import { Container, Row, Col, ResponsiveEmbed } from "react-bootstrap";
 import HomeCarousel from "./components/carousel";
