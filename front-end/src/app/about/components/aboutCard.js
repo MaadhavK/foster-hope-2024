@@ -41,9 +41,9 @@ async function getMemberIssue(username) {
 export default async function AboutCard({member}) {
   const commit = await getMemberCommit(member.name)
   const issue = await getMemberIssue(member.username)
-  console.log(commit)
+  // console.log(commit)
   // console.log("Current Member: ", member.name)
-  console.log(commit.length)
+  // console.log(commit.length)
   // console.log(issue.length)
   return (
     // About Cards

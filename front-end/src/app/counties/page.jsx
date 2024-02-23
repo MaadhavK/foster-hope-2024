@@ -35,7 +35,7 @@ export default function listCounties() {
                                 Number of Foster Homes: 20
                                 <br></br>
                                 </Card.Text>
-                                <Button href = "counties/instances/travis/"> Read More </Button>
+                                <Button href = "counties/1/"> Read More </Button>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -53,7 +53,7 @@ export default function listCounties() {
                                 <br></br>
                                 Number of Foster Homes: 20
                                 </Card.Text>
-                                <Button href = "counties/instances/hays/"> Read More </Button>
+                                <Button href = "counties/2/"> Read More </Button>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -71,7 +71,7 @@ export default function listCounties() {
                                 <br></br>
                                 Number of Foster Homes: 20
                                 </Card.Text>
-                                <Button href = "counties/instances/bastrop/"> Read More </Button>
+                                <Button href = "counties/3/"> Read More </Button>
                             </Card.Body>
                         </Card>
                     </Col>
