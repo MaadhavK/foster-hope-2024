@@ -7,7 +7,7 @@
   padding: 6rem;
   min-height: 100vh;
   background-color: rgb(255, 255, 255);
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 .description {
@@ -283,4 +283,42 @@
   padding-top: 5rem;
   padding-bottom: 2rem;
   border-top: 0;
+}
+
+.splashgrad{
+  height: 40vh;
+  width: 100vw;
+  position: relative;
+  background-image: linear-gradient(#333333,#c7c7c7);
+}
+
+.splashwhitebg{
+  width: 100vw;
+  height: 70vh;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.splashdarkbg{
+  width: 100vw;
+  height: 100%;
+  position:relative;
+  background-color: #c7c7c7;
+}
+
+.splashcont {
+  width: 100vw;
+  margin: 0; 
+}
+.splashcont2 {
+  z-index: 1;
+  width: 100vw;
+  margin: 0; 
+}
+.splashelem {
+  position: relative;
+  align-items: center;
+  justify-content: center;
 }
