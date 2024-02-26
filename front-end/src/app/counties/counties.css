@@ -10,13 +10,16 @@
 .header{
     text-align: center;
     margin-bottom: 20px; /* Adjust the value as needed */
+    color: black;
 }
 
 
 .paragraph {
     font-size: 23px; /* Change the font size as needed */
+    color: black;
 }
 
 .bullet-point {
     font-size: 20px; /* Change the font size as needed */
+    color: black;
 }
