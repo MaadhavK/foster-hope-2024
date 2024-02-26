@@ -10,16 +10,19 @@ function HomeCarousel() {
   
   const CarouselItems = (images) => {
     return images.map((img, idx) => (
-      <Carousel.Item key={idx} interval={3000} style={{ width: "100%", height: "30rem", background: "rgba(0,0,0,0.5)" }}>
-        <Image src={img.src} fluid style={{ objectFit: "cover", width: "100%", height: "100%", opacity: "0.8", borderRadius: "10px" }} />
-      </Carousel.Item>
-    ));
-  };
+          <Carousel.Item key = {idx} interval={3000} style={{height:"500px", background: "#a8d5b9"}}>
+            <Image src={img.src} fluid style={{objectFit: "cover", width:"100%", height:"100%", opacity: ".95", borderRadius: "10px"}}/>
+          </Carousel.Item>
+          
+      ));
+    };
 
   return (
-    <Carousel style={{ width: "100%" }}>
-      {CarouselItems(images)}
-    </Carousel>
+    <>
+      <Carousel style={{minWidth:"400px", maxWidth:"100vw"}}>
+        {CarouselItems(images)}
+      </Carousel>
+    </>
   )
 }
 
