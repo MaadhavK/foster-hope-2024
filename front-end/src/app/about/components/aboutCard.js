@@ -16,6 +16,8 @@ async function getMemberCommit(username) {
     username = "aleanadhiraa"
   } else if (username == "Nathan Cheng") {
     username = "nathanchengus"
+  } else if (username=="Maadhav Kothuri") {
+    username = "maadhavskothuri"
   }
   // Get info from gitlab api
   const res = await fetch(`https://gitlab.com/api/v4/projects/${id}/repository/commits?author=${username}&all=true&per_page=100`,{ method: 'GET', headers} )
