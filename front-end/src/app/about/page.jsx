@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image"
 import AboutCard from "./components/aboutCard";
 import ImageCard from "./components/ImageCard";

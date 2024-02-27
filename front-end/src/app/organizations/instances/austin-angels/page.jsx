@@ -16,7 +16,7 @@ export default function AustinAngels(){
                 <Row>
                     <Col>
                     {/* image media */}
-                        <img className="halfimage" src="/images/orgs/AustinAngels.png"/>
+                        <img className="halfimage" src="https://www.austinangels.com/uploads/1/2/3/4/123469485/black2020_burstaalogo.png"/>
                     </Col>
                     <Col>
                     {/*  description and attributes and website*/}
