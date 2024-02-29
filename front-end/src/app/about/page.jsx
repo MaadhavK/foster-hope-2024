@@ -97,7 +97,7 @@ export default function About() {
         <Container fluid={true} style = {{maxWidth:"100vw", padding:"5vw"}}>
 
             {/* need help figuring out how to get the lower two columns to center their cards*/}
-            <Row style={{padding:"3vw", justifyContent:"space-evenly"}}>
+            <Row style={{padding:"3vw", paddingTop:"0", justifyContent:"space-evenly"}}>
                 {data["members"].slice(0, 5).map((member) => (
                     <Col xs style={{paddingBottom: "2rem"}}> <AboutCard member={member}/> </Col>
                 ))}
