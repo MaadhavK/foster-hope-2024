@@ -22,7 +22,7 @@ export default function Home() {
 
       <Container className={styles.splashcont} styles={{height:"70vh", paddingTop:"55px", paddingBottom:"100px", top:"0"}}>
         <Row style={{zIndex:"1", maxWidth:"100vw", margin:"0", padding:"0", border:"0", height:"70vh", justifyContent:"center"}}>
-          <Col style={{zIndex:"1", alignItems:"center", justifyContent:"center", alignSelf:"center"}}>
+          <Col style={{zIndex:"1", maxWidth:"100vw", alignItems:"center", justifyContent:"center", alignSelf:"center"}}>
             <h1 style={{zIndex:"1", textAlign:"center", fontSize:"3rem"}}>
               Foster Hope
             </h1>
