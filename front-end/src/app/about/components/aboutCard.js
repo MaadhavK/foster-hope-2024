@@ -11,6 +11,9 @@ const headers = {
   'Authorization': `BEARER ${token}`
 };
 
+const lora = Lora({weight: '400', subsets: ['latin']})
+const cabin = Cabin({weight: '400', subsets: ['latin']})
+
 // Define the AboutCard component as a const
 const AboutCard = ({ member }) => {
   const [commit, setCommit] = useState([]);
@@ -62,8 +65,8 @@ const AboutCard = ({ member }) => {
     <Card style={{ width: "20rem" }}>
       <Card.Img variant="top" style={{width:"20rem", height:"20rem", objectFit:"cover"}} src={member.img} />
       <Card.Body style={{ padding: "1rem", background: "lightblue" , maxWidth:"20rem"}}>
-        <Card.Title>{member.name}</Card.Title>
-        <Card.Text>
+        <Card.Title className={cabin.className} style={{fontWeight:"bold"}}>{member.name}</Card.Title>
+        <Card.Text className={cabin.className}>
           Commit: {commit.length} <br />
           Issue: {issue.length} <br />
           Role: {member.role} <br />
