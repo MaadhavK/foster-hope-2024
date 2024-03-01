@@ -17,7 +17,9 @@ supabase = create_client(url, key)
 records_to_insert = {}
 
 def get_soup_and_driver(URL):
-    driver = webdriver.Chrome()
+    options = webdriver.ChromeOptions()
+    options.add_experimental_option('excludeSwitches', ['enable-logging'])
+    driver = webdriver.Chrome(options=options)
     driver.get(URL)
     return BeautifulSoup(driver.page_source, 'html.parser'), driver
 
@@ -25,6 +27,7 @@ def parse_web_data(soup, driver):
     class_boxes = soup.findAll("li")
     for card in class_boxes:
         card_name = card.find('a', class_='event-card-link')
+
 
         if card_name and 'aria-label' in card_name.attrs and 'data-event-category' in card_name.attrs:
             card_details = card.find_all('p', class_='Typography_root__487rx #585163 Typography_body-md__487rx event-card__clamp-line--one Typography_align-match-parent__487rx')
@@ -40,20 +43,42 @@ def parse_web_data(soup, driver):
 
             if image_src:
                 item_list[6] = image_src['src']  # image url
+                link_to_event = card_name['href']
+
 
                 # Store the record in the dictionary if it doesn't exist already
                 if item_list[0] not in records_to_insert:
-                    records_to_insert[item_list[0]] = {
-                        "name": item_list[0],
-                        "location": item_list[1],
-                        "hours": item_list[5],
-                        "free-or-paid": item_list[2],
-                        "type": "event",
-                        "media": item_list[6]
-                    }
-                    print("Inserting record into Supabase:", item_list[0])
-                else:
-                    print("Record already exists in records_to_insert:", item_list[0])
+
+                    link_to_event = card_name['href']
+                    soup_2, driver_2 = get_soup_and_driver(link_to_event)
+
+                    location_info = soup_2.find('p', class_='location-info__address-text')
+                    event_description_div = soup_2.find('div', id='event-description')
+
+
+                    if location_info and event_description_div:
+
+                        paragraphs = event_description_div.find_all('p')
+                        location_info_text = location_info.get_text() if location_info else None
+
+                        if paragraphs and location_info_text:
+                            event_description_text = '\n'.join([p.get_text() for p in paragraphs])
+
+                            records_to_insert[item_list[0]] = {
+                                "name": item_list[0],
+                                "location": location_info_text,
+                                "hours": item_list[5],
+                                "website": link_to_event,
+                                "type": "event",
+                                "media": item_list[6],
+                                "description": event_description_text
+                            }
+                            print(records_to_insert[item_list[0]])
+
+
+                    driver_2.quit()
+    driver.quit()
+
 
 
 
@@ -75,7 +100,7 @@ for city in list_of_cities:
     url = first + city + last
     soup, driver = get_soup_and_driver(url)
     parse_web_data(soup, driver)
-    driver.quit()
+    #driver.quit()
 
 # Insert records from the dictionary into Supabase
 for record_name, record_data in records_to_insert.items():
