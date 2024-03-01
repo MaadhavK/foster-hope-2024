@@ -1,12 +1,18 @@
 "use client"
 import React, { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
+import { Lora, Cabin } from 'next/font/google';
+
+
 
 const id = "54579149"
 const token = "glpat-UCq8eByXaqn8Jzxw96g1"
 const headers = {
   'Authorization': `BEARER ${token}`
 };
+
+const lora = Lora({weight: '400', subsets: ['latin']})
+const cabin = Cabin({weight: '400', subsets: ['latin']})
 
 // Define the AboutCard component as a const
 const AboutCard = ({ member }) => {
@@ -57,10 +63,10 @@ const AboutCard = ({ member }) => {
 
   return (
     <Card style={{ width: "20rem" }}>
-      <Card.Img variant="top" src={member.img} />
-      <Card.Body style={{ padding: "1rem", background: "lightblue" }}>
-        <Card.Title>{member.name}</Card.Title>
-        <Card.Text>
+      <Card.Img variant="top" style={{width:"20rem", height:"20rem", objectFit:"cover"}} src={member.img} />
+      <Card.Body style={{ padding: "1rem", background: "lightblue" , maxWidth:"20rem"}}>
+        <Card.Title className={cabin.className} style={{fontWeight:"bold"}}>{member.name}</Card.Title>
+        <Card.Text className={cabin.className}>
           Commit: {commit.length} <br />
           Issue: {issue.length} <br />
           Role: {member.role} <br />
