@@ -11,4 +11,4 @@ def whois(name):
     return "Hello, " + name + ", that is your name!"
 
 if __name__ == "__main__":
-    flaskApp.run(port=5000, debug=True);
+    flaskApp.run(port=5000, debug=True)

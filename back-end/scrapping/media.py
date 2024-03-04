@@ -55,8 +55,9 @@ def store_county_images():
         params = {
             'key': google_key,
             'cx': img_engine_id,
-            'q': county + ' county',
-            'searchType': 'image'
+            'q': county + ' county view',
+            'searchType': 'image',
+            'imgSize': 'medium'
         }
         img_response = requests.get(api_endpoint, params)
         print(img_response)
@@ -71,6 +72,6 @@ def store_county_images():
         else:
             print('unsuccesssful update')
             print(county)
-store_county_videos()
+store_county_images()
 
 
