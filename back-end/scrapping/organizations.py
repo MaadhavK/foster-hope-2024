@@ -1,8 +1,6 @@
 from dotenv import load_dotenv
 import os
 import requests
-from bs4 import BeautifulSoup
-from selenium import webdriver
 from supabase import create_client
 
 # Load environment variables from .env file
