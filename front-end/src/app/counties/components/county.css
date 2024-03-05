@@ -1,0 +1,8 @@
+.btncustom {
+    background-color: #c7c7c7; /* This is a coral color, replace it with your desired color */
+    color: black; /* Text color */
+}
+
+.btncustom:hover{
+    background-color: #c7c7c7; /* This is a coral color, replace it with your desired color */
+}
