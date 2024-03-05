@@ -11,6 +11,8 @@ load_dotenv(dotenv_path=dotenv_path)
 # Grab .env keys
 url = os.environ.get("SUPABASE_URL")
 key = os.environ.get("SUPABASE_KEY")
+google_key = os.environ.get("GOOGLE_API_KEY")
+
 
 supabase = create_client(url, key)
 
@@ -18,6 +20,7 @@ records_to_insert = {}
 
 def get_soup_and_driver(URL):
     options = webdriver.ChromeOptions()
+    #options.add_argument('--headless')
     options.add_experimental_option('excludeSwitches', ['enable-logging'])
     driver = webdriver.Chrome(options=options)
     driver.get(URL)
@@ -54,19 +57,22 @@ def parse_web_data(soup, driver):
 
                     location_info = soup_2.find('p', class_='location-info__address-text')
                     event_description_div = soup_2.find('div', id='event-description')
+                    address_div = soup_2.find('div', class_='location-info__address')
 
 
                     if location_info and event_description_div:
 
                         paragraphs = event_description_div.find_all('p')
                         location_info_text = location_info.get_text() if location_info else None
-
+                        addr = address_div.contents[1].strip()
                         if paragraphs and location_info_text:
                             event_description_text = '\n'.join([p.get_text() for p in paragraphs])
 
                             records_to_insert[item_list[0]] = {
                                 "name": item_list[0],
                                 "location": location_info_text,
+                                "address": addr,
+                                "map": 'https://www.google.com/maps/embed/v1/place?key={}&q={}'.format(google_key, addr),
                                 "hours": item_list[5],
                                 "website": link_to_event,
                                 "type": "event",
