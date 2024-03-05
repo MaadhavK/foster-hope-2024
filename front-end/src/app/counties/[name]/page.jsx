@@ -4,11 +4,19 @@ import countiesData from "../../data/counties.json";
 import { Row, Col, Container } from "react-bootstrap";
 import "../counties.css";
 import YouTube from 'react-youtube';
+
+import { Lora, Cabin} from "next/font/google";
+
+const lora = Lora({weight: '400', subsets: ['latin']})
+const cabin = Cabin({weight: '400', subsets: ['latin']})
+
+
 export default function CountyPage ({params}) {
     const id = params.name
     const data = countiesData
     const counties = data?.counties
     const county = counties.find(b => b.id == id)
+    console.log(county);
     const videoId = new URLSearchParams(new URL(county.vid_url).search).get("v")
     return (
         <main className= {styles.main}>

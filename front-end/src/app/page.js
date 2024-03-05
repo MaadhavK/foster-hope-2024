@@ -8,14 +8,11 @@ import _default from "react-bootstrap/esm/Nav";
 import { Container, Row, Col, ResponsiveEmbed } from "react-bootstrap";
 import HomeCarousel from "./components/carousel";
 // import { useEffect } from "react";
-import { Poppins, Anton, Lora, Cabin} from "next/font/google";
-
-// Splash Page
-
-const poppins = Poppins({ weight: '400', subsets: ['latin']  })
-const anton = Anton({ weight: '400', subsets: ['latin']  })
+import { Lora, Cabin} from "next/font/google";
 const lora = Lora({weight: '400', subsets: ['latin']})
 const cabin = Cabin({weight: '400', subsets: ['latin']})
+
+// splash page
 
 export default function Home() {
   return (
