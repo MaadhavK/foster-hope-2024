@@ -90,7 +90,7 @@ supabase.table("Resources").delete().neq('name', '-1').execute()
 response = supabase.from_("FosterHomesPerCounty").select("city").execute()
 
 
-# Extract county values from the response and create a list
+# Extract city values from the response and create a list
 list_of_cities = set(row["city"] for row in response.data)
 
 
