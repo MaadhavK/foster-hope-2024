@@ -1,14 +1,15 @@
 from flask import Flask
+from flask_cors import CORS
 
-flaskApp = Flask(__name__)
+app = Flask(__name__)
+CORS(app)
 
-@flaskApp.route("/")
+@app.route("/")
 def home():
     return "Hello I Am Here!"
 
-@flaskApp.route("/whois/<name>")
-def whois(name):
-    return "Hello, " + name + ", that is your name!"
+@app.route("/api")
+def printAPI():
+    return "This is the API!"
 
-if __name__ == "__main__":
-    flaskApp.run(port=5000, debug=True)
+import routes
