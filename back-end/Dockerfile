@@ -1,7 +1,8 @@
 FROM python:latest
 
-COPY ./requirements.txt .
+WORKDIR /back-end
 
+COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD ["/bin/bash"]
+CMD ["nohup", "gunicorn", "-b", "0.0.0.0:8080", "endpoints:app", "&"]

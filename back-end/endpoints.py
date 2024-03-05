@@ -12,4 +12,7 @@ def home():
 def printAPI():
     return "This is the API!"
 
+if __name__ == "__main__":
+    app.run(port=5000, debug=True);
+
 import routes
