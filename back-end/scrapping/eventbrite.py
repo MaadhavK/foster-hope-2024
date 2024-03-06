@@ -11,7 +11,7 @@ load_dotenv(dotenv_path=dotenv_path)
 # Grab .env keys
 url = os.environ.get("SUPABASE_URL")
 key = os.environ.get("SUPABASE_KEY")
-google_key = os.environ.get("AIzaSyAOZ65nCwIADaCQgPJGU76oaBB4Chznnp8")
+google_key = os.environ.get("GOOGLE_API_KEY")
 
 
 supabase = create_client(url, key)
