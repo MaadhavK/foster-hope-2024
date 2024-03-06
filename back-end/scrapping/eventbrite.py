@@ -20,7 +20,7 @@ records_to_insert = {}
 
 def get_soup_and_driver(URL):
     options = webdriver.ChromeOptions()
-    #options.add_argument('--headless')
+    options.add_argument('--headless')
     options.add_experimental_option('excludeSwitches', ['enable-logging'])
     driver = webdriver.Chrome(options=options)
     driver.get(URL)
