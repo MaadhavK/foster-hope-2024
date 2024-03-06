@@ -32,7 +32,7 @@ export default function CountyPage ({params}) {
                         <Col style={{minWidth:"400px", alignItems:"center", justifyContent:"center", margin:"0 auto"}}>
                             {/* Info */}
                             <p className={cabin.className} style={{color:"black", fontSize:"1.5rem"}}>{county.description}</p>
-                            <div style={{width:"400px", height:"2rem", marginTop:"20px"}}>
+                            <div style={{width:"400px", height:"2rem", color:"black", marginTop:"20px"}}>
                                 <div className={cabin.className} style={{fontSize:"1.3rem", textAlign:"left", float:"left", clear:"none", display:"inline"}}>
                                     Population:
                                 </div>
@@ -40,7 +40,7 @@ export default function CountyPage ({params}) {
                                     {county.population}
                                 </div>
                             </div>
-                            <div style={{width:"400px", height:"2rem"}}>
+                            <div style={{width:"400px", height:"2rem", color:"black"}}>
                                 <div className={cabin.className} style={{fontSize:"1.3rem", textAlign:"left", float:"left", clear:"none", display:"inline"}}>
                                     Number of Agencies
                                 </div>
@@ -48,7 +48,7 @@ export default function CountyPage ({params}) {
                                     {county.num_agencies}
                                 </div>
                             </div>
-                            <div style={{width:"400px", height:"2rem"}}>
+                            <div style={{width:"400px", height:"2rem", color:"black"}}>
                                 <div className={cabin.className} style={{fontSize:"1.3rem", textAlign:"left", float:"left", clear:"none", display:"inline"}}>
                                     Number of Foster Children:
                                 </div>
@@ -56,7 +56,7 @@ export default function CountyPage ({params}) {
                                     {county.num_foster_child}
                                 </div>
                             </div>
-                            <div style={{width:"400px", height:"2rem"}}>
+                            <div style={{width:"400px", height:"2rem", color:"black"}}>
                                 <div className={cabin.className} style={{fontSize:"1.3rem", textAlign:"left", float:"left", clear:"none", display:"inline"}}>
                                     Number of Foster Homes:
                                 </div>

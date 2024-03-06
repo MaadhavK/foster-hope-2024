@@ -9,16 +9,6 @@ import { Lora, Cabin} from "next/font/google";
 const lora = Lora({weight: '400', subsets: ['latin']})
 const cabin = Cabin({weight: '400', subsets: ['latin']})
 
-// name": "Austin Angels",
-// "img_url": "https://www.austinangels.com/uploads/1/2/3/4/123469485/black2020_burstaalogo.png",
-// "description": "Austin Angels is a nonprofit organization dedicated to supporting foster children and their caretakers in the Austin, Texas area. Their mission revolves around providing consistent support, encouragement, and resources to foster families, aiming to break the cycle of abuse and neglect for children in the foster care system. Through various programs and initiatives, including mentorship, family coaching, and resource provision, Austin Angels strives to create a positive impact on the lives of foster children and their caregivers, ultimately fostering a sense of stability and belonging for those in need.",
-// "location": "Austin",
-// "type": "Non-Profit",
-// "reviews": 4.7,
-// "hours": "8:30 - 5:00",
-// "website": "https://www.austinangels.com/",
-// "vid_url": "https://www.youtube.com/watch?v=FOOvHdqBiJQ"
-
 const OrgCard = ({org}) => {
     var thisOrg = JSON.parse(org);
     if (!thisOrg) {

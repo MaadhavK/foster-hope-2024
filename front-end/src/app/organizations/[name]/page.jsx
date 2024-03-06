@@ -30,7 +30,7 @@ export default function OrgPage ({params}) {
                         </Col>
                         <Col d-flex={true} style={{minWidth:"400px", alignItems:"center", alignContent:"center", justifyContent:"center", paddingRight:"30px"}}>
                             <p className={cabin.className} style={{color:"black", fontSize:"1.25rem"}}>{org.description}</p>
-                            <div style={{height:"2rem", marginTop:"20px"}}>
+                            <div style={{height:"2rem", marginTop:"20px", color:"black"}}>
                                 <div className={cabin.className} style={{fontSize:"1.2rem", textAlign:"left", float:"left", clear:"none", display:"inline"}}>
                                     <b>Location:</b>
                                 </div>
@@ -38,7 +38,7 @@ export default function OrgPage ({params}) {
                                     {org.location}
                                 </div>
                             </div>
-                            <div style={{ height:"2rem"}}>
+                            <div style={{ height:"2rem", color:"black"}}>
                                 <div className={cabin.className} style={{fontSize:"1.2rem", textAlign:"left", float:"left", clear:"none", display:"inline"}}>
                                     <b>Type:</b>
                                 </div>
@@ -46,7 +46,7 @@ export default function OrgPage ({params}) {
                                     {org.type}
                                 </div>
                             </div>
-                            <div style={{height:"2rem"}}>
+                            <div style={{height:"2rem", color:"black"}}>
                                 <div className={cabin.className} style={{fontSize:"1.2rem", textAlign:"left", float:"left", clear:"none", display:"inline"}}>
                                     <b>Reviews:</b>
                                 </div>
@@ -54,7 +54,7 @@ export default function OrgPage ({params}) {
                                     {org.reviews}
                                 </div>
                             </div>
-                            <div style={{height:"2rem"}}>
+                            <div style={{height:"2rem", color:"black"}}>
                                 <div className={cabin.className} style={{fontSize:"1.2rem", textAlign:"left", float:"left", clear:"none", display:"inline"}}>
                                     <b>Hours:</b>
                                 </div>
