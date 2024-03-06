@@ -75,8 +75,13 @@ def store_county_images():
 
 def store_org_images():
     response = supabase.table('Organizations').select('name').execute()
-    orgs= list(row['county'] for row in response.data)
+    orgs= list(row['name'] for row in response.data)
     for org in reversed(orgs):
+        # img = supabase.table('Organizations').select('image').eq('name', org).execute()
+        # if img.data[0].get('image') != None:
+        #     print(org + 'image already exists')
+        #     continue
+
         api_endpoint = 'https://www.googleapis.com/customsearch/v1'
         params = {
             'key': google_key,
@@ -106,7 +111,8 @@ def store_org_map():
         map_link = 'https://www.google.com/maps/embed/v1/place?key={}&q={}'.format(google_key, addr)
         supabase.table('Organizations').update({'map': map_link}).eq('location', addr).execute()
 #store_county_videos()
-store_county_images()
-store_org_images()
+#store_county_images()
+#store_org_images()
+#store_org_map()
 
 
