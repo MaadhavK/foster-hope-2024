@@ -26,7 +26,7 @@ def get_soup_and_driver(URL):
     driver.get(URL)
     return BeautifulSoup(driver.page_source, 'html.parser'), driver
 
-def parse_web_data(soup, driver):
+def parse_web_data(soup, driver, county):
     class_boxes = soup.findAll("li")
     for card in class_boxes:
         card_name = card.find('a', class_='event-card-link')
@@ -77,7 +77,8 @@ def parse_web_data(soup, driver):
                                 "website": link_to_event,
                                 "type": "event",
                                 "media": item_list[6],
-                                "description": event_description_text
+                                "description": event_description_text,
+                                "county": county
                             }
                             print(records_to_insert[item_list[0]])
 
@@ -89,24 +90,29 @@ def parse_web_data(soup, driver):
 
 
 
-#Clear out table
+# Clear out table
 supabase.table("Resources").delete().neq('name', '-1').execute()
 
-#Get list of cities
-response = supabase.from_("FosterHomesPerCounty").select("city").execute()
+# Get list of cities and counties
+response = supabase.from_("FosterHomesPerCounty").select("city", "county").execute()
 
+# Extract city and county values from the response and create separate lists
+list_of_cities = []
+list_of_counties = []
 
-# Extract city values from the response and create a list
-list_of_cities = set(row["city"] for row in response.data)
-
+for row in response.data:
+    city = row["city"]
+    county = row["county"]
+    list_of_cities.append(city)
+    list_of_counties.append(county)
 
 first = "https://www.eventbrite.com/d/tx--"
 last = "/kids-events/"
-for city in list_of_cities:
+for city, county in zip(list_of_cities, list_of_counties):
     url = first + city + last
     soup, driver = get_soup_and_driver(url)
-    parse_web_data(soup, driver)
-    #driver.quit()
+    parse_web_data(soup, driver, county)
+    # driver.quit()
 
 # Insert records from the dictionary into Supabase
 for record_name, record_data in records_to_insert.items():
