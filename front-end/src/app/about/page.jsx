@@ -99,7 +99,7 @@ export default function About() {
             {/* need help figuring out how to get the lower two columns to center their cards*/}
             <Row style={{padding:"3vw", paddingTop:"0", justifyContent:"space-evenly"}}>
                 {data["members"].slice(0, 5).map((member) => (
-                    <Col xs style={{paddingBottom: "2rem"}}> <AboutCard member={member}/> </Col>
+                    <Col className="center" xs style={{paddingBottom: "2rem", margin:"0 auto"}}> <AboutCard style={{margin:"0 auto"}} member={member}/> </Col>
                 ))}
             </Row>
             {/* <Row style = {{padding: "2rem"}}>
