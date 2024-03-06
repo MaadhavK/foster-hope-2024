@@ -30,7 +30,10 @@ export default function listCounties() {
                 <div className={cabin.className}>
                     <br></br>
                     <p className={styles.splashdesc} style={{}}>
-                        blurb about county stuff and how it's important to foster kids
+                        County plays a vital role in the foster care system by overseeing placements and ensuring the safety of children 
+                        within its jurisdiction. Collaborating with local partners, counties provide essential support to foster 
+                        families, including counseling, healthcare, and education. This local approach is crucial for safeguarding 
+                        the well-being and future of children in foster care.
                     </p>
                 </div>
             </Container>
@@ -42,66 +45,6 @@ export default function listCounties() {
                 </Row>
             </Container>
             
-            {/* <Container style = {{padding: 15}}>
-                <Row>
-                    <Col>
-                         <Card style = {{width: "20rem", height: "35rem"}}>
-                            <Card.Img variant="bottom" src = "images/counties/travis.jpg"/>
-                            <Card.Body  style={{padding: "1rem", background: "lightblue"}}>
-                                <Card.Title> Travis County</Card.Title>
-                                <Card.Text>
-                                Population: 1,305,000
-                                <br></br>
-                                Number of Agencies: 
-                                <br></br>
-                                Number of Foster Children: 186
-                                <br></br>
-                                Number of Foster Homes: 20
-                                <br></br>
-                                </Card.Text>
-                                <Button href = "counties/1/"> Read More </Button>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card style = {{width: "20rem", height: "35rem"}}>
-                            <Card.Img variant="top" src = "images/counties/haysCounty.jpg"/>
-                            <Card.Body  style={{padding: "1rem", background: "lightblue"}}>
-                                <Card.Title> Hays County</Card.Title>
-                                <Card.Text>
-                                Population: 241,067
-                                <br></br>
-                                Number of Agencies: 50
-                                <br></br>
-                                Number of Foster Children: 100
-                                <br></br>
-                                Number of Foster Homes: 20
-                                </Card.Text>
-                                <Button href = "counties/2/"> Read More </Button>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card style = {{width: "20rem", height: "35rem"}}>
-                            <Card.Img variant="top" src = "/images/counties/bastrop.jpg"/>
-                            <Card.Body style={{padding: "1rem", background: "lightblue"}}>
-                                <Card.Title> Bastrop County</Card.Title>
-                                <Card.Text>
-                                Population: 97,216
-                                <br></br>
-                                Number of Agencies: 50
-                                <br></br>
-                                Number of Foster Children: 100
-                                <br></br>
-                                Number of Foster Homes: 20
-                                </Card.Text>
-                                <Button href = "counties/3/"> Read More </Button>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                </Row>
-
-            </Container> */}
             <h3 className={lora.className} style={{color:"black", paddingBottom:"20px"}}>
                 Number of Instances: {countylen}
             </h3>
