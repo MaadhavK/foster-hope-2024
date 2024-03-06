@@ -75,7 +75,7 @@ def store_county_images():
 
 def store_org_images():
     response = supabase.table('Organizations').select('name').execute()
-    orgs= list(row['county'] for row in response.data)
+    orgs= list(row['name'] for row in response.data)
     for org in reversed(orgs):
         api_endpoint = 'https://www.googleapis.com/customsearch/v1'
         params = {
