@@ -29,13 +29,13 @@ export default async function listCounties() {
 
     return (      
         <main className={styles.main} style={{backgroundColor:"white", width:"100vw", paddingTop:"55px", height:"100%"}}>
-            <Container style={{maxWidth:"100vw", margin:"0", paddingLeft:"5vw", paddingTop:"5vh", border:"0"}}>
+            <Container style={{maxWidth:"100vw", margin:"0", paddingLeft:"5vw", paddingRight:"5vw", paddingTop:"5vh", border:"0"}}>
                 <div className={lora.className}>
-                    <h1 style={{color:"black"}}>Counties</h1>
+                    <h1 style={{color:"black", textAlign:"center"}}>Counties</h1>
                 </div>
                 <div className={cabin.className}>
                     <br></br>
-                    <p className={styles.splashdesc} style={{}}>
+                    <p className={styles.splashdesc} style={{textAlign:"center"}}>
                         blurb about county stuff and how it's important to foster kids
                     </p>
                 </div>

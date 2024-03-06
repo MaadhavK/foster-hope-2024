@@ -67,7 +67,7 @@ export default function About() {
       <main className= {styles.main} style={{backgroundColor:"#f8f9fa"}}>
         <Container style={{maxWidth:"100vw", padding:"0", margin:"0", backgroundColor:"#c7c7c7"}}> 
           <div style={{backgroundColor:"#c7c7c7", paddingLeft:"5vw", paddingRight:"5vw",paddingTop:"15vh", paddingBottom:"20px", color:"black"}}>
-            <h1 className={lora.className} style={{fontSize:"3rem"}}>About Foster Hope.</h1>
+            <h1 className={lora.className} style={{fontSize:"3rem", textAlign:"center"}}>About Foster Hope.</h1>
           </div>
 
           <div style={{paddingLeft:"5vw", paddingRight:"5vw", color:"#333"}}>
@@ -80,7 +80,7 @@ export default function About() {
           <br/>
 
           <div style={{backgroundColor:"#c7c7c7", padding:"20px", paddingLeft:"5vw", paddingRight:"5vw", color:"black"}}>
-            <h2 className={lora.className}>Our Data Sources</h2>
+            <h2 className={lora.className} style={{textAlign:"center"}}>Our Data Sources</h2>
           </div>
 
           <div style={{paddingLeft:"5vw", paddingRight:"5vw", color:"#333"}}>
@@ -90,23 +90,14 @@ export default function About() {
           </div>
         </Container>
         <div className={styles.aboutgrad}>
-          <h2 className={lora.className} style={{paddingLeft:"5vw", color:"black"}}>Our Team</h2>
+          <h2 className={lora.className} style={{width:"100vw", paddingLeft:"5vw", paddingRight:"5vw", color:"black", textAlign:"center"}}>Our Team</h2>
         </div>
-        {/* add gradient and then OUR TEAM*/}
-        {/* Group bio cards */}
-        <Container fluid={true} style = {{maxWidth:"100vw", padding:"5vw"}}>
-
-            {/* need help figuring out how to get the lower two columns to center their cards*/}
-            <Row style={{padding:"3vw", paddingTop:"0", justifyContent:"space-evenly"}}>
+        <Container fluid={true} style = {{maxWidth:"100vw", padding:"5vw", alignItems:"center"}}>
+            <Row style={{padding:"3vw", paddingTop:"0"}}>
                 {data["members"].slice(0, 5).map((member) => (
-                    <Col xs style={{paddingBottom: "2rem"}}> <AboutCard member={member}/> </Col>
+                    <Col className="center" xs style={{paddingBottom: "2rem"}}> <AboutCard member={member}/> </Col>
                 ))}
             </Row>
-            {/* <Row style = {{padding: "2rem"}}>
-                {data["members"].slice(3, 5).map((member) => (
-                    <Col xs> <AboutCard member={member}/> </Col>
-                ))}
-            </Row> */}
             
         </Container>
         {/* Icons with tools used */}
