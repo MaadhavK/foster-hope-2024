@@ -17,16 +17,16 @@ open_ai_key = os.environ.get("OPEN_AI_KEY")
 
 client = OpenAI(api_key=open_ai_key)
 
-# Example prompt
-prompt_text = "What is the meaning of life?"
+def ask_chatgpt(prompt):
+    
+  # Example prompt
+  prompt_text = "What is the meaning of life?"
 
-# Generate a response using ChatGPT
-response =  client.chat.completions.create(
-    model="gpt-3.5-turbo",  # You can use other engines as well
-    messages=[
-        {"role": "user", "content": "Who won the world series in 2020?"}
-    ]
-)
-
-# Print the response
-print(response.choices[0].message.content)
+  # Generate a response using ChatGPT
+  response =  client.chat.completions.create(
+      model="gpt-3.5-turbo",  # You can use other engines as well
+      messages=[
+          {"role": "user", "content": prompt}
+      ]
+  )
+  return response.choices[0].message.content

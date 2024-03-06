@@ -1,87 +1,44 @@
-"use client"
 // import Counties from "./components/countyCardList"
 import { Row, Col, Container, Card, Button} from "react-bootstrap";
 import styles from "../page.module.css";
+// import "./counties.css"
 
-// model page for resources
-export default function Resources() {
+import Link from "next/link";
+
+import { Lora, Cabin} from "next/font/google";
+const lora = Lora({weight: '400', subsets: ['latin']})
+const cabin = Cabin({weight: '400', subsets: ['latin']})
+import resData from "../data/resources.json";
+import ResourceCard from "./components/resourcecard.js"
+
+export default function listResources() {
+
+    const resources = resData;
+    const reslen = Object.keys(resources?.resources).length;
+
     return (
-        <main className= {styles.main}>
-            <div className= {styles.description}>
-                <h1>Resources</h1>
+        <main className={styles.main} style={{backgroundColor:"white", width:"100vw", paddingTop:"55px", height:"100%"}}>
+            <Container style={{maxWidth:"100vw", margin:"0", paddingLeft:"5vw", paddingRight:"5vw", paddingTop:"5vh", border:"0"}}>
+                <div className={lora.className}>
+                    <h1 style={{color:"black", textAlign:"center"}}>Resources</h1>
                 </div>
-                <Container style = {{padding: 15}}>
-                    <Row>
-                        <Col>
-                        {/* lists out cards of instances, style in rows using bootstrap row and col */}
-                            <Card style = {{width: "20rem"}}>
-                                <Card.Img variant="top" src="/images/resources/storytime.jpeg"/>
-                                <Card.Body style={{padding: "1rem", background: "lightblue"}}>
-                                    <Card.Title> Free Kids Event: Children's Book Story Time</Card.Title>
-                                    <Card.Text>
-                                    Location: Austin
-                                    <br></br>
-                                    Type: Event
-                                    <br></br>
-                                    In person: yes
-                                    <br></br>
-                                    Website: 
-                                    <a href="https://www.eventbrite.com/e/free-kids-event-childrens-book-story-time-tickets-817584907467?aff=ebdssbdestsearch" target="_blank" rel="nofollow">
-                                    https://www.eventbrite.com</a>
-                                    <br></br>
-                                    </Card.Text>
-                                    <Button href = "resources/instances/storytime/"> Read More </Button>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col>
-                            <Card style = {{width: "20rem"}}>
-                                <Card.Img variant="top" src="/images/resources/event2.jpg"/>
-                                <Card.Body style={{padding: "1rem", background: "lightblue"}}>
-                                    <Card.Title> Recognizing & Reporting Child Abuse</Card.Title>
-                                    <Card.Text>
-                                    Location: Austin
-                                    <br></br>
-                                    Type: Event
-                                    <br></br>
-                                    In person: yes
-                                    <br></br>
-                                    Website: 
-                                    <a href="https://www.eventbrite.com/e/recognizing-reporting-child-abuse-tickets-796979666637?aff=ebdssbdestsearch" target="_blank" rel="nofollow">
-                                    https://www.eventbrite.com</a>
-                                    <br></br>
-                                    </Card.Text>
-                                    <Button href = "resources/instances/recognize/"> Read More </Button>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col>
-                            <Card style = {{width: "20rem"}}>
-                                <Card.Img variant="top" src="/images/resources/logo.png"/>
-                                <Card.Body style={{padding: "1rem", background: "lightblue"}}>
-                                    <Card.Title> Children's Center of Austin</Card.Title>
-                                    <Card.Text>
-                                    Location: Austin
-                                    <br></br>
-                                    Type: Children's Institute
-                                    <br></br>
-                                    In person: yes
-                                    <br></br>
-                                    Website: 
-                                    <a href="https://www.childrenscenterofaustin.com/" target="_blank" rel="nofollow">
-                                    https://www.childrenscenterofaustin.com/</a>
-                                    <br></br>
-                                    </Card.Text>
-                                    <Button href = "resources/instances/childrenscenter/"> Read More </Button>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                    </Row>
-
-                </Container>
-                <h3>
-                    Number of Instances: 3
-                </h3>
-            </main>
+                <div className={cabin.className}>
+                    <br></br>
+                    <p className={styles.splashdesc} style={{color:"black", textAlign:"center"}}>
+                        blurb about resources stuff and how it's important to foster kids / those wanting to support
+                    </p>
+                </div>
+            </Container>
+            <Container fluid={true} style = {{}}>
+                <Row style={{padding:"3vw", paddingTop:"2rem", justifyContent:"space-evenly"}}>
+                    {resources["resources"].slice(0, 9).map((res) => (
+                        <Col xs style={{paddingBottom: "2rem"}}> <ResourceCard resource={JSON.stringify(res)}/> </Col>
+                    ))}
+                </Row>
+            </Container>
+            <h3 className={lora.className} style={{color:"black", paddingBottom:"20px"}}>
+                Number of Instances: {reslen}
+            </h3>
+        </main>
     )
 }

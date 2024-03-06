@@ -18,8 +18,7 @@ export default function Resource1(){
                     <img src="/images/resources/storytime.jpeg" style={{width: "500px", height: "auto", margin: "12px"}}></img>
                 </Col>
                 <Col xs style={{paddingBottom: "2rem"}}>
-                <p> From organizers: 
-                    Join us for our fun storytime event for a soon-to-be-released children's book!
+                <p> From organizers: Join us for our fun storytime event for a soon-to-be-released children's book!
     This book, created for children ages 9 and under, encourages literacy and teaches a multitude of valuable life lessons.
     We will appreciate you and your child's feedback on our children's book at the event.
     This event will be taking place remotely. 📧 We will reach out to you via email before the event. Please make sure to check your spam folder.
