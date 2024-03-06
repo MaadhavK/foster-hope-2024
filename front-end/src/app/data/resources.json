@@ -1,0 +1,37 @@
+{
+    "resources": [
+        {
+            "id": 1,
+            "name": "Free Kids Event: Children's Book Story Time",
+            "img_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F687005179%2F1990944059303%2F1%2Foriginal.20240131-194059?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C1050%2C525&s=8e33b3d3f52b61953c95c0a2f1fba6bc",
+            "description": "From organizers: Join us for our fun storytime event for a soon-to-be-released children's book! This book, created for children ages 9 and under, encourages literacy and teaches a multitude of valuable life lessons. We will appreciate you and your child's feedback on our children's book at the event. This event will be taking place remotely. We will reach out to you via email before the event. Please make sure to check your spam folder. Don't miss out on this exclusive experience! We look forward to meeting you! Follow us on Facebook to be the first to know about our upcoming events and exciting announcements!",
+            "location": "Austin",
+            "type": "Event",
+            "reviews": 4.7,
+            "website": "https://www.eventbrite.com/e/free-kids-event-childrens-book-story-time-tickets-817584907467?aff=ebdssbdestsearch",
+            "vid_url": "https://www.youtube.com/watch?v=3s5ZUj2VUBc"
+        },
+        {
+            "id": 2,
+            "name": "Children's Center of Austin",
+            "img_url": "https://cbsaustin.com/resources/media2/16x9/full/1050/center/80/405d2e4f-05db-4b68-b9e0-d8dd67b25c81-large16x9_IMG_5879.JPG",
+            "description": "From organizers: Welcome to The Children’s Center of Austin, providing the finest quality childcare and education for infants through pre-kindergarten, as well as after-school care for kindergarten through fifth grade and summer camp for ages 6-10. The Children’s Center of Austin offers a safe, clean, and nurturing setting with a theme-based educational curriculum designed to promote learning and exploration in a warm and fun environment. Both of our locations feature controlled access, separate classrooms, shaded playgrounds, and fun activity areas for art, swimming, and extracurricular activities.",
+            "location": "Austin",
+            "type": "Children's Institute",
+            "reviews": 4.7,
+            "website": "https://www.childrenscenterofaustin.com/",
+            "vid_url": "https://www.youtube.com/watch?v=3s5ZUj2VUBc"
+        },
+        {
+            "id": 3,
+            "name": "Children's Center",
+            "img_url": "https://cbsaustin.com/resources/media2/16x9/full/1050/center/80/405d2e4f-05db-4b68-b9e0-d8dd67b25c81-large16x9_IMG_5879.JPG",
+            "description": "From organizers: Welcome to The Children’s Center of Austin, providing the finest quality childcare and education for infants through pre-kindergarten, as well as after-school care for kindergarten through fifth grade and summer camp for ages 6-10. The Children’s Center of Austin offers a safe, clean, and nurturing setting with a theme-based educational curriculum designed to promote learning and exploration in a warm and fun environment. Both of our locations feature controlled access, separate classrooms, shaded playgrounds, and fun activity areas for art, swimming, and extracurricular activities.",
+            "location": "Austin",
+            "type": "Children's Institute",
+            "reviews": 4.7,
+            "website": "https://www.childrenscenterofaustin.com/",
+            "vid_url": "https://www.youtube.com/watch?v=3s5ZUj2VUBc"
+        }
+    ]
+}
