@@ -77,21 +77,26 @@ def find_org_info(query, county):
 # supabase.table("Organizations").delete().neq('name', '-1').execute()
 
 # get list of counties
-counties_json = supabase.table('FosterHomesPerCounty').select('county').execute().data
-counties = [entry['county'] for entry in counties_json]
+# counties_json = supabase.table('Counties').select('county').execute().data
+# counties = [entry['county'] for entry in counties_json]
 
 # test for one county
 # find_org_info("Foster Care organizations in Austin, TX", "Austin")
 # for record in records_to_insert.values():
 #     print(record)
 
-# get records for each county
-for county in counties: # go through counties and find info on the various orgs within that county
-    # print(county)
-    find_org_info(f"Foster Care organizations in {county}, TX", county)
 
+# get records for each county
+# for county in counties: # go through counties and find info on the various orgs within that county
+#     print(county)
+#     find_org_info(f"Foster Care organizations in {county}, TX", county)
+
+# for county in counties:
+#     if county not in records_to_insert.values():
+#         print(county)
 # uncomment to populate supabase table
 # for record_name, record_data in records_to_insert.items(): # input record data into supabase
 #     supabase.table("Organizations").insert(record_data).execute()
+
 
 

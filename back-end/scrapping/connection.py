@@ -1,6 +1,5 @@
 from dotenv import load_dotenv
 import os
-import requests
 from supabase import create_client
 
 # Load environment variables from .env file
@@ -19,17 +18,47 @@ supabase = create_client(url, key)
 
 def get_county_orgs():
     #go through all counties
-    response = supabase.table('FosterHomesPerCounty').select('county').execute()
+    response = supabase.table('Counties').select('county').execute()
     counties= list(row['county'] for row in response.data)
     for county in counties:
         #get all orgs within current county
-        
-    #go through all orgs
-    response = supabase.table('Organizations').select('name').execute()
-    orgs= list(row['name'] for row in response.data)
-    for org in reversed(orgs):
-        #get county they're in
-        county_name = supabase.table('Organizations').select('county').eq('name', org).execute()
-        #update county orgs to include
-        supabase.table('Counties').update({'organizations': }).eq('name', county_name).execute()
+        orgs = supabase.table('Organizations').select('id').eq('county', county).execute()
+        #make it a list
+        # img.data[0].get('image') != None:
+        orgs_list = [data.get('id') for data in orgs.data]
+        supabase.table('Counties').update({'organizations': orgs_list}).eq('county', county).execute()
 
+def get_org_resources():
+    #go through all orgs 
+    response = supabase.table('Organizations').select('id').execute()
+    orgs= list(row['id'] for row in response.data)
+    for org in orgs:
+        #get corresponding county
+        county = supabase.table('Organizations').select('county').eq('id', org).execute()
+        county_name = county.data[0].get('county')
+        #get the resources of that county
+        resource = supabase.table('Counties').select('resources').eq('county', county_name).execute()
+        resource_list = resource.data[0].get('resources')
+        #set the resources of this org
+        supabase.table('Organizations').update({'resources': resource_list}).eq('id', org).execute()
+
+def get_resource_orgs():
+    #go through all resources
+    response = supabase.table('Resources').select('id').execute()
+    resources = list(row['id'] for row in response)
+    for resource in resources:
+        #get corresponding addr
+        county = supabase.table('Resources').select('county').eq('id', resource).execute()
+        county_name = county.data[0].get('county')
+        #get the orgs of that county
+        org = supabase.table('Counties').select('organizations').eq('county', county_name).execute()
+        org_list = org.data[0].get('organizations')
+        #set orgs of this resource
+        supabase.table('Resources').update({'organizations': org_list}).eq('id', resource).execute()
+        
+        
+
+
+#get_county_orgs()
+get_org_resources()
+get_resource_orgs()

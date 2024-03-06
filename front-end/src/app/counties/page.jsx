@@ -1,4 +1,3 @@
-"use client"
 // import Counties from "./components/countyCardList"
 import { Row, Col, Container, Card, Button} from "react-bootstrap";
 import styles from "../page.module.css";
@@ -16,33 +15,46 @@ import CountyCard from "./components/countycard";
 //     title: "Counties"
 // }
 
-export default function listCounties() {
-    const counties = countiesData;
-    // console.log(counties["counties"].slice(0,9));
-    const countylen = Object.keys(counties?.counties).length;
+async function getCounties() {
+    const response = await fetch('https://api.foster-hope.com/counties/all_counties');
+    return await response.json();
+}
+
+export default async function listCounties() {
+    const counties = await getCounties();
+    //console.log(counties);
+    //console.log(counties["data"].slice(0,9));
+    //const countylen = Object.keys(counties["data"]).length;
+    //console.log(countylen);
 
     return (      
         <main className={styles.main} style={{backgroundColor:"white", width:"100vw", paddingTop:"55px", height:"100%"}}>
-            <Container style={{maxWidth:"100vw", margin:"0", paddingLeft:"5vw", paddingTop:"5vh", border:"0"}}>
+            <Container style={{maxWidth:"100vw", margin:"0", paddingLeft:"5vw", paddingRight:"5vw", paddingTop:"5vh", border:"0"}}>
                 <div className={lora.className}>
-                    <h1 style={{color:"black"}}>Counties</h1>
+                    <h1 style={{color:"black", textAlign:"center"}}>Counties</h1>
                 </div>
                 <div className={cabin.className}>
                     <br></br>
-                    <p className={styles.splashdesc} style={{}}>
+                    <p className={styles.splashdesc} style={{textAlign:"center"}}>
                         blurb about county stuff and how it's important to foster kids
                     </p>
                 </div>
             </Container>
             <Container fluid={true} style = {{}}>
                 <Row style={{padding:"3vw", paddingTop:"2rem", justifyContent:"space-evenly"}}>
-                    {counties["counties"].slice(0, 9).map((county) => (
+                    {counties["data"].slice(0, 9).map((county) => (
                         <Col xs style={{paddingBottom: "2rem"}}> <CountyCard county={JSON.stringify(county)}/> </Col>
                     ))}
                 </Row>
             </Container>
-            
-            {/* <Container style = {{padding: 15}}>
+            <h3 className={lora.className} style={{color:"black", paddingBottom:"20px"}}>
+                Number of Instances: {9}
+            </h3>
+        </main>
+    )
+}
+
+{/* <Container style = {{padding: 15}}>
                 <Row>
                     <Col>
                          <Card style = {{width: "20rem", height: "35rem"}}>
@@ -102,9 +114,3 @@ export default function listCounties() {
                 </Row>
 
             </Container> */}
-            <h3 className={lora.className} style={{color:"black", paddingBottom:"20px"}}>
-                Number of Instances: {countylen}
-            </h3>
-        </main>
-    )
-}

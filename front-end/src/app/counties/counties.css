@@ -13,6 +13,14 @@
     color: black;
 }
 
+.stats{
+    display:flexbox;
+    flex-direction: row;
+    align-items: stretch;
+    color:black;
+    width:100vw;
+}
+
 
 .paragraph {
     font-size: 23px; /* Change the font size as needed */
