@@ -21,11 +21,11 @@ async function getCounties() {
 }
 
 export default async function listCounties() {
-    const counties = countiesData;
-    const c2 = await getCounties();
-
-    console.log(c2["data"].slice(0,9));
-    const countylen = Object.keys(counties?.counties).length;
+    const counties = await getCounties();
+    //console.log(counties);
+    //console.log(counties["data"].slice(0,9));
+    //const countylen = Object.keys(counties["data"]).length;
+    //console.log(countylen);
 
     return (      
         <main className={styles.main} style={{backgroundColor:"white", width:"100vw", paddingTop:"55px", height:"100%"}}>
@@ -42,13 +42,13 @@ export default async function listCounties() {
             </Container>
             <Container fluid={true} style = {{}}>
                 <Row style={{padding:"3vw", paddingTop:"2rem", justifyContent:"space-evenly"}}>
-                    {counties["counties"].slice(0, 9).map((county) => (
+                    {counties["data"].slice(0, 9).map((county) => (
                         <Col xs style={{paddingBottom: "2rem"}}> <CountyCard county={JSON.stringify(county)}/> </Col>
                     ))}
                 </Row>
             </Container>
             <h3 className={lora.className} style={{color:"black", paddingBottom:"20px"}}>
-                Number of Instances: {countylen}
+                Number of Instances: {9}
             </h3>
         </main>
     )
