@@ -1,8 +1,4 @@
 import os
-import fosterhomespercounty
-import fosterkidspercounty
-import media
-import wiki
 from supabase import create_client
 from dotenv import load_dotenv
 
@@ -51,7 +47,7 @@ def put_fosterkids_fosterhomes_to_counties_table():
             print(f"Inserted new record for {entry["county"]}.")
 
 
-def get_and_do_everything():
+#def get_and_do_everything():
     # Get number of kids and number of homes in separate tables
     #fosterkidspercounty.send_api_request(supabase)
     #fosterhomespercounty.send_api_request(supabase)
@@ -62,9 +58,34 @@ def get_and_do_everything():
     # calling media here does not work
     #media.store_county_images(supabase)
     #media.store_county_images(supabase)
-    wiki.scrape_county_wiki_data(supabase)
+    #wiki.scrape_county_wiki_data(supabase)
 
-get_and_do_everything()
+#get_and_do_everything()
+
+
+
+# This gets the number of orgs for each county
+
+response = supabase.from_("Counties").select("county").eq('county').execute()
+
+for county in response.data:
+    
+    countyname = county["county"]
+    num = supabase.from_("Organizations").select("county").eq('county', countyname).execute()
+    numOfOrgs = len(num.data)
+    print(countyname)
+    print(numOfOrgs)
+    print("======================")
+    supabase.table('Counties').update({'number_of_orgs': numOfOrgs}).eq('county', countyname).execute()
+    
+    
+    
+
+# index = 1
+# for name in response.data:
+#     supabase.table('Organizations').update({'id': index}).eq('county', name["name"]).execute()
+#     index+=1
+
 
 
 

@@ -26,7 +26,9 @@ const CountyCard = ({county}) => {
     if (!thisCounty) {
         return <div>Error: County data is not available</div>;
     }
-    const path = "counties/" + thisCounty?.id + "/";
+
+    //console.log(thisCounty?.name.replace(" ", '_'));
+    const path = "counties/" + thisCounty?.name.replace(" ", '_') + "/";
 
     return (
         <Card style = {{width: "20rem", height: "35rem"}}>

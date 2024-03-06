@@ -27,13 +27,14 @@ export default function Home() {
         <Row style={{height:"20vh"}}></Row>
         <Row style={{zIndex:"1", maxWidth:"100vw", margin:"0", padding:"0", border:"0", height:"50vh", justifyContent:"center"}}>
           <Col style={{zIndex:"1", maxWidth:"100vw", alignItems:"center", justifyContent:"center", alignSelf:"center"}}>
-            <h1 className={lora.className} style={{zIndex:"1", textAlign:"center", fontSize:"4rem", textShadow:"2px 2px 4px #101010", fontWeight:"bold"}}>
+            <h1 className={lora.className} style={{zIndex:"1", textAlign:"center", fontSize:"4rem", textShadow:"2px 2px 4px #101010", fontWeight:"bold", color:"#fffae0"}}>
               Foster Hope.
             </h1>
             <br/>
-            <div className={cabin.className} style={{textAlign:"center"}}>
-              empowing lives for foster children.
+            <div className={cabin.className} style={{textAlign: "center", color: "#fffae0"}}>
+                Empowering lives for foster children.
             </div>
+
           </Col>
         </Row>
       </Container>

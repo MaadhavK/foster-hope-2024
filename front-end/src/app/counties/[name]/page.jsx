@@ -12,11 +12,14 @@ const cabin = Cabin({weight: '400', subsets: ['latin']})
 
 
 export default function CountyPage ({params}) {
-    const id = params.name
+    console.log(params)
+    const id = params.name.replace("_", ' ');
+
     const data = countiesData
     const counties = data?.counties
-    const county = counties.find(b => b.id == id)
+    const county = counties.find(b => b.name == id)
     console.log(county);
+    //return (<div>asdjkfljsadlkfdsaf</div>)
     const videoId = new URLSearchParams(new URL(county.vid_url).search).get("v")
     return (
         <main className= {styles.main}>

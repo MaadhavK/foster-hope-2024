@@ -18,19 +18,30 @@ supabase = create_client(url, key)
 
 records_to_insert = {}
 
+
 def get_soup_and_driver(URL):
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
     options.add_experimental_option('excludeSwitches', ['enable-logging'])
+    options.add_argument('log-level=3')
     driver = webdriver.Chrome(options=options)
     driver.get(URL)
     return BeautifulSoup(driver.page_source, 'html.parser'), driver
 
 def parse_web_data(soup, driver, county):
+    
+    
+    response = supabase.table("Resources").select("*").eq("county", county).execute()
+    if len(response.data) >= 2:
+        return
     class_boxes = soup.findAll("li")
+    
+    total = 0
     for card in class_boxes:
         card_name = card.find('a', class_='event-card-link')
-
+        
+        if total>=3:
+            break
 
         if card_name and 'aria-label' in card_name.attrs and 'data-event-category' in card_name.attrs:
             card_details = card.find_all('p', class_='Typography_root__487rx #585163 Typography_body-md__487rx event-card__clamp-line--one Typography_align-match-parent__487rx')
@@ -70,8 +81,7 @@ def parse_web_data(soup, driver, county):
 
                             records_to_insert[item_list[0]] = {
                                 "name": item_list[0],
-                                "location": location_info_text,
-                                "address": addr,
+                                "location": addr,
                                 "map": 'https://www.google.com/maps/embed/v1/place?key={}&q={}'.format(google_key, addr),
                                 "hours": item_list[5],
                                 "website": link_to_event,
@@ -81,6 +91,16 @@ def parse_web_data(soup, driver, county):
                                 "county": county
                             }
                             print(records_to_insert[item_list[0]])
+                            
+                            response = supabase.table("Resources").select("*").eq("name", item_list[0]).execute()
+                            
+                            if len(response.data) >= 1:
+                                print(f"The county {item_list[0]} already exists in the table. Skipping insertion.")
+                            else:
+                                # Insert the new record if the county doesn't exist
+                                print(f"Inserted new record for {item_list[0]}.")
+                                supabase.table("Resources").insert(records_to_insert[item_list[0]]).execute()
+                                total+=1
 
 
                     driver_2.quit()
@@ -90,8 +110,11 @@ def parse_web_data(soup, driver, county):
 
 
 
-# Clear out table
-supabase.table("Resources").delete().neq('name', '-1').execute()
+
+
+
+
+
 
 # Get list of cities and counties
 response = supabase.from_("FosterHomesPerCounty").select("city", "county").execute()
@@ -109,11 +132,9 @@ for row in response.data:
 first = "https://www.eventbrite.com/d/tx--"
 last = "/kids-events/"
 for city, county in zip(list_of_cities, list_of_counties):
+    
     url = first + city + last
     soup, driver = get_soup_and_driver(url)
     parse_web_data(soup, driver, county)
     # driver.quit()
 
-# Insert records from the dictionary into Supabase
-for record_name, record_data in records_to_insert.items():
-    supabase.table("Resources").insert(record_data).execute()
