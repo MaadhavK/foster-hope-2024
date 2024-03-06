@@ -1,26 +1,38 @@
-import {Card, Button} from 'react-bootstrap';
-// component create card to list data of resource instance on model page, use for phase 2
-export default function ResourceCard({resource}) {
-    const path = "resources/instances/" + resource.name + '/'
-    console.log(path)
+"use client"
+import styles from "../../page.module.css";
+import {Card} from 'react-bootstrap';
+import { Button } from "react-bootstrap";
+import YouTube from 'react-youtube';
+
+import { Lora, Cabin} from "next/font/google";
+
+const lora = Lora({weight: '400', subsets: ['latin']})
+const cabin = Cabin({weight: '400', subsets: ['latin']})
+
+const ResourceCard = ({resource}) => {
+    var thisRes = JSON.parse(resource);
+    if (!thisRes) {
+        return <div>Error: org data is not available</div>;
+    }
+    const path = "resources/" + thisRes?.id + "/";
+
     return (
-        <container>
-            <Card style = {{width: "20rem"}}>
-            <Card.Img variant="top" src={resource.img}/>
-                <Card.Body>
-                    <Card.Title>{resource.name}</Card.Title>
-                    <Card.Text>
-                        Location: {resource.location}
-                        <br></br>
-                        Type: {resource.type}
-                        <br></br>
-                        Phone: {resource.phone}
-                        <br></br>
-                        Website: {resource.website}
-                    </Card.Text>
-                <Button href = {path}> Read More </Button>
-                </Card.Body>
-            </Card>
-        </container>
+        <Card style = {{width: "20rem", height: "35rem", margin:"0 auto"}}>
+            <Card.Img  style={{width:"20rem", height:"20rem", objectFit:"cover"}} variant="top" src = {thisRes?.img_url}/>
+            <Card.Body className="d-flex flex-column justify-content-center" style={{padding: "1rem", background: "lightblue"}}>
+                <Card.Title className={lora.className} style={{fontSize:"1.3rem"}}><b>{thisRes?.name}</b></Card.Title>
+                <Card.Text className={cabin.className} style={{paddingTop:"10px", paddingBottom:"10px"}}>
+                Location: {thisRes?.location}
+                <br></br>
+                Type: {thisRes?.type}
+                <br></br>
+                Reviews: {thisRes?.reviews}
+                <br></br>
+                </Card.Text>
+                <Button variant="outline-dark" href = {path}> Read More </Button>
+            </Card.Body>
+        </Card>
     )
-}
+} 
+
+export default ResourceCard;
