@@ -60,9 +60,9 @@ def get_and_do_everything():
     #put_fosterkids_fosterhomes_to_counties_table()
     
     # calling media here does not work
+    media.store_county_images(supabase)
     #media.store_county_images(supabase)
-    #media.store_county_images(supabase)
-    wiki.scrape_county_wiki_data(supabase)
+    #wiki.scrape_county_wiki_data(supabase)
 
 get_and_do_everything()
 

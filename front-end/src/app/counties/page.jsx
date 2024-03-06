@@ -1,4 +1,3 @@
-"use client"
 // import Counties from "./components/countyCardList"
 import { Row, Col, Container, Card, Button} from "react-bootstrap";
 import styles from "../page.module.css";
@@ -16,9 +15,16 @@ import CountyCard from "./components/countycard";
 //     title: "Counties"
 // }
 
-export default function listCounties() {
+async function getCounties() {
+    const response = await fetch('https://api.foster-hope.com/counties/all_counties');
+    return await response.json();
+}
+
+export default async function listCounties() {
     const counties = countiesData;
-    // console.log(counties["counties"].slice(0,9));
+    const c2 = await getCounties();
+
+    console.log(c2["data"].slice(0,9));
     const countylen = Object.keys(counties?.counties).length;
 
     return (      
@@ -41,8 +47,14 @@ export default function listCounties() {
                     ))}
                 </Row>
             </Container>
-            
-            {/* <Container style = {{padding: 15}}>
+            <h3 className={lora.className} style={{color:"black", paddingBottom:"20px"}}>
+                Number of Instances: {countylen}
+            </h3>
+        </main>
+    )
+}
+
+{/* <Container style = {{padding: 15}}>
                 <Row>
                     <Col>
                          <Card style = {{width: "20rem", height: "35rem"}}>
@@ -102,9 +114,3 @@ export default function listCounties() {
                 </Row>
 
             </Container> */}
-            <h3 className={lora.className} style={{color:"black", paddingBottom:"20px"}}>
-                Number of Instances: {countylen}
-            </h3>
-        </main>
-    )
-}
