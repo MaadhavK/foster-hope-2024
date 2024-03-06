@@ -62,7 +62,7 @@ const AboutCard = ({ member }) => {
   }
 
   return (
-    <Card style={{ width: "20rem" }}>
+    <Card style={{ width: "20rem", margin:"0 auto"}}>
       <Card.Img variant="top" style={{width:"20rem", height:"20rem", objectFit:"cover"}} src={member.img} />
       <Card.Body style={{ padding: "1rem", background: "lightblue" , maxWidth:"20rem"}}>
         <Card.Title className={cabin.className} style={{fontWeight:"bold"}}>{member.name}</Card.Title>
