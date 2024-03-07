@@ -14,37 +14,37 @@ key = os.environ.get("SUPABASE_KEY")
 supabase = create_client(url, key)
 
 
-def put_fosterkids_fosterhomes_to_counties_table():
-    # Execute queries to fetch data from FosterHomesPerCounty and FosterKidsPerCounty
-    response1 = supabase.from_("FosterHomesPerCounty").select("county", "number_of_homes").execute()
-    response2 = supabase.from_("FosterKidsPerCounty").select("county", "number_of_foster_kids").execute()
+# def put_fosterkids_fosterhomes_to_counties_table():
+#     # Execute queries to fetch data from FosterHomesPerCounty and FosterKidsPerCounty
+#     response1 = supabase.from_("FosterHomesPerCounty").select("county", "number_of_homes").execute()
+#     response2 = supabase.from_("FosterKidsPerCounty").select("county", "number_of_foster_kids").execute()
 
     
 
-    # Combine data from FosterHomesPerCounty and FosterKidsPerCounty
-    combined_data = []
-    for fhpc_entry in response1.data:
-        for fkpc_entry in response2.data:
-            if fhpc_entry["county"] == fkpc_entry["county"]:
-                combined_entry = {
-                    "county": fhpc_entry["county"],
-                    "number_of_homes": fhpc_entry["number_of_homes"],
-                    "number_of_foster_kids": fkpc_entry["number_of_foster_kids"]
-                }
-                combined_data.append(combined_entry)
+#     # Combine data from FosterHomesPerCounty and FosterKidsPerCounty
+#     combined_data = []
+#     for fhpc_entry in response1.data:
+#         for fkpc_entry in response2.data:
+#             if fhpc_entry["county"] == fkpc_entry["county"]:
+#                 combined_entry = {
+#                     "county": fhpc_entry["county"],
+#                     "number_of_homes": fhpc_entry["number_of_homes"],
+#                     "number_of_foster_kids": fkpc_entry["number_of_foster_kids"]
+#                 }
+#                 combined_data.append(combined_entry)
 
-    # Insert combined data into Counties table
-    for entry in combined_data:
-        response = supabase.table("Counties").select("*").eq("county", entry["county"]).execute()
+#     # Insert combined data into Counties table
+#     for entry in combined_data:
+#         response = supabase.table("Counties").select("*").eq("county", entry["county"]).execute()
         
         
-        # Check if any records were found for the county
-        if len(response.data) >= 1:
-            print(f"The county {entry["county"]} already exists in the table. Skipping insertion.")
-        else:
-            # Insert the new record if the county doesn't exist
-            supabase.table("Counties").insert(entry).execute()
-            print(f"Inserted new record for {entry["county"]}.")
+#         # Check if any records were found for the county
+#         if len(response.data) >= 1:
+#             print(f"The county {entry["county"]} already exists in the table. Skipping insertion.")
+#         else:
+#             # Insert the new record if the county doesn't exist
+#             supabase.table("Counties").insert(entry).execute()
+#             print(f"Inserted new record for {entry["county"]}.")
 
 
 #def get_and_do_everything():
@@ -56,7 +56,7 @@ def put_fosterkids_fosterhomes_to_counties_table():
     #put_fosterkids_fosterhomes_to_counties_table()
     
     # calling media here does not work
-    media.store_county_images(supabase)
+    #media.store_county_images(supabase)
     #media.store_county_images(supabase)
     #media.store_county_images(supabase)
     #wiki.scrape_county_wiki_data(supabase)
@@ -65,21 +65,16 @@ def put_fosterkids_fosterhomes_to_counties_table():
 
 
 
-# This gets the number of orgs for each county
+response = supabase.table('Counties').select('county').execute()
+counties= list(row['county'] for row in response.data)
+for county in counties:
+    orgs = supabase.table('Counties').select('organizations').eq('county', county).execute()
+    num_orgs = len(orgs.data[0].get('organizations'))
+    print(county)
+    print(orgs.data[0].get('organizations'))
+    print(num_orgs)
+    supabase.table('Counties').update({'number_of_orgs': num_orgs}).eq('county', county).execute()
 
-response = supabase.from_("Counties").select("county").eq('county').execute()
-
-for county in response.data:
-    
-    countyname = county["county"]
-    num = supabase.from_("Organizations").select("county").eq('county', countyname).execute()
-    numOfOrgs = len(num.data)
-    print(countyname)
-    print(numOfOrgs)
-    print("======================")
-    supabase.table('Counties').update({'number_of_orgs': numOfOrgs}).eq('county', countyname).execute()
-    
-    
     
 
 # index = 1

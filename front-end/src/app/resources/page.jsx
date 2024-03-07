@@ -9,17 +9,25 @@ import { Lora, Cabin} from "next/font/google";
 const lora = Lora({weight: '400', subsets: ['latin']})
 const cabin = Cabin({weight: '400', subsets: ['latin']})
 import ResourceCard from "./components/resourcecard.js"
+import Pagination from "../components/pagination.js"
 
 
 async function getResources() {
     const response = await fetch('https://api.foster-hope.com/resources/all_resources');
     return await response.json();
 }
-export default async function listResources() {
+export default async function listResources( {searchParams} ) {
 
     const resources = await getResources();
-    console.log(resources);
-    //const reslen = Object.keys(resources?.resources).length;
+
+    const page = searchParams["page"] ?? 1
+    const per_page = searchParams["per_page"] ?? 16
+    const start = (Number(page) - 1) * Number(per_page)
+    const end = start + Number(per_page)
+    const num_instances = Object.keys(resources.data).length
+    // console.log(resources);
+    
+    const entries = resources.data.slice(start, end)
 
     return (
         <main className={styles.main} style={{backgroundColor:"white", width:"100vw", paddingTop:"55px", height:"100%"}}>
@@ -36,13 +44,17 @@ export default async function listResources() {
             </Container>
             <Container fluid={true} style = {{}}>
                 <Row style={{padding:"3vw", paddingTop:"2rem", justifyContent:"space-evenly"}}>
-                    {resources["data"].slice(0, 9).map((res) => (
+                    {entries.map((res) => (
                         <Col xs style={{paddingBottom: "2rem"}}> <ResourceCard resource={JSON.stringify(res)}/> </Col>
                     ))}
                 </Row>
             </Container>
-            <h3 className={lora.className} style={{color:"black", paddingBottom:"20px"}}>
-                Number of Instances: {9}
+            <Pagination
+                num_instances={num_instances}
+                path={"resources"}
+            />
+            <h3 className={lora.className} style={{color:"black", paddingBottom:"20px",  paddingTop: "10px"}}>
+                Number of Instances: {num_instances}
             </h3>
         </main>
     )
