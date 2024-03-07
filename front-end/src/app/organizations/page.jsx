@@ -19,7 +19,7 @@ async function getOrgs() {
 export default async function listCounties() {
 
     const orgs = await getOrgs();
-    //const orgslen = Object.keys(orgs?.orgs).length;
+    const orgslen = Object.keys(orgs?.data).length;
 
     return (
         <main className={styles.main} style={{backgroundColor:"white", width:"100vw", paddingTop:"55px", height:"100%"}}>
@@ -37,12 +37,12 @@ export default async function listCounties() {
             <Container fluid={true} style = {{}}>
                 <Row style={{padding:"3vw", paddingTop:"2rem", justifyContent:"space-evenly"}}>
                     {orgs["data"].slice(0, 10).map((organization) => (
-                        <Col xs style={{paddingBottom: "2rem"}}> <OrgCard org={JSON.stringify(organization)}/> </Col>
+                        <Col xs style={{paddingBottom: "2rem"}}> <OrgCard org={organization}/> </Col>
                     ))}
                 </Row>
             </Container>
             <h3 className={lora.className} style={{color:"black", paddingBottom:"20px"}}>
-                Number of Instances: {9}
+                Number of Instances: {orgslen}
             </h3>
         </main>
     )
