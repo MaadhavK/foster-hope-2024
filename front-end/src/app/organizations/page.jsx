@@ -9,6 +9,7 @@ import { Lora, Cabin} from "next/font/google";
 const lora = Lora({weight: '400', subsets: ['latin']})
 const cabin = Cabin({weight: '400', subsets: ['latin']})
 import OrgCard from "./components/orgCard.js"
+import Pagination from "../components/Pagination.js"
 
 
 async function getOrgs() {
@@ -16,10 +17,17 @@ async function getOrgs() {
     return await response.json();
 }
 // model page for counties
-export default async function listCounties() {
+export default async function listCounties( {searchParams} ) {
 
     const orgs = await getOrgs();
     //const orgslen = Object.keys(orgs?.orgs).length;
+    const page = searchParams["page"] ?? 1
+    const per_page = searchParams["per_page"] ?? 16
+    const start = (Number(page) - 1) * Number(per_page)
+    const end = start + Number(per_page)
+    const num_instances = Object.keys(orgs.data).length
+
+    const entries = orgs.data.slice(start, end)
 
     return (
         <main className={styles.main} style={{backgroundColor:"white", width:"100vw", paddingTop:"55px", height:"100%"}}>
@@ -36,13 +44,17 @@ export default async function listCounties() {
             </Container>
             <Container fluid={true} style = {{}}>
                 <Row style={{padding:"3vw", paddingTop:"2rem", justifyContent:"space-evenly"}}>
-                    {orgs["data"].slice(0, 10).map((organization) => (
+                    {entries.map((organization) => (
                         <Col xs style={{paddingBottom: "2rem"}}> <OrgCard org={JSON.stringify(organization)}/> </Col>
                     ))}
                 </Row>
             </Container>
+            <Pagination
+                num_instances={num_instances}
+                path={"organizations"}
+            />
             <h3 className={lora.className} style={{color:"black", paddingBottom:"20px"}}>
-                Number of Instances: {9}
+                Number of Instances: {num_instances}
             </h3>
         </main>
     )

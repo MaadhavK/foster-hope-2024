@@ -1,9 +1,9 @@
 "use client"
 import { useRouter, useSearchParams} from 'next/navigation';
 import React, {useState, useEffect} from 'react';
-import "../counties.css";
 
-const Pagination = ({num_instances}) => {
+
+const Pagination = ({num_instances, path}) => {
 
     
     const router = useRouter()
@@ -20,12 +20,12 @@ const Pagination = ({num_instances}) => {
     });
 
     return (
-    <div className='flex gap-2'>
-      <button
+    <div className={{'paddingBottom':'10px'}}>
+      <button style={{display:"inline", marginRight:"20px"}}
         className='bg-blue-500 text-white p-1'
         disabled={!pageState.hasPrevPage}
         onClick={() => {
-          router.push(`/counties/?page=${Number(page) - 1}&per_page=${per_page}`)
+          router.push(`/${path}/?page=${Number(page) - 1}&per_page=${per_page}`)
             setPageState({
                     prevPage: pageState.prevPage - 1,
                     nextPage: pageState.nextPage - 1,
@@ -38,21 +38,21 @@ const Pagination = ({num_instances}) => {
         prev page
       </button>
 
-      <div className='text-black'>
+      <div className='text-black' style={{display:"inline"}}>
         {pageState.prevPage + 1} / {Math.ceil(Number(num_instances)/Number(per_page))}
         
       </div>
 
-      <button
+      <button style={{display:"inline", marginLeft:"20px"}}
         className='bg-blue-500 text-white p-1'
         disabled={!pageState.hasNextPage}
         onClick={() => {
-          router.push(`/counties/?page=${Number(page) + 1}&per_page=${per_page}`)
+          router.push(`/${path}/?page=${Number(page) + 1}&per_page=${per_page}`)
             setPageState({
                 prevPage: pageState.prevPage + 1,
                 nextPage: pageState.nextPage + 1,
                 hasPrevPage: true,
-                hasNextPage: pageState.nextPage + 1 < Math.ceil(Number(num_instances)/Number(per_page))
+                hasNextPage: pageState.nextPage + 1 < 1 + Math.ceil(Number(num_instances)/Number(per_page))
             });
             
           

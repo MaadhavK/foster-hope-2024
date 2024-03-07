@@ -9,7 +9,7 @@ import { Lora, Cabin} from "next/font/google";
 const lora = Lora({weight: '400', subsets: ['latin']})
 const cabin = Cabin({weight: '400', subsets: ['latin']})
 import CountyCard from "./components/countycard";
-import Pagination from "./components/pagination"
+import Pagination from "../components/pagination.js"
 
 
 export const getCounties = async ()=> {
@@ -17,7 +17,7 @@ export const getCounties = async ()=> {
     return await response.json();
 }
 
-export default async function listCounties({searchParams} ) {
+export default async function listCounties( {searchParams} ) {
     const counties = await getCounties();
 
     const page = searchParams["page"] ?? 1
@@ -55,8 +55,9 @@ export default async function listCounties({searchParams} ) {
             </Container>
             <Pagination
                 num_instances={num_instances}
+                path = {"counties"}
             />
-            <h3 className={lora.className} style={{color:"black", paddingBottom:"20px"}}>
+            <h3 className={lora.className} style={{color:"black", paddingBottom:"20px", paddingTop:"10px"}}>
                 Number of Instances: {num_instances}
             </h3>
         </main>
