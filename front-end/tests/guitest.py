@@ -1,7 +1,8 @@
 import unittest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import time
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 class GUITests(unittest.TestCase):
     def setUp(self) -> None:
@@ -22,10 +23,46 @@ class GUITests(unittest.TestCase):
     # test site subpages
     def test_1(self): # about 
         driver = self.driver
-        page_link = driver.find_element(By.XPATH, '//nav//a[normalize-space()="About"]')
+        wait = WebDriverWait(driver, 10)
+        navbar_toggle_button = wait.until(EC.visibility_of_element_located((By.CLASS_NAME, 'navbar-toggler')))
+        navbar_toggle_button.click()
+        navbar = wait.until(EC.visibility_of_element_located((By.CLASS_NAME, 'navbar-nav')))
+        page_link = navbar.find_element(By.LINK_TEXT, 'About Us')
         page_link.click()
-        self.assertEqual(driver.current_url, self.url+ "about")
+        
+        self.assertEqual(driver.current_url, self.url + "about")
+    
+    def test_2(self): # about 
+        driver = self.driver
+        wait = WebDriverWait(driver, 10)
+        navbar_toggle_button = wait.until(EC.visibility_of_element_located((By.CLASS_NAME, 'navbar-toggler')))
+        navbar_toggle_button.click()
+        navbar = wait.until(EC.visibility_of_element_located((By.CLASS_NAME, 'navbar-nav')))
+        page_link = navbar.find_element(By.LINK_TEXT, 'Counties')
+        page_link.click()
+        
+        self.assertEqual(driver.current_url, self.url + "counties")
 
+    def test_3(self): # about 
+        driver = self.driver
+        wait = WebDriverWait(driver, 10)
+        navbar_toggle_button = wait.until(EC.visibility_of_element_located((By.CLASS_NAME, 'navbar-toggler')))
+        navbar_toggle_button.click()
+        navbar = wait.until(EC.visibility_of_element_located((By.CLASS_NAME, 'navbar-nav')))
+        page_link = navbar.find_element(By.LINK_TEXT, 'Organizations')
+        page_link.click()
+        
+        self.assertEqual(driver.current_url, self.url + "organizations")
+    def test_4(self): # about 
+        driver = self.driver
+        wait = WebDriverWait(driver, 10)
+        navbar_toggle_button = wait.until(EC.visibility_of_element_located((By.CLASS_NAME, 'navbar-toggler')))
+        navbar_toggle_button.click()
+        navbar = wait.until(EC.visibility_of_element_located((By.CLASS_NAME, 'navbar-nav')))
+        page_link = navbar.find_element(By.LINK_TEXT, 'Resources')
+        page_link.click()
+        
+        self.assertEqual(driver.current_url, self.url + "resources")
     # def test_2(self): # counties
     #     driver = self.driver
     #     page_link = driver.find_element(By.LINK_TEXT, "Counties")
