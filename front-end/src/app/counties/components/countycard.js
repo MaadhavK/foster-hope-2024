@@ -15,11 +15,8 @@ const CountyCard = ({county}) => {
     if (!thisCounty) {
         return <div>Error: County data is not available</div>;
     }
-    console.log(thisCounty);
-    console.log(thisCounty.county);
-    console.log()
-    const path = "counties/" + thisCounty.county + "/";
 
+    const path = "counties/" + thisCounty.county.replace(" ", '_') + "/";
     return (
         <Card style = {{width: "20rem", height: "35rem", margin:"0 auto"}}>
             <Card.Img  style={{width:"20rem", height:"20rem", objectFit:"cover"}} variant="top" src = {thisCounty?.image}/>
@@ -28,15 +25,13 @@ const CountyCard = ({county}) => {
                 <Card.Text className={cabin.className} style={{paddingTop:"10px", paddingBottom:"10px"}}>
                 Population: {thisCounty?.population}
                 <br></br>
-                Number of Agencies: 10
+                Number of Orgs: {thisCounty?.number_of_orgs}
                 <br></br>
                 Number of Foster Children: {thisCounty?.number_of_foster_kids}
                 <br></br>
                 Number of Foster Homes: {thisCounty?.number_of_homes}
                 <br></br>
-                Number of Foster Homes: {thisCounty?.number_of_homes}
-                <br></br>
-                Id: {thisCounty?.id}
+
                 </Card.Text>
                 <Button className={lora.className} variant="outline-dark" href = {path}> Read More </Button>
             </Card.Body>
