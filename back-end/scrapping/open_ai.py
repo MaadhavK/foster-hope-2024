@@ -24,11 +24,11 @@ def ask_chatgpt(prompt):
 
   # Generate a response using ChatGPT
   response =  client.chat.completions.create(
-      model="gpt-3.5-turbo",  # You can use other engines as well
+      model="gpt-4",  # You can use other engines as well
       messages=[
           {"role": "user", "content": prompt}
       ]
   )
   return response.choices[0].message.content
 
-ask_chatgpt("Description of Buckner Family Hope Center")
+
