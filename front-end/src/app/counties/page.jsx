@@ -8,7 +8,6 @@ import Link from "next/link";
 import { Lora, Cabin} from "next/font/google";
 const lora = Lora({weight: '400', subsets: ['latin']})
 const cabin = Cabin({weight: '400', subsets: ['latin']})
-import countiesData from "../data/counties.json";
 import CountyCard from "./components/countycard";
 
 // export const metadata = {

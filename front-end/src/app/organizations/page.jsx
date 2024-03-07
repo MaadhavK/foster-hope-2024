@@ -8,14 +8,18 @@ import Link from "next/link";
 import { Lora, Cabin} from "next/font/google";
 const lora = Lora({weight: '400', subsets: ['latin']})
 const cabin = Cabin({weight: '400', subsets: ['latin']})
-import orgsData from "../data/organizations.json";
 import OrgCard from "./components/orgCard.js"
 
-// model page for counties
-export default function listCounties() {
 
-    const orgs = orgsData;
-    const orgslen = Object.keys(orgs?.orgs).length;
+async function getOrgs() {
+    const response = await fetch('https://api.foster-hope.com/orgs/all_orgs');
+    return await response.json();
+}
+// model page for counties
+export default async function listCounties() {
+
+    const orgs = await getOrgs();
+    //const orgslen = Object.keys(orgs?.orgs).length;
 
     return (
         <main className={styles.main} style={{backgroundColor:"white", width:"100vw", paddingTop:"55px", height:"100%"}}>
@@ -32,13 +36,13 @@ export default function listCounties() {
             </Container>
             <Container fluid={true} style = {{}}>
                 <Row style={{padding:"3vw", paddingTop:"2rem", justifyContent:"space-evenly"}}>
-                    {orgs["orgs"].slice(0, 10).map((organization) => (
+                    {orgs["data"].slice(0, 10).map((organization) => (
                         <Col xs style={{paddingBottom: "2rem"}}> <OrgCard org={JSON.stringify(organization)}/> </Col>
                     ))}
                 </Row>
             </Container>
             <h3 className={lora.className} style={{color:"black", paddingBottom:"20px"}}>
-                Number of Instances: {orgslen}
+                Number of Instances: {9}
             </h3>
         </main>
     )
