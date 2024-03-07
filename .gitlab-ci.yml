@@ -29,6 +29,7 @@ build-job:
 
 unit-test-job:
   stage: test
+  image: node:20-alpine
   script:
     - echo "Running Jest tests..."
     - cd front-end # Navigate to the front-end directory
@@ -45,6 +46,7 @@ lint-test-job:
 
 selenium-test-job:
   stage: test
+  image: python:latest
   script:
     - echo "Running Selenium tests..."
     - cd front-end/tests/selenium_tests
@@ -54,6 +56,7 @@ selenium-test-job:
 
 api-test-job:
   stage: test
+  image: python:latest
   script:
     - echo "Running API tests..."
     - cd front-end/tests/api_tests
