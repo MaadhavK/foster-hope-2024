@@ -300,6 +300,12 @@
   align-items: flex-end;
 }
 
+.itemgrad{
+  height: 100px;
+  width: 100vw;
+  background-image: linear-gradient(#f8f9fa, #ffffff);
+}
+
 .splashwhitebg{
   width: 100vw;
   height: 70vh;

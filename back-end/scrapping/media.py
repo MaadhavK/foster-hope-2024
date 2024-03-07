@@ -31,8 +31,7 @@ def store_county_videos():
     for county in counties:
         
         youtube_link = supabase.table('Counties').select('media').eq('county', county).execute()
-        if youtube_link.data[0].get('media') != None:
-            print(county+" already has videos")
+        if youtube_link.data[0].get('media') != "None":
             continue
         api_endpoint = 'https://www.googleapis.com/youtube/v3/search'
         params = {
@@ -56,6 +55,7 @@ def store_county_videos():
         else:
             print('unsuccesssful update')
             print(county)
+            print(video_response.text)
 
 def store_county_images():
     #response = supabase.table('Counties').select('county').execute()
@@ -121,7 +121,7 @@ def store_org_map():
     for addr in addresses:
         map_link = 'https://www.google.com/maps/embed/v1/place?key={}&q={}'.format(google_key, addr)
         supabase.table('Organizations').update({'map': map_link}).eq('location', addr).execute()
-#store_county_videos()
+# store_county_videos()
 #store_county_images()
 # store_org_images()
 # store_org_map()
