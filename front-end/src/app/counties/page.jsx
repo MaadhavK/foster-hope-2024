@@ -27,10 +27,6 @@ export default async function listCounties({searchParams} ) {
     const num_instances = Object.keys(counties.data).length
 
     const entries = counties.data.slice(start, end)
-    //console.log(counties);
-    //console.log(counties["data"].slice(0,9));
-    //const countylen = Object.keys(counties["data"]).length;
-    //console.log(countylen);
 
     return (      
         <main className={styles.main} style={{backgroundColor:"white", width:"100vw", paddingTop:"55px", height:"100%"}}>
