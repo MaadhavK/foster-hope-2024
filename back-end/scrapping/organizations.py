@@ -101,5 +101,18 @@ def find_org_info(query, county):
 # for record_name, record_data in records_to_insert.items(): # input record data into supabase
 #     supabase.table("Organizations").insert(record_data).execute()
 
+# base_url = 'https://maps.googleapis.com/maps/api/place/details/json'
+# params = {
+#     'key': google_key,
+#     # 'fields': 'description',
+#     'place_id': 'ChIJmZWuwpGWxokRPLuaVzFwo2I'
+# }
+# response = requests.get(base_url, params=params)
 
+# if response.status_code == 200:
+#     data = response.json()
+#     results = data.get('result', [])
+#     # print(results)
+#     reviews = results.get('reviews')
+#     print(results.get('reviews'))
 
