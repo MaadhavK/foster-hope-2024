@@ -30,3 +30,5 @@ def ask_chatgpt(prompt):
       ]
   )
   return response.choices[0].message.content
+
+ask_chatgpt("Description of Buckner Family Hope Center")
