@@ -33,23 +33,6 @@ unit-test-job:
   script:
     - echo "Running Jest tests..."
     - cd front-end # Navigate to the front-end directory
-
-    # Referenced from https://gitlab.com/goesoscar/NutriNet/-/blob/main/.gitlab-ci.yml?ref_type=heads
-    # Add chrome to container
-    - wget -q -O -
-      https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
-      add -
-    - sh -c 'echo "deb [arch=amd64]
-      http://dl.google.com/linux/chrome/deb/ stable main" >>
-      /etc/apt/sources.list.d/google-chrome.list'
-    - apt-get -y update
-    - apt-get install -y google-chrome-stable
-
-    # Download and unzip the chromedriver
-    - apt-get install -yqq unzip
-    - wget -O /tmp/chromedriver.zip http://chromedriver.storage.googleapis.com/`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE`/chromedriver_linux64.zip
-    - unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin/
-
     - npm install # Install dependencies
     - npm test # Run Jest tests
     - echo "Jest tests complete."
@@ -64,6 +47,8 @@ lint-test-job:
 selenium-test-job:
   stage: test
   image: python:latest
+  services:
+    - selenium/standalone-chrome:latest
   script:
     - echo "Running Selenium tests..."
     - cd front-end/tests/selenium_tests
