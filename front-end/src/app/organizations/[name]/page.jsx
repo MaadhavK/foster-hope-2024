@@ -16,7 +16,7 @@ export default async function OrgPage ({params}) {
     const id = params.name
     const data = await getOrgs()
     const orgs = data?.data
-    const org = orgs.find(b => b.name.replaceAll(' ', '') == id)
+    const org = orgs.find(b => b.id == id)
 
     const date = new Date();
     const offsetMinutes = date.getTimezoneOffset();
