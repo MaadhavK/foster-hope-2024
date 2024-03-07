@@ -154,6 +154,16 @@ supabase = create_client(url, key)
 # # print(hours)
 # for hour in hours:
 #     # print(hour)
-supabase.table("Resources").delete().eq('hours', None).execute()
+
 # for record_name, record_data in records_to_insert.items(): # input record data into supabase
 #     supabase.table("Resources").insert(record_data).execute()
+
+# response = supabase.table('Resources').select('name').execute()
+# # print(response)
+# names = list(row['name'] for row in response.data)
+# print(names)
+# index = 1
+# for name in names:
+#         supabase.table('Resources').update({'id': index}).eq('name', name).execute()
+#         index += 1
+
