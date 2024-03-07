@@ -28,6 +28,18 @@ def get_county_orgs():
         orgs_list = [data.get('id') for data in orgs.data]
         supabase.table('Counties').update({'organizations': orgs_list}).eq('county', county).execute()
 
+def get_county_resources():
+    #go through all counties
+    response = supabase.table('Counties').select('county').execute()
+    counties= list(row['county'] for row in response.data)
+    for county in counties:
+        #get all resources within current county
+        resources = supabase.table('Resources').select('id').eq('county', county).execute()
+        #make it a list
+        # img.data[0].get('image') != None:
+        resource_list = [data.get('id') for data in resources.data]
+        supabase.table('Counties').update({'resources': resource_list}).eq('county', county).execute()
+
 def get_org_resources():
     #go through all orgs 
     response = supabase.table('Organizations').select('id').execute()
@@ -45,7 +57,7 @@ def get_org_resources():
 def get_resource_orgs():
     #go through all resources
     response = supabase.table('Resources').select('id').execute()
-    resources = list(row['id'] for row in response)
+    resources = [row['id'] for row in response.data]
     for resource in resources:
         #get corresponding addr
         county = supabase.table('Resources').select('county').eq('id', resource).execute()
@@ -55,10 +67,8 @@ def get_resource_orgs():
         org_list = org.data[0].get('organizations')
         #set orgs of this resource
         supabase.table('Resources').update({'organizations': org_list}).eq('id', resource).execute()
-        
-        
-
 
 #get_county_orgs()
-get_org_resources()
-get_resource_orgs()
+#get_county_resources()
+#get_org_resources()
+#get_resource_orgs()
