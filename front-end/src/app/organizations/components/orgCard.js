@@ -13,7 +13,7 @@ const OrgCard = ({org}) => {
     if (!thisOrg) {
         return <div>Error: org data is not available</div>;
     }
-    const path = "organizations/" + thisOrg?.name.replaceAll(' ', '') + "/";
+    const path = "organizations/" + thisOrg.id + "/";
     const date = new Date();
     const offsetMinutes = date.getTimezoneOffset();
     const offsetMilliseconds = offsetMinutes * 60 * 1000;

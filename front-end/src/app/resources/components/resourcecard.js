@@ -14,9 +14,20 @@ const ResourceCard = ({resource}) => {
     if (!thisRes) {
         return <div>Error: org data is not available</div>;
     }
-    const pathname = thisRes?.name.replaceAll(' ', '').replaceAll('[', '').replaceAll(']','');
-    console.log(pathname) 
-    const path = "resources/" + pathname + "/";
+    // PATHNAME IS FED UP SWITCH TO ID
+    const path = "resources/" + thisRes.id + "/";
+    const date = new Date();
+    const offsetMinutes = date.getTimezoneOffset();
+    const offsetMilliseconds = offsetMinutes * 60 * 1000;
+    const currentDate = new Date(date.getTime() - offsetMilliseconds);
+    const day = currentDate.getDay() - 1;
+
+    let hours = thisRes?.hours;
+
+    if(thisRes.type != "event"){
+        hours = JSON.parse(thisRes?.hours)[day]
+    }
+
     return (
         <Card style = {{width: "20rem", height: "30rem", margin:"0 auto"}}>
             <Card.Img  style={{width:"20rem", height:"15rem", objectFit:"cover"}} variant="top" src = {thisRes?.media}/>
@@ -26,7 +37,7 @@ const ResourceCard = ({resource}) => {
                     <Card.Text className={cabin.className} style={{paddingTop:"10px", paddingBottom:"10px"}}>
                     Location: {thisRes?.county}
                     <br></br>
-                    Hours: 9-5
+                    Hours: {hours}
                     <br></br>
                     Type: {thisRes?.type}
                     <br></br>

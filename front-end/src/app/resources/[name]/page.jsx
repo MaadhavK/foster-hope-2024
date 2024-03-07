@@ -17,7 +17,23 @@ export default async function resPage ({params}) {
     const id = params.name;
     const data = await getCounties();
     const resources = data?.data;
-    const res = resources.find(b => b.name.replaceAll(' ','').replaceAll('[', '').replaceAll(']','') == id);
+    const res = resources.find(b => b.id == id);
+
+    const date = new Date();
+    const offsetMinutes = date.getTimezoneOffset();
+    const offsetMilliseconds = offsetMinutes * 60 * 1000;
+    const currentDate = new Date(date.getTime() - offsetMilliseconds);
+    const day = currentDate.getDay() - 1;
+
+    const countyPath = "../counties/"+ res.county + "/";
+
+    let hours = res?.hours;
+
+    if(res.type != "event"){
+        hours = JSON.parse(res?.hours)[day]
+    }
+
+
     return (
         <div style={{minHeight:"100vh", backgroundColor:"#ffffff", paddingTop:"55px"}}>
             <div style={{textAlign:"center", color:"black", height:"30vh", display:"flex", flexDirection:"column",justifyContent:"center", alignItems:"center"}}>
@@ -54,10 +70,11 @@ export default async function resPage ({params}) {
                                     <b>Hours:</b>
                                 </div>
                                 <div className={cabin.className} style={{fontSize:"1.2rem", textAlign:"right", float:"right", clear:"none", display:"inline"}}>
-                                    {res.hours}
+                                    {hours}
                                 </div>
                             </div>
                             <br></br>
+                            <Button className={cabin.className} variant="outline-dark" href={countyPath} style={{width:"150px"}}>county</Button>
                             <Button className={cabin.className} variant="outline-dark" href={res.website} style={{width:"150px"}}>Website</Button>
                         </Col>
                     </Row>
