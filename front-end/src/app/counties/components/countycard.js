@@ -16,12 +16,11 @@ const CountyCard = ({county}) => {
         return <div>Error: County data is not available</div>;
     }
 
-    //console.log(thisCounty?.name.replace(" ", '_'));
-    console.log(thisCounty);
-    console.log(thisCounty.county);
-    console.log()
-    const path = "counties/" + thisCounty?.name.replace(" ", '_') + "/";
-
+    //console.log(thisCounty.county);
+    // console.log(thisCounty)
+    // console.log(thisCounty.county);
+    // console.log()
+    const path = "counties/" + thisCounty.county.replace(" ", '_') + "/";
     return (
         <Card style = {{width: "20rem", height: "35rem", margin:"0 auto"}}>
             <Card.Img  style={{width:"20rem", height:"20rem", objectFit:"cover"}} variant="top" src = {thisCounty?.image}/>
