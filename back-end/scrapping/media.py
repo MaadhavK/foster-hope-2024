@@ -121,9 +121,9 @@ def store_org_map():
     for addr in addresses:
         map_link = 'https://www.google.com/maps/embed/v1/place?key={}&q={}'.format(google_key, addr)
         supabase.table('Organizations').update({'map': map_link}).eq('location', addr).execute()
-store_county_videos()
+# store_county_videos()
 #store_county_images()
-store_org_images()
-store_org_map()
+# store_org_images()
+# store_org_map()
 
 
