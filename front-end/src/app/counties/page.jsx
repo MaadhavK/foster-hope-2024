@@ -57,7 +57,9 @@ export default async function listCounties( {searchParams} ) {
                 num_instances={num_instances}
                 path = {"counties"}
             />
-            <h3 className={lora.className} style={{color:"black", paddingBottom:"20px", paddingTop:"10px"}}>
+            <br></br>
+            <br></br>
+            <h3 className={lora.className} style={{color:"black", paddingBottom:"20px"}}>
                 Number of Instances: {num_instances}
             </h3>
         </main>

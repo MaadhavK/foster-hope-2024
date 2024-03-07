@@ -16,7 +16,7 @@ engine_id = os.environ.get("ENGINE_ID")
 supabase = create_client(url, key)
 
 records_to_insert = {}
-    
+index = 0
 def find_operation_hours(placeid):
     base_url = 'https://maps.googleapis.com/maps/api/place/details/json'
     params = {
@@ -38,6 +38,7 @@ def find_operation_hours(placeid):
 
 def find_org_info(query, county):
     # print("in find_place")
+    global index
     base_url = 'https://maps.googleapis.com/maps/api/place/textsearch/json'
     params = {
         'query': query,
@@ -59,6 +60,7 @@ def find_org_info(query, county):
             if all(var is not None for var in (org_id, org_name, org_type, org_rating, org_hours, org_location)): # make sure result has all attributes
                 if org_name not in records_to_insert: # then add record if not already in dict
                     records_to_insert[org_name] = {
+                        "id": index,
                         "name": org_name,
                         "type": org_type,
                         "rating": org_rating,
@@ -68,6 +70,7 @@ def find_org_info(query, county):
                         "map": None,
                         "county": county
                     }
+                    index += 1
                     
     else:
         print(f"Error: {response.status_code} - {response.text}")
@@ -80,21 +83,21 @@ def find_org_info(query, county):
 # counties_json = supabase.table('Counties').select('county').execute().data
 # counties = [entry['county'] for entry in counties_json]
 
-# test for one county
-# find_org_info("Foster Care organizations in Austin, TX", "Austin")
-# for record in records_to_insert.values():
-#     print(record)
+# # test for one county
+# # find_org_info("Foster Care organizations in Austin county, TX", "Austin")
+# # for record in records_to_insert.values():
+# #     print(record)
 
 
-# get records for each county
+# # get records for each county
 # for county in counties: # go through counties and find info on the various orgs within that county
 #     print(county)
-#     find_org_info(f"Foster Care organizations in {county}, TX", county)
+#     find_org_info(f"Foster Care organizations in {county} county, TX", county)
 
-# for county in counties:
-#     if county not in records_to_insert.values():
-#         print(county)
-# uncomment to populate supabase table
+# # for county in counties:
+# #     if county not in records_to_insert.values():
+# #         print(county)
+# # uncomment to populate supabase table
 # for record_name, record_data in records_to_insert.items(): # input record data into supabase
 #     supabase.table("Organizations").insert(record_data).execute()
 
