@@ -21,6 +21,9 @@ class GUITests(unittest.TestCase):
     
     def test_about_us(self):
         driver = self.driver
-        driver.find_element(By.LINK_TEXT, )
+        driver.find_element(By.LINK_TEXT, 'About Us').click()
+        self.assertEqual(self.self.driver.current_url, self.url + '/About')
+    
+    def test_counties(self)
 
     
