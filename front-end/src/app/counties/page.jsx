@@ -8,7 +8,6 @@ import Link from "next/link";
 import { Lora, Cabin} from "next/font/google";
 const lora = Lora({weight: '400', subsets: ['latin']})
 const cabin = Cabin({weight: '400', subsets: ['latin']})
-import countiesData from "../data/counties.json";
 import CountyCard from "./components/countycard";
 import Pagination from "./components/pagination"
 
@@ -42,7 +41,10 @@ export default async function listCounties({searchParams} ) {
                 <div className={cabin.className}>
                     <br></br>
                     <p className={styles.splashdesc} style={{textAlign:"center"}}>
-                        blurb about county stuff and how it's important to foster kids
+                        County plays a vital role in the foster care system by overseeing placements and ensuring the safety of children
+                        within its jurisdiction. Collaborating with local partners, counties provide essential support to foster
+                        families, including counseling, healthcare, and education. This local approach is crucial for safeguarding
+                        the well-being and future of children in foster care.
                     </p>
                 </div>
             </Container>

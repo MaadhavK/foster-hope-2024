@@ -18,7 +18,7 @@ const OrgCard = ({org}) => {
 
     return (
         <Card style = {{width: "20rem", height: "35rem", margin:"0 auto"}}>
-            <Card.Img  style={{width:"20rem", height:"20rem", objectFit:"cover"}} variant="top" src = {thisOrg?.img_url}/>
+            <Card.Img  style={{width:"20rem", height:"20rem", objectFit:"cover"}} variant="top" src = {thisOrg?.image}/>
             <Card.Body className="d-flex flex-column justify-content-center" style={{padding: "1rem", background: "lightblue"}}>
                 <Card.Title className={lora.className} style={{fontSize:"1.3rem"}}><b>{thisOrg?.name}</b></Card.Title>
                 <Card.Text className={cabin.className} style={{paddingTop:"10px", paddingBottom:"10px"}}>
@@ -26,9 +26,9 @@ const OrgCard = ({org}) => {
                 <br></br>
                 Type: {thisOrg?.type}
                 <br></br>
-                Reviews: {thisOrg?.reviews}
+                Reviews: {thisOrg?.ratings}
                 <br></br>
-                Hours: {thisOrg?.hours}
+                Hours: {thisOrg?.operation_hours}
                 </Card.Text>
                 <Button variant="outline-dark" href = {path}> Read More </Button>
             </Card.Body>
