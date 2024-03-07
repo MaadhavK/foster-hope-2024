@@ -34,6 +34,10 @@ const CountyCard = ({county}) => {
                 Number of Foster Children: {thisCounty?.number_of_foster_kids}
                 <br></br>
                 Number of Foster Homes: {thisCounty?.number_of_homes}
+                <br></br>
+                Number of Foster Homes: {thisCounty?.number_of_homes}
+                <br></br>
+                Id: {thisCounty?.id}
                 </Card.Text>
                 <Button className={lora.className} variant="outline-dark" href = {path}> Read More </Button>
             </Card.Body>

@@ -1,7 +1,8 @@
 import json
 from flask import Flask, request
 from sqlalchemy import create_engine, text
-from endpoints import app
+from app import app
+from uuid import UUID
 
 
 engine = create_engine("postgresql://postgres.bonmudwmggaxnixodrbn:2PLFaKPRPW3bxsh9@aws-0-us-west-1.pooler.supabase.com:5432/postgres", future=True)
@@ -9,12 +10,14 @@ engine = create_engine("postgresql://postgres.bonmudwmggaxnixodrbn:2PLFaKPRPW3bx
 @app.route('/counties/single_county')
 def single_county():
     with engine.connect() as connection:
-        county = request.args.get("county_name")
+        county = request.args.get("id")
         query = ""
 
         if county:
-            query = text('SELECT * FROM "Counties" WHERE name LIKE '+"'%" + str(county)+"%'")
-        
+            query = text('SELECT * FROM "Counties" WHERE id =' +"'" + str(county)+"'")
+        else:
+            return None
+ 
         result = connection.execute(query)
         data = [x._asdict() for x in result.all()]
         return json.JSONEncoder().encode({"data": data})
@@ -31,12 +34,13 @@ def all_counties():
 @app.route('/orgs/single_org')
 def single_org():
     with engine.connect() as connection:
-        org = request.args.get("org_name")
+        org = request.args.get("id")
         query = ""
 
         if org:
-            query = text('SELECT * FROM "Organizations" WHERE name LIKE '+"'%" + str(org)+"%'")
-        
+            query = text('SELECT * FROM "Organizations" WHERE id = '+"'" + str(org)+"'")
+        else:
+            return None
         result = connection.execute(query)
         data = [x._asdict() for x in result.all()]
         return json.JSONEncoder().encode({"data": data})
@@ -53,11 +57,11 @@ def all_orgs():
 @app.route('/resources/single_resource')
 def resources():
     with engine.connect() as connection:
-        name = request.args.get("resource_name")
+        name = request.args.get("id")
         query = ""
 
         if name:
-            query = text('SELECT * FROM "Resources" WHERE name LIKE '+"'%" + str(name)+"%'")
+            query = text('SELECT * FROM "Resources" WHERE id= '+"'" + str(name)+"'")
         
         result = connection.execute(query)
         data = [x._asdict() for x in result.all()]
