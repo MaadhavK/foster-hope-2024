@@ -63,6 +63,8 @@ class GUITests(unittest.TestCase):
         page_link.click()
         
         self.assertEqual(driver.current_url, self.url + "resources")
+
+        
     # def test_2(self): # counties
     #     driver = self.driver
     #     page_link = driver.find_element(By.LINK_TEXT, "Counties")

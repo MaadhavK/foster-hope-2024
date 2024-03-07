@@ -84,6 +84,25 @@ export default async function CountyPage ({params}) {
                         </div>
 
                     </Row>
+                    <Row>
+                        <ul>
+                            {county.resources.map((resource, index) => (
+                                <li key={index}>
+                                    <a href={'resources/' + resource.name.replace(" ", '_') + "/"}></a>
+                                </li>
+                            ))}
+                        </ul>
+                        <ul>
+                            {county.organizations.map((org, index) => {
+                                return (
+                                <li key={index}>
+                                    <a href={'organizations/' + org.name.replace(" ", '_') + "/"}></a>
+                                </li>
+                                )
+                            })}
+
+                        </ul>
+                    </Row>
                 </Container>
             </div>
             

@@ -47,8 +47,9 @@ export default async function listCounties( {searchParams} ) {
             <Container fluid={true} style = {{}}>
                 <Row style={{padding:"3vw", paddingTop:"2rem", justifyContent:"space-evenly"}}>
                     {entries.map((county) => (
-                        <Col xs style={{paddingBottom: "2rem"}}> <CountyCard county={JSON.stringify(county)}/> </Col>
-                    ))}
+                        <Col xs style={{paddingBottom: "2rem"}}> <CountyCard county={JSON.stringify(county)}/>{console.log(county)} </Col>
+                   
+                   ))}
                 </Row>
                 
                 
