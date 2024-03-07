@@ -56,6 +56,8 @@ export default async function listCounties({searchParams} ) {
             <Pagination
                 num_instances={num_instances}
             />
+            <br></br>
+            <br></br>
             <h3 className={lora.className} style={{color:"black", paddingBottom:"20px"}}>
                 Number of Instances: {num_instances}
             </h3>

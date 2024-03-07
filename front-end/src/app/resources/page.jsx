@@ -18,8 +18,7 @@ async function getResources() {
 export default async function listResources() {
 
     const resources = await getResources();
-    console.log(resources);
-    //const reslen = Object.keys(resources?.resources).length;
+    const reslen = Object.keys(resources?.data).length;
 
     return (
         <main className={styles.main} style={{backgroundColor:"white", width:"100vw", paddingTop:"55px", height:"100%"}}>
@@ -42,7 +41,7 @@ export default async function listResources() {
                 </Row>
             </Container>
             <h3 className={lora.className} style={{color:"black", paddingBottom:"20px"}}>
-                Number of Instances: {9}
+                Number of Instances: {reslen}
             </h3>
         </main>
     )
