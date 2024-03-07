@@ -34,7 +34,7 @@ unit-test-job:
     - echo "Running Jest tests..."
     - cd front-end # Navigate to the front-end directory
     - npm install # Install dependencies
-    - npm test --prefix tests/jest_tests # Run Jest tests
+    - npm test # Run Jest tests
     - echo "Jest tests complete."
 
 lint-test-job:
@@ -60,6 +60,7 @@ api-test-job:
   script:
     - echo "Running API tests..."
     - cd front-end/tests/api_tests
+    - pip install -r requirements.txt # Install Python dependencies if necessary
     - python api_test.py # Replace this with the command to run your API tests
     - echo "API tests complete."
 
