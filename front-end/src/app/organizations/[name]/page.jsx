@@ -2,6 +2,7 @@ import styles from "../../page.module.css";
 import { Row, Col, Container, Button} from "react-bootstrap";
 import { Lora, Cabin} from "next/font/google";
 import Link from "next/link";
+import GMapEmbed from "@/app/components/gmaps";
 
 const lora = Lora({weight: '400', subsets: ['latin']})
 const cabin = Cabin({weight: '400', subsets: ['latin']})
@@ -22,6 +23,8 @@ export default async function OrgPage ({params}) {
     const offsetMilliseconds = offsetMinutes * 60 * 1000;
     const currentDate = new Date(date.getTime() - offsetMilliseconds);
     const day = currentDate.getDay() - 1;
+
+    const countyPath = "../counties/" + org.county.replaceAll(' ', '_') +"/"
 
     return (
         <div style={{minHeight:"100vh", backgroundColor:"#ffffff", paddingTop:"55px"}}>
@@ -70,11 +73,12 @@ export default async function OrgPage ({params}) {
                                 </div>
                             </div>
                             <br></br>
+                            <Button className={cabin.className} variant="outline-dark" href={countyPath} style={{width:"150px"}}>County</Button>
                             <Button className={cabin.className} variant="outline-dark" href={org.website} style={{width:"150px"}}>Website</Button>
                         </Col>
                     </Row>
                     <Row>
-
+                        <GMapEmbed params={org.map}></GMapEmbed>
                     </Row>
                 </Container>
             </div>

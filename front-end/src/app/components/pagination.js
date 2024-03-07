@@ -2,6 +2,9 @@
 import { useRouter, useSearchParams} from 'next/navigation';
 import React, {useState, useEffect} from 'react';
 
+import { Lora } from "next/font/google";
+
+const lora = Lora({weight: '400', subsets: ['latin']})
 
 const Pagination = ({num_instances, path}) => {
 
@@ -20,7 +23,7 @@ const Pagination = ({num_instances, path}) => {
     });
 
     return (
-    <div className={{'paddingBottom':'10px'}}>
+    <div className={lora.className} style={{'paddingBottom':'10px'}}>
       <button style={{display:"inline", marginRight:"20px"}}
         className='bg-blue-500 text-white p-1'
         disabled={!pageState.hasPrevPage}
