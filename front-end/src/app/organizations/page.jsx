@@ -38,7 +38,10 @@ export default async function listCounties( {searchParams} ) {
                 <div className={cabin.className}>
                     <br></br>
                     <p className={styles.splashdesc} style={{color:"black", textAlign:"center"}}>
-                        blurb about orgs stuff and how it's important to foster kids / those donating
+                        Foster support organizations and adoption agencies offer essential support for children in need, 
+                        providing emotional, educational, and social assistance. They facilitate adoptions, ensuring children 
+                        find permanent homes, while also offering ongoing support to foster and adoptive families. Through 
+                        advocacy and legal aid, they protect children's rights and enable successful transitions into secure environments.
                     </p>
                 </div>
             </Container>

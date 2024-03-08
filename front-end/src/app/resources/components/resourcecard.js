@@ -10,6 +10,7 @@ const lora = Lora({weight: '400', subsets: ['latin']})
 const cabin = Cabin({weight: '400', subsets: ['latin']})
 
 const ResourceCard = ({resource}) => {
+    
     resource.replace(/"/g, /'/g)
     // console.log(`Here's the resource: ${resource}`)
     var thisRes = JSON.parse(resource);
@@ -20,7 +21,7 @@ const ResourceCard = ({resource}) => {
     }
     // PATHNAME IS FED UP SWITCH TO ID
     const path = "resources/" + thisRes.id + "/";
-    console.log(`Here's the Path: ${Object.keys(thisRes)}`);
+    
     const date = new Date();
     const offsetMinutes = date.getTimezoneOffset();
     const offsetMilliseconds = offsetMinutes * 60 * 1000;

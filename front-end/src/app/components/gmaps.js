@@ -1,14 +1,14 @@
 "use client"
 
 export default function GMapEmbed ({params}) {
-    console.log(params)
     const source = params.replaceAll(' ', '+')
+    console.log(source)
     return(
         <iframe
-            width="600"
-            height="450"
+            width="400px"
+            height="600px"
             loading="lazy"
-            allowfullscreen
+            allowFullScreen
             src={source}>
         </iframe>
     )

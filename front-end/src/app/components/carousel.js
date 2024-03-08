@@ -13,7 +13,7 @@ function HomeCarousel() {
   const CarouselItems = (images) => {
     return images.map((img, idx) => (
           <Carousel.Item key = {idx} interval={3000} style={{height:"400px", background: "#a8d5b9"}}>
-            <Image src={img.src} fluid style={{objectFit: "cover", width:"100%", height:"100%", opacity: ".95", borderRadius: "10px"}}/>
+            <Image src={img.src} alt={img.alt} fluid style={{objectFit: "cover", width:"100%", height:"100%", opacity: ".95", borderRadius: "10px"}}/>
           </Carousel.Item>
           
       ));

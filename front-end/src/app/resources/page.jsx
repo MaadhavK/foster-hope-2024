@@ -25,7 +25,7 @@ export default async function listResources({ searchParams }) {
     const per_page = searchParams["per_page"] ?? 16
     const start = (Number(page) - 1) * Number(per_page)
     const end = start + Number(per_page)
-    console.log(resources.data)
+    
     const num_instances = Object.keys(resources.data).length
 
     const entries = resources.data.slice(start, end)
@@ -38,8 +38,12 @@ export default async function listResources({ searchParams }) {
                 </div>
                 <div className={cabin.className}>
                     <br></br>
-                    <p className={styles.splashdesc} style={{ color: "black", textAlign: "center" }}>
-                        blurb about resources stuff and how it's important to foster kids / those wanting to support
+                    <p className={styles.splashdesc} style={{color:"black", textAlign:"center"}}>
+                        Resources such as events, financial aid, and mental health support are crucial for foster children, 
+                        providing emotional, educational, and social support. These resources offer counseling, academic assistance, 
+                        and connections with peers and positive role models, helping foster children navigate trauma and instability. 
+                        They empower children with essential life skills and ensure their rights are upheld through advocacy 
+                        and legal aid services, fostering resilience and supporting successful transitions into adulthood.
                     </p>
                 </div>
             </Container>

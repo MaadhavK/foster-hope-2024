@@ -37,9 +37,9 @@ export default async function listCounties( {searchParams} ) {
                 <div className={cabin.className}>
                     <br></br>
                     <p className={styles.splashdesc} style={{textAlign:"center"}}>
-                        County plays a vital role in the foster care system by overseeing placements and ensuring the safety of children
-                        within its jurisdiction. Collaborating with local partners, counties provide essential support to foster
-                        families, including counseling, healthcare, and education. This local approach is crucial for safeguarding
+                        Counties plays a vital role in the foster care system by overseeing placements and ensuring the safety of children
+                        within its jurisdiction. Collaborating with local partners, counties provide support to foster
+                        families through counseling, healthcare, and education. This local approach is crucial for safeguarding
                         the well-being and future of children in foster care.
                     </p>
                 </div>
@@ -47,8 +47,9 @@ export default async function listCounties( {searchParams} ) {
             <Container fluid={true} style = {{}}>
                 <Row style={{padding:"3vw", paddingTop:"2rem", justifyContent:"space-evenly"}}>
                     {entries.map((county) => (
-                        <Col xs style={{paddingBottom: "2rem"}}> <CountyCard county={JSON.stringify(county)}/> </Col>
-                    ))}
+                        <Col xs style={{paddingBottom: "2rem"}}> <CountyCard county={JSON.stringify(county)}/></Col>
+                   
+                   ))}
                 </Row>
                 
                 
