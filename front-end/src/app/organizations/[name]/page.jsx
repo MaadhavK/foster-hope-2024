@@ -4,7 +4,6 @@ import { Lora, Cabin} from "next/font/google";
 import CountyCard from "@/app/counties/components/countycard";
 import ResourceCard from "@/app/resources/components/resourcecard";
 import Link from "next/link";
-import GMapEmbed from "@/app/components/gmaps";
 
 const lora = Lora({weight: '400', subsets: ['latin']})
 const cabin = Cabin({weight: '400', subsets: ['latin']})
