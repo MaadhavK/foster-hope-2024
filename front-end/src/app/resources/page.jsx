@@ -13,7 +13,7 @@ import Pagination from "../components/pagination.js"
 
 
 async function getResources() {
-    const response = await fetch(`https://api.foster-hope.com/resources/all_resources`, { cache: 'no-store' })
+    const response = await fetch(`http://api.foster-hope.com/resources/all_resources`)
     return await response.json();
 }
 export default async function listResources({ searchParams }) {

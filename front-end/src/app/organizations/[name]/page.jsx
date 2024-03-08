@@ -10,17 +10,17 @@ const lora = Lora({weight: '400', subsets: ['latin']})
 const cabin = Cabin({weight: '400', subsets: ['latin']})
 
 async function getOrgs() {
-    const response = await fetch('https://api.foster-hope.com/orgs/all_orgs');
+    const response = await fetch('http://api.foster-hope.com/orgs/all_orgs');
     return await response.json();
 }
 
 async function getCounties() {
-    const response = await fetch('https://api.foster-hope.com/counties/all_counties');
+    const response = await fetch('http://api.foster-hope.com/counties/all_counties');
     return await response.json();
 }
 
 async function getResources() {
-    const response = await fetch('https://api.foster-hope.com/resources/all_resources');
+    const response = await fetch('http://api.foster-hope.com/resources/all_resources');
     return await response.json();
 }
 
@@ -43,8 +43,9 @@ export default async function OrgPage ({params}) {
     const counties = countydata["data"]
     const county = counties.find(b => b.county == org.county)
     const countyPath = "../counties/" + org.county.replaceAll(' ', '_') +"/"
-    // console.log(orgs.description)
+    // console.log(org.resources)
 
+    // return (<div></div>)
     const resData = await getResources()
     const resources = resData["data"]
 
@@ -117,7 +118,7 @@ export default async function OrgPage ({params}) {
                         <h3 className={lora.className}>
                                 Related Resources
                         </h3>
-                        {orgs.resources.map((id) => {
+                        {org.resources.map((id) => {
                             return (
                                 <Col xs style={{paddingBottom: "3rem", width:"20rem"}}> <ResourceCard resource={JSON.stringify(resources.find(b => b.id == id))}/> </Col>
 

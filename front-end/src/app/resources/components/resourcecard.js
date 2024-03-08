@@ -19,8 +19,8 @@ const ResourceCard = ({resource}) => {
     if (!thisRes) {
         return <div>Error: resource data is not available</div>;
     }
-    // PATHNAME IS FED UP SWITCH TO ID
-    const path = "resources/" + thisRes.id + "/";
+
+    const path = "../resources/" + thisRes.id + "/";
     
     const date = new Date();
     const offsetMinutes = date.getTimezoneOffset();

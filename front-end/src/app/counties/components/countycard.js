@@ -16,7 +16,7 @@ const CountyCard = ({county}) => {
         return <div>Error: County data is not available</div>;
     }
 
-    const path = "counties/" + thisCounty.county.replace(" ", '_') + "/";
+    const path = "../counties/" + thisCounty.county.replace(" ", '_') + "/";
     return (
         <Card style = {{width: "20rem", height: "35rem", margin:"0 auto"}}>
             <Card.Img  style={{width:"20rem", height:"20rem", objectFit:"cover"}} variant="top" src = {thisCounty?.image}/>

@@ -21,12 +21,12 @@ async function getCounties() {
 }
 
 async function getOrgs() {
-    const response = await fetch("https://api.foster-hope.com/orgs/all_orgs");
+    const response = await fetch("http://api.foster-hope.com/orgs/all_orgs");
     return await response.json();
 }
 
 async function getResources() {
-    const response = await fetch('https://api.foster-hope.com/resources/all_resources');
+    const response = await fetch('http://api.foster-hope.com/resources/all_resources');
     return await response.json();
 }
 
@@ -113,7 +113,7 @@ export default async function CountyPage ({params}) {
                             Organizations in {county.county} County:
                         </h3>
                     </Row>
-                    <Row style={{alignItems:"center", padding:"5vw", paddingTop:"0", justifyContent:"space-evenly"}}>
+                    <Row style={{alignItems:"center"}}>
                             {county.organizations.map((id) => {
                                 return (
                                     <Col xs style={{paddingBottom: "3rem", width:"20rem"}}> <OrgCard org={orgs.find(b => b.id == id)}/> </Col>
@@ -137,39 +137,7 @@ export default async function CountyPage ({params}) {
                                 // </div>
                                 )
                             })}
-                    </Row>
-                    <Row style={{paddingBottom:"20px"}}>
-                        <h3 className={lora.className} style={{textAlign:"center"}}>
-                            Organizations in {county.county} County:
-                        </h3>
-                    </Row>
-                    <Row style={{alignItems:"center", padding:"5vw", paddingTop:"0", justifyContent:"space-evenly"}}>
-                            {county.organizations.map((id) => {
-                                return (
-                                    <Col xs style={{paddingBottom: "3rem", width:"20rem"}}> <OrgCard org={orgs.find(b => b.id == id)}/> </Col>
-                                    // <div key={id} style={{width:"100%", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", padding:"5px"}}>
-                                    //     <Button variant="outline-dark" href={'organizations/' + id + "/"} style={{width:"400px"}}> {orgs.find(b => b.id == id).name}</Button>
-                                    // </div>  
-                                )
-                            })}
-                    </Row>
-                    <Row style={{paddingBottom:"20px"}}>
-                        <h3 className={lora.className} style={{textAlign:"center"}}>
-                            Resources in {county.county} County:
-                        </h3>
-                    </Row>
-                    <Row style={{alignItems:"center"}}>
-                            {county.resources.map((id) => {
-                                return (
-                                <Col xs style={{paddingBottom: "3rem", width:"20rem"}}> <ResourceCard resource={JSON.stringify(res.find(b => b.id == id))}/> </Col>
-                                // <div key={id} style={{width:"100%", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", padding:"5px"}}>
-                                //     <Button variant="outline-dark" href={'organizations/' + id + "/"} style={{width:"400px"}}> {res.find(b => b.id == id).name}</Button>
-                                // </div>
-                                )
-                            })}
-                    </Row>
-
-                    
+                    </Row>                  
                 </Container>
             </div>
             

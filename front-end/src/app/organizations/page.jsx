@@ -13,7 +13,7 @@ import Pagination from "../components/pagination.js"
 
 
 async function getOrgs() {
-    const response = await fetch('https://api.foster-hope.com/orgs/all_orgs');
+    const response = await fetch('http://api.foster-hope.com/orgs/all_orgs');
     return await response.json();
 }
 // model page for counties
