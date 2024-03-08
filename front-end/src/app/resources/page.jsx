@@ -38,7 +38,11 @@ export default async function listResources( {searchParams} ) {
                 <div className={cabin.className}>
                     <br></br>
                     <p className={styles.splashdesc} style={{color:"black", textAlign:"center"}}>
-                        blurb about resources stuff and how it's important to foster kids / those wanting to support
+                        Resources such as events, financial aid, and mental health support are crucial for foster children, 
+                        providing emotional, educational, and social support. These resources offer counseling, academic assistance, 
+                        and connections with peers and positive role models, helping foster children navigate trauma and instability. 
+                        They empower children with essential life skills and ensure their rights are upheld through advocacy 
+                        and legal aid services, fostering resilience and supporting successful transitions into adulthood.
                     </p>
                 </div>
             </Container>

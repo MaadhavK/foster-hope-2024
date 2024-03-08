@@ -79,10 +79,7 @@ export default async function resPage ({params}) {
                         </Col>
                     </Row>
                     <Row>
-                        {/* <div className="col-md-12 text-center mt-5">
-                            <YouTube videoId={videoId} />
-                        </div> */}
-
+                         
                     </Row>
                 </Container>
             </div>
