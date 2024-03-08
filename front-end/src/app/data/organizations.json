@@ -1,0 +1,40 @@
+{
+    "orgs": [
+        {
+            "id": 1, 
+            "name": "Austin Angels",
+            "img_url": "https://www.austinangels.com/uploads/1/2/3/4/123469485/black2020_burstaalogo.png",
+            "description": "Austin Angels is a nonprofit organization dedicated to supporting foster children and their caretakers in the Austin, Texas area. Their mission revolves around providing consistent support, encouragement, and resources to foster families, aiming to break the cycle of abuse and neglect for children in the foster care system. Through various programs and initiatives, including mentorship, family coaching, and resource provision, Austin Angels strives to create a positive impact on the lives of foster children and their caregivers, ultimately fostering a sense of stability and belonging for those in need.",
+            "location": "Austin",
+            "type": "Non-Profit",
+            "reviews": 4.7,
+            "hours": "8:30 - 5:00",
+            "website": "https://www.austinangels.com/",
+            "vid_url": "https://www.youtube.com/watch?v=FOOvHdqBiJQ"
+        },
+        {
+            "id": 2,
+            "name": "Foster Village",
+            "img_url": "https://www.fostervillageaustin.org/images/r/media/image/fostervillage_affiliate-logos_stacked-austin_colored-white-background/x480/fostervillage_affiliate-logos_stacked-austin_colored-white-background.jpg",
+            "description": "Foster Village, based in Austin, Texas, is dedicated to supporting foster families and children in the foster care system. Their mission involves providing practical assistance, building community support networks, meeting essential needs, empowering foster parents through training and resources, and advocating for the rights and well-being of children in foster care. Through their initiatives, Foster Village aims to create a more supportive and nurturing environment for foster families and children in the Austin community.",
+            "location": "Dripping Springs",
+            "type": "Non-Profit",
+            "reviews": 4.7,
+            "hours": "24/7",
+            "website": "https://www.fostervillageaustin.org/about",
+            "vid_url": "https://www.youtube.com/watch?v=r6Qr442U6mg"
+        },
+        {
+            "id": 3,
+            "name": "Houston Alumni and Youth",
+            "img_url": "https://media.licdn.com/dms/image/C4E1BAQF_IqNgwaJEWw/company-background_10000/0/1602172147043/the_hay_center_cover?e=2147483647&v=beta&t=BLBe-rCSLaF3-fjs-8W_D9OEuBqJ7kRrYUjulEle-1A",
+            "description": "The Hay Center's mission is ''empowering current and former foster youth to be successful, productive adults through training & mentorship in education, employment, and personal achievement''. The Hay Center supports foster youth through having a center that provides life skills courses, supportive services and amenities, and engagement events. An example is that they offer are GED and job readiness courses.",
+            "location": "Houston",
+            "type": "Government",
+            "reviews": 3.4,
+            "hours": "9:00 - 6:00",
+            "website": "https://www.haycenter.org/",
+            "vid_url": "https://www.youtube.com/watch?v=H03R1jUqrCQ"
+        }
+    ]
+}

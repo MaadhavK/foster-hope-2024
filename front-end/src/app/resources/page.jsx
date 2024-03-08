@@ -1,87 +1,66 @@
-"use client"
 // import Counties from "./components/countyCardList"
-import { Row, Col, Container, Card, Button} from "react-bootstrap";
+import { Row, Col, Container, Card, Button } from "react-bootstrap";
 import styles from "../page.module.css";
+// import "./counties.css"
 
-// model page for resources
-export default function Resources() {
+import Link from "next/link";
+
+import { Lora, Cabin } from "next/font/google";
+const lora = Lora({ weight: '400', subsets: ['latin'] })
+const cabin = Cabin({ weight: '400', subsets: ['latin'] })
+import ResourceCard from "./components/resourcecard.js"
+import Pagination from "../components/pagination.js"
+
+
+async function getResources() {
+    const response = await fetch(`http://api.foster-hope.com/resources/all_resources`)
+    return await response.json();
+}
+export default async function listResources({ searchParams }) {
+
+    const resources = await getResources();
+
+
+    const page = searchParams["page"] ?? 1
+    const per_page = searchParams["per_page"] ?? 16
+    const start = (Number(page) - 1) * Number(per_page)
+    const end = start + Number(per_page)
+    
+    const num_instances = Object.keys(resources.data).length
+
+    const entries = resources.data.slice(start, end)
+
     return (
-        <main className= {styles.main}>
-            <div className= {styles.description}>
-                <h1>Resources</h1>
+        <main className={styles.main} style={{ backgroundColor: "white", width: "100vw", paddingTop: "55px", height: "100%" }}>
+            <Container style={{ maxWidth: "100vw", margin: "0", paddingLeft: "5vw", paddingRight: "5vw", paddingTop: "5vh", border: "0" }}>
+                <div className={lora.className}>
+                    <h1 style={{ color: "black", textAlign: "center" }}>Resources</h1>
                 </div>
-                <Container style = {{padding: 15}}>
-                    <Row>
-                        <Col>
-                        {/* lists out cards of instances, style in rows using bootstrap row and col */}
-                            <Card style = {{width: "20rem"}}>
-                                <Card.Img variant="top" src="/images/resources/storytime.jpeg"/>
-                                <Card.Body style={{padding: "1rem", background: "lightblue"}}>
-                                    <Card.Title> Free Kids Event: Children's Book Story Time</Card.Title>
-                                    <Card.Text>
-                                    Location: Austin
-                                    <br></br>
-                                    Type: Event
-                                    <br></br>
-                                    In person: yes
-                                    <br></br>
-                                    Website: 
-                                    <a href="https://www.eventbrite.com/e/free-kids-event-childrens-book-story-time-tickets-817584907467?aff=ebdssbdestsearch" target="_blank" rel="nofollow">
-                                    https://www.eventbrite.com</a>
-                                    <br></br>
-                                    </Card.Text>
-                                    <Button href = "resources/instances/storytime/"> Read More </Button>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col>
-                            <Card style = {{width: "20rem"}}>
-                                <Card.Img variant="top" src="/images/resources/event2.jpg"/>
-                                <Card.Body style={{padding: "1rem", background: "lightblue"}}>
-                                    <Card.Title> Recognizing & Reporting Child Abuse</Card.Title>
-                                    <Card.Text>
-                                    Location: Austin
-                                    <br></br>
-                                    Type: Event
-                                    <br></br>
-                                    In person: yes
-                                    <br></br>
-                                    Website: 
-                                    <a href="https://www.eventbrite.com/e/recognizing-reporting-child-abuse-tickets-796979666637?aff=ebdssbdestsearch" target="_blank" rel="nofollow">
-                                    https://www.eventbrite.com</a>
-                                    <br></br>
-                                    </Card.Text>
-                                    <Button href = "resources/instances/recognize/"> Read More </Button>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col>
-                            <Card style = {{width: "20rem"}}>
-                                <Card.Img variant="top" src="/images/resources/logo.png"/>
-                                <Card.Body style={{padding: "1rem", background: "lightblue"}}>
-                                    <Card.Title> Children's Center of Austin</Card.Title>
-                                    <Card.Text>
-                                    Location: Austin
-                                    <br></br>
-                                    Type: Children's Institute
-                                    <br></br>
-                                    In person: yes
-                                    <br></br>
-                                    Website: 
-                                    <a href="https://www.childrenscenterofaustin.com/" target="_blank" rel="nofollow">
-                                    https://www.childrenscenterofaustin.com/</a>
-                                    <br></br>
-                                    </Card.Text>
-                                    <Button href = "resources/instances/childrenscenter/"> Read More </Button>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                    </Row>
-
-                </Container>
-                <h3>
-                    Number of Instances: 3
-                </h3>
-            </main>
+                <div className={cabin.className}>
+                    <br></br>
+                    <p className={styles.splashdesc} style={{color:"black", textAlign:"center"}}>
+                        Resources such as events, financial aid, and mental health support are crucial for foster children, 
+                        providing emotional, educational, and social support. These resources offer counseling, academic assistance, 
+                        and connections with peers and positive role models, helping foster children navigate trauma and instability. 
+                        They empower children with essential life skills and ensure their rights are upheld through advocacy 
+                        and legal aid services, fostering resilience and supporting successful transitions into adulthood.
+                    </p>
+                </div>
+            </Container>
+            <Container fluid={true} style={{}}>
+                <Row style={{ padding: "3vw", paddingTop: "2rem", justifyContent: "space-evenly" }}>
+                    {entries.map((res) => (
+                        <Col xs style={{ paddingBottom: "2rem" }}> <ResourceCard resource={JSON.stringify(res)} /> </Col>
+                    ))}
+                </Row>
+            </Container>
+            <Pagination
+                num_instances={num_instances}
+                path={"resources"}
+            />
+            <h3 className={lora.className} style={{ color: "black", paddingBottom: "20px", paddingTop: "10px" }}>
+                Number of Instances: {num_instances}
+            </h3>
+        </main>
     )
 }

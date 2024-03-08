@@ -1,84 +1,65 @@
-"use client"
 // import Counties from "./components/countyCardList"
 import { Row, Col, Container, Card, Button} from "react-bootstrap";
 import styles from "../page.module.css";
+// import "./counties.css"
 
 import Link from "next/link";
 
+import { Lora, Cabin} from "next/font/google";
+const lora = Lora({weight: '400', subsets: ['latin']})
+const cabin = Cabin({weight: '400', subsets: ['latin']})
+import OrgCard from "./components/orgCard.js"
+import Pagination from "../components/pagination.js"
+
+
+async function getOrgs() {
+    const response = await fetch('http://api.foster-hope.com/orgs/all_orgs');
+    return await response.json();
+}
 // model page for counties
-export default function listCounties() {
+export default async function listCounties( {searchParams} ) {
+
+    const orgs = await getOrgs();
+    //const orgslen = Object.keys(orgs?.orgs).length;
+    const page = searchParams["page"] ?? 1
+    const per_page = searchParams["per_page"] ?? 16
+    const start = (Number(page) - 1) * Number(per_page)
+    const end = start + Number(per_page)
+    const num_instances = Object.keys(orgs.data).length
+
+    const entries = orgs.data.slice(start, end)
+
     return (
-        <main className= {styles.main}>
-            <div className= {styles.description} >
-                <h1 styles={{color: "black"}}>Organizations</h1>
+        <main className={styles.main} style={{backgroundColor:"white", width:"100vw", paddingTop:"55px", height:"100%"}}>
+            <Container style={{maxWidth:"100vw", margin:"0", paddingLeft:"5vw", paddingRight:"5vw", paddingTop:"5vh", border:"0"}}>
+                <div className={lora.className}>
+                    <h1 style={{color:"black", textAlign:"center"}}>Organizations</h1>
                 </div>
-                <Container style = {{padding: 15}}>
-                    {/* creates cards for instances, uses bootstrap row and col to format it in rows*/}
-                    <Row>
-                        <Col>
-                            <Card style = {{width: "20rem"}}>
-                                <Card.Img variant="top" src="/images/orgs/AustinAngels.png"/>
-                                <Card.Body style={{padding: "1rem", background: "lightblue"}}>
-                                    <Card.Title> Austin Angels</Card.Title>
-                                    <Card.Text>
-                                    Location: Austin
-                                    <br></br>
-                                    Type: Non-profit
-                                    <br></br>
-                                    Review: 4.7
-                                    <br></br>
-                                    Hours: 8:30 - 5:00
-                                    <br></br>
-                                    </Card.Text>
-                                    <Button href = "organizations/instances/austin-angels/"> Read More </Button>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col>
-                            <Card style = {{width: "20rem"}}>
-                                <Card.Img variant="top" src="/images/orgs/foster-village.jpeg"/>
-                                <Card.Body style={{padding: "1rem", background: "lightblue"}}>
-                                    <Card.Title> Foster Village Inc.</Card.Title>
-                                    <Card.Text>
-                                    Location: Dripping Springs
-                                    <br></br>
-                                    Type: Non-profit
-                                    <br></br>
-                                    Review: 4.7
-                                    <br></br>
-                                    Hours: 24/7
-                                    <br></br>
-                                    </Card.Text>
-                                    <Button href = "organizations/instances/foster-village/"> Read More </Button>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col>
-                            <Card style = {{width: "20rem"}}>
-                                <Card.Img variant="top" src="/images/orgs/houstonalumniyouth.jpeg"/>
-                                <Card.Body style={{padding: "1rem", background: "lightblue"}}>
-                                    <Card.Title> Houston Alumni and Youth</Card.Title>
-                                    <Card.Text>
-                                    Location: Houston
-                                    <br></br>
-                                    Type: Government Office
-                                    <br></br>
-                                    Review: 3.4
-                                    <br></br>
-                                    Hours: 9:00 - 6:00
-                                    <br></br>
-                                    </Card.Text>
-                                    <Button href = "organizations/instances/houston-alumni-youth/"> Read More </Button>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                    </Row>
-
-                </Container>
-                <h3>
-                    Number of Instances: 3
-                </h3>
-
-            </main>
+                <div className={cabin.className}>
+                    <br></br>
+                    <p className={styles.splashdesc} style={{color:"black", textAlign:"center"}}>
+                        Foster support organizations and adoption agencies offer essential support for children in need, 
+                        providing emotional, educational, and social assistance. They facilitate adoptions, ensuring children 
+                        find permanent homes, while also offering ongoing support to foster and adoptive families. Through 
+                        advocacy and legal aid, they protect children's rights and enable successful transitions into secure environments.
+                    </p>
+                </div>
+            </Container>
+            <Container fluid={true} style = {{}}>
+                <Row style={{padding:"3vw", paddingTop:"2rem", justifyContent:"space-evenly"}}>
+                    {entries.map((organization) => (
+                        <Col xs style={{paddingBottom: "2rem"}}> <OrgCard org={organization}/> </Col>
+                    ))}
+                </Row>
+            </Container>
+            <Pagination
+                num_instances={num_instances}
+                path={"organizations"}
+            />
+            <br></br>
+            <p className={lora.className} style={{color:"black", paddingBottom:"20px"}}>
+                Number of Instances: {num_instances}
+            </p>
+        </main>
     )
 }

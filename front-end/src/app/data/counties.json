@@ -1,0 +1,39 @@
+{
+    "counties": [
+        {
+            
+            "id": 1,
+            "name": "Travis County",
+            "img_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Travis_courthouse_2011.jpg",
+            "description": "Travis County is located in Central Texas. As of the 2020 census, the population was 1,290,188. It is the fifth-most populous county in Texas. Its county seat and most populous city is Austin, the capital of Texas.",
+            "population": "1,290,188",
+            "num_agencies": 50,
+            "num_foster_child": 100,
+            "num_foster_homes": 20,
+            "vid_url": "https://www.youtube.com/watch?v=wo0m4Lk-Ylo&ab_channel=TravisCountyTX"
+            
+        },
+        {
+            "id": 2,
+            "name": "Hays County",
+            "img_url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Hays_courthouse.jpg",
+            "description": "Hays County is a county in the central portion of the U.S. state of Texas. It is part of the Austin-Round Rock metropolitan area. As of the 2020 census, its official population had reached 241,067. The county seat is San Marcos",
+            "population": "241,067",
+            "num_agencies": 50,
+            "num_foster_child": 100,
+            "num_foster_homes": 20,
+            "vid_url": "https://www.youtube.com/watch?v=8ymjC8Up-Rk&ab_channel=KVUE"
+        },
+        {
+            "id": 3,
+            "name": "Bastrop County",
+            "img_url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Bastrop_courthouse.jpg",
+            "description": "Bastrop County is located in the U.S. state of Texas. It is in Central Texas and its county seat is Bastrop. As of the 2020 census, the population was 97,216. Bastrop County is included in the Austin–Round Rock, Texas, metropolitan statistical area",
+            "population": "97,216",
+            "num_agencies": 50,
+            "num_foster_child": 100,
+            "num_foster_homes": 20,
+            "vid_url": "https://www.youtube.com/watch?v=jjSyux2Nu8E&ab_channel=SecretsofTexas"
+        }
+    ]
+}
