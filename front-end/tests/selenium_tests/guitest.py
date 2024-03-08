@@ -14,8 +14,8 @@ class GUITests(unittest.TestCase):
         options.add_argument('--no-sandbox')
         options.add_argument("--disable-gpu")
         options.add_argument('--disable-dev-shm-usage')
-        #self.driver = webdriver.Chrome(options=options)
-        self.driver = webdriver.Remote(command_executor='http://selenium__standalone-chrome:4444/wd/hub', options=options)
+        self.driver = webdriver.Chrome(options=options)
+        #self.driver = webdriver.Remote(command_executor='http://selenium__standalone-chrome:4444/wd/hub', options=options)
         self.driver.implicitly_wait(10)
         self.driver.get(self.url)
     
@@ -296,7 +296,7 @@ class GUITests(unittest.TestCase):
         
         
         # Wait for the button element to be visible
-        button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//a[contains(text(), 'county')]")))
+        button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//a[contains(text(), 'Read More')]")))
         
         driver.execute_script("arguments[0].scrollIntoView();", button)
         actions = ActionChains(driver)
@@ -348,7 +348,7 @@ class GUITests(unittest.TestCase):
 
 
         # Wait for the button element to be visible
-        button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//a[contains(text(), 'County')]")))
+        button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//a[contains(text(), 'Read More')]")))
         
         driver.execute_script("arguments[0].scrollIntoView();", button)
         actions = ActionChains(driver)
