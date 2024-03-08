@@ -93,7 +93,7 @@ export default async function resPage ({params}) {
                                 </div>
                             </div>
                             <br></br>
-                            <Button className={cabin.className} variant="outline-dark" href={countyPath} style={{width:"150px"}}>county</Button>
+                            {/* <Button className={cabin.className} variant="outline-dark" href={countyPath} style={{width:"150px"}}>county</Button> */}
                             <Button className={cabin.className} variant="outline-dark" href={res.website} style={{width:"150px"}}>Website</Button>
                         </Col>
                     </Row>
