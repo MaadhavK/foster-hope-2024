@@ -7,15 +7,16 @@ import Link from "next/link";
 const lora = Lora({weight: '400', subsets: ['latin']})
 const cabin = Cabin({weight: '400', subsets: ['latin']})
 
-async function getCounties() {
-    const response = await fetch('https://api.foster-hope.com/resources/all_resources');
+async function getResources(id) {
+    const response = await fetch(`https://api.foster-hope.com/resources/single_resource?id=${id}`);
     return await response.json();
 }
 
 
 export default async function resPage ({params}) {
     const id = params.name;
-    const data = await getCounties();
+    console.log(`Here's the ID: ${id}`);
+    const data = await getResources(id);
     const resources = data?.data;
     const res = resources.find(b => b.id == id);
 

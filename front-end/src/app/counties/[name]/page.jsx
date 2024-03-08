@@ -6,6 +6,8 @@ import YoutubeEmbed from "@/app/components/youtube";
 import { Row, Col, Container } from "react-bootstrap";
 import "../counties.css";
 import YouTube from 'react-youtube';
+import ResourceCard from '../../resources/components/resourcecard.js'
+import OrgCard from '../../organizations/components/orgCard.js'
 
 import { Lora, Cabin} from "next/font/google";
 
@@ -22,10 +24,13 @@ export default async function CountyPage ({params}) {
 
 
     const data = await getCounties()
+    console.log(data)
     const id = params.name.replace("_", ' ');
     const counties = data["data"]
     const county = counties.find(b => b.county == id)
 
+    const relatedOrgs = county.organizations
+    console.log(county)
     
     return (
         <div style={{minHeight:"100vh", backgroundColor:"#ffffff", paddingTop:"55px"}}>
@@ -84,6 +89,13 @@ export default async function CountyPage ({params}) {
                         </div>
 
                     </Row>
+
+                    {/* Related Orgs */}
+                    <div style={{textAlign:"center", color:"black", height:"30vh", display:"flex", flexDirection:"column",justifyContent:"center", alignItems:"center"}}>
+                        <h2 className={lora.className} style={{fontSize:"1.8rem", zIndex:"1"}}>Related Organizations</h2>
+                        
+                    </div>
+                    <Row></Row>
                 </Container>
             </div>
             

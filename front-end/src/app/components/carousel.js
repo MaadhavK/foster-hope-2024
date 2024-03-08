@@ -4,8 +4,10 @@ import { Image } from 'react-bootstrap';
 function HomeCarousel() {
   const images = [
     {src: "/images/FrontPageImage.jpg", caption: "Image 1"},
-    {src: "/images/homePage2.jpg", caption: "Image 2"},
-    {src: "/images/homePage3.jpg", caption: "Image 3"},
+    {src: "/images/homePage9.jpg", caption: "Image 2"},
+    {src: "/images/homePage6.jpg", caption: "Image 3"},
+    {src: "/images/homePage4.jpg", caption: "Image 4"},
+    {src: "/images/homePage8.jpg", caption: "Image 5"},
   ];
   
   const CarouselItems = (images) => {

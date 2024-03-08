@@ -13,7 +13,7 @@ import Pagination from "../components/pagination.js"
 
 
 export const getCounties = async ()=> {
-    const response = await fetch('https://api.foster-hope.com/counties/all_counties');
+    const response = await fetch('http://api.foster-hope.com/counties/all_counties');
     return await response.json();
 }
 

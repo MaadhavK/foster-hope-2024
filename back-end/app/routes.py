@@ -5,6 +5,7 @@ from app import app
 from uuid import UUID
 
 
+
 engine = create_engine("postgresql://postgres.bonmudwmggaxnixodrbn:2PLFaKPRPW3bxsh9@aws-0-us-west-1.pooler.supabase.com:5432/postgres", future=True)
 
 @app.route('/counties/single_county')

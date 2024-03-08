@@ -18,6 +18,7 @@ export default async function OrgPage ({params}) {
     const orgs = data?.data
     const org = orgs.find(b => b.id == id)
 
+
     const date = new Date();
     const offsetMinutes = date.getTimezoneOffset();
     const offsetMilliseconds = offsetMinutes * 60 * 1000;
