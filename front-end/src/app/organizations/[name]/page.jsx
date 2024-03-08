@@ -101,7 +101,15 @@ export default async function OrgPage ({params}) {
                     </Row>
                     <Row style={{justifyContent:"space-around", padding:"5vw"}}>
                         <Col>
-                            FUTURE GMAP EMBED HERE
+                        <iframe
+                            width="600"
+                            height="450"
+                            style={{border: "0"}}
+                            loading="lazy"
+                            allowfullscreen
+                            referrerpolicy="no-referrer-when-downgrade"
+                            src={org.map}>
+                            </iframe>
                             {/* <GMapEmbed params={org.map}></GMapEmbed> */}
                         </Col>
                         <Col style={{}}>
