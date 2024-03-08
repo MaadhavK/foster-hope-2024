@@ -100,10 +100,13 @@ export default async function OrgPage ({params}) {
                     </Row>
                     <Row style={{justifyContent:"space-around", padding:"5vw"}}>
                         <Col>
+                            <h3 className={lora.className} style={{textAlign:"center", paddingBottom:"20px"}}>
+                                Map
+                            </h3>
                             <iframe
                                 width="100%"
-                                height="100%"
-                                style={{border: "0", minWidth:"300px", minHeight:"35rem"}}
+                                height="35rem"
+                                style={{border: "0", minWidth:"300px", minHeight:"35rem", marginBottom:"50px"}}
                                 loading="lazy"
                                 allowfullscreen
                                 referrerpolicy="no-referrer-when-downgrade"
@@ -112,7 +115,7 @@ export default async function OrgPage ({params}) {
                             {/* <GMapEmbed params={org.map}></GMapEmbed> */}
                         </Col>
                         <Col style={{}}>
-                            <h3 className={lora.className} style={{textAlign:"center", padding:"20px"}}>
+                            <h3 className={lora.className} style={{textAlign:"center", paddingBottom:"20px"}}>
                                 County
                             </h3>
                             <CountyCard county={JSON.stringify(county)}/>
