@@ -100,9 +100,9 @@ export default async function resPage ({params}) {
                     <Row style={{justifyContent:"space-around", padding:"5vw"}}>
                         <Col>
                         <iframe
-                            width="600"
-                            height="450"
-                            style={{border: "0"}}
+                            width="100%"
+                            height="100%"
+                            style={{border: "0", minWidth:"300px", minHeight:"35rem"}}
                             loading="lazy"
                             allowfullscreen
                             referrerpolicy="no-referrer-when-downgrade"
@@ -121,7 +121,7 @@ export default async function resPage ({params}) {
                         </Col>
                     </Row>
                     <Row>
-                        <h3 className={lora.className}>
+                        <h3 className={lora.className} style={{textAlign:"center", padding:"20px"}}>
                                 Related Organizations
                         </h3>
                         {res.organizations.map((id) => {

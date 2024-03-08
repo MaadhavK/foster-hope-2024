@@ -101,19 +101,19 @@ export default async function OrgPage ({params}) {
                     </Row>
                     <Row style={{justifyContent:"space-around", padding:"5vw"}}>
                         <Col>
-                        <iframe
-                            width="600"
-                            height="450"
-                            style={{border: "0"}}
-                            loading="lazy"
-                            allowfullscreen
-                            referrerpolicy="no-referrer-when-downgrade"
-                            src={org.map}>
-                            </iframe>
+                            <iframe
+                                width="100%"
+                                height="100%"
+                                style={{border: "0", minWidth:"300px", minHeight:"35rem"}}
+                                loading="lazy"
+                                allowfullscreen
+                                referrerpolicy="no-referrer-when-downgrade"
+                                src={org.map}>
+                            </iframe>                     
                             {/* <GMapEmbed params={org.map}></GMapEmbed> */}
                         </Col>
                         <Col style={{}}>
-                            <h3 className={lora.className} style={{textAlign:"center"}}>
+                            <h3 className={lora.className} style={{textAlign:"center", padding:"20px"}}>
                                 County
                             </h3>
                             <CountyCard county={JSON.stringify(county)}/>
@@ -123,7 +123,7 @@ export default async function OrgPage ({params}) {
                         </Col>
                     </Row>
                     <Row>
-                        <h3 className={lora.className}>
+                        <h3 className={lora.className} style={{textAlign:"center", width:"100%", padding:"20px"}}>
                                 Related Resources
                         </h3>
                         {org.resources.map((id) => {
