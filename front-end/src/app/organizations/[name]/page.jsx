@@ -40,11 +40,12 @@ export default async function OrgPage ({params}) {
 
     const countydata = await getCounties();
     const counties = countydata["data"]
-
-    // console.log(countydata)
     const county = counties.find(b => b.county == org.county)
     const countyPath = "../counties/" + org.county.replaceAll(' ', '_') +"/"
     // console.log(orgs.description)
+
+    const resData = await getResources()
+    const resources = resData["data"]
 
     return (
         <div style={{minHeight:"100vh", backgroundColor:"#ffffff", paddingTop:"55px"}}>
@@ -117,7 +118,7 @@ export default async function OrgPage ({params}) {
                         </h3>
                         {orgs.resources.map((id) => {
                             return (
-                                <Col xs style={{paddingBottom: "3rem", width:"20rem"}}> <ResourceCard resource={JSON.stringify(res.find(b => b.id == id))}/> </Col>
+                                <Col xs style={{paddingBottom: "3rem", width:"20rem"}}> <ResourceCard resource={JSON.stringify(resources.find(b => b.id == id))}/> </Col>
 
                             // <div key={id} style={{width:"100%", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", padding:"5px"}}>
                             //     <Button variant="outline-dark" href={'organizations/' + id + "/"} style={{width:"400px"}}> {res.find(b => b.id == id).name}</Button>

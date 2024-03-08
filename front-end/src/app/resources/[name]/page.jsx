@@ -2,20 +2,31 @@ import styles from "../../page.module.css";
 import { Row, Col, Container, Button} from "react-bootstrap";
 
 import { Lora, Cabin} from "next/font/google";
+import CountyCard from "@/app/counties/components/countycard";
+import ResourceCard from "../components/resourcecard";
 import Link from "next/link";
 
 const lora = Lora({weight: '400', subsets: ['latin']})
 const cabin = Cabin({weight: '400', subsets: ['latin']})
 
-async function getCounties() {
+async function getResources() {
     const response = await fetch('https://api.foster-hope.com/resources/all_resources');
     return await response.json();
 }
 
+async function getOrgs() {
+    const response = await fetch('https://api.foster-hope.com/orgs/all_orgs');
+    return await response.json();
+}
+
+async function getCounties() {
+    const response = await fetch('https://api.foster-hope.com/counties/all_counties');
+    return await response.json();
+}
 
 export default async function resPage ({params}) {
     const id = params.name;
-    const data = await getCounties();
+    const data = await getResources();
     const resources = data?.data;
     const res = resources.find(b => b.id == id);
 
@@ -25,6 +36,9 @@ export default async function resPage ({params}) {
     const currentDate = new Date(date.getTime() - offsetMilliseconds);
     const day = currentDate.getDay() - 1;
 
+    const countydata = await getCounties()
+    const counties = countydata["data"]
+    const county = counties.find(b => b.county == res.county)
     const countyPath = "../counties/"+ res.county + "/";
 
     let hours = res?.hours;
@@ -32,6 +46,9 @@ export default async function resPage ({params}) {
     if(res.type != "event"){
         hours = JSON.parse(res?.hours)[day]
     }
+
+    const orgdata = await getOrgs()
+    const orgs = orgdata["data"]
 
 
     return (
@@ -78,8 +95,34 @@ export default async function resPage ({params}) {
                             <Button className={cabin.className} variant="outline-dark" href={res.website} style={{width:"150px"}}>Website</Button>
                         </Col>
                     </Row>
+                    <Row style={{justifyContent:"space-around", padding:"5vw"}}>
+                        <Col>
+                            FUTURE GMAP EMBED HERE
+                            {/* <GMapEmbed params={org.map}></GMapEmbed> */}
+                        </Col>
+                        <Col style={{}}>
+                            <h3 className={lora.className} style={{textAlign:"center"}}>
+                                County
+                            </h3>
+                            <CountyCard county={JSON.stringify(county)}/>
+                            {/* <div key={id} style={{width:"100%", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", padding:"5px"}}>
+                                <Button variant="outline-dark" href={countyPath} style={{width:"400px"}}> {org.county} County</Button>
+                            </div> */}
+                        </Col>
+                    </Row>
                     <Row>
-                         
+                        <h3 className={lora.className}>
+                                Related Resources
+                        </h3>
+                        {res.resources.map((id) => {
+                            return (
+                                <Col xs style={{paddingBottom: "3rem", width:"20rem"}}> <ResourceCard resource={JSON.stringify(orgs.find(b => b.id == id))}/> </Col>
+
+                            // <div key={id} style={{width:"100%", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", padding:"5px"}}>
+                            //     <Button variant="outline-dark" href={'organizations/' + id + "/"} style={{width:"400px"}}> {res.find(b => b.id == id).name}</Button>
+                            // </div>
+                            )
+                        })}
                     </Row>
                 </Container>
             </div>
