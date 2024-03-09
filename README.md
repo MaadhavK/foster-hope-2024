@@ -32,7 +32,7 @@ FosterHope
 | Phase | Gitlab Pipeline                                             |
 | ----- | ----------------------------------------------------------- |
 | 1     | https://gitlab.com/nathanchengus/cs373-group-22/-/pipelines |
-| 2     |                                                             |
+| 2     | https://gitlab.com/nathanchengus/cs373-group-22/-/pipelines                                                           |
 | 3     |                                                             |
 | 4     |                                                             |
 
