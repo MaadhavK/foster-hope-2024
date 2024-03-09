@@ -20,13 +20,15 @@ async function getOrgs() {
 export default async function listCounties( {searchParams} ) {
 
     const orgs = await getOrgs();
-    //const orgslen = Object.keys(orgs?.orgs).length;
+    
+    // Pagination logic
     const page = searchParams["page"] ?? 1
     const per_page = searchParams["per_page"] ?? 16
     const start = (Number(page) - 1) * Number(per_page)
     const end = start + Number(per_page)
     const num_instances = Object.keys(orgs.data).length
 
+    // This page's page entries
     const entries = orgs.data.slice(start, end)
 
     return (
@@ -35,6 +37,7 @@ export default async function listCounties( {searchParams} ) {
                 <div className={lora.className}>
                     <h1 style={{color:"black", textAlign:"center"}}>Organizations</h1>
                 </div>
+                {/* Organization page description */}
                 <div className={cabin.className}>
                     <br></br>
                     <p className={styles.splashdesc} style={{color:"black", textAlign:"center"}}>
@@ -45,6 +48,7 @@ export default async function listCounties( {searchParams} ) {
                     </p>
                 </div>
             </Container>
+            {/* Current page instance cards */}
             <Container fluid={true} style = {{}}>
                 <Row style={{padding:"3vw", paddingTop:"2rem", justifyContent:"space-evenly"}}>
                     {entries.map((organization) => (

@@ -8,16 +8,19 @@ import Link from "next/link";
 const lora = Lora({weight: '400', subsets: ['latin']})
 const cabin = Cabin({weight: '400', subsets: ['latin']})
 
+// Data for orgs
 async function getOrgs() {
     const response = await fetch('http://api.foster-hope.com/orgs/all_orgs');
     return await response.json();
 }
 
+// Data for related counties
 async function getCounties() {
     const response = await fetch('http://api.foster-hope.com/counties/all_counties');
     return await response.json();
 }
 
+// Data for related resources
 async function getResources() {
     const response = await fetch('http://api.foster-hope.com/resources/all_resources');
     return await response.json();
@@ -31,7 +34,7 @@ export default async function OrgPage ({params}) {
     const orgs = data?.data
     const org = orgs.find(b => b.id == id)
 
-
+    // Logic to parse the open hours
     const date = new Date();
     const offsetMinutes = date.getTimezoneOffset();
     const offsetMilliseconds = offsetMinutes * 60 * 1000;
@@ -54,6 +57,7 @@ export default async function OrgPage ({params}) {
                 <h1 className={lora.className} style={{fontSize:"3rem", color:"black", zIndex:"1"}}>{org.name}</h1>
                 <p className={cabin.className} style={{color:"black"}}>{org.location}</p>
             </div> 
+            {/* Organization information */}
             <div style={{backgroundColor:"#f8f9fa"}}> 
                 <Container fluid={true} style={{padding:"10vh"}}>
                     <Row style={{paddingBottom:"50px"}}>
@@ -98,6 +102,7 @@ export default async function OrgPage ({params}) {
                             <Button className={cabin.className} variant="outline-dark" href={org.website} style={{width:"150px"}}>Website</Button>
                         </Col>
                     </Row>
+                    
                     <Row style={{justifyContent:"space-around", padding:"5vw"}}>
                         <Col>
                             <h3 className={lora.className} style={{textAlign:"center", paddingBottom:"20px"}}>
@@ -114,6 +119,7 @@ export default async function OrgPage ({params}) {
                             </iframe>                     
                             {/* <GMapEmbed params={org.map}></GMapEmbed> */}
                         </Col>
+                        {/* Related County */}
                         <Col style={{}}>
                             <h3 className={lora.className} style={{textAlign:"center", paddingBottom:"20px"}}>
                                 County
@@ -124,6 +130,7 @@ export default async function OrgPage ({params}) {
                             </div> */}
                         </Col>
                     </Row>
+                    {/* Related Resources */}
                     <Row>
                         <h3 className={lora.className} style={{textAlign:"center", width:"100%", padding:"20px"}}>
                                 Related Resources

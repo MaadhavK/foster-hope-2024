@@ -7,6 +7,7 @@ import { Lora , Cabin} from 'next/font/google';
 const lora = Lora({weight: '400', subsets: ['latin']})
 const cabin = Cabin({weight: '400', subsets: ['latin']})
 
+// Navigation bar with styling and routing
 export default function NavBar(){
     return (
         <Navbar bg="light" data-bs-theme="light" fixed = "top" border="white" expand="lg">

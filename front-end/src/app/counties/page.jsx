@@ -20,12 +20,14 @@ export const getCounties = async ()=> {
 export default async function listCounties( {searchParams} ) {
     const counties = await getCounties();
 
+    // Params for pagination
     const page = searchParams["page"] ?? 1
     const per_page = searchParams["per_page"] ?? 16
     const start = (Number(page) - 1) * Number(per_page)
     const end = start + Number(per_page)
     const num_instances = Object.keys(counties.data).length
 
+    // Page slice
     const entries = counties.data.slice(start, end)
 
     return (      
@@ -36,6 +38,7 @@ export default async function listCounties( {searchParams} ) {
                 </div>
                 <div className={cabin.className}>
                     <br></br>
+                    {/* Page description */}
                     <p className={styles.splashdesc} style={{textAlign:"center"}}>
                         Counties plays a vital role in the foster care system by overseeing placements and ensuring the safety of children
                         within its jurisdiction. Collaborating with local partners, counties provide support to foster
@@ -44,6 +47,7 @@ export default async function listCounties( {searchParams} ) {
                     </p>
                 </div>
             </Container>
+            {/* All of the county pages in the page */}
             <Container fluid={true} style = {{}}>
                 <Row style={{padding:"3vw", paddingTop:"2rem", justifyContent:"space-evenly"}}>
                     {entries.map((county) => (
