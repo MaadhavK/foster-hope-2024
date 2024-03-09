@@ -8,7 +8,7 @@ import { Row, Col, Container, Button } from "react-bootstrap";
 import "../counties.css";
 import YouTube from 'react-youtube';
 
-
+// COunties instance page
 import { Lora, Cabin} from "next/font/google";
 import ResourceCard from "@/app/resources/components/resourcecard";
 
@@ -20,11 +20,13 @@ async function getCounties() {
     return await response.json();
 }
 
+// Related orgs
 async function getOrgs() {
     const response = await fetch("http://api.foster-hope.com/orgs/all_orgs");
     return await response.json();
 }
 
+// Related resources
 async function getResources() {
     const response = await fetch('http://api.foster-hope.com/resources/all_resources');
     return await response.json();
@@ -108,6 +110,7 @@ export default async function CountyPage ({params}) {
                         </div>
 
                     </Row>
+                    {/* Related Organizations with organization cards */}
                     <Row style={{paddingBottom:"20px"}}>
                         <h3 className={lora.className} style={{textAlign:"center"}}>
                             Organizations in {county.county} County:
@@ -128,6 +131,7 @@ export default async function CountyPage ({params}) {
                             Resources in {county.county} County:
                         </h3>
                     </Row>
+                    {/* Related resources with resource cards */}
                     <Row style={{alignItems:"center"}}>
                             {county.resources.map((id) => {
                                 return (

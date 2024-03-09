@@ -8,11 +8,14 @@ import { Lora, Cabin} from "next/font/google";
 const lora = Lora({weight: '400', subsets: ['latin']})
 const cabin = Cabin({weight: '400', subsets: ['latin']})
 
+// Organization card
 const OrgCard = ({org}) => {
     var thisOrg = org;
     if (!thisOrg) {
         return <div>Error: org data is not available</div>;
     }
+
+    // Date/time logic
     const path = "../organizations/" + thisOrg.id + "/";
     const date = new Date();
     const offsetMinutes = date.getTimezoneOffset();
@@ -21,6 +24,7 @@ const OrgCard = ({org}) => {
     const day = currentDate.getDay() - 1;
 
     return (
+        // Organization card
         <Card style = {{width: "20rem", height: "37rem", margin:"0 auto"}}>
             <Card.Img  style={{width:"20rem", height:"20rem", objectFit:"cover"}} variant="top" src = {thisOrg?.image}/>
             <Card.Body className="d-flex flex-column" style={{padding: "1rem", background: "lightblue", justifyContent:"space-between"}}>

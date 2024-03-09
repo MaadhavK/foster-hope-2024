@@ -23,6 +23,7 @@ export default function Home() {
         <img src="images/handholding.jpeg" style={{zIndex:"-1", filter:"brightness(14%)", width:"100vw", height:"70vh", opacity:".8", objectFit:"cover"}}></img>
       </div> 
 
+      {/* Front image */}
       <Container className={styles.splashcont} styles={{height:"70vh", paddingTop:"55px", paddingBottom:"100px", top:"0"}}>
         <Row style={{height:"20vh"}}></Row>
         <Row style={{zIndex:"1", maxWidth:"100vw", margin:"0", padding:"0", border:"0", height:"50vh", justifyContent:"center"}}>
@@ -43,6 +44,7 @@ export default function Home() {
     </div>
     <div className={styles.splashdarkbg} style={{padding:"5vw"}}>
       <Container fluid={true} className={styles.splashcont} styles={{maxWidth:"100vw", height:"100vh", padding:"0"}}>
+        {/* Splash page information */}
         <Row styles={{padding:"0"}}>
           <Col styles={{padding:"0"}}>
             <h2 className={lora.className} style={{color:"black", minWidth:"400px"}}>Our Mission</h2>

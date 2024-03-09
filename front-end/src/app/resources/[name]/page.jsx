@@ -9,16 +9,19 @@ import Link from "next/link";
 const lora = Lora({weight: '400', subsets: ['latin']})
 const cabin = Cabin({weight: '400', subsets: ['latin']})
 
+// Resources data
 async function getResources() {
     const response = await fetch(`http://api.foster-hope.com/resources/all_resources`);
     return await response.json();
 }
 
+// Get related orgs data
 async function getOrgs() {
     const response = await fetch('http://api.foster-hope.com/orgs/all_orgs');
     return await response.json();
 }
 
+// Get related counties data
 async function getCounties() {
     const response = await fetch('http://api.foster-hope.com/counties/all_counties');
     return await response.json();
@@ -28,10 +31,11 @@ export default async function resPage ({params}) {
     const id = params.name;
     
     const data = await getResources();
-    
+    // Find this instance
     const resources = data?.data;
     const res = resources.find(b => b.id == id);
     
+    // Date/time logic
     const date = new Date();
     const offsetMinutes = date.getTimezoneOffset();
     const offsetMilliseconds = offsetMinutes * 60 * 1000;
@@ -65,6 +69,7 @@ export default async function resPage ({params}) {
                         <Col style={{minWidth:"400px", paddingBottom:"5vh"}}>
                             <img src={res.media} alt="res image" style={{objectFit:"contain", height:"400px", minWidth:"400px", maxWidth:"40vw"}}/>
                         </Col>
+                        {/* Organization info */}
                         <Col style={{minWidth:"400px", alignItems:"center", alignContent:"center", justifyContent:"center", paddingRight:"30px"}}>
                             <p className={cabin.className} style={{color:"black", fontSize:"1.25rem"}}>{res.description}</p>
                             <div style={{ height:"2rem", paddingTop:"20px", color:"black"}}>
@@ -113,6 +118,7 @@ export default async function resPage ({params}) {
                             </iframe>
                             {/* <GMapEmbed params={org.map}></GMapEmbed> */}
                         </Col>
+                        {/* Related county */}
                         <Col style={{}}>
                             <h3 className={lora.className} style={{textAlign:"center", paddingBottom:"20px"}}>
                                 County
@@ -123,6 +129,7 @@ export default async function resPage ({params}) {
                             </div> */}
                         </Col>
                     </Row>
+                    {/* Related organizations */}
                     <Row>
                         <h3 className={lora.className} style={{textAlign:"center", paddingBottom:"20px"}}>
                                 Related Organizations

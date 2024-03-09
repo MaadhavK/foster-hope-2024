@@ -20,7 +20,7 @@ export default async function listResources({ searchParams }) {
 
     const resources = await getResources();
 
-
+    // Pagination logic
     const page = searchParams["page"] ?? 1
     const per_page = searchParams["per_page"] ?? 16
     const start = (Number(page) - 1) * Number(per_page)
@@ -38,6 +38,7 @@ export default async function listResources({ searchParams }) {
                 </div>
                 <div className={cabin.className}>
                     <br></br>
+                    {/* Resources page description */}
                     <p className={styles.splashdesc} style={{color:"black", textAlign:"center"}}>
                         Resources such as events, financial aid, and mental health support are crucial for foster children, 
                         providing emotional, educational, and social support. These resources offer counseling, academic assistance, 
@@ -47,6 +48,7 @@ export default async function listResources({ searchParams }) {
                     </p>
                 </div>
             </Container>
+            {/* All of the resource cards */}
             <Container fluid={true} style={{}}>
                 <Row style={{ padding: "3vw", paddingTop: "2rem", justifyContent: "space-evenly" }}>
                     {entries.map((res) => (
@@ -54,6 +56,7 @@ export default async function listResources({ searchParams }) {
                     ))}
                 </Row>
             </Container>
+            {/* Pagination component */}
             <Pagination
                 num_instances={num_instances}
                 path={"resources"}
