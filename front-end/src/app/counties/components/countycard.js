@@ -20,7 +20,7 @@ const CountyCard = ({county}) => {
     const path = "../counties/" + thisCounty.county.replace(" ", '_') + "/";
     // County information with routing to instance page
     return (
-        <Card style = {{width: "20rem", height: "35rem", margin:"0 auto"}}>
+        <Card style = {{width: "20rem", height: "37rem", margin:"0 auto"}}>
             <Card.Img  style={{width:"20rem", height:"20rem", objectFit:"cover"}} variant="top" src = {thisCounty?.image}/>
             <Card.Body className="d-flex flex-column justify-content-center" style={{padding: "1rem", background: "lightblue"}}>
                 <Card.Title className={lora.className} style={{fontSize:"1.6rem"}}><b>{thisCounty?.county}</b></Card.Title>

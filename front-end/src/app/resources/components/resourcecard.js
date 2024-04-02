@@ -38,8 +38,8 @@ const ResourceCard = ({resource}) => {
 
     return (
         // Resource card info with routing to instance page
-        <Card style = {{width: "20rem", height: "30rem", margin:"0 auto"}}>
-            <Card.Img  style={{width:"20rem", height:"15rem", objectFit:"cover"}} variant="top" src = {thisRes?.media}/>
+        <Card style = {{width: "20rem", height: "37rem", margin:"0 auto"}}>
+            <Card.Img  style={{width:"20rem", height:"20rem", objectFit:"cover"}} variant="top" src = {thisRes?.media}/>
             <Card.Body className="d-flex flex-column" style={{padding: "1rem", background: "lightblue", justifyContent:"space-between"}}>
                 <div>
                     <Card.Title className={lora.className} style={{fontSize:"1.2rem", alignSelf:"flex-start"}}><b>{thisRes?.name}</b></Card.Title>
