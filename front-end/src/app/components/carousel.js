@@ -2,6 +2,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import { Image } from 'react-bootstrap';
 
 function HomeCarousel() {
+  // All of the images in the carousel
   const images = [
     {src: "/images/FrontPageImage.jpg", caption: "Image 1", alt: "Image 1"},
     {src: "/images/homePage9.jpg", caption: "Image 2", alt: "Image 2"},
@@ -10,6 +11,7 @@ function HomeCarousel() {
     {src: "/images/homePage8.jpg", caption: "Image 5", alt: "Image 5"},
   ];
   
+  // Carousel with images
   const CarouselItems = (images) => {
     return images.map((img, idx) => (
           <Carousel.Item key = {idx} interval={3000} style={{height:"400px", background: "#a8d5b9"}}>

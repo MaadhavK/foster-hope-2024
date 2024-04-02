@@ -334,3 +334,18 @@
   align-items: center;
   justify-content: center;
 }
+
+.search-bar-wrapper {
+  padding-left: 2vw;
+}
+
+/* phone screen */
+@media (orientation:portrait) {
+  .search-bar-wrapper {
+      margin: 0 auto;
+  }
+}
+
+.search-button {
+  background-color: #ffcd0e;
+}

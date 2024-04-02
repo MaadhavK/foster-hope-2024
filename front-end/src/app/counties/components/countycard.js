@@ -10,6 +10,7 @@ import { Lora, Cabin} from "next/font/google";
 const lora = Lora({weight: '400', subsets: ['latin']})
 const cabin = Cabin({weight: '400', subsets: ['latin']})
 
+// Card with county information (params are data passed in)
 const CountyCard = ({county}) => {
     var thisCounty = JSON.parse(county);
     if (!thisCounty) {
@@ -17,6 +18,7 @@ const CountyCard = ({county}) => {
     }
 
     const path = "../counties/" + thisCounty.county.replace(" ", '_') + "/";
+    // County information with routing to instance page
     return (
         <Card style = {{width: "20rem", height: "35rem", margin:"0 auto"}}>
             <Card.Img  style={{width:"20rem", height:"20rem", objectFit:"cover"}} variant="top" src = {thisCounty?.image}/>

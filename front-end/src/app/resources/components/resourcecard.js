@@ -9,6 +9,7 @@ import { Lora, Cabin} from "next/font/google";
 const lora = Lora({weight: '400', subsets: ['latin']})
 const cabin = Cabin({weight: '400', subsets: ['latin']})
 
+// Resource card
 const ResourceCard = ({resource}) => {
     
     resource.replace(/"/g, /'/g)
@@ -22,6 +23,7 @@ const ResourceCard = ({resource}) => {
 
     const path = "../resources/" + thisRes.id + "/";
     
+    // Date/time logic
     const date = new Date();
     const offsetMinutes = date.getTimezoneOffset();
     const offsetMilliseconds = offsetMinutes * 60 * 1000;
@@ -35,6 +37,7 @@ const ResourceCard = ({resource}) => {
     }
 
     return (
+        // Resource card info with routing to instance page
         <Card style = {{width: "20rem", height: "30rem", margin:"0 auto"}}>
             <Card.Img  style={{width:"20rem", height:"15rem", objectFit:"cover"}} variant="top" src = {thisRes?.media}/>
             <Card.Body className="d-flex flex-column" style={{padding: "1rem", background: "lightblue", justifyContent:"space-between"}}>

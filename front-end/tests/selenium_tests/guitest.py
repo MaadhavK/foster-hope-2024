@@ -8,7 +8,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 class GUITests(unittest.TestCase):
     def setUp(self) -> None:
-        self.url = "https://develop.d38oxs0wh0o0ma.amplifyapp.com/"
+        self.url = 'https://www.foster-hope.com/'
         options = webdriver.ChromeOptions()
         options.add_argument("--headless")
         options.add_experimental_option("excludeSwitches", ["enable-logging"])

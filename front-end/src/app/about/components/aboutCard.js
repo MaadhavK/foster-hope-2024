@@ -19,6 +19,7 @@ const AboutCard = ({ member }) => {
   const [commit, setCommit] = useState([]);
   const [issue, setIssue] = useState([]);
 
+  // Getting data from gitlab
   useEffect(() => {
     async function fetchData() {
       const commitData = await getMemberCommit(member.name);
@@ -29,6 +30,7 @@ const AboutCard = ({ member }) => {
     fetchData();
   }, [member.name, member.username]);
 
+  // Getting commits
   async function getMemberCommit(username) {
     if (username == "Raymond Wang") {
       username = "raymww"
