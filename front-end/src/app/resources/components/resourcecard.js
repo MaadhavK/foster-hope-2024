@@ -11,7 +11,6 @@ const cabin = Cabin({weight: '400', subsets: ['latin']})
 
 // Resource card
 const ResourceCard = ({resource}) => {
-    
     resource.replace(/"/g, /'/g)
     // console.log(`Here's the resource: ${resource}`)
     var thisRes = JSON.parse(resource);
@@ -33,7 +32,8 @@ const ResourceCard = ({resource}) => {
     let hours = thisRes?.hours;
 
     if(thisRes.type != "event"){
-        hours = JSON.parse(thisRes?.hours)[day]
+        //hours = JSON.parse(thisRes?.hours)[day]
+        hours = Array.isArray(thisRes?.hours) ? JSON.parse(thisRes?.hours)[day] : '';
     }
 
     return (
