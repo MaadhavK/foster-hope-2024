@@ -67,25 +67,25 @@ export default async function SearchBar() {
           
           <Tabs defaultActiveKey="counties" className="tabs" justify>
             <Tab eventKey="counties" title="Counties">
-              {/* Render Counties content */}
-            <Container fluid={true} style = {{}}>
-                <Row style={{padding:"3vw", paddingTop:"2rem", justifyContent:"space-evenly"}}>
-                    {county_entries.map((county) => (
-                        <Col xs style={{paddingBottom: "2rem"}}> <CountyCard county={JSON.stringify(county)}/></Col>
-                   
-                   ))}
-                </Row>
-                
-            </Container>
-            <Pagination
-                num_instances={num_instances_counties}
-                path = {"counties"}
-            />
-            <br></br>
-            <br></br>
-            <h3 className={lora.className} style={{color:"black", paddingBottom:"20px"}}>
-                Number of Instances: {num_instances_counties}
-            </h3>
+                {/* Render Counties content */}
+              <Container fluid={true} style = {{}}>
+                  <Row style={{padding:"3vw", paddingTop:"2rem", justifyContent:"space-evenly"}}>
+                      {county_entries.map((county) => (
+                          <Col xs style={{paddingBottom: "2rem"}}> <CountyCard county={JSON.stringify(county)}/></Col>
+                    
+                    ))}
+                  </Row>
+                  
+              </Container>
+              <Pagination
+                  num_instances={num_instances_counties}
+                  path = {"counties"}
+              />
+              <br></br>
+              <br></br>
+              <h3 className={lora.className} style={{color:"black", paddingBottom:"20px"}}>
+                  Number of Instances: {num_instances_counties}
+              </h3>
             </Tab>
             <Tab eventKey="orgs" title="Organizations">
               {/* Render Organizations content */}
@@ -95,15 +95,15 @@ export default async function SearchBar() {
                         <Col xs style={{paddingBottom: "2rem"}}> <OrgCard org={organization}/> </Col>
                     ))}
                 </Row>
-            </Container>
-            <Pagination
-                num_instances={num_instances_orgs}
-                path={"organizations"}
-            />
-            <br></br>
-            <p className={lora.className} style={{color:"black", paddingBottom:"20px"}}>
-                Number of Instances: {num_instances_orgs}
-            </p>
+              </Container>
+              <Pagination
+                  num_instances={num_instances_orgs}
+                  path={"organizations"}
+              />
+              <br></br>
+              <p className={lora.className} style={{color:"black", paddingBottom:"20px"}}>
+                  Number of Instances: {num_instances_orgs}
+              </p>
             </Tab>
             <Tab eventKey="resources" title="Resources">
               {/* Render Resources content */}
@@ -113,15 +113,15 @@ export default async function SearchBar() {
                         <Col xs style={{ paddingBottom: "2rem" }}> <ResourceCard resource={JSON.stringify(res)} /> </Col>
                     ))}
                 </Row>
-            </Container>
-            {/* Pagination component */}
-            <Pagination
-                num_instances={resources_entries}
-                path={"resources"}
-            />
-            <h3 className={lora.className} style={{ color: "black", paddingBottom: "20px", paddingTop: "10px" }}>
-                Number of Instances: {num_instances_resources}
-            </h3>
+              </Container>
+              {/* Pagination component */}
+              <Pagination
+                  num_instances={resources_entries}
+                  path={"resources"}
+              />
+              <h3 className={lora.className} style={{ color: "black", paddingBottom: "20px", paddingTop: "10px" }}>
+                  Number of Instances: {num_instances_resources}
+              </h3>
             </Tab>
           </Tabs>
         </div>
