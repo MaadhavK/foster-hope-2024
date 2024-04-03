@@ -23,8 +23,8 @@ def single_county():
         data = [x._asdict() for x in result.all()]
         return json.JSONEncoder().encode({"data": data})
 
-@app.route('/counties/all_counties_filter')
-def all_counties_filter():
+@app.route('/counties/all_counties_search')
+def all_counties_search():
     with engine.connect() as connection:
         search_query = request.args.get("search_query")
         int_search_query = 0
@@ -42,7 +42,22 @@ def all_counties_filter():
             result = connection.execute(query, {'search_query': f'%{search_query}%', 'int_search_query': 0})  # Provide a default value for int_val if val is not a digit
 
         data = [x._asdict() for x in result.all()]
-        return json.JSONEncoder().encode({"data": data})    
+        return json.JSONEncoder().encode({"data": data})  
+
+@app.route('/counties/all_counties_sort')
+def all_counties_sort():
+    sorts = request.args.get('sort')
+    with engine.connect() as connection:
+        query = 'SELECT * FROM "Counties"'
+        if sorts:
+            for sort in sorts.split(","):
+                descending = sort[0] == '-' 
+                field = sort[1:] if descending else sort
+                query += f' ORDER BY "{field}" {"DESC" if descending else "ASC"},'
+            query = query.rstrip(',')
+        result = connection.execute(text(query))
+        data = [x._asdict() for x in result.all()]
+        return json.JSONEncoder().encode({"data": data})  
 
 @app.route('/counties/all_counties')
 def all_counties():
@@ -76,8 +91,8 @@ def all_orgs():
         data = [x._asdict() for x in result.all()]
         return json.JSONEncoder().encode({"data": data})
     
-@app.route('/orgs/all_orgs_filter')
-def all_orgs_filter():
+@app.route('/orgs/all_orgs_search')
+def all_orgs_search():
     with engine.connect() as connection:
         search_query = request.args.get("search_query")
         int_search_query = 0
@@ -96,6 +111,21 @@ def all_orgs_filter():
         data = [x._asdict() for x in result.all()]
         return json.JSONEncoder().encode({"data": data})    
 
+@app.route('/orgs/all_orgs_sort')
+def all_orgs_sort():
+    sorts = request.args.get('sort')
+    with engine.connect() as connection:
+        query = 'SELECT * FROM "Organizations"'
+        if sorts:
+            for sort in sorts.split(","):
+                descending = sort[0] == '-' 
+                field = sort[1:] if descending else sort
+                query += f' ORDER BY "{field}" {"DESC" if descending else "ASC"},'
+            query = query.rstrip(',')
+        result = connection.execute(text(query))
+        data = [x._asdict() for x in result.all()]
+        return json.JSONEncoder().encode({"data": data})
+    
 @app.route('/resources/single_resource')
 def resources():
     with engine.connect() as connection:
@@ -131,8 +161,8 @@ def all_resources():
         data = [x._asdict() for x in result.all()]
         return json.JSONEncoder().encode({"data": data})
     
-@app.route('/resources/all_resources_filter')
-def all_resources_filter():
+@app.route('/resources/all_resources_search')
+def all_resources_search():
     search_query = request.args.get('search_query') # get search query from request params
     with engine.connect() as connection:
         if search_query:
@@ -148,13 +178,13 @@ def all_resources_filter():
 def all_resources_sort():
     sorts = request.args.get('sort')
     with engine.connect() as connection:
-        query = 'SELECT * FROM Resources'
+        query = 'SELECT * FROM "Resources"'
         if sorts:
             for sort in sorts.split(","):
                 descending = sort[0] == '-' 
                 field = sort[1:] if descending else sort
-                query += f'ORDER BY "{field}" {"DESC" if descending else "ASC"},'
+                query += f' ORDER BY "{field}" {"DESC" if descending else "ASC"},'
             query = query.rstrip(',')
         result = connection.execute(text(query))
-        data = [dict(row) for row in result.fetchall()]
+        data = [x._asdict() for x in result.all()]
         return json.JSONEncoder().encode({"data": data})
