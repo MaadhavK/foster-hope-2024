@@ -22,7 +22,27 @@ def single_county():
         result = connection.execute(query)
         data = [x._asdict() for x in result.all()]
         return json.JSONEncoder().encode({"data": data})
-    
+
+@app.route('/counties/all_counties_filter')
+def all_counties_filter():
+    with engine.connect() as connection:
+        search_query = request.args.get("search_query")
+        int_search_query = int(search_query)
+        query = ""
+
+        if search_query:
+            query = text('SELECT * FROM "Counties" WHERE county ILIKE :search_query OR number_of_homes ILIKE :search_query OR number_of_foster_kids ILIKE :search_query OR population ILIKE :search_query OR description ILIKE :search_query OR number_of_orgs = :int_search_query')
+        else:
+            return None
+        # Execute the query with parameters based on their types
+        if search_query.isdigit():  # Check if val is a digit (assuming it's a string)
+            result = connection.execute(query, {'val': f'%{search_query}%', 'int_val': f'%{int_search_query}%'})
+        else:
+            result = connection.execute(query, {'val': f'%{search_query}%', 'int_val': f'%{int_search_query}%'})  # Provide a default value for int_val if val is not a digit
+
+        data = [x._asdict() for x in result.all()]
+        return json.JSONEncoder().encode({"data": data})    
+
 @app.route('/counties/all_counties')
 def all_counties():
     with engine.connect() as connection:
@@ -53,7 +73,7 @@ def all_orgs():
 
         result = connection.execute(query)
         data = [x._asdict() for x in result.all()]
-        return json.JSONEncoder().encode({"data": data})
+        return json.JSONEncoder().encoqde({"data": data})
     
 @app.route('/resources/single_resource')
 def resources():
@@ -87,5 +107,18 @@ def all_resources():
         query = query = text('SELECT * FROM "Resources"')
 
         result = connection.execute(query)
+        data = [x._asdict() for x in result.all()]
+        return json.JSONEncoder().encode({"data": data})
+    
+@app.route('/resources/all_resources_filter')
+def all_resources_filter():
+    search_query = request.args.get('search_query') # get search query from request params
+    with engine.connect() as connection:
+        if search_query:
+            query = text('SELECT * FROM "Resources" WHERE name ILIKE :search_query OR location ILIKE :search_query OR hours ILIKE :search_query OR type ILIKE :search_query OR description ILIKE :search_query')
+            result = connection.execute(query, {'search_query': f'%{search_query}%'})
+        else:
+            query = text('SELECT * FROM "Resources"')
+            result = connection.execute(query)
         data = [x._asdict() for x in result.all()]
         return json.JSONEncoder().encode({"data": data})
