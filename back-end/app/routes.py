@@ -27,7 +27,7 @@ def single_county():
 def all_counties_filter():
     with engine.connect() as connection:
         search_query = request.args.get("search_query")
-        int_search_query = int(search_query)
+        int_search_query = 0
         query = ""
 
         if search_query:
@@ -36,9 +36,10 @@ def all_counties_filter():
             return None
         # Execute the query with parameters based on their types
         if search_query.isdigit():  # Check if val is a digit (assuming it's a string)
-            result = connection.execute(query, {'val': f'%{search_query}%', 'int_val': f'%{int_search_query}%'})
+            int_search_query = int(search_query)
+            result = connection.execute(query, {'search_query': f'%{search_query}%', 'int_search_query': int_search_query})
         else:
-            result = connection.execute(query, {'val': f'%{search_query}%', 'int_val': f'%{int_search_query}%'})  # Provide a default value for int_val if val is not a digit
+            result = connection.execute(query, {'search_query': f'%{search_query}%', 'int_search_query': 0})  # Provide a default value for int_val if val is not a digit
 
         data = [x._asdict() for x in result.all()]
         return json.JSONEncoder().encode({"data": data})    
@@ -73,8 +74,28 @@ def all_orgs():
 
         result = connection.execute(query)
         data = [x._asdict() for x in result.all()]
-        return json.JSONEncoder().encoqde({"data": data})
+        return json.JSONEncoder().encode({"data": data})
     
+@app.route('/orgs/all_orgs_filter')
+def all_orgs_filter():
+    with engine.connect() as connection:
+        search_query = request.args.get("search_query")
+        int_search_query = 0
+        query = ""
+
+        if search_query:
+            query = text('SELECT * FROM "Organizations" WHERE name ILIKE :search_query OR location ILIKE :search_query OR operation_hours ILIKE :search_query OR type ILIKE :search_query OR description ILIKE :search_query OR rating = :int_search_query')
+        else:
+            return None
+        if search_query.isdigit(): 
+            int_search_query = int(search_query)
+            result = connection.execute(query, {'search_query': f'%{search_query}%', 'int_search_query': int_search_query})
+        else:
+            result = connection.execute(query, {'search_query': f'%{search_query}%', 'int_search_query': 0})  # Provide a default value for int_val if val is not a digit
+
+        data = [x._asdict() for x in result.all()]
+        return json.JSONEncoder().encode({"data": data})    
+
 @app.route('/resources/single_resource')
 def resources():
     with engine.connect() as connection:
