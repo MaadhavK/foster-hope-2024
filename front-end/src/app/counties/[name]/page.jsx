@@ -2,15 +2,15 @@
 import styles from "../../page.module.css";
 // import React, { useEffect, useState } from 'react';
 import countiesData from "../../data/counties.json";
-import YoutubeEmbed from "@/app/components/youtube";
-import OrgCard from "@/app/organizations/components/orgCard";
+import YoutubeEmbed from "../../components/youtube";
+import OrgCard from "../../organizations/components/orgCard";
 import { Row, Col, Container, Button } from "react-bootstrap";
 import "../counties.css";
 import YouTube from 'react-youtube';
 
 // COunties instance page
 import { Lora, Cabin} from "next/font/google";
-import ResourceCard from "@/app/resources/components/resourcecard";
+import ResourceCard from "../../resources/components/resourcecard";
 
 const lora = Lora({weight: '400', subsets: ['latin']})
 const cabin = Cabin({weight: '400', subsets: ['latin']})
