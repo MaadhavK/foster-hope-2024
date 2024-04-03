@@ -11,7 +11,6 @@ const cabin = Cabin({weight: '400', subsets: ['latin']})
 
 // Resource card
 const ResourceCard = ({resource}) => {
-    
     resource.replace(/"/g, /'/g)
     // console.log(`Here's the resource: ${resource}`)
     var thisRes = JSON.parse(resource);
@@ -33,13 +32,14 @@ const ResourceCard = ({resource}) => {
     let hours = thisRes?.hours;
 
     if(thisRes.type != "event"){
-        hours = JSON.parse(thisRes?.hours)[day]
+        //hours = JSON.parse(thisRes?.hours)[day]
+        hours = Array.isArray(thisRes?.hours) ? JSON.parse(thisRes?.hours)[day] : '';
     }
 
     return (
         // Resource card info with routing to instance page
-        <Card style = {{width: "20rem", height: "30rem", margin:"0 auto"}}>
-            <Card.Img  style={{width:"20rem", height:"15rem", objectFit:"cover"}} variant="top" src = {thisRes?.media}/>
+        <Card style = {{width: "20rem", height: "37rem", margin:"0 auto"}}>
+            <Card.Img  style={{width:"20rem", height:"20rem", objectFit:"cover"}} variant="top" src = {thisRes?.media}/>
             <Card.Body className="d-flex flex-column" style={{padding: "1rem", background: "lightblue", justifyContent:"space-between"}}>
                 <div>
                     <Card.Title className={lora.className} style={{fontSize:"1.2rem", alignSelf:"flex-start"}}><b>{thisRes?.name}</b></Card.Title>

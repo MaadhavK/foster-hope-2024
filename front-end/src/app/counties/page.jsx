@@ -1,9 +1,8 @@
 // import Counties from "./components/countyCardList"
 import { Row, Col, Container, Card, Button} from "react-bootstrap";
 import styles from "../page.module.css";
-// import "./counties.css"
+import ModelSearch from "../components/modelSearch"
 
-import Link from "next/link";
 
 import { Lora, Cabin} from "next/font/google";
 const lora = Lora({weight: '400', subsets: ['latin']})
@@ -47,6 +46,7 @@ export default async function listCounties( {searchParams} ) {
                     </p>
                 </div>
             </Container>
+            <ModelSearch model="Counties"/>
             {/* All of the county pages in the page */}
             <Container fluid={true} style = {{}}>
                 <Row style={{padding:"3vw", paddingTop:"2rem", justifyContent:"space-evenly"}}>
@@ -55,7 +55,6 @@ export default async function listCounties( {searchParams} ) {
                    
                    ))}
                 </Row>
-                
                 
             </Container>
             <Pagination
