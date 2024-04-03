@@ -1,5 +1,5 @@
 // import Counties from "./components/countyCardList"
-import { Row, Col, Container, Card, Button} from "react-bootstrap";
+import { Row, Col, Container, Card, Button, Form} from "react-bootstrap";
 import styles from "../page.module.css";
 import ModelSearch from "../components/modelSearch"
 
@@ -17,6 +17,7 @@ export const getCounties = async ()=> {
 }
 
 export default async function listCounties( {searchParams} ) {
+
     const counties = await getCounties();
 
     // Params for pagination
@@ -46,13 +47,14 @@ export default async function listCounties( {searchParams} ) {
                     </p>
                 </div>
             </Container>
-            <ModelSearch model="Counties"/>
+            
+            <ModelSearch model="Counties" choices={["County Name", "Population", "Num of Foster Children", "Num of Agencies", "Num of Foster Homes"]}/>
+
             {/* All of the county pages in the page */}
             <Container fluid={true} style = {{}}>
                 <Row style={{padding:"3vw", paddingTop:"2rem", justifyContent:"space-evenly"}}>
                     {entries.map((county) => (
                         <Col xs style={{paddingBottom: "2rem"}}> <CountyCard county={JSON.stringify(county)}/></Col>
-                   
                    ))}
                 </Row>
                 

@@ -1,7 +1,7 @@
 // import Counties from "./components/countyCardList"
 import { Row, Col, Container, Card, Button} from "react-bootstrap";
 import styles from "../page.module.css";
-// import "./counties.css"
+import ModelSearch from "../components/modelSearch.js";
 
 import Link from "next/link";
 
@@ -48,6 +48,7 @@ export default async function listCounties( {searchParams} ) {
                     </p>
                 </div>
             </Container>
+            <ModelSearch model="Organizations" choices={["Name", "Location", "County", "Rating", "Hours", "Type"]}/>
             {/* Current page instance cards */}
             <Container fluid={true} style = {{}}>
                 <Row style={{padding:"3vw", paddingTop:"2rem", justifyContent:"space-evenly"}}>
