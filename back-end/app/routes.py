@@ -143,3 +143,18 @@ def all_resources_filter():
             result = connection.execute(query)
         data = [x._asdict() for x in result.all()]
         return json.JSONEncoder().encode({"data": data})
+
+@app.route('/resources/all_resources_sort')
+def all_resources_sort():
+    sorts = request.args.get('sort')
+    with engine.connect() as connection:
+        query = 'SELECT * FROM Resources'
+        if sorts:
+            for sort in sorts.split(","):
+                descending = sort[0] == '-' 
+                field = sort[1:] if descending else sort
+                query += f'ORDER BY "{field}" {"DESC" if descending else "ASC"},'
+            query = query.rstrip(',')
+        result = connection.execute(text(query))
+        data = [dict(row) for row in result.fetchall()]
+        return json.JSONEncoder().encode({"data": data})
