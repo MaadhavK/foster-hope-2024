@@ -13,13 +13,14 @@ import Pagination from "../components/pagination.js"
 
 
 async function getOrgs() {
-    const response = await fetch('http://api.foster-hope.com/orgs/all_orgs');
+    const response = await fetch('https://api.foster-hope.com/orgs/all_orgs');
     return await response.json();
 }
 
 async function searchAndSort(search, sort, asc){
-    const response = await fetch('http://api.foster-hope.com/orgs/all_orgs?' + (search != null ? "search_query=" + search + (sort != null ? "&" : "") : "") + (sort != null ? "sort=" + (asc ? "" : "-")  + sort : ""));
-    return await response.json();
+    const response = await fetch('https://api.foster-hope.com/orgs/all_orgs?' + (search != null ? "search_query=" + search + (sort != null ? "&" : "") : "") + (sort != null ? "sort=" + (asc ? "" : "-")  + sort : ""));
+    const result = await response.json();
+    return result;
 }
 
 

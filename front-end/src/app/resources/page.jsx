@@ -14,15 +14,50 @@ import Pagination from "../components/pagination.js"
 
 
 async function getResources() {
-    const response = await fetch(`http://api.foster-hope.com/resources/all_resources`)
+    const response = await fetch(`https://api.foster-hope.com/resources/all_resources`)
     return await response.json();
 }
+
+async function searchAndSort(search, sort, asc){
+    const response = await fetch('https://api.foster-hope.com/resources/all_resources?' + (search != null ? "search_query=" + search + (sort != null ? "&" : "") : "") + (sort != null ? "sort=" + (asc ? "" : "-")  + sort : ""));
+    const result = await response.json();
+    return result;
+}
+
 export default async function listResources({ searchParams }) {
     const search = searchParams["search"] ?? null
     const sort = Number(searchParams["sort"] ?? 0)
-    const asc = searchParams["asc"] ?? false
+    const asc = searchParams["asc"] == "true" ? true : false;
 
-    const resources = await getResources();
+    var sortParam = null;
+    switch (sort) {
+        case 0:
+            sortParam = null;
+            break;
+        case 1:
+            sortParam = "name";
+            break;
+        case 2:
+            sortParam = "location";
+            break;
+        case 3:
+            sortParam = "hours";
+            break;
+        case 4:
+            sortParam = "type";
+            break;
+        case 5:
+            sortParam = "county";
+            break;
+    }
+
+    var resources = null;
+
+    if(search != null || sortParam != null){
+        resources = await searchAndSort(search, sortParam, asc);
+    } else {
+         resources = await getResources();
+    }
 
     // Pagination logic
     const page = searchParams["page"] ?? 1

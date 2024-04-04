@@ -11,29 +11,50 @@ import Pagination from "../components/pagination.js"
 
 
 export const getCounties = async ()=> {
-    const response = await fetch('http://api.foster-hope.com/counties/all_counties');
+    const response = await fetch('https://api.foster-hope.com/counties/all_counties');
     return await response.json();
 }
 
-export const getSearch = async (search) => {
-    const response = await fetch('http://api.foster-hope.com/counties/all_counties?search_query=' + search);
-    return await response.json();
+async function searchAndSort(search, sort, asc){
+    const response = await fetch('https://api.foster-hope.com/counties/all_counties?' + (search != null ? "search_query=" + search + (sort != null ? "&" : "") : "") + (sort != null ? "sort=" + (asc ? "" : "-")  + sort : ""));
+    const result = await response.json();
+    return result;
 }
 
 
 export default async function listCounties( {searchParams} ) {
     const search = searchParams["search"] ?? null
-    const sort = searchParams["sort"] ?? 0
+    const sort = Number(searchParams["sort"] ?? 0)
     const asc = searchParams["asc"] ?? false
+    
+    var sortParam = null;
+    switch (sort) {
+        case 0:
+            sortParam = null;
+            break;
+        case 1:
+            sortParam = "county";
+            break;
+        case 2:
+            sortParam = "population";
+            break;
+        case 3:
+            sortParam = "num_of_foster_kids";
+            break;
+        case 4:
+            sortParam = "num_of_orgs";
+            break;
+        case 5:
+            sortParam = "num_of_homes";
+            break;
+    }
 
     var counties = null;
 
-    if(search != null){
-        counties = await getSearch(search);
-        console.log(counties);
+    if(search != null || sortParam != null){
+        counties = await searchAndSort(search, sortParam, asc);
     } else {
         counties = await getCounties();
-        console.log("no search");
     } 
 
     // Params for pagination
