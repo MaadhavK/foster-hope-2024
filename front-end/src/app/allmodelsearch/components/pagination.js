@@ -24,22 +24,6 @@ const Pagination = ({num_instances, path}) => {
         hasNextPage: true
     });
 
-
-
-    // useEffect(() => {
-    //   // Update pageState based on the new page value
-    //   const page = searchParams.get('page') ?? '1'
-    //   if(page!==pageState.prevPage+1 || page!==pageState.nextPage-1){
-    //   router.push(`/${path}&page=${Number(1)}&per_page=${per_page}`)
-    //   setPageState({
-    //       prevPage: page-1,
-    //       nextPage: page+1,
-    //       hasPrevPage: false, 
-    //       hasNextPage: true 
-    //   });
-    //   }
-    // }, [searchParams]);
-
     return (
     <div className={lora.className} style={{'paddingBottom':'10px'}}>
       <button style={{display:"inline", marginRight:"20px"}}

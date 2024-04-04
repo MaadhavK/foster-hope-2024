@@ -93,12 +93,6 @@ const Tabination = ({counties, orgs, resources, searchParams}) => {
         }
     }
     
-    // useEffect(() => {
-    //     // Update the page state based on the searchParams["page"]
-    //     setPage(searchParams["page"] ?? 1);
-    //     // console.log(page)
-    // }, [searchParams]);
-    
     
     useEffect(() => {
         const tempPage = searchParams["page"] ?? 1;

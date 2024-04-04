@@ -19,15 +19,41 @@ export const getCounties = async () => {
     const response = await fetch('http://api.foster-hope.com/orgs/all_orgs');
     return await response.json();
   }
-  export const getResources = async () => {
+    export const getResources = async () => {
     const response = await fetch(`http://api.foster-hope.com/resources/all_resources`)
     return await response.json();
   }
 
+export const getSearchCounties = async (search) => {
+    const response = await fetch('http://api.foster-hope.com/counties/all_counties?search_query=' + search);
+    return await response.json();
+}
+export const getSearchOrgs = async (search) => {
+    const response = await fetch('https://api.foster-hope.com/orgs/all_orgs?search_query=' + search);
+    return await response.json();
+}
+export const getSearchResources = async (search) => {
+    const response = await fetch('https://api.foster-hope.com/resources/all_resources?search_query=' + search);
+    return await response.json();
+}
+
 export default async function AllModelSearch({ searchParams }) {
-    const counties = await getCounties();
-    const orgs = await getOrgs();
-    const resources = await getResources();
+    var counties = null;
+    var orgs = null;
+    var resources = null;
+
+
+    const search = searchParams["search"] ?? null
+    if(search != null){
+        //counties = await getSearchCounties(search);
+        counties = await getCounties();
+        orgs = await getSearchOrgs(search)
+        resources = await getSearchResources(search)
+    } else {
+        counties = await getCounties();
+        orgs = await getOrgs();
+        resources = await getResources();
+    } 
 
     return (
         <main className={styles.main} style={{ backgroundColor: "#f8f9fa" }}>
