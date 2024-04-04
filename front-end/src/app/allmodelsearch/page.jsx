@@ -4,10 +4,6 @@ import { Row, Col, Container, Tab, Tabs } from "react-bootstrap";
 const lora = Lora({ weight: '400', subsets: ['latin'] })
 const cabin = Cabin({ weight: '400', subsets: ['latin'] })
 
-import CountyCard from "../counties/components/countycard";
-import OrgCard from "../organizations/components/orgCard";
-import ResourceCard from "../resources/components/resourcecard";
-import Pagination from "./components/pagination.js"
 import Tabination from "./components/tabination.js"
 
 
@@ -45,8 +41,7 @@ export default async function AllModelSearch({ searchParams }) {
 
     const search = searchParams["search"] ?? null
     if(search != null){
-        //counties = await getSearchCounties(search);
-        counties = await getCounties();
+        counties = await getSearchCounties(search);
         orgs = await getSearchOrgs(search)
         resources = await getSearchResources(search)
     } else {
