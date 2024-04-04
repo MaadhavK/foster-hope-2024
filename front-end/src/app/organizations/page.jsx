@@ -90,6 +90,11 @@ export default async function listCounties( {searchParams} ) {
                 </div>
             </Container>
             <ModelSearch model="Organizations" choices={["Name", "County", "Rating", "Hours", "Type"]}/>
+            <br></br>
+            <br></br>
+            <h4 className={lora.className} style={{color:"black", paddingBottom:"20px"}}>
+                Number of Instances: {num_instances}
+            </h4>
             {/* Current page instance cards */}
             <Container fluid={true} style = {{}}>
                 <Row style={{padding:"3vw", paddingTop:"2rem", justifyContent:"space-evenly"}}>
@@ -106,9 +111,6 @@ export default async function listCounties( {searchParams} ) {
                 asc={asc}
             />
             <br></br>
-            <p className={lora.className} style={{color:"black", paddingBottom:"20px"}}>
-                Number of Instances: {num_instances}
-            </p>
         </main>
     )
 }
