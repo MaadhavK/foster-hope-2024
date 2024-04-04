@@ -1,9 +1,7 @@
-// import Counties from "./components/countyCardList"
-import { Row, Col, Container, Card, Button} from "react-bootstrap";
+import { Row, Col, Container, Card, Button, Form} from "react-bootstrap";
 import styles from "../page.module.css";
-// import "./counties.css"
+import ModelSearch from "../components/modelSearch"
 
-import Link from "next/link";
 
 import { Lora, Cabin} from "next/font/google";
 const lora = Lora({weight: '400', subsets: ['latin']})
@@ -17,8 +15,26 @@ export const getCounties = async ()=> {
     return await response.json();
 }
 
+export const getSearch = async (search) => {
+    const response = await fetch('http://api.foster-hope.com/counties/all_counties?search_query=' + search);
+    return await response.json();
+}
+
+
 export default async function listCounties( {searchParams} ) {
-    const counties = await getCounties();
+    const search = searchParams["search"] ?? null
+    const sort = searchParams["sort"] ?? 0
+    const asc = searchParams["asc"] ?? false
+
+    var counties = null;
+
+    if(search != null){
+        counties = await getSearch(search);
+        console.log(counties);
+    } else {
+        counties = await getCounties();
+        console.log("no search");
+    } 
 
     // Params for pagination
     const page = searchParams["page"] ?? 1
@@ -47,12 +63,14 @@ export default async function listCounties( {searchParams} ) {
                     </p>
                 </div>
             </Container>
+            
+            <ModelSearch model="Counties" choices={["County Name", "Population", "Num of Foster Children", "Num of Agencies", "Num of Foster Homes"]}/>
+
             {/* All of the county pages in the page */}
             <Container fluid={true} style = {{}}>
                 <Row style={{padding:"3vw", paddingTop:"2rem", justifyContent:"space-evenly"}}>
                     {entries.map((county) => (
                         <Col xs style={{paddingBottom: "2rem"}}> <CountyCard county={JSON.stringify(county)}/></Col>
-                   
                    ))}
                 </Row>
                 
@@ -60,6 +78,8 @@ export default async function listCounties( {searchParams} ) {
             <Pagination
                 num_instances={num_instances}
                 path = {"counties"}
+                // search = {}
+                // sort = {}
             />
             <br></br>
             <br></br>
