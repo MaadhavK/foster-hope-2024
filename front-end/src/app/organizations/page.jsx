@@ -18,7 +18,6 @@ async function getOrgs() {
 }
 
 async function searchAndSort(search, sort, asc){
-    console.log('http://api.foster-hope.com/orgs/all_orgs?' + (search != null ? "search_query=" + search + (sort != null ? "&" : "") : "") + (sort != null ? "sort=" + (asc ? "" : "-")  + sort : ""));
     const response = await fetch('http://api.foster-hope.com/orgs/all_orgs?' + (search != null ? "search_query=" + search + (sort != null ? "&" : "") : "") + (sort != null ? "sort=" + (asc ? "" : "-")  + sort : ""));
     return await response.json();
 }
@@ -26,9 +25,12 @@ async function searchAndSort(search, sort, asc){
 
 // model page for counties
 export default async function listCounties( {searchParams} ) {
+    // get params for search and sort from url params
     const search = searchParams["search"] ?? null
     const sort = Number(searchParams["sort"] ?? 0)
+    const asc = searchParams["asc"] ?? false
     
+    // switch statement to encode the sort by from number
     var sortParam = null;
     switch (sort) {
         case 0:
@@ -51,10 +53,8 @@ export default async function listCounties( {searchParams} ) {
             break;
     }
 
-    const asc = searchParams["asc"] ?? false
-
+    // if sort or search active, call api for it
     var orgs = null;
-
     if(search != null || sortParam != null){
         orgs = await searchAndSort(search, sortParam, asc);
     } else {
@@ -100,6 +100,9 @@ export default async function listCounties( {searchParams} ) {
             <Pagination
                 num_instances={num_instances}
                 path={"organizations"}
+                search={search}
+                sort={sort}
+                asc={asc}
             />
             <br></br>
             <p className={lora.className} style={{color:"black", paddingBottom:"20px"}}>

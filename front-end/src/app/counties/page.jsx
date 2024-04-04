@@ -78,8 +78,9 @@ export default async function listCounties( {searchParams} ) {
             <Pagination
                 num_instances={num_instances}
                 path = {"counties"}
-                // search = {}
-                // sort = {}
+                search = {search}
+                sort = {sort}
+                asc = {asc}
             />
             <br></br>
             <br></br>

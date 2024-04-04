@@ -18,6 +18,9 @@ async function getResources() {
     return await response.json();
 }
 export default async function listResources({ searchParams }) {
+    const search = searchParams["search"] ?? null
+    const sort = Number(searchParams["sort"] ?? 0)
+    const asc = searchParams["asc"] ?? false
 
     const resources = await getResources();
 
@@ -62,6 +65,9 @@ export default async function listResources({ searchParams }) {
             <Pagination
                 num_instances={num_instances}
                 path={"resources"}
+                search={search}
+                sort={sort}
+                asc={asc}
             />
             <h3 className={lora.className} style={{ color: "black", paddingBottom: "20px", paddingTop: "10px" }}>
                 Number of Instances: {num_instances}
