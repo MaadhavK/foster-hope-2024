@@ -50,12 +50,12 @@ const data = {
 
   const imageArray = [
     // Add more image data as needed
-    { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png', alt: 'Image 1', logo: "React" },
-    { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/800px-Bootstrap_logo.svg.png', alt: 'Image 2', logo: "Bootstrap" },
-    { src: 'https://yt3.googleusercontent.com/R6P5skGdZJeM1bebvt3ILeU8k-9tiqE5T198RmBH8SoGXH2gk_Lk-45uZoq6X6pW4a4c9Sqn=s900-c-k-c0x00ffffff-no-rj', alt: 'Image 3', logo: "GitLab" },
-    { src: 'https://seeklogo.com/images/P/postman-logo-F43375A2EB-seeklogo.com.png', alt: 'Image 4', logo: "Postman" },
-    { src: 'https://www.docker.com/wp-content/uploads/2023/05/symbol_blue-docker-logo.png', alt: 'Image 5', logo: "Docker" },
-    { src: 'https://seeklogo.com/images/A/aws-amplify-logo-D68DDB5AB1-seeklogo.com.png', alt: 'Image 6', logo: "AWS Amplify" },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png', alt: 'Image 1', logo: "React", link: "" },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/800px-Bootstrap_logo.svg.png', alt: 'Image 2', logo: "Bootstrap", link: ""},
+    { src: 'https://yt3.googleusercontent.com/R6P5skGdZJeM1bebvt3ILeU8k-9tiqE5T198RmBH8SoGXH2gk_Lk-45uZoq6X6pW4a4c9Sqn=s900-c-k-c0x00ffffff-no-rj', alt: 'Image 3', logo: "GitLab", link: "https://gitlab.com/nathanchengus/cs373-group-22" },
+    { src: 'https://seeklogo.com/images/P/postman-logo-F43375A2EB-seeklogo.com.png', alt: 'Image 4', logo: "Postman", link: "https://documenter.getpostman.com/view/32909464/2sA2r3ZkjZ" },
+    { src: 'https://www.docker.com/wp-content/uploads/2023/05/symbol_blue-docker-logo.png', alt: 'Image 5', logo: "Docker", link: "" },
+    { src: 'https://seeklogo.com/images/A/aws-amplify-logo-D68DDB5AB1-seeklogo.com.png', alt: 'Image 6', logo: "AWS Amplify", link: "" },
   ];
 
 
@@ -109,7 +109,7 @@ export default function About() {
           <br/>
           <Row className="image-grid">
           {imageArray.map((image, index) => (
-          <ImageCard key={index} src={image.src} alt={image.alt} textBelowImage={image.logo} />
+          <ImageCard key={index} src={image.src} alt={image.alt} textBelowImage={image.logo} link = {image.link}/>
           ))}
           </Row>
         </Container>
