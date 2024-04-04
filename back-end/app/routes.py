@@ -114,7 +114,7 @@ def single_org():
 def all_orgs():
     search_query = request.args.get('search_query')
     sort = request.args.get('sort')
-    int_search_query = 0
+    int_search_query = None
     with engine.connect() as connection:
         query = 'SELECT * FROM "Organizations"'
         if search_query:
