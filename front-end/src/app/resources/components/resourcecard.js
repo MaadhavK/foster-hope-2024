@@ -9,8 +9,10 @@ import { Lora, Cabin} from "next/font/google";
 const lora = Lora({weight: '400', subsets: ['latin']})
 const cabin = Cabin({weight: '400', subsets: ['latin']})
 
+import { HighlightText } from "../../components/HighlightText";
+
 // Resource card
-const ResourceCard = ({resource}) => {
+const ResourceCard = ({resource, query}) => {
     resource.replace(/"/g, /'/g)
     // console.log(`Here's the resource: ${resource}`)
     var thisRes = JSON.parse(resource);
@@ -42,13 +44,13 @@ const ResourceCard = ({resource}) => {
             <Card.Img  style={{width:"20rem", height:"20rem", objectFit:"cover"}} variant="top" src = {thisRes?.media}/>
             <Card.Body className="d-flex flex-column" style={{padding: "1rem", background: "lightblue", justifyContent:"space-between"}}>
                 <div>
-                    <Card.Title className={lora.className} style={{fontSize:"1.2rem", alignSelf:"flex-start"}}><b>{thisRes?.name}</b></Card.Title>
+                    <Card.Title className={lora.className} style={{fontSize:"1.2rem", alignSelf:"flex-start"}}><b>{HighlightText(thisRes?.name,query)}</b></Card.Title>
                     <Card.Text className={cabin.className} style={{paddingTop:"10px", paddingBottom:"10px"}}>
-                    Location: {thisRes?.county}
+                    Location: {HighlightText(thisRes?.county,query)}
                     <br></br>
-                    Hours: {hours}
+                    Hours: {HighlightText(hours,query)}
                     <br></br>
-                    Type: {thisRes?.type}
+                    Type: {HighlightText(thisRes?.type,query)}
                     <br></br>
                     </Card.Text>
                 </div>

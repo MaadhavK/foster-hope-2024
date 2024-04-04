@@ -8,8 +8,10 @@ import { Lora, Cabin} from "next/font/google";
 const lora = Lora({weight: '400', subsets: ['latin']})
 const cabin = Cabin({weight: '400', subsets: ['latin']})
 
+import { HighlightText } from "../../components/HighlightText";
+
 // Organization card
-const OrgCard = ({org}) => {
+const OrgCard = ({org, query=""}) => {
     var thisOrg = org;
     if (!thisOrg) {
         return <div>Error: org data is not available</div>;
@@ -29,15 +31,15 @@ const OrgCard = ({org}) => {
             <Card.Img  style={{width:"20rem", height:"20rem", objectFit:"cover"}} variant="top" src = {thisOrg?.image}/>
             <Card.Body className="d-flex flex-column" style={{padding: "1rem", background: "lightblue", justifyContent:"space-between"}}>
                 <div>
-                    <Card.Title className={lora.className} style={{fontSize:"1.3rem"}}><b>{thisOrg?.name}</b></Card.Title>
+                    <Card.Title className={lora.className} style={{fontSize:"1.3rem"}}><b>{HighlightText(thisOrg?.name,query)}</b></Card.Title>
                     <Card.Text className={cabin.className} style={{paddingTop:"10px", paddingBottom:"10px"}}>
-                    Location: {thisOrg?.county} County
+                    Location: {HighlightText(thisOrg?.county, query)} County
                     <br></br>
-                    Type: {JSON.parse(thisOrg.type)[0].replaceAll('_', ' ')}
+                    Type: {HighlightText(JSON.parse(thisOrg.type)[0].replaceAll('_', ' '),query)}
                     <br></br>
-                    Reviews: {thisOrg?.rating}
+                    Reviews: {HighlightText(thisOrg?.rating, query)}
                     <br></br>
-                    {JSON.parse(thisOrg.operation_hours)[day]}
+                    {HighlightText(JSON.parse(thisOrg.operation_hours)[day], query)}
                     </Card.Text>
                     </div>
                 <div>

@@ -13,8 +13,8 @@ const Pagination = ({num_instances, path}) => {
     const router = useRouter()
     const searchParams = useSearchParams()
 
-    const page = searchParams.get('page') ?? '1'
     const per_page = searchParams.get('per_page') ?? '16'
+    const page = searchParams.get('page') ?? '1'
 
     // State for pagination logic
     const [pageState, setPageState] = useState( {
@@ -26,20 +26,19 @@ const Pagination = ({num_instances, path}) => {
 
 
 
-    useEffect(() => {
-      // Update pageState based on the new page value
-        const page = searchParams.get('page') ?? '1'
-        if(page!=pageState.prevPage+1 || page!=pageState.nextPage-1){
-        setPageState({
-            prevPage: 0,
-            nextPage: 2,
-            hasPrevPage: page > 1, // Check if there's a previous page
-            hasNextPage: true // Set to true by default, you might want to update this based on the actual data
-        });
-        console.log(page)
-        console.log(pageState.prevPage+1)
-      }
-    }, [searchParams]);
+    // useEffect(() => {
+    //   // Update pageState based on the new page value
+    //   const page = searchParams.get('page') ?? '1'
+    //   if(page!==pageState.prevPage+1 || page!==pageState.nextPage-1){
+    //   router.push(`/${path}&page=${Number(1)}&per_page=${per_page}`)
+    //   setPageState({
+    //       prevPage: page-1,
+    //       nextPage: page+1,
+    //       hasPrevPage: false, 
+    //       hasNextPage: true 
+    //   });
+    //   }
+    // }, [searchParams]);
 
     return (
     <div className={lora.className} style={{'paddingBottom':'10px'}}>
@@ -48,7 +47,7 @@ const Pagination = ({num_instances, path}) => {
         disabled={!pageState.hasPrevPage}
         onClick={() => {
           // Routing to the previous page and updating state
-          router.push(`/${path}/?page=${Number(page) - 1}&per_page=${per_page}`)
+          router.push(`/${path}&page=${Number(page) - 1}&per_page=${per_page}`)
             setPageState({
                     prevPage: pageState.prevPage - 1,
                     nextPage: pageState.nextPage - 1,
