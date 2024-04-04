@@ -7,7 +7,7 @@ import { Lora } from "next/font/google";
 const lora = Lora({weight: '400', subsets: ['latin']})
 
 // The logic for creating pagination in our model pages
-const Pagination = ({num_instances, path}) => {
+const Pagination = ({num_instances, path, search, sort, asc}) => {
 
     
     const router = useRouter()
@@ -31,7 +31,7 @@ const Pagination = ({num_instances, path}) => {
         disabled={!pageState.hasPrevPage}
         onClick={() => {
           // Routing to the previous page and updating state
-          router.push(`/${path}/?page=${Number(page) - 1}&per_page=${per_page}`)
+          router.push(`/${path}?page=${Number(page) - 1}&per_page=${per_page}`)
             setPageState({
                     prevPage: pageState.prevPage - 1,
                     nextPage: pageState.nextPage - 1,
@@ -54,7 +54,7 @@ const Pagination = ({num_instances, path}) => {
         disabled={!pageState.hasNextPage}
         // Routing to the next page and updating state
         onClick={() => {
-          router.push(`/${path}/?page=${Number(page) + 1}&per_page=${per_page}`)
+          router.push("/" + path + "?" + (search != null ? "search=" + search + "&" : "") + (sort != 0 ? "sort=" + sort + "&asc=" + asc + "&": "") +  "page="+ (Number(page) + 1) + "&per_page=" + Number(per_page))
             setPageState({
                 prevPage: pageState.prevPage + 1,
                 nextPage: pageState.nextPage + 1,

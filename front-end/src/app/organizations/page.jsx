@@ -17,20 +17,46 @@ async function getOrgs() {
     return await response.json();
 }
 
-async function searchOrgs(search){
-    const response = await fetch('http://api.foster-hope.com/orgs/all_orgs?search_query=' + search);
+async function searchAndSort(search, sort, asc){
+    const response = await fetch('http://api.foster-hope.com/orgs/all_orgs?' + (search != null ? "search_query=" + search + (sort != null ? "&" : "") : "") + (sort != null ? "sort=" + (asc ? "" : "-")  + sort : ""));
     return await response.json();
 }
+
+
 // model page for counties
 export default async function listCounties( {searchParams} ) {
+    // get params for search and sort from url params
     const search = searchParams["search"] ?? null
-    const sort = searchParams["sort"] ?? 0
+    const sort = Number(searchParams["sort"] ?? 0)
     const asc = searchParams["asc"] ?? false
+    
+    // switch statement to encode the sort by from number
+    var sortParam = null;
+    switch (sort) {
+        case 0:
+            sortParam = null;
+            break;
+        case 1:
+            sortParam = "name";
+            break;
+        case 2:
+            sortParam = "county";
+            break;
+        case 3:
+            sortParam = "rating";
+            break;
+        case 4:
+            sortParam = "hours";
+            break;
+        case 5:
+            sortParam = "operation_hours";
+            break;
+    }
 
+    // if sort or search active, call api for it
     var orgs = null;
-
-    if(search != null){
-        orgs = await searchOrgs(search);
+    if(search != null || sortParam != null){
+        orgs = await searchAndSort(search, sortParam, asc);
     } else {
         orgs = await getOrgs();
     }
@@ -62,7 +88,7 @@ export default async function listCounties( {searchParams} ) {
                     </p>
                 </div>
             </Container>
-            <ModelSearch model="Organizations" choices={["Name", "Location", "County", "Rating", "Hours", "Type"]}/>
+            <ModelSearch model="Organizations" choices={["Name", "County", "Rating", "Hours", "Type"]}/>
             {/* Current page instance cards */}
             <Container fluid={true} style = {{}}>
                 <Row style={{padding:"3vw", paddingTop:"2rem", justifyContent:"space-evenly"}}>
@@ -74,6 +100,9 @@ export default async function listCounties( {searchParams} ) {
             <Pagination
                 num_instances={num_instances}
                 path={"organizations"}
+                search={search}
+                sort={sort}
+                asc={asc}
             />
             <br></br>
             <p className={lora.className} style={{color:"black", paddingBottom:"20px"}}>
