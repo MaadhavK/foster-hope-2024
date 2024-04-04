@@ -1,4 +1,3 @@
-// import Counties from "./components/countyCardList"
 import { Row, Col, Container, Card, Button, Form} from "react-bootstrap";
 import styles from "../page.module.css";
 import ModelSearch from "../components/modelSearch"
@@ -16,9 +15,26 @@ export const getCounties = async ()=> {
     return await response.json();
 }
 
-export default async function listCounties( {searchParams} ) {
+export const getSearch = async (search) => {
+    const response = await fetch('http://api.foster-hope.com/counties/all_counties?search_query=' + search);
+    return await response.json();
+}
 
-    const counties = await getCounties();
+
+export default async function listCounties( {searchParams} ) {
+    const search = searchParams["search"] ?? null
+    const sort = searchParams["sort"] ?? 0
+    const asc = searchParams["asc"] ?? false
+
+    var counties = null;
+
+    if(search != null){
+        counties = await getSearch(search);
+        console.log(counties);
+    } else {
+        counties = await getCounties();
+        console.log("no search");
+    } 
 
     // Params for pagination
     const page = searchParams["page"] ?? 1
@@ -62,6 +78,8 @@ export default async function listCounties( {searchParams} ) {
             <Pagination
                 num_instances={num_instances}
                 path = {"counties"}
+                // search = {}
+                // sort = {}
             />
             <br></br>
             <br></br>

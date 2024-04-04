@@ -16,10 +16,24 @@ async function getOrgs() {
     const response = await fetch('http://api.foster-hope.com/orgs/all_orgs');
     return await response.json();
 }
+
+async function searchOrgs(search){
+    const response = await fetch('http://api.foster-hope.com/orgs/all_orgs?search_query=' + search);
+    return await response.json();
+}
 // model page for counties
 export default async function listCounties( {searchParams} ) {
+    const search = searchParams["search"] ?? null
+    const sort = searchParams["sort"] ?? 0
+    const asc = searchParams["asc"] ?? false
 
-    const orgs = await getOrgs();
+    var orgs = null;
+
+    if(search != null){
+        orgs = await searchOrgs(search);
+    } else {
+        orgs = await getOrgs();
+    }
     
     // Pagination logic
     const page = searchParams["page"] ?? 1
