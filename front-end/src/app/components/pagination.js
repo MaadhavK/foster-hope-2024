@@ -27,7 +27,7 @@ const Pagination = ({num_instances, path, search, sort, asc}) => {
     return (
     <div className={lora.className} style={{'paddingBottom':'10px'}}>
       <button style={{display:"inline", marginRight:"20px"}}
-        className='bg-blue-500 text-white p-1'
+        className='bg-blue-500 text-darkgray p-1'
         disabled={!pageState.hasPrevPage}
         onClick={() => {
           // Routing to the previous page and updating state
@@ -50,7 +50,7 @@ const Pagination = ({num_instances, path, search, sort, asc}) => {
       </div>
 
       <button style={{display:"inline", marginLeft:"20px"}}
-        className='bg-blue-500 text-white p-1'
+        className='bg-blue-500 text-darkgray p-1'
         disabled={!pageState.hasNextPage}
         // Routing to the next page and updating state
         onClick={() => {
