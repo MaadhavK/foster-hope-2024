@@ -11,6 +11,7 @@ import { useRouter } from 'next/navigation';
 
 export default function ModelSearch({model, choices}) {
 
+    // state for search term and cards
     const router = useRouter();
     const [saveTerm, setSaveTerm] = useState(null);
     const [searched, setSearched] = useState(null);
@@ -27,6 +28,7 @@ export default function ModelSearch({model, choices}) {
         }
     };
 
+    // Logic for handling a search
     const handleSearch = (event) => {
         if (event !== null) {
             event.preventDefault();
@@ -37,6 +39,7 @@ export default function ModelSearch({model, choices}) {
         }
     }
 
+    // Toggling the sort from ascending to descending and vice versa
     const toggleAscSwitch = (e) => {
         const val = !asc;
         setAsc(val);
@@ -51,6 +54,7 @@ export default function ModelSearch({model, choices}) {
         router.push(model.toLowerCase() + "?" + (searched != null ? "search=" + encodeURIComponent(searched) + (e.target.value != 0 ? "&": "") : "") + (e.target.value != 0 ? "sort=" + e.target.value + "&asc=" + asc : ""));
     }
 
+    // Reset elements to original
     const reset = (event) => {
         router.replace("/" + model.toLowerCase(), undefined, { shallow: true });
         document.getElementById("searchBar").value = "";
@@ -63,6 +67,7 @@ export default function ModelSearch({model, choices}) {
     return (
         <Container fluid={true} style={{ maxWidth: "100vw", padding: "0" }}>
             <Row className="justify-content-center align-items-center">
+                {/* Sort drop down menu */}
                 <Col xs="auto" className="d-flex align-items-center">
                     <Form.Select value={selVal} onChange={handleSelect} className={cabin.className} style={{color:"black", fontSize:"1rem"}}>
                         <option value={0}>Sort By:</option>
@@ -71,10 +76,12 @@ export default function ModelSearch({model, choices}) {
                         ))}
                     </Form.Select>
                 </Col>
+                {/* Ascending/Descending Toggle */}
                 <Col xs="auto" className="d-flex align-items-center">
                     <Form.Switch id="ascSwitch" style={{color:"black", fontSize:"1rem"}} className={cabin.className} onChange={toggleAscSwitch} label={asc ? "Ascending" : "Descending"}/>
                 </Col>
                 <Col xs="auto" className="d-flex align-items-center">
+                    {/* Search Bar */}
                     <Container style={{minWidth:"500px"}}>
                         <Row>
                             <Col xs="auto" className="d-flex align-items-center">
@@ -102,6 +109,7 @@ export default function ModelSearch({model, choices}) {
                                 <img src="/images/search_icon.svg.png" alt='magnifying glass' style={{ height: '1rem' }}/>
                                 </Button>
                             </Col>
+                            {/* Reset button */}
                             <Col xs="auto" className="d-flex align-items-center">
                                 <Button className={cabin.className} style={{ fontSize: '1rem' , color:"black", backgroundColor:"#c7c7c7", borderColor:"#ffffff"}} onClick={reset}
                                     onMouseEnter={(e) => {

@@ -6,6 +6,7 @@ const cabin = Cabin({ weight: "400", subsets: ["latin"] });
 
 import Tabination from "./components/tabination.js";
 
+// Getting all of the data for the models
 export const getCounties = async () => {
   const response = await fetch(
     "http://api.foster-hope.com/counties/all_counties"
@@ -47,6 +48,7 @@ export default async function AllModelSearch({ searchParams }) {
   var orgs = null;
   var resources = null;
 
+    // Search paramters (is there a search paramter or not?)
   const search = searchParams["search"] ?? null;
   if (search != null) {
     counties = await getSearchCounties(search);
@@ -68,6 +70,7 @@ export default async function AllModelSearch({ searchParams }) {
           backgroundColor: "#c7c7c7",
         }}
       >
+        {/* Tabs with the results of the search for each model */}
         <Tabination
           counties={counties}
           orgs={orgs}

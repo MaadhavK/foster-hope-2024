@@ -87,6 +87,7 @@ export default async function listResources({ searchParams }) {
                     </p>
                 </div>
             </Container>
+            {/* Search bar functionality */}
             <ModelSearch model="Resources" choices={["Name", "Location", "Hours", "Type", "Website"]}/>
             <br></br>
             <br></br>

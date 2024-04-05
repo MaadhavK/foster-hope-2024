@@ -93,6 +93,7 @@ export default async function listCounties( {searchParams} ) {
                     </p>
                 </div>
             </Container>
+            {/* Search bar functionality */}
             <ModelSearch model="Organizations" choices={["Name", "Type", "Rating", "Location", "Operation Hours"]}/>
             <br></br>
             <br></br>

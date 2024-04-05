@@ -211,7 +211,8 @@ export default function Home() {
           </Row>
         </Container>
       </div>
-
+      
+      {/* Down arrow to show that more content is available */}
       <div className={styles.splashdarkbg} style={{ padding: "5vw" }}>
         <Container
           fluid={true}
@@ -238,6 +239,7 @@ export default function Home() {
             </div>
           )}
 
+          {/* Global search bar */}
           <Row className="justify-content-center align-items-center">
             <Col xs="auto" className="d-flex align-items-center">
               <Form.Control

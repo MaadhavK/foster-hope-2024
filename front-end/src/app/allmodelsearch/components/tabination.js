@@ -229,6 +229,7 @@ const Tabination = ({ counties, orgs, resources, searchParams }) => {
         </Row>
       </Container>
 
+      {/* County Tab */}
       <Tabs
         defaultActiveKey="counties"
         className={lora.className}
@@ -277,6 +278,7 @@ const Tabination = ({ counties, orgs, resources, searchParams }) => {
             />
           </div>
           
+        {/* Organizations Tab */}
         </Tab>
         <Tab eventKey="orgs" title="Organizations" style={{color:"black", backgroundColor: "#FFFFFF" }}>
           <br></br>
@@ -314,7 +316,8 @@ const Tabination = ({ counties, orgs, resources, searchParams }) => {
               path={`${searchURL}`}
             />
           </div>
-          
+        
+        {/* Resources Tab */}
         </Tab>
         <Tab eventKey="resources" title="Resources" style={{color:"black", backgroundColor: "#FFFFFF" }}>
           <br></br>
