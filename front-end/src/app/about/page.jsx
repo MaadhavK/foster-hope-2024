@@ -15,35 +15,40 @@ const data = {
         "role": "Frontend",
         "bio":  "I'm a third year cs major at UT, and I'm interested in web and app development. I like dancing and reading in my free time",
         "img": "/images/Grace.jpg",
-        "username": "pan-grace"
+        "username": "pan-grace",
+        "tests" : "4"
       },
       {
         "name": "Raymond Wang",
         "role": "Frontend",
         "bio":  "I'm a second-year cs student at UT, and I'm interested in application and game programming, as well as data modeling / ml. In spare time, I game, play ultimate frisbee, and hang with my cat.",
         "img": "/images/Raymond.jpeg",
-        "username": "raymww"
+        "username": "raymww",
+        "tests" : "0"
       },
       {
         "name": "Maadhav Kothuri",
-        "role": "Frontend (so far)",
-        "bio":  "I'm a second-year computer science major at UT Austin and am interested in building full-stack applications that make an impact. In my spare time, I like to play the trumpet, spend time with friends, and participate in the UT fencing club.",
+        "role": "Full Stack",
+        "bio":  "I'm a second-year computer science major at UT Austin and am interested in building full-stack applications. In my spare time, I like to play the trumpet, spend time with friends, and participate in the UT fencing club.",
         "img": "/images/Maadhav.jpg",
-        "username": "maadhavskothuri"
+        "username": "maadhavskothuri",
+        "tests": "0"
       },
       {
         "name": "Alea Nablan",
         "role": "Frontend",
         "bio":  "I'm a fourth year studying computer science at UT Austin. I enjoy listening to music and watching various kinds of tv shows.",
         "img": "/images/Alea.jpg",
-        "username": "aleanadhiraa"
+        "username": "aleanadhiraa",
+        "tests" : "6"
       },
       {
         "name": "Nathan Cheng",
         "role": "Full Stack",
         "bio":  "I'm a third year cs major at UT Austin. I like playing v ball and I like thrifting.",
         "img": "/images/Nathan.PNG",
-        "username": "nathanchengus"
+        "username": "nathanchengus",
+        "tests" : "20"
       }
     ]
   }
