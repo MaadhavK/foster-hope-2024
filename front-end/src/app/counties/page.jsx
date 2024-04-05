@@ -39,13 +39,13 @@ export default async function listCounties( {searchParams} ) {
             sortParam = "population";
             break;
         case 3:
-            sortParam = "num_of_foster_kids";
+            sortParam = "number_of_foster_kids";
             break;
         case 4:
-            sortParam = "num_of_orgs";
+            sortParam = "number_of_orgs";
             break;
         case 5:
-            sortParam = "num_of_homes";
+            sortParam = "number_of_homes";
             break;
     }
 
