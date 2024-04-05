@@ -21,19 +21,43 @@ export default function Home() {
 
   const [searchTerm, setSearchTerm] = useState(null);
 
-  const [showArrow, setShowArrow] = useState(true)
+  const [showArrow, setShowArrow] = useState(true);
+  const [hovering, setHovering] = useState(false);
+  const [clicking, setClicking] = useState(false);
+  const [scrolledDown, setScrolledDown] = useState(false);
+
   //const [scrollLocation, setScrollLocation] = useState()
   useEffect(() => {
-    function scroll() {
-      const totalHeight = document.documentElement.offsetHeight;
-      const currHeight = window.innerHeight + window.scrollY;
+    let prevScrollPos = window.pageYOffset;
 
-      setShowArrow(totalHeight - currHeight > 0);
+    function scroll() {
+      const currentScrollPos = window.pageYOffset;
+      const scrollingDown = currentScrollPos > prevScrollPos;
+
+      setShowArrow(!scrollingDown && !scrolledDown);
+
+      if (scrollingDown) {
+        setScrolledDown(true);
+      } else {
+        setScrolledDown(false);
+      }
+
+      prevScrollPos = currentScrollPos;
     }
+
     window.addEventListener("scroll", scroll);
     return () => {
-    }
-  }, [])
+      window.removeEventListener("scroll", scroll);
+    };
+  }, [scrolledDown]);
+
+  const handleArrowClick = () => {
+    const offset = 800; // Adjust this value as needed
+    window.scrollTo({
+      top: document.documentElement.offsetHeight - offset,
+      behavior: "smooth",
+    });
+  };
 
   const saveSearch = (e) => {
     setSearchTerm(e.target.value);
@@ -79,7 +103,6 @@ export default function Home() {
               objectFit: "cover",
             }}
           ></img>
-          
         </div>
 
         {/* Front image */}
@@ -92,7 +115,6 @@ export default function Home() {
             top: "0",
           }}
         >
-          
           <Row style={{ height: "20vh" }}></Row>
           <Row
             style={{
@@ -196,15 +218,26 @@ export default function Home() {
           className={styles.splashcont}
           style={{ maxWidth: "100vw", height: "10vh", padding: "0" }}
         >
-          {showArrow &&
-          <div className='down-arrow' style={{
-          position: "fixed",
-          bottom: "0",
-          left: "50%",
-          color: "#ffffff",
-          fontSize: "3.25rem"
-        }}
-      ><span>&darr;</span></div>}
+          {showArrow && (
+            <div
+              className={`down-arrow ${hovering ? "hovering" : ""}`}
+              onClick={handleArrowClick}
+              onMouseEnter={() => setHovering(true)}
+              onMouseLeave={() => setHovering(false)}
+              style={{
+                position: "fixed",
+                bottom: "0",
+                left: "50%",
+                color: scrolledDown || hovering ? "#4f4f4f" : "#ffffff",
+                fontSize: "3.25rem",
+                fontWeight: hovering ? "bold" : "normal",
+                transition: "bottom 0.3s",
+              }}
+            >
+              <span>&darr;</span>
+            </div>
+          )}
+
           <Row className="justify-content-center align-items-center">
             <Col xs="auto" className="d-flex align-items-center">
               <Form.Control
