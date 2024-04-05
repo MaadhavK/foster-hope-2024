@@ -238,6 +238,17 @@ const Tabination = ({ counties, orgs, resources, searchParams }) => {
       >
         <Tab eventKey="counties" title="Counties" 
         style={{color:"black", backgroundColor: "#FFFFFF"}}>
+          <br></br>
+          <h3
+            className={lora.className}
+            style={{
+              color: "black",
+              paddingBottom: "20px",
+              textAlign: "center",
+            }}
+          >
+            Number of Instances: {num_instances_counties}
+          </h3>
           {/* Render Counties content */}
           <Container fluid={true} style={{}}>
             <Row
@@ -265,6 +276,10 @@ const Tabination = ({ counties, orgs, resources, searchParams }) => {
               path={`${searchURL}`}
             />
           </div>
+          
+        </Tab>
+        <Tab eventKey="orgs" title="Organizations" style={{color:"black", backgroundColor: "#FFFFFF" }}>
+          <br></br>
           <h3
             className={lora.className}
             style={{
@@ -273,10 +288,9 @@ const Tabination = ({ counties, orgs, resources, searchParams }) => {
               textAlign: "center",
             }}
           >
-            Number of Instances: {num_instances_counties}
+            Number of Instances: {num_instances_orgs}
           </h3>
-        </Tab>
-        <Tab eventKey="orgs" title="Organizations" style={{color:"black", backgroundColor: "#FFFFFF" }}>
+
           {/* Render Organizations content */}
           <Container fluid={true} style={{}}>
             <Row
@@ -300,6 +314,10 @@ const Tabination = ({ counties, orgs, resources, searchParams }) => {
               path={`${searchURL}`}
             />
           </div>
+          
+        </Tab>
+        <Tab eventKey="resources" title="Resources" style={{color:"black", backgroundColor: "#FFFFFF" }}>
+          <br></br>
           <h3
             className={lora.className}
             style={{
@@ -308,10 +326,8 @@ const Tabination = ({ counties, orgs, resources, searchParams }) => {
               textAlign: "center",
             }}
           >
-            Number of Instances: {num_instances_orgs}
+            Number of Instances: {num_instances_resources}
           </h3>
-        </Tab>
-        <Tab eventKey="resources" title="Resources" style={{color:"black", backgroundColor: "#FFFFFF" }}>
           {/* Render Resources content */}
           <Container fluid={true} style={{}}>
             <Row
@@ -333,22 +349,14 @@ const Tabination = ({ counties, orgs, resources, searchParams }) => {
             </Row>
           </Container>
           {/* Pagination component */}
+          
           <div style={{ display: "flex", justifyContent: "center" }}>
             <Pagination
               num_instances={num_instances_resources}
               path={`${searchURL}`}
             />
           </div>
-          <h3
-            className={lora.className}
-            style={{
-              color: "black",
-              paddingBottom: "20px",
-              textAlign: "center",
-            }}
-          >
-            Number of Instances: {num_instances_resources}
-          </h3>
+        
         </Tab>
       </Tabs>
     </div>

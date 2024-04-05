@@ -31,13 +31,13 @@ export const getSearchCounties = async (search) => {
 };
 export const getSearchOrgs = async (search) => {
   const response = await fetch(
-    "https://api.foster-hope.com/orgs/all_orgs?search_query=" + search
+    "http://api.foster-hope.com/orgs/all_orgs?search_query=" + search
   );
   return await response.json();
 };
 export const getSearchResources = async (search) => {
   const response = await fetch(
-    "https://api.foster-hope.com/resources/all_resources?search_query=" + search
+    "http://api.foster-hope.com/resources/all_resources?search_query=" + search
   );
   return await response.json();
 };
