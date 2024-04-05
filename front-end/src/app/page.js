@@ -8,7 +8,7 @@ import _default from "react-bootstrap/esm/Nav";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import HomeCarousel from "./components/carousel";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Lora, Cabin } from "next/font/google";
 const lora = Lora({ weight: "400", subsets: ["latin"] });
 const cabin = Cabin({ weight: "400", subsets: ["latin"] });
@@ -20,6 +20,20 @@ export default function Home() {
   const router = useRouter();
 
   const [searchTerm, setSearchTerm] = useState(null);
+
+  const [showArrow, setShowArrow] = useState(true)
+  //const [scrollLocation, setScrollLocation] = useState()
+  useEffect(() => {
+    function scroll() {
+      const totalHeight = document.documentElement.offsetHeight;
+      const currHeight = window.innerHeight + window.scrollY;
+
+      setShowArrow(totalHeight - currHeight > 0);
+    }
+    window.addEventListener("scroll", scroll);
+    return () => {
+    }
+  }, [])
 
   const saveSearch = (e) => {
     setSearchTerm(e.target.value);
@@ -65,6 +79,7 @@ export default function Home() {
               objectFit: "cover",
             }}
           ></img>
+          
         </div>
 
         {/* Front image */}
@@ -77,6 +92,7 @@ export default function Home() {
             top: "0",
           }}
         >
+          
           <Row style={{ height: "20vh" }}></Row>
           <Row
             style={{
@@ -111,6 +127,7 @@ export default function Home() {
               >
                 Foster Hope.
               </h1>
+
               <br />
               <div
                 className={cabin.className}
@@ -179,6 +196,15 @@ export default function Home() {
           className={styles.splashcont}
           style={{ maxWidth: "100vw", height: "100vh", padding: "0" }}
         >
+          {showArrow &&
+          <div className='down-arrow' style={{
+          position: "fixed",
+          bottom: "0",
+          left: "50%",
+          color: "#ffffff",
+          fontSize: "3.25rem"
+        }}
+      ><span>&darr;</span></div>}
           <Row className="justify-content-center align-items-center">
             <Col xs="auto" className="d-flex align-items-center">
               <Form.Control
