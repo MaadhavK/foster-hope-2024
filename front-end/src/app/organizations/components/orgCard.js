@@ -33,7 +33,7 @@ const OrgCard = ({org, query=""}) => {
                 <div>
                     <Card.Title className={lora.className} style={{fontSize:"1.3rem"}}><b>{HighlightText(thisOrg?.name,query)}</b></Card.Title>
                     <Card.Text className={cabin.className} style={{paddingTop:"10px", paddingBottom:"10px"}}>
-                    Location: {HighlightText(thisOrg?.county, query)} County
+                    Location: {HighlightText(thisOrg?.location, query)}
                     <br></br>
                     Type: {HighlightText(JSON.parse(thisOrg.type)[0].replaceAll('_', ' '),query)}
                     <br></br>

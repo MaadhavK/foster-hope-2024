@@ -18,7 +18,11 @@ async function getOrgs() {
 }
 
 async function searchAndSort(search, sort, asc){
-    const response = await fetch('https://api.foster-hope.com/orgs/all_orgs?' + (search != null ? "search_query=" + search + (sort != null ? "&" : "") : "") + (sort != null ? "sort=" + (asc ? "" : "-")  + sort : ""));
+    const response = await fetch('https://api.foster-hope.com/orgs/all_orgs?' + 
+    (search != null ? "search_query=" + search + (sort != null ? "&" : "") : "") + 
+    (sort != null ? "sort=" + (asc ? "" : "-") + sort : "") +
+    (asc != null ? "&asc=" + asc : ""));
+
     const result = await response.json();
     return result;
 }
@@ -29,7 +33,7 @@ export default async function listCounties( {searchParams} ) {
     // get params for search and sort from url params
     const search = searchParams["search"] ?? null
     const sort = Number(searchParams["sort"] ?? 0)
-    const asc = searchParams["asc"] ?? false
+    const asc = searchParams["asc"] == "true" ? true : false;
     
     // switch statement to encode the sort by from number
     var sortParam = null;
@@ -41,13 +45,13 @@ export default async function listCounties( {searchParams} ) {
             sortParam = "name";
             break;
         case 2:
-            sortParam = "county";
+            sortParam = "type";
             break;
         case 3:
             sortParam = "rating";
             break;
         case 4:
-            sortParam = "hours";
+            sortParam = "location";
             break;
         case 5:
             sortParam = "operation_hours";
@@ -89,7 +93,7 @@ export default async function listCounties( {searchParams} ) {
                     </p>
                 </div>
             </Container>
-            <ModelSearch model="Organizations" choices={["Name", "County", "Rating", "Hours", "Type"]}/>
+            <ModelSearch model="Organizations" choices={["Name", "Type", "Rating", "Location", "Operation Hours"]}/>
             <br></br>
             <br></br>
             <h4 className={lora.className} style={{color:"black", paddingBottom:"20px"}}>
@@ -99,7 +103,7 @@ export default async function listCounties( {searchParams} ) {
             <Container fluid={true} style = {{}}>
                 <Row style={{padding:"3vw", paddingTop:"2rem", justifyContent:"space-evenly"}}>
                     {entries.map((organization) => (
-                        <Col xs style={{paddingBottom: "2rem"}}> <OrgCard org={organization}/> </Col>
+                        <Col xs style={{paddingBottom: "2rem"}}> <OrgCard org={organization} query={search}/> </Col>
                     ))}
                 </Row>
             </Container>

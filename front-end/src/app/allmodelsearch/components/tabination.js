@@ -213,11 +213,9 @@ const Tabination = ({ counties, orgs, resources, searchParams }) => {
               }}
               onClick={handleSearch}
               onMouseEnter={(e) => {
-                e.target.style.backgroundColor = "#d0d0d0";
                 e.target.style.borderColor = "#000000";
               }}
               onMouseLeave={(e) => {
-                e.target.style.backgroundColor = "#c7c7c7";
                 e.target.style.borderColor = "#ffffff";
               }}
             >

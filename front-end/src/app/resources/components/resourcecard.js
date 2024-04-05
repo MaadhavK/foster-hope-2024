@@ -11,6 +11,18 @@ const cabin = Cabin({weight: '400', subsets: ['latin']})
 
 import { HighlightText } from "../../components/HighlightText";
 
+function extractDomain(url) {
+    let domain = url.replace(/(^\w+:|^)\/\//, '').split('/')[0];
+    // Removing any subdomains
+    domain = domain.replace("www.", "");
+    return domain;
+  }
+// Function to extract domain name
+function getDomainName(url) {
+    const domain = extractDomain(url);
+    return domain;
+}
+
 // Resource card
 const ResourceCard = ({resource, query}) => {
     resource.replace(/"/g, /'/g)
@@ -51,6 +63,8 @@ const ResourceCard = ({resource, query}) => {
                     Hours: {HighlightText(hours,query)}
                     <br></br>
                     Type: {HighlightText(thisRes?.type,query)}
+                    <br></br>
+                    Website: {HighlightText(getDomainName(thisRes?.website), query)}
                     <br></br>
                     </Card.Text>
                 </div>

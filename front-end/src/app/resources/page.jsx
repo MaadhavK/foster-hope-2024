@@ -47,7 +47,7 @@ export default async function listResources({ searchParams }) {
             sortParam = "type";
             break;
         case 5:
-            sortParam = "county";
+            sortParam = "website";
             break;
     }
 
@@ -87,12 +87,12 @@ export default async function listResources({ searchParams }) {
                     </p>
                 </div>
             </Container>
-            <ModelSearch model="Resources" choices={["Name", "Location", "Hours", "Type", "County"]}/>
+            <ModelSearch model="Resources" choices={["Name", "Location", "Hours", "Type", "Website"]}/>
             {/* All of the resource cards */}
             <Container fluid={true} style={{}}>
                 <Row style={{ padding: "3vw", paddingTop: "2rem", justifyContent: "space-evenly" }}>
                     {entries.map((res) => (
-                        <Col xs style={{ paddingBottom: "2rem" }}> <ResourceCard resource={JSON.stringify(res)} /> </Col>
+                        <Col xs style={{ paddingBottom: "2rem" }}> <ResourceCard resource={JSON.stringify(res)} query={search}/> </Col>
                     ))}
                 </Row>
             </Container>

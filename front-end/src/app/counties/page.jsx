@@ -16,7 +16,12 @@ export const getCounties = async ()=> {
 }
 
 async function searchAndSort(search, sort, asc){
-    const response = await fetch('https://api.foster-hope.com/counties/all_counties?' + (search != null ? "search_query=" + search + (sort != null ? "&" : "") : "") + (sort != null ? "sort=" + (asc ? "" : "-")  + sort : ""));
+    console.log('https://api.foster-hope.com/counties/all_counties?' + 
+    (search != null ? "search_query=" + search + (sort != null ? "&" : "") : "") + 
+    (sort != null ? "sort=" + (asc ? "" : "-") + sort : ""))
+    const response = await fetch('https://api.foster-hope.com/counties/all_counties?' + 
+    (search != null ? "search_query=" + search + (sort != null ? "&" : "") : "") + 
+    (sort != null ? "sort=" + (asc ? "" : "-") + sort : ""));
     const result = await response.json();
     return result;
 }
@@ -25,7 +30,7 @@ async function searchAndSort(search, sort, asc){
 export default async function listCounties( {searchParams} ) {
     const search = searchParams["search"] ?? null
     const sort = Number(searchParams["sort"] ?? 0)
-    const asc = searchParams["asc"] ?? false
+    const asc = searchParams["asc"] == "true" ? true : false;
     
     var sortParam = null;
     switch (sort) {
@@ -39,13 +44,13 @@ export default async function listCounties( {searchParams} ) {
             sortParam = "population";
             break;
         case 3:
-            sortParam = "num_of_foster_kids";
+            sortParam = "number_of_foster_kids";
             break;
         case 4:
-            sortParam = "num_of_orgs";
+            sortParam = "number_of_orgs";
             break;
         case 5:
-            sortParam = "num_of_homes";
+            sortParam = "number_of_homes";
             break;
     }
 
@@ -85,13 +90,13 @@ export default async function listCounties( {searchParams} ) {
                 </div>
             </Container>
             
-            <ModelSearch model="Counties" choices={["County Name", "Population", "Num of Foster Children", "Num of Agencies", "Num of Foster Homes"]}/>
+            <ModelSearch model="Counties" choices={["County Name", "Population", "Num of Foster Children", "Num of Orgs", "Num of Foster Homes"]}/>
 
             {/* All of the county pages in the page */}
             <Container fluid={true} style = {{}}>
                 <Row style={{padding:"3vw", paddingTop:"2rem", justifyContent:"space-evenly"}}>
                     {entries.map((county) => (
-                        <Col xs style={{paddingBottom: "2rem"}}> <CountyCard county={JSON.stringify(county)}/></Col>
+                        <Col xs style={{paddingBottom: "2rem"}}> <CountyCard county={JSON.stringify(county)} query={search}/></Col>
                    ))}
                 </Row>
                 
