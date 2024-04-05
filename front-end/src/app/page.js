@@ -194,7 +194,7 @@ export default function Home() {
         <Container
           fluid={true}
           className={styles.splashcont}
-          style={{ maxWidth: "100vw", height: "100vh", padding: "0" }}
+          style={{ maxWidth: "100vw", height: "10vh", padding: "0" }}
         >
           {showArrow &&
           <div className='down-arrow' style={{
