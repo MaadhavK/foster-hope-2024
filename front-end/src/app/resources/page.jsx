@@ -14,12 +14,12 @@ import Pagination from "../components/pagination.js"
 
 
 async function getResources() {
-    const response = await fetch(`https://api.foster-hope.com/resources/all_resources`)
+    const response = await fetch(`http://api.foster-hope.com/resources/all_resources`)
     return await response.json();
 }
 
 async function searchAndSort(search, sort, asc){
-    const response = await fetch('https://api.foster-hope.com/resources/all_resources?' + (search != null ? "search_query=" + search + (sort != null ? "&" : "") : "") + (sort != null ? "sort=" + (asc ? "" : "-")  + sort : ""));
+    const response = await fetch('http://api.foster-hope.com/resources/all_resources?' + (search != null ? "search_query=" + search + (sort != null ? "&" : "") : "") + (sort != null ? "sort=" + (asc ? "" : "-")  + sort : ""));
     const result = await response.json();
     return result;
 }
@@ -88,6 +88,11 @@ export default async function listResources({ searchParams }) {
                 </div>
             </Container>
             <ModelSearch model="Resources" choices={["Name", "Location", "Hours", "Type", "Website"]}/>
+            <br></br>
+            <br></br>
+            <h3 className={lora.className} style={{ color: "black", paddingBottom: "20px", paddingTop: "10px" }}>
+                Number of Instances: {num_instances}
+            </h3>
             {/* All of the resource cards */}
             <Container fluid={true} style={{}}>
                 <Row style={{ padding: "3vw", paddingTop: "2rem", justifyContent: "space-evenly" }}>
@@ -104,9 +109,7 @@ export default async function listResources({ searchParams }) {
                 sort={sort}
                 asc={asc}
             />
-            <h3 className={lora.className} style={{ color: "black", paddingBottom: "20px", paddingTop: "10px" }}>
-                Number of Instances: {num_instances}
-            </h3>
+            
         </main>
     )
 }

@@ -11,15 +11,15 @@ import Pagination from "../components/pagination.js"
 
 
 export const getCounties = async ()=> {
-    const response = await fetch('https://api.foster-hope.com/counties/all_counties');
+    const response = await fetch('http://api.foster-hope.com/counties/all_counties');
     return await response.json();
 }
 
 async function searchAndSort(search, sort, asc){
-    console.log('https://api.foster-hope.com/counties/all_counties?' + 
+    console.log('http://api.foster-hope.com/counties/all_counties?' + 
     (search != null ? "search_query=" + search + (sort != null ? "&" : "") : "") + 
     (sort != null ? "sort=" + (asc ? "" : "-") + sort : ""))
-    const response = await fetch('https://api.foster-hope.com/counties/all_counties?' + 
+    const response = await fetch('http://api.foster-hope.com/counties/all_counties?' + 
     (search != null ? "search_query=" + search + (sort != null ? "&" : "") : "") + 
     (sort != null ? "sort=" + (asc ? "" : "-") + sort : ""));
     const result = await response.json();
@@ -92,6 +92,12 @@ export default async function listCounties( {searchParams} ) {
             
             <ModelSearch model="Counties" choices={["County Name", "Population", "Num of Foster Children", "Num of Orgs", "Num of Foster Homes"]}/>
 
+            <br></br>
+            <br></br>
+            <h3 className={lora.className} style={{ color: "black", paddingBottom: "20px", paddingTop: "10px" }}>
+                Number of Instances: {num_instances}
+            </h3>
+
             {/* All of the county pages in the page */}
             <Container fluid={true} style = {{}}>
                 <Row style={{padding:"3vw", paddingTop:"2rem", justifyContent:"space-evenly"}}>
@@ -108,11 +114,7 @@ export default async function listCounties( {searchParams} ) {
                 sort = {sort}
                 asc = {asc}
             />
-            <br></br>
-            <br></br>
-            <h3 className={lora.className} style={{color:"black", paddingBottom:"20px"}}>
-                Number of Instances: {num_instances}
-            </h3>
+            
         </main>
     )
 }
