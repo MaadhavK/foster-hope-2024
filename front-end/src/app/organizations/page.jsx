@@ -1,7 +1,7 @@
 // import Counties from "./components/countyCardList"
 import { Row, Col, Container, Card, Button} from "react-bootstrap";
 import styles from "../page.module.css";
-// import "./counties.css"
+import ModelSearch from "../components/modelSearch.js";
 
 import Link from "next/link";
 
@@ -16,10 +16,55 @@ async function getOrgs() {
     const response = await fetch('http://api.foster-hope.com/orgs/all_orgs');
     return await response.json();
 }
+
+async function searchAndSort(search, sort, asc){
+    const response = await fetch('http://api.foster-hope.com/orgs/all_orgs?' + 
+    (search != null ? "search_query=" + search + (sort != null ? "&" : "") : "") + 
+    (sort != null ? "sort=" + (asc ? "" : "-") + sort : "") +
+    (asc != null ? "&asc=" + asc : ""));
+
+    const result = await response.json();
+    return result;
+}
+
+
 // model page for counties
 export default async function listCounties( {searchParams} ) {
+    // get params for search and sort from url params
+    const search = searchParams["search"] ?? null
+    const sort = Number(searchParams["sort"] ?? 0)
+    const asc = searchParams["asc"] == "true" ? true : false;
+    
+    // switch statement to encode the sort by from number
+    var sortParam = null;
+    switch (sort) {
+        case 0:
+            sortParam = null;
+            break;
+        case 1:
+            sortParam = "name";
+            break;
+        case 2:
+            sortParam = "type";
+            break;
+        case 3:
+            sortParam = "rating";
+            break;
+        case 4:
+            sortParam = "location";
+            break;
+        case 5:
+            sortParam = "operation_hours";
+            break;
+    }
 
-    const orgs = await getOrgs();
+    // if sort or search active, call api for it
+    var orgs = null;
+    if(search != null || sortParam != null){
+        orgs = await searchAndSort(search, sortParam, asc);
+    } else {
+        orgs = await getOrgs();
+    }
     
     // Pagination logic
     const page = searchParams["page"] ?? 1
@@ -48,22 +93,29 @@ export default async function listCounties( {searchParams} ) {
                     </p>
                 </div>
             </Container>
+            {/* Search bar functionality */}
+            <ModelSearch model="Organizations" choices={["Name", "Type", "Rating", "Location", "Operation Hours"]}/>
+            <br></br>
+            <br></br>
+            <h4 className={lora.className} style={{color:"black", paddingBottom:"20px"}}>
+                Number of Instances: {num_instances}
+            </h4>
             {/* Current page instance cards */}
             <Container fluid={true} style = {{}}>
                 <Row style={{padding:"3vw", paddingTop:"2rem", justifyContent:"space-evenly"}}>
                     {entries.map((organization) => (
-                        <Col xs style={{paddingBottom: "2rem"}}> <OrgCard org={organization}/> </Col>
+                        <Col xs style={{paddingBottom: "2rem"}}> <OrgCard org={organization} query={search}/> </Col>
                     ))}
                 </Row>
             </Container>
             <Pagination
                 num_instances={num_instances}
                 path={"organizations"}
+                search={search}
+                sort={sort}
+                asc={asc}
             />
             <br></br>
-            <p className={lora.className} style={{color:"black", paddingBottom:"20px"}}>
-                Number of Instances: {num_instances}
-            </p>
         </main>
     )
 }

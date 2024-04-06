@@ -9,9 +9,22 @@ import { Lora, Cabin} from "next/font/google";
 const lora = Lora({weight: '400', subsets: ['latin']})
 const cabin = Cabin({weight: '400', subsets: ['latin']})
 
+import { HighlightText } from "../../components/HighlightText";
+
+function extractDomain(url) {
+    let domain = url.replace(/(^\w+:|^)\/\//, '').split('/')[0];
+    // Removing any subdomains
+    domain = domain.replace("www.", "");
+    return domain;
+  }
+// Function to extract domain name
+function getDomainName(url) {
+    const domain = extractDomain(url);
+    return domain;
+}
+
 // Resource card
-const ResourceCard = ({resource}) => {
-    
+const ResourceCard = ({resource, query}) => {
     resource.replace(/"/g, /'/g)
     // console.log(`Here's the resource: ${resource}`)
     var thisRes = JSON.parse(resource);
@@ -33,22 +46,25 @@ const ResourceCard = ({resource}) => {
     let hours = thisRes?.hours;
 
     if(thisRes.type != "event"){
-        hours = JSON.parse(thisRes?.hours)[day]
+        //hours = JSON.parse(thisRes?.hours)[day]
+        hours = Array.isArray(thisRes?.hours) ? JSON.parse(thisRes?.hours)[day] : '';
     }
 
     return (
         // Resource card info with routing to instance page
-        <Card style = {{width: "20rem", height: "30rem", margin:"0 auto"}}>
-            <Card.Img  style={{width:"20rem", height:"15rem", objectFit:"cover"}} variant="top" src = {thisRes?.media}/>
+        <Card style = {{width: "20rem", height: "37rem", margin:"0 auto"}}>
+            <Card.Img  style={{width:"20rem", height:"20rem", objectFit:"cover"}} variant="top" src = {thisRes?.media}/>
             <Card.Body className="d-flex flex-column" style={{padding: "1rem", background: "lightblue", justifyContent:"space-between"}}>
                 <div>
-                    <Card.Title className={lora.className} style={{fontSize:"1.2rem", alignSelf:"flex-start"}}><b>{thisRes?.name}</b></Card.Title>
+                    <Card.Title className={lora.className} style={{fontSize:"1.2rem", alignSelf:"flex-start"}}><b>{HighlightText(thisRes?.name,query)}</b></Card.Title>
                     <Card.Text className={cabin.className} style={{paddingTop:"10px", paddingBottom:"10px"}}>
-                    Location: {thisRes?.county}
+                    Location: {HighlightText(thisRes?.county,query)}
                     <br></br>
-                    Hours: {hours}
+                    Hours: {HighlightText(hours,query)}
                     <br></br>
-                    Type: {thisRes?.type}
+                    Type: {HighlightText(thisRes?.type,query)}
+                    <br></br>
+                    Website: {HighlightText(getDomainName(thisRes?.website), query)}
                     <br></br>
                     </Card.Text>
                 </div>

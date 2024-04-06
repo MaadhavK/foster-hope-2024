@@ -14,14 +14,14 @@ export default function NavBar(){
             <Container className={styles.container} style={{maxWidth:"100vw", paddingLeft:"5vw", paddingRight:"5vw"}}>
                 <Navbar.Brand className={lora.className} style={{fontWeight:"bold"}} href="/">
                     <img
-                        src="foster-logo.jpg"  
+                        src="/images/foster-logo.jpg"  
                         width="30"
                         height="30"
                         className="d-inline-block align-top"
-                        alt="Your Logo"
+                        alt=""
                     />
-                    Foster Hope.
-                </Navbar.Brand>
+
+                    Foster Hope.</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                 <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className='me-auto'></Nav>

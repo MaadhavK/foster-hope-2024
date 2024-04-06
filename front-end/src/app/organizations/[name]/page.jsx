@@ -1,8 +1,8 @@
 import styles from "../../page.module.css";
 import { Row, Col, Container, Button} from "react-bootstrap";
 import { Lora, Cabin} from "next/font/google";
-import CountyCard from "@/app/counties/components/countycard";
-import ResourceCard from "@/app/resources/components/resourcecard";
+import CountyCard from "../../counties/components/countycard";
+import ResourceCard from "../../resources/components/resourcecard";
 import Link from "next/link";
 
 const lora = Lora({weight: '400', subsets: ['latin']})

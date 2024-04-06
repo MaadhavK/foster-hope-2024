@@ -1,6 +1,7 @@
 // import Counties from "./components/countyCardList"
-import { Row, Col, Container, Card, Button } from "react-bootstrap";
+import { Row, Col, Container, Card, Button, Form} from "react-bootstrap";
 import styles from "../page.module.css";
+import ModelSearch from "../components/modelSearch.js"
 // import "./counties.css"
 
 import Link from "next/link";
@@ -16,9 +17,47 @@ async function getResources() {
     const response = await fetch(`http://api.foster-hope.com/resources/all_resources`)
     return await response.json();
 }
-export default async function listResources({ searchParams }) {
 
-    const resources = await getResources();
+async function searchAndSort(search, sort, asc){
+    const response = await fetch('http://api.foster-hope.com/resources/all_resources?' + (search != null ? "search_query=" + search + (sort != null ? "&" : "") : "") + (sort != null ? "sort=" + (asc ? "" : "-")  + sort : ""));
+    const result = await response.json();
+    return result;
+}
+
+export default async function listResources({ searchParams }) {
+    const search = searchParams["search"] ?? null
+    const sort = Number(searchParams["sort"] ?? 0)
+    const asc = searchParams["asc"] == "true" ? true : false;
+
+    var sortParam = null;
+    switch (sort) {
+        case 0:
+            sortParam = null;
+            break;
+        case 1:
+            sortParam = "name";
+            break;
+        case 2:
+            sortParam = "location";
+            break;
+        case 3:
+            sortParam = "hours";
+            break;
+        case 4:
+            sortParam = "type";
+            break;
+        case 5:
+            sortParam = "website";
+            break;
+    }
+
+    var resources = null;
+
+    if(search != null || sortParam != null){
+        resources = await searchAndSort(search, sortParam, asc);
+    } else {
+         resources = await getResources();
+    }
 
     // Pagination logic
     const page = searchParams["page"] ?? 1
@@ -48,11 +87,18 @@ export default async function listResources({ searchParams }) {
                     </p>
                 </div>
             </Container>
+            {/* Search bar functionality */}
+            <ModelSearch model="Resources" choices={["Name", "Location", "Hours", "Type", "Website"]}/>
+            <br></br>
+            <br></br>
+            <h3 className={lora.className} style={{ color: "black", paddingBottom: "20px", paddingTop: "10px" }}>
+                Number of Instances: {num_instances}
+            </h3>
             {/* All of the resource cards */}
             <Container fluid={true} style={{}}>
                 <Row style={{ padding: "3vw", paddingTop: "2rem", justifyContent: "space-evenly" }}>
                     {entries.map((res) => (
-                        <Col xs style={{ paddingBottom: "2rem" }}> <ResourceCard resource={JSON.stringify(res)} /> </Col>
+                        <Col xs style={{ paddingBottom: "2rem" }}> <ResourceCard resource={JSON.stringify(res)} query={search}/> </Col>
                     ))}
                 </Row>
             </Container>
@@ -60,10 +106,11 @@ export default async function listResources({ searchParams }) {
             <Pagination
                 num_instances={num_instances}
                 path={"resources"}
+                search={search}
+                sort={sort}
+                asc={asc}
             />
-            <h3 className={lora.className} style={{ color: "black", paddingBottom: "20px", paddingTop: "10px" }}>
-                Number of Instances: {num_instances}
-            </h3>
+            
         </main>
     )
 }

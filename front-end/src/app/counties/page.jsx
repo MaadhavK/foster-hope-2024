@@ -1,9 +1,7 @@
-// import Counties from "./components/countyCardList"
-import { Row, Col, Container, Card, Button} from "react-bootstrap";
+import { Row, Col, Container, Card, Button, Form} from "react-bootstrap";
 import styles from "../page.module.css";
-// import "./counties.css"
+import ModelSearch from "../components/modelSearch"
 
-import Link from "next/link";
 
 import { Lora, Cabin} from "next/font/google";
 const lora = Lora({weight: '400', subsets: ['latin']})
@@ -17,8 +15,52 @@ export const getCounties = async ()=> {
     return await response.json();
 }
 
+async function searchAndSort(search, sort, asc){
+    console.log('http://api.foster-hope.com/counties/all_counties?' + 
+    (search != null ? "search_query=" + search + (sort != null ? "&" : "") : "") + 
+    (sort != null ? "sort=" + (asc ? "" : "-") + sort : ""))
+    const response = await fetch('http://api.foster-hope.com/counties/all_counties?' + 
+    (search != null ? "search_query=" + search + (sort != null ? "&" : "") : "") + 
+    (sort != null ? "sort=" + (asc ? "" : "-") + sort : ""));
+    const result = await response.json();
+    return result;
+}
+
+
 export default async function listCounties( {searchParams} ) {
-    const counties = await getCounties();
+    const search = searchParams["search"] ?? null
+    const sort = Number(searchParams["sort"] ?? 0)
+    const asc = searchParams["asc"] == "true" ? true : false;
+    
+    var sortParam = null;
+    switch (sort) {
+        case 0:
+            sortParam = null;
+            break;
+        case 1:
+            sortParam = "county";
+            break;
+        case 2:
+            sortParam = "population";
+            break;
+        case 3:
+            sortParam = "number_of_foster_kids";
+            break;
+        case 4:
+            sortParam = "number_of_orgs";
+            break;
+        case 5:
+            sortParam = "number_of_homes";
+            break;
+    }
+
+    var counties = null;
+
+    if(search != null || sortParam != null){
+        counties = await searchAndSort(search, sortParam, asc);
+    } else {
+        counties = await getCounties();
+    } 
 
     // Params for pagination
     const page = searchParams["page"] ?? 1
@@ -47,26 +89,32 @@ export default async function listCounties( {searchParams} ) {
                     </p>
                 </div>
             </Container>
+            {/* Search bar functionality */}
+            <ModelSearch model="Counties" choices={["County Name", "Population", "Num of Foster Children", "Num of Orgs", "Num of Foster Homes"]}/>
+
+            <br></br>
+            <br></br>
+            <h3 className={lora.className} style={{ color: "black", paddingBottom: "20px", paddingTop: "10px" }}>
+                Number of Instances: {num_instances}
+            </h3>
+
             {/* All of the county pages in the page */}
             <Container fluid={true} style = {{}}>
                 <Row style={{padding:"3vw", paddingTop:"2rem", justifyContent:"space-evenly"}}>
                     {entries.map((county) => (
-                        <Col xs style={{paddingBottom: "2rem"}}> <CountyCard county={JSON.stringify(county)}/></Col>
-                   
+                        <Col xs style={{paddingBottom: "2rem"}}> <CountyCard county={JSON.stringify(county)} query={search}/></Col>
                    ))}
                 </Row>
-                
                 
             </Container>
             <Pagination
                 num_instances={num_instances}
                 path = {"counties"}
+                search = {search}
+                sort = {sort}
+                asc = {asc}
             />
-            <br></br>
-            <br></br>
-            <h3 className={lora.className} style={{color:"black", paddingBottom:"20px"}}>
-                Number of Instances: {num_instances}
-            </h3>
+            
         </main>
     )
 }

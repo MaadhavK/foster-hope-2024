@@ -71,6 +71,7 @@ const AboutCard = ({ member }) => {
         <Card.Text className={cabin.className}>
           Commit: {commit.length} <br />
           Issue: {issue.length} <br />
+          Tests: {member.tests} <br />
           Role: {member.role} <br />
           Bio: {member.bio}
         </Card.Text>

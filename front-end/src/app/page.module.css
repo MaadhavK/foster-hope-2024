@@ -334,3 +334,47 @@
   align-items: center;
   justify-content: center;
 }
+
+.search-bar-wrapper {
+  padding-left: 2vw;
+}
+
+/* Down Arrow  */
+
+.down-arrow {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  color: #ffffff;
+  font-size: 3.25rem;
+  transition: color 0.3s, font-weight 0.3s; /* Add transition for smooth effect */
+}
+
+.down-arrow:hover {
+  color: #ff0000; /* Change color on hover */
+  font-weight: bold; /* Make it bold on hover */
+}
+
+
+@keyframes jump {
+  0% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 20px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+/* phone screen */
+@media (orientation:portrait) {
+  .search-bar-wrapper {
+      margin: 0 auto;
+  }
+}
+
+.search-button {
+  background-color: #ffcd0e;
+}
