@@ -4,50 +4,24 @@ import React, { useEffect } from "react";
 
 const PieChart = ({ data }) => {
   useEffect(() => {
-
     // Clear previous SVG element
     d3.select("#pie-chart-container").select("svg").remove();
 
-    const counties = data.map((county) => ({
-      name: county.county,
-      fosterHomes: parseInt(county.number_of_homes)
-    }));
+    // Count occurrences of each event category
+    const eventCounts = data.reduce((counts, event) => {
+      counts[event.event_category] = (counts[event.event_category] || 0) + 1;
+      return counts;
+    }, {});
 
-    const ranges = [
-      { label: "0-50", min: 0, max: 50 },
-      { label: "50-100", min: 50, max: 100 },
-      { label: "100-150", min: 100, max: 150 },
-      { label: "150-200", min: 150, max: 200 }
-    ];
+    // Sort event counts in descending order
+    const sortedEventCounts = Object.entries(eventCounts).sort((a, b) => b[1] - a[1]);
 
-    const getCountyRange = (fosterHomes) => {
-      for (const range of ranges) {
-        if (fosterHomes >= range.min && fosterHomes < range.max) {
-          return range.label;
-        }
-      }
-      return "200+";
-    };
+    // Select the top five categories and aggregate the rest into "Others"
+    const topCategories = sortedEventCounts.slice(0, 5);
+    const othersCount = sortedEventCounts.slice(5).reduce((sum, [, count]) => sum + count, 0);
+    const pieData = [...topCategories, ['others', othersCount]];
 
-    const groupedCounties = {};
-    counties.forEach((county) => {
-      const range = getCountyRange(county.fosterHomes);
-      groupedCounties[range] = (groupedCounties[range] || 0) + 1;
-    });
-
-    const pieData = Object.entries(groupedCounties).map(([range, count]) => ({
-      label: range,
-      value: count
-    }));
-
-    // Sort pieData based on the numerical part of the label
-    pieData.sort((a, b) => {
-      const numA = parseInt(a.label.split('-')[0]);
-      const numB = parseInt(b.label.split('-')[0]);
-      return numA - numB;
-    });
-
-    const pie = d3.pie().value((d) => d.value);
+    const pie = d3.pie().value((d) => d[1]);
     const arcData = pie(pieData);
 
     const arc = d3.arc().innerRadius(0).outerRadius(250);
@@ -89,29 +63,30 @@ const PieChart = ({ data }) => {
       .attr("height", legendRectSize)
       .attr("fill", (d, i) => d3.schemeCategory10[i]);
 
-    const total = pieData.reduce((acc, entry) => acc + entry.value, 0);
+    const total = pieData.reduce((acc, [, value]) => acc + value, 0);
     legendItems
       .append("text")
       .attr("x", legendRectSize + legendSpacing)
       .attr("y", legendRectSize - legendSpacing)
-      .text((d) => `${d.label} (${((d.value / total) * 100).toFixed(2)}%)`);
+      .text((d) => `${d[0]} (${((d[1] / total) * 100).toFixed(2)}%)`);
 
-    
-      const svgWidth = 900; // Width of the SVG element
+    const svgWidth = 900; // Width of the SVG element
 
-      svg
-        .append("text")
-        .attr("x", svgWidth / 2) // Set x position to half of the SVG width
-        .attr("y", 60)
-        .attr("text-anchor", "middle")
-        .style("font-size", "32px")
-        .style("font-weight", "bold")
-        .text("Number of Foster Homes in Each County");
+    svg
+      .append("text")
+      .attr("x", svgWidth / 2) // Set x position to half of the SVG width
+      .attr("y", 60)
+      .attr("text-anchor", "middle")
+      .style("font-size", "32px")
+      .style("font-weight", "bold")
+      .text("Event Categories Distribution");
   }, [data]);
 
   return (
-      <div id="pie-chart-container" />
+    <div id="pie-chart-container" />
   );
 };
 
 export default PieChart;
+
+

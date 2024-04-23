@@ -24,15 +24,16 @@ export const getElderHomes = async () => {
 
 
 export default async function providervisuals() {
-    var counties = null;
-    var orgs = null;
-    var resources = null;
+
+    var elderhomes = null;
+    var hospitals = null;
+    var events = null;
   
       // Search paramters (is there a search paramter or not?)
 
-      counties = await getCounties();
-      orgs = await getOrgs();
-      resources = await getResources();
+    elderhomes = await getElderHomes();
+    hospitals = await getHospitals();
+    events = await getEvents();
   
     return (
       <main
@@ -81,7 +82,7 @@ export default async function providervisuals() {
             <Col style={{ textAlign: "center" }}>
               {" "}
               {/* Center the content inside the column */}
-              <PieChart data={counties.data} />
+              <PieChart data={events} />
             </Col>
           </Row>
 
