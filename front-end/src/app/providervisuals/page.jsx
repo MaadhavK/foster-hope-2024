@@ -55,7 +55,7 @@ export default async function providervisuals() {
         }}
       >
         <Container style={{maxWidth: "100vw", margin: "0", paddingLeft: "5vw", paddingRight: "5vw", paddingTop: "5vh", border: "0", justifyContent: "center", alignItems: "center"}}>
-          <Row style={{padding: "3vw", paddingTop: "2rem", justifyContent: "space-evenly"}}>
+          <Row style={{paddingTop: "1rem", paddingBottom: "1rem", justifyContent: "space-evenly"}}>
             <Col>
               <div className={lora.className}>
                 <h1 style={{ color: "black", textAlign: "center" }}>
@@ -64,19 +64,68 @@ export default async function providervisuals() {
               </div>
             </Col>
           </Row>
-          <Row style={{padding: "3vw", paddingTop: "2rem", justifyContent: "center"}} >
+          <Row style={{paddingTop: "1rem", paddingBottom: "1rem", justifyContent: "center"}} >
             <Col style={{ textAlign: "center" }}>
               <PieChart data={events} />
             </Col>
           </Row>
-          <Row style={{padding: "3vw", paddingTop: "2rem", justifyContent: "center"}} >
+          <Row style={{paddingTop: "1rem", paddingBottom: "1rem", justifyContent: "center"}} >
             <Col style={{ textAlign: "center" }}>
               <ScatterPlot data={scatter} />
             </Col>
           </Row>
-          <Row style={{padding: "3vw", paddingTop: "2rem", justifyContent: "center"}} >
+          <Row style={{paddingTop: "1rem", paddingBottom: "1rem", justifyContent: "center"}} >
             <Col style={{ textAlign: "center" }}>
               <BarChart data={elderhomes} />
+            </Col>
+          </Row>
+          <Row style={{paddingTop: "1rem", paddingBottom: "1rem", justifyContent: "center"}} >
+          <Col className={lora.className} style={{paddingLeft:"20vw", paddingRight:"20vw", paddingTop:"1rem", paddingBottom:"1rem", color:"black"}}>
+              <h2 style={{textAlign:"center"}}>Critiques</h2>
+              <br/>
+              <div style={{fontSize:"20px"}}>What did they do well?</div>
+              <br/>
+              <div>
+                
+              </div>
+              <br/>
+              <div style={{fontSize:"20px"}}>How effective was their RESTful API?</div>
+              <br/>
+              <div>
+                Their RESTful API seems to be well implemented and the documentation provided through
+                postman was more than ample for us to use them to create visualizations. 
+              </div>
+              <br/>
+              <div style={{fontSize:"20px"}}>How well did they implement your user stories?</div>
+              <br/>
+              <div>
+                
+              </div>
+              <br/>
+              <div style={{fontSize:"20px"}}>What did we learn from their website?</div>
+              <br/>
+              <div>
+                
+              </div>
+              <br/>
+              <div style={{fontSize:"20px"}}>What can they do better?</div>
+              <br/>
+              <div>
+                There seems to be some spacing issues, especially with the pictures in model pages and the 
+                searching and sorting elements that makes the website less visually appealing. The font could 
+                also be improved.
+              </div>
+              <br/>
+              <div style={{fontSize:"20px"}}>What effects did the peer reviews have?</div>
+              <br/>
+              <div></div>
+              <br/>
+              <div style={{fontSize:"20px"}}>What puzzles us about their website?</div>
+              <br/>
+              <div>
+                One thing that puzzles us is an issue that we were having with our api, which seems to provide different
+                data based on whether http or https is used in the api call. 
+              </div>
             </Col>
           </Row>
 

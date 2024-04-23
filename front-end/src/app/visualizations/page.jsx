@@ -74,8 +74,8 @@ export default async function visualizations() {
         >
           <Row
             style={{
-              padding: "3vw",
-              paddingTop: "2rem",
+              paddingTop: "1rem",
+              paddingBottom: "1rem",
               justifyContent: "space-evenly",
             }}
           >
@@ -89,8 +89,8 @@ export default async function visualizations() {
           </Row>
           <Row
             style={{
-              padding: "3vw",
-              paddingTop: "2rem",
+              paddingTop: "1rem",
+              paddingBottom: "1rem",
               justifyContent: "center", // Center the content horizontally
             }}
           >
@@ -102,8 +102,8 @@ export default async function visualizations() {
           </Row>
           <Row
             style={{
-              padding: "3vw",
-              paddingTop: "2rem",
+              paddingTop: "1rem",
+              paddingBottom: "1rem",
               justifyContent: "center", // Center the content horizontally
             }}
           >
@@ -115,8 +115,8 @@ export default async function visualizations() {
           </Row>
           <Row
             style={{
-              padding: "3vw",
-              paddingTop: "2rem",
+              paddingTop: "1rem",
+              paddingBottom: "1rem",
               justifyContent: "center", // Center the content horizontally
             }}
           >
@@ -126,7 +126,50 @@ export default async function visualizations() {
               <ScatterPlot data={scatter}/>
             </Col>
           </Row>
-
+          <Row style={{paddingTop: "1rem", paddingBottom: "1rem", justifyContent: "center"}} >
+            <Col className={lora.className} style={{paddingLeft:"20vw", paddingRight:"20vw", paddingTop:"1rem", paddingBottom:"1rem", color:"black"}}>
+              <h2 style={{textAlign:"center"}}>Critiques</h2>
+              <br/>
+              <div style={{fontSize:"20px"}}>What did we do well?</div>
+              <br/>
+              <div>
+                We think that our final website's design and ui is clean and user friendly. We worked together well as a 
+                group and were able to meet and collaborate together. We had a lot of fun working on this project. 
+              </div>
+              <br/>
+              <div style={{fontSize:"20px"}}>What did we learn?</div>
+              <br/>
+              <div>
+                
+              </div>
+              <br/>
+              <div style={{fontSize:"20px"}}>What did we teach each other?</div>
+              <br/>
+              <div>
+                
+              </div>
+              <br/>
+              <div style={{fontSize:"20px"}}>What can we do better?</div>
+              <br/>
+              <div>
+                We could have done a better job scraping picture for our models and reduced the amount of grainy, 
+                hard to understand pictures. Our descriptions also were on the longer side and we could have cleaned
+                this up using a word limit to make our model pages more concise and clean. We could have also improved 
+                highlighting for our search function. 
+              </div>
+              <br/>
+              <div style={{fontSize:"20px"}}>What effects did the peer reviews have?</div>
+              <br/>
+              <div></div>
+              <br/>
+              <div style={{fontSize:"20px"}}>What puzzles us?</div>
+              <br/>
+              <div>
+                One thing that puzzles us is an issue that we were having with our api, which seems to provide different
+                data based on whether http or https is used in the api call. 
+              </div>
+            </Col>
+          </Row>
         </Container>
       </main>
     );

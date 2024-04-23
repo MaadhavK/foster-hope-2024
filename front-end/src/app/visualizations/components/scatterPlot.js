@@ -54,7 +54,6 @@ const ScatterPlot = ({ data }) => {
         .attr("y", 60)
         .attr("text-anchor", "middle")
         .style("font-size", "32px")
-        .style("font-weight", "bold")
         .text("County Population vs Foster Homes");
     
     svg.append("text")
