@@ -1,7 +1,7 @@
 "use client"
 import * as d3 from "d3";
 import React, { useEffect } from "react";
-import { Lora} from "next/font/google";
+import { Lora } from "next/font/google";
 const lora = Lora({weight: '400', subsets: ['latin']})
 
 const BarChart = ({ data }) => {
@@ -11,7 +11,6 @@ const BarChart = ({ data }) => {
 
     // Filter out ratings with a value of 0
     const filteredData = data.filter(d => d.rating !== 0);
-
 
     // Group ratings into specified ranges
     const barData = [
@@ -67,19 +66,19 @@ const BarChart = ({ data }) => {
       .text(d => d.value);
 
     barSvg.append("text")
-      .attr("x", 165)
+      .attr("x", 155)
       .attr("y", chartHeight + 20)
       .text("<2")
     barSvg.append("text")
-      .attr("x", 355)
+      .attr("x", 350)
       .attr("y", chartHeight + 20)
       .text("2-3")
     barSvg.append("text")
-      .attr("x", 550)
+      .attr("x", 545)
       .attr("y", chartHeight + 20)
       .text("3-4")
     barSvg.append("text")
-      .attr("x", 740)
+      .attr("x", 735)
       .attr("y", chartHeight + 20)
       .text("4-5")
     barSvg.append("text")
@@ -91,7 +90,7 @@ const BarChart = ({ data }) => {
     barSvg.append("text")
       .attr("text-anchor", "middle")
       .style("font-size", "20px")
-      .text("Number of Orgs")
+      .text("Number of Elder Homes")
       .attr("transform", "translate(19," + (svgHeight / 2) + ") rotate(-90)");
       // Add y-axis
     barSvg.append("g")
@@ -104,7 +103,7 @@ const BarChart = ({ data }) => {
       .attr("text-anchor", "middle")
       .style("font-size", "32px")
       .style("font-weight", "bold")
-      .text("Number of Ratings in Each Range");
+      .text("Ratings of Elder Homes");
 
   }, [data]);
 

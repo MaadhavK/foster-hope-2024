@@ -1,6 +1,8 @@
 "use client"
 import * as d3 from "d3";
 import React, { useEffect } from "react";
+import { Lora} from "next/font/google";
+const lora = Lora({weight: '400', subsets: ['latin']})
 
 const PieChart = ({ data }) => {
   useEffect(() => {
@@ -110,7 +112,7 @@ const PieChart = ({ data }) => {
   }, [data]);
 
   return (
-      <div id="pie-chart-container" />
+      <div id="pie-chart-container" className={lora.className} style={{color:"black"}}/>
   );
 };
 

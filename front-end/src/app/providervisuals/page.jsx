@@ -5,6 +5,7 @@ const lora = Lora({weight: '400', subsets: ['latin']})
 const cabin = Cabin({weight: '400', subsets: ['latin']})
 import PieChart from "./components/pieChart.js";
 import ScatterPlot from "./components/scatterPlot.js";
+import BarChart from "./components/barChart";
 
 export const getElderHomes = async () => {
     const response = await fetch(
@@ -71,6 +72,11 @@ export default async function providervisuals() {
           <Row style={{padding: "3vw", paddingTop: "2rem", justifyContent: "center"}} >
             <Col style={{ textAlign: "center" }}>
               <ScatterPlot data={scatter} />
+            </Col>
+          </Row>
+          <Row style={{padding: "3vw", paddingTop: "2rem", justifyContent: "center"}} >
+            <Col style={{ textAlign: "center" }}>
+              <BarChart data={elderhomes} />
             </Col>
           </Row>
 
