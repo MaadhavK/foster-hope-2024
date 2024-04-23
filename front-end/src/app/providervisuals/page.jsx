@@ -4,6 +4,7 @@ import { Lora, Cabin} from "next/font/google";
 const lora = Lora({weight: '400', subsets: ['latin']})
 const cabin = Cabin({weight: '400', subsets: ['latin']})
 import PieChart from "./components/pieChart.js";
+import ScatterPlot from "./components/scatterPlot.js";
 
 export const getElderHomes = async () => {
     const response = await fetch(
@@ -34,6 +35,23 @@ export default async function providervisuals() {
     elderhomes = await getElderHomes();
     hospitals = await getHospitals();
     events = await getEvents();
+
+    var scatter = [];
+    var maxBeds = 0;
+    var maxRevenue = 0;
+    for(var k in hospitals){
+        var bed = parseFloat(hospitals[k]["beds"]);
+        var rev = parseFloat(hospitals[k]["gross_patient_revenue"].substring(1).replace(",", ''));
+        if(bed > maxBeds){
+            maxBeds = bed;
+        }
+        if (rev > maxRevenue) {
+            maxRevenue = rev;
+        }
+        scatter.push({beds : parseFloat(hospitals[k]["beds"]), revenue : rev});
+    }
+    console.log(scatter);
+    scatter = JSON.stringify(scatter);
   
     return (
       <main
@@ -45,25 +63,8 @@ export default async function providervisuals() {
           height: "100%",
         }}
       >
-        <Container
-          style={{
-            maxWidth: "100vw",
-            margin: "0",
-            paddingLeft: "5vw",
-            paddingRight: "5vw",
-            paddingTop: "5vh",
-            border: "0",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Row
-            style={{
-              padding: "3vw",
-              paddingTop: "2rem",
-              justifyContent: "space-evenly",
-            }}
-          >
+        <Container style={{maxWidth: "100vw", margin: "0", paddingLeft: "5vw", paddingRight: "5vw", paddingTop: "5vh", border: "0", justifyContent: "center", alignItems: "center"}}>
+          <Row style={{padding: "3vw", paddingTop: "2rem", justifyContent: "space-evenly"}}>
             <Col>
               <div className={lora.className}>
                 <h1 style={{ color: "black", textAlign: "center" }}>
@@ -72,17 +73,14 @@ export default async function providervisuals() {
               </div>
             </Col>
           </Row>
-          <Row
-            style={{
-              padding: "3vw",
-              paddingTop: "2rem",
-              justifyContent: "center", // Center the content horizontally
-            }}
-          >
+          <Row style={{padding: "3vw", paddingTop: "2rem", justifyContent: "center"}} >
             <Col style={{ textAlign: "center" }}>
-              {" "}
-              {/* Center the content inside the column */}
               <PieChart data={events} />
+            </Col>
+          </Row>
+          <Row style={{padding: "3vw", paddingTop: "2rem", justifyContent: "center"}} >
+            <Col style={{ textAlign: "center" }}>
+              <ScatterPlot data={scatter} />
             </Col>
           </Row>
 
