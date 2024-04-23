@@ -86,7 +86,8 @@ export default async function providervisuals() {
               <div style={{fontSize:"20px"}}>What did they do well?</div>
               <br/>
               <div>
-                
+                Their website runs very well. Their models are all very relevant to their 
+                marginalized group and provides very relevant information to any prospective user.
               </div>
               <br/>
               <div style={{fontSize:"20px"}}>How effective was their RESTful API?</div>
@@ -99,13 +100,16 @@ export default async function providervisuals() {
               <div style={{fontSize:"20px"}}>How well did they implement your user stories?</div>
               <br/>
               <div>
-                
+                The group accurately implemented all features and changes that we requested.
               </div>
               <br/>
               <div style={{fontSize:"20px"}}>What did we learn from their website?</div>
               <br/>
               <div>
-                
+                We learned a lot about through using the data to create visualizations. We saw that the 
+                number of beds correlated with the overall revenue up to a certain point - more beds means
+                overall much more revenue. Then, when hospitals have a very large number of beds, they seem to 
+                make very little in overall revenue. This was something really interesting that we learned.
               </div>
               <br/>
               <div style={{fontSize:"20px"}}>What can they do better?</div>
@@ -113,18 +117,14 @@ export default async function providervisuals() {
               <div>
                 There seems to be some spacing issues, especially with the pictures in model pages and the 
                 searching and sorting elements that makes the website less visually appealing. The font could 
-                also be improved.
+                also be improved. They could have provided more information explaining their models.
               </div>
-              <br/>
-              <div style={{fontSize:"20px"}}>What effects did the peer reviews have?</div>
-              <br/>
-              <div></div>
               <br/>
               <div style={{fontSize:"20px"}}>What puzzles us about their website?</div>
               <br/>
               <div>
-                One thing that puzzles us is an issue that we were having with our api, which seems to provide different
-                data based on whether http or https is used in the api call. 
+                One thing that puzzles us is how they were able to implement sorting / searching through 
+                their model page without changing the url, which is what we thought was the simplest solution.l
               </div>
             </Col>
           </Row>

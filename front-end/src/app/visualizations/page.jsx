@@ -140,13 +140,17 @@ export default async function visualizations() {
               <div style={{fontSize:"20px"}}>What did we learn?</div>
               <br/>
               <div>
-                
+                We learned a great deal about all the tools that we used to implement this project. Javascript, React, AWS,
+                Postman, web scraping, making an api, filtering and sorting the api, etc. This project really helped us to
+                hone our skills in areas that will be very applicable in the future.
               </div>
               <br/>
               <div style={{fontSize:"20px"}}>What did we teach each other?</div>
               <br/>
               <div>
-                
+                Most of what we learned were done through collaboration and teaching each other. No one person knew everything
+                that needed to be done, and through research we all did and teaching each other, we were able to all gain a deep
+                understanding of 
               </div>
               <br/>
               <div style={{fontSize:"20px"}}>What can we do better?</div>
@@ -160,7 +164,10 @@ export default async function visualizations() {
               <br/>
               <div style={{fontSize:"20px"}}>What effects did the peer reviews have?</div>
               <br/>
-              <div></div>
+              <div>
+                We think that the peer reviews were overall a good way to keep everyone in the group accountable and
+                to give constructive feedback for everyone to improve the next time.
+              </div>
               <br/>
               <div style={{fontSize:"20px"}}>What puzzles us?</div>
               <br/>
