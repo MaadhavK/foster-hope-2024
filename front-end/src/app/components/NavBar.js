@@ -30,6 +30,7 @@ export default function NavBar(){
                     <Nav.Link className={cabin.className} href="/counties">Counties</Nav.Link>
                     <Nav.Link className={cabin.className} href="/organizations">Organizations</Nav.Link>
                     <Nav.Link className={cabin.className} href="/resources">Resources</Nav.Link>
+                    <Nav.Link className={cabin.className} href="/visualizations">Visualizations</Nav.Link>
                 </Nav>
                 </Navbar.Collapse>
             </Container>
