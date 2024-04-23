@@ -13,7 +13,7 @@ const BarChart = ({ data }) => {
 
     // Group ratings into specified ranges
     const barData = [
-      { label: "1-2", value: filteredData.filter(d => d.rating >= 1 && d.rating < 2).length },
+      { label: "1-2", value: filteredData.filter(d => d.rating > 0 && d.rating < 2).length },
       { label: "2-3", value: filteredData.filter(d => d.rating >= 2 && d.rating < 3).length },
       { label: "3-4", value: filteredData.filter(d => d.rating >= 3 && d.rating < 4).length },
       { label: "4-5", value: filteredData.filter(d => d.rating >= 4 && d.rating <= 5).length }
@@ -23,7 +23,7 @@ const BarChart = ({ data }) => {
 
     const svgWidth = 900;
     const svgHeight = 700;
-    const margin = { top: 0, right: 40, bottom: 0, left: 60 }; // Adjusted left margin
+    const margin = { top: 0, right: 40, bottom: 80, left: 70}; // Adjusted left margin
     const chartWidth = svgWidth - margin.left - margin.right;
     const chartHeight = svgHeight - margin.top - margin.bottom;
 
@@ -39,8 +39,8 @@ const BarChart = ({ data }) => {
 
 
     const yScale = d3.scaleLinear()
-      .domain([0, d3.max(barData, d => d.value) * 1.2 || 0])
-      .range([margin.top + chartHeight, margin.top]);
+      .domain([0, d3.max(barData, d => d.value) * 1.035 || 0])
+      .range([margin.top + chartHeight, 100]);
 
     barSvg.selectAll("rect")
       .data(barData)
@@ -63,8 +63,34 @@ const BarChart = ({ data }) => {
       .attr("text-anchor", "middle")
       .text(d => d.value);
 
-
-    // Add y-axis
+    barSvg.append("text")
+      .attr("x", 155)
+      .attr("y", chartHeight + 20)
+      .text("<2")
+    barSvg.append("text")
+      .attr("x", 350)
+      .attr("y", chartHeight + 20)
+      .text("2-3")
+    barSvg.append("text")
+      .attr("x", 545)
+      .attr("y", chartHeight + 20)
+      .text("3-4")
+    barSvg.append("text")
+      .attr("x", 735)
+      .attr("y", chartHeight + 20)
+      .text("4-5")
+    barSvg.append("text")
+      .attr("x", svgWidth / 2)
+      .attr("y", chartHeight + 55)
+      .attr("text-anchor", "middle")
+      .style("font-size", "20px")
+      .text("Ratings")
+    barSvg.append("text")
+      .attr("text-anchor", "middle")
+      .style("font-size", "20px")
+      .text("Number of Orgs")
+      .attr("transform", "translate(19," + (svgHeight / 2) + ") rotate(-90)");
+      // Add y-axis
     barSvg.append("g")
       .attr("transform", `translate(${margin.left},0)`)
       .call(d3.axisLeft(yScale));
@@ -79,7 +105,7 @@ const BarChart = ({ data }) => {
 
   }, [data]);
 
-  return <div id="bar-chart-container" />;
+  return <div id="bar-chart-container" style={{color:"black"}}/>;
 };
 
 export default BarChart;
