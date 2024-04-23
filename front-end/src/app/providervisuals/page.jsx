@@ -5,25 +5,25 @@ const lora = Lora({weight: '400', subsets: ['latin']})
 const cabin = Cabin({weight: '400', subsets: ['latin']})
 import PieChart from "./components/pieChart.js";
 
-export const getCounties = async () => {
+export const getElderHomes = async () => {
     const response = await fetch(
-      "http://api.foster-hope.com/counties/all_counties"
+      "https://cs373backend.elderhelpertexas.me/elderhomes"
     );
     return await response.json();
   };
-  export const getOrgs = async () => {
-    const response = await fetch("http://api.foster-hope.com/orgs/all_orgs");
+  export const getHospitals = async () => {
+    const response = await fetch("https://cs373backend.elderhelpertexas.me/hospitals");
     return await response.json();
   };
-  export const getResources = async () => {
+  export const getEvents = async () => {
     const response = await fetch(
-      `http://api.foster-hope.com/resources/all_resources`
+      `https://cs373backend.elderhelpertexas.me/events`
     );
     return await response.json();
   };
 
 
-export default async function visualizations() {
+export default async function providervisuals() {
     var counties = null;
     var orgs = null;
     var resources = null;
