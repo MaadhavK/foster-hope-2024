@@ -4,6 +4,7 @@ import { Lora, Cabin} from "next/font/google";
 const lora = Lora({weight: '400', subsets: ['latin']})
 const cabin = Cabin({weight: '400', subsets: ['latin']})
 import PieChart from "./components/pieChart.js";
+import BarChart from "./components/barChart.js";
 
 export const getCounties = async () => {
     const response = await fetch(
@@ -82,6 +83,19 @@ export default async function visualizations() {
               {" "}
               {/* Center the content inside the column */}
               <PieChart data={counties.data} />
+            </Col>
+          </Row>
+          <Row
+            style={{
+              padding: "3vw",
+              paddingTop: "2rem",
+              justifyContent: "center", // Center the content horizontally
+            }}
+          >
+            <Col style={{ textAlign: "center" }}>
+              {" "}
+              {/* Center the content inside the column */}
+              <BarChart data={orgs.data} />
             </Col>
           </Row>
 
