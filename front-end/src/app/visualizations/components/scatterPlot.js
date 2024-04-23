@@ -23,16 +23,16 @@ const ScatterPlot = ({ data }) => {
     const root = JSON.parse(data);
 
     // Add X axis
-    var x = d3.scaleLinear()
-        .domain([0, 1000])
-        .range([ 0, width ]);
+    var x = d3.scaleLog()
+        .domain([1e2, 1e7])
+        .range([ 1, width ]);
     svg.append("g")
         .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x));
+        .call(d3.axisBottom(x).ticks(5));
 
     // Add Y axis
     var y = d3.scaleLinear()
-        .domain([0, 1000000])
+        .domain([0, 700])
         .range([ height, 100]);
     svg.append("g")
         .call(d3.axisLeft(y));
@@ -43,8 +43,8 @@ const ScatterPlot = ({ data }) => {
         .data(root)
         .enter()
         .append("circle")
-        .attr("cx", function (d) { return x(d.beds); } )
-        .attr("cy", function (d) { return y(d.revenue); } )
+        .attr("cx", function (d) { return x(d.population); } )
+        .attr("cy", function (d) { return y(d.fosterHomes); } )
         .attr("r", 2.5)
         .style("fill", "#9c70ba")
 
@@ -54,19 +54,19 @@ const ScatterPlot = ({ data }) => {
         .attr("text-anchor", "middle")
         .style("font-size", "32px")
         .style("font-weight", "bold")
-        .text("Hospital Beds vs. Gross Revenue");
+        .text("County Population vs Number of Foster Homes");
     
     svg.append("text")
         .attr("x", width / 2) // Set x position to half of the SVG width
         .attr("y", 670)
         .attr("text-anchor", "middle")
         .style("font-size", "16px")
-        .text("Number of Hospital Beds");
+        .text("County Population (log scaled)");
     
     svg.append("text")
         .attr("text-anchor", "middle")
         .style("font-size", "16px")
-        .text("Gross Revenue of Hospital")
+        .text("Number of Foster Homes")
         .attr("transform", "translate(-70," + (height / 2) + ") rotate(-90)");
 
   }, [data]);

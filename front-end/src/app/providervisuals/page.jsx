@@ -37,20 +37,10 @@ export default async function providervisuals() {
     events = await getEvents();
 
     var scatter = [];
-    var maxBeds = 0;
-    var maxRevenue = 0;
     for(var k in hospitals){
-        var bed = parseFloat(hospitals[k]["beds"]);
         var rev = parseFloat(hospitals[k]["gross_patient_revenue"].substring(1).replace(",", ''));
-        if(bed > maxBeds){
-            maxBeds = bed;
-        }
-        if (rev > maxRevenue) {
-            maxRevenue = rev;
-        }
         scatter.push({beds : parseFloat(hospitals[k]["beds"]), revenue : rev});
     }
-    console.log(scatter);
     scatter = JSON.stringify(scatter);
   
     return (
