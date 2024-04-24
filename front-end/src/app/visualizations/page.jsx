@@ -7,23 +7,22 @@ import PieChart from "./components/pieChart.js";
 import BarChart from "./components/barChart.js";
 import ScatterPlot from "./components/scatterPlot.js";
 
-export const getCounties = async () => {
+async function getCounties() {
     const response = await fetch(
       "http://api.foster-hope.com/counties/all_counties"
     );
     return await response.json();
   };
-  export const getOrgs = async () => {
+  async function getOrgs() {
     const response = await fetch("http://api.foster-hope.com/orgs/all_orgs");
     return await response.json();
   };
-  export const getResources = async () => {
+  async function getResources() {
     const response = await fetch(
       `http://api.foster-hope.com/resources/all_resources`
     );
     return await response.json();
   };
-
 
 export default async function visualizations() {
     var counties = null;

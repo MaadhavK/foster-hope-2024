@@ -7,22 +7,24 @@ import PieChart from "./components/pieChart.js";
 import ScatterPlot from "./components/scatterPlot.js";
 import BarChart from "./components/barChart";
 
-export const getElderHomes = async () => {
+async function getElderHomes() {
     const response = await fetch(
       "https://cs373backend.elderhelpertexas.me/elderhomes"
     );
     return await response.json();
   };
-  export const getHospitals = async () => {
+  async function getHospitals() {
     const response = await fetch("https://cs373backend.elderhelpertexas.me/hospitals");
     return await response.json();
   };
-  export const getEvents = async () => {
+  async function getEvents() {
     const response = await fetch(
       `https://cs373backend.elderhelpertexas.me/events`
     );
     return await response.json();
   };
+
+
 
 
 export default async function providervisuals() {
