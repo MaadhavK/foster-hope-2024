@@ -7,36 +7,36 @@ const cabin = Cabin({ weight: "400", subsets: ["latin"] });
 import Tabination from "./components/tabination.js";
 
 // Getting all of the data for the models
-export const getCounties = async () => {
+const getCounties = async () => {
   const response = await fetch(
     "http://api.foster-hope.com/counties/all_counties"
   );
   return await response.json();
 };
-export const getOrgs = async () => {
+const getOrgs = async () => {
   const response = await fetch("http://api.foster-hope.com/orgs/all_orgs");
   return await response.json();
 };
-export const getResources = async () => {
+const getResources = async () => {
   const response = await fetch(
     `http://api.foster-hope.com/resources/all_resources`
   );
   return await response.json();
 };
 
-export const getSearchCounties = async (search) => {
+const getSearchCounties = async (search) => {
   const response = await fetch(
     "http://api.foster-hope.com/counties/all_counties?search_query=" + search
   );
   return await response.json();
 };
-export const getSearchOrgs = async (search) => {
+const getSearchOrgs = async (search) => {
   const response = await fetch(
     "http://api.foster-hope.com/orgs/all_orgs?search_query=" + search
   );
   return await response.json();
 };
-export const getSearchResources = async (search) => {
+const getSearchResources = async (search) => {
   const response = await fetch(
     "http://api.foster-hope.com/resources/all_resources?search_query=" + search
   );

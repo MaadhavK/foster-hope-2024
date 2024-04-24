@@ -29,7 +29,7 @@ async function searchAndSort(search, sort, asc){
 
 
 // model page for counties
-export default async function listCounties( {searchParams} ) {
+export default async function listOrgs( {searchParams} ) {
     // get params for search and sort from url params
     const search = searchParams["search"] ?? null
     const sort = Number(searchParams["sort"] ?? 0)
