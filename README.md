@@ -20,7 +20,7 @@ FosterHope
 | Nathan Cheng    | @nathanchengus   | nyc278  |
 | Grace Pan       | @pan-grace       | gp22489 |
 | Alea Nablan     | @aleanadhiraa    | ann2246 |
-| Raymond Wang    | @raymww          |         |
+| Raymond Wang    | @raymww          | rmw2945 |
 
 | Phase | GitSHA                                   |
 | ----- | ---------------------------------------- |
