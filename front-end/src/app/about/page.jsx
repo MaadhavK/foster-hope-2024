@@ -109,7 +109,7 @@ export default function About() {
         </Container>
         {/* Icons with tools used */}
         
-        <Container style={{justifyContent:"space-between", color: "black"}}>
+        <Container style={{justifyContent:"space-between", color: "black", textAlign: "center"}}>
           <h1 className={lora.className}>Tools Used</h1>
           <br/>
           <Row className="image-grid">
