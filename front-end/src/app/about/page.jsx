@@ -119,14 +119,12 @@ export default function About() {
           <h1 className={lora.className} style={{ textAlign: 'center', color: "black"}}>Data Sources</h1>
           <br/>
 
-          <h4 className="centered1" style={{textAlign: 'center', marginBottom: "40px", color: "black"}}>
+          <h4 style={{textAlign: 'center', marginBottom: "40px"}}>
             <a href="https://developers.google.com/maps">Google Maps Platform</a> <br></br>
             <a href="https://www.eventbrite.com/d/united-states--texas/children-events/">Eventbrite</a> <br></br>
             <a href="https://www.mediawiki.org/wiki/API:Main_page">Wikipedia</a> <br></br>
             <a href="https://developers.google.com/youtube/v3/docs">Youtube</a> <br></br>
             <a href="https://data.texas.gov/browse?q=Foster%20care&sortBy=relevance">Texas Government Data</a> <br></br>
-
-
           </h4>
 
           <Row>
