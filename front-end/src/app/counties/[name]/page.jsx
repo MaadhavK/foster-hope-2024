@@ -52,7 +52,7 @@ export default async function CountyPage ({params}) {
     const res = resData["data"]
 
     return (
-        <div style={{minHeight:"100vh", backgroundColor:"#ffffff", paddingTop:"55px"}}>
+        <div style={{minHeight:"100vh", backgroundColor:"lightblue", paddingTop:"55px"}}>
             <div style={{textAlign:"center", color:"black", height:"30vh", display:"flex", flexDirection:"column",justifyContent:"center", alignItems:"center"}}>
                 <h1 className={lora.className} style={{fontSize:"3rem", zIndex:"1"}}>{county.county} County</h1>
             </div> 

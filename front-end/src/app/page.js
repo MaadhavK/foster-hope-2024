@@ -141,7 +141,7 @@ export default function Home() {
                 style={{
                   zIndex: "1",
                   textAlign: "center",
-                  fontSize: "4rem",
+                  fontSize: "5rem",
                   textShadow: "2px 2px 4px #101010",
                   fontWeight: "bold",
                   color: "#fffae0",
@@ -153,7 +153,7 @@ export default function Home() {
               <br />
               <div
                 className={cabin.className}
-                style={{ textAlign: "center", color: "#fffae0" }}
+                style={{ textAlign: "center", color: "#fffae0", fontSize: "1.5rem"}}
               >
                 Empowering lives for foster children.
               </div>
@@ -173,19 +173,19 @@ export default function Home() {
             <Col styles={{ padding: "0" }}>
               <h2
                 className={lora.className}
-                style={{ color: "black", minWidth: "400px" }}
+                style={{ color: "black", minWidth: "400px", fontSize:"2rem" }}
               >
                 Our Mission
               </h2>
               <br />
-              <p className={styles.splashdesc} style={{}}>
+              <p className={styles.splashdesc} style={{fontSize: "1.2rem"}}>
                 Those in foster care face the difficult task of navigating the
                 complexities of the foster care system. They face many
                 challenges, such as frequent changes in homes that breaks
                 relationships, emotional struggles that are often overlooked,
                 and a lack of resources and support.
               </p>
-              <p className={styles.splashdesc} style={{}}>
+              <p className={styles.splashdesc} style={{fontSize: "1.2rem"}}>
                 Foster Hope contains a wealth of information and resources about
                 foster care in Texas. Those that are in foster care can easily
                 locate local resources and support organizations, and those that

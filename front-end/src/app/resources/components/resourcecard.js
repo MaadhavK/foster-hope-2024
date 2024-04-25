@@ -58,13 +58,13 @@ const ResourceCard = ({resource, query}) => {
                 <div>
                     <Card.Title className={lora.className} style={{fontSize:"1.2rem", alignSelf:"flex-start"}}><b>{HighlightText(thisRes?.name,query)}</b></Card.Title>
                     <Card.Text className={cabin.className} style={{paddingTop:"10px", paddingBottom:"10px"}}>
-                    Location: {HighlightText(thisRes?.county,query)}
+                    <b>Location: </b> {HighlightText(thisRes?.county,query)}
                     <br></br>
-                    Hours: {HighlightText(hours,query)}
+                    <b>Hours: </b>{HighlightText(hours,query)}
                     <br></br>
-                    Type: {HighlightText(thisRes?.type,query)}
+                    <b>Type: </b> {HighlightText(thisRes?.type,query)}
                     <br></br>
-                    Website: {HighlightText(getDomainName(thisRes?.website), query)}
+                    <b>Website: </b>{HighlightText(getDomainName(thisRes?.website), query)}
                     <br></br>
                     </Card.Text>
                 </div>

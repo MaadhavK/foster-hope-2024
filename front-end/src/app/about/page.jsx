@@ -76,7 +76,7 @@ export default function About() {
             <h1 className={lora.className} style={{fontSize:"3rem", textAlign:"center"}}>About Foster Hope.</h1>
           </div>
 
-          <div style={{paddingLeft:"5vw", paddingRight:"5vw", color:"#333"}}>
+          <div style={{paddingLeft:"5vw", paddingRight:"5vw", color:"#333", textAlign: "center"}}>
             <p className={cabin.className}> This website aims to inform users about foster children in Texas by providing important statistics as well as organizations and resources that are in place
               to support these children. The intended users are people part of the foster care system (children or providers) who may be looking for information about their specific area
               or need support from the organizations or resources provided.
@@ -89,7 +89,7 @@ export default function About() {
             <h2 className={lora.className} style={{textAlign:"center"}}>Our Data Sources</h2>
           </div>
 
-          <div style={{paddingLeft:"5vw", paddingRight:"5vw", color:"#333"}}>
+          <div style={{paddingLeft:"5vw", paddingRight:"5vw", color:"#333", textAlign: "center"}}>
             <p className={cabin.className}>
               Our data comes from the Google Places API, the Wikipedia API and the EventBrite API, as well as certain government websites with specific county data. Although the data shown in this phase is a small fraction of the actual data, it did seem that Travis County had resources that were much more readily available than the other counties. This is likely due to its comparitively large population, meaning that foster children in smaller counties, like Bastrop County, might be less supported. With that said, it was surprising to see 
               that even in smaller counties with population between 25,000 and 50,000, there were more available resources and organizations than expected.
