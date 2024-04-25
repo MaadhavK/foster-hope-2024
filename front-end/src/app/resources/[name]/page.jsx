@@ -58,7 +58,7 @@ export default async function resPage ({params}) {
     const orgs = orgdata["data"]
 
     return (
-        <div style={{minHeight:"100vh", backgroundColor:"#ffffff", paddingTop:"55px"}}>
+        <div style={{minHeight:"100vh", backgroundColor:"lightblue", paddingTop:"55px"}}>
             <div style={{textAlign:"center", color:"black", height:"30vh", display:"flex", flexDirection:"column",justifyContent:"center", alignItems:"center"}}>
                 <h1 className={lora.className} style={{fontSize:"3rem", color:"black"}}>{res.name}</h1>
                 <p className={cabin.className} style={{color:"black"}}>{res.location}</p>
