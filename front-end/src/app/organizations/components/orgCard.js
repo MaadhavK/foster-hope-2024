@@ -33,13 +33,13 @@ const OrgCard = ({org, query=""}) => {
                 <div>
                     <Card.Title className={lora.className} style={{fontSize:"1.3rem"}}><b>{HighlightText(thisOrg?.name,query)}</b></Card.Title>
                     <Card.Text className={cabin.className} style={{paddingTop:"10px", paddingBottom:"10px"}}>
-                    Location: {HighlightText(thisOrg?.location, query)}
+                    <b>Location: </b>{HighlightText(thisOrg?.location, query)}
                     <br></br>
-                    Type: {HighlightText(JSON.parse(thisOrg.type)[0].replaceAll('_', ' '),query)}
+                    <b>Type: </b> {HighlightText(JSON.parse(thisOrg.type)[0].replaceAll('_', ' '),query)}
                     <br></br>
-                    Reviews: {HighlightText(thisOrg?.rating, query)}
+                    <b>Reviews: </b> {HighlightText(thisOrg?.rating, query)}
                     <br></br>
-                    {HighlightText(JSON.parse(thisOrg.operation_hours)[day], query)}
+                    <b>{HighlightText(JSON.parse(thisOrg.operation_hours)[day], query)}</b>
                     </Card.Text>
                     </div>
                 <div>

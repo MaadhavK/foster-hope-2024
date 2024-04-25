@@ -29,13 +29,13 @@ const CountyCard = ({county, query = ""}) => {
             <Card.Body className="d-flex flex-column justify-content-center" style={{padding: "1rem", background: "lightblue"}}>
                 <Card.Title className={lora.className} style={{fontSize:"1.6rem"}}><b>{HighlightText(thisCounty?.county, query)}</b></Card.Title>
                 <Card.Text className={cabin.className} style={{paddingTop:"10px", paddingBottom:"10px"}}>
-                Population: {HighlightText(thisCounty?.population, query)}
+                <b>Population: </b> {HighlightText(thisCounty?.population, query)}
                 <br></br>
-                Number of Orgs: {HighlightText(thisCounty?.number_of_orgs, query)}
+                <b>Number of Orgs: </b> {HighlightText(thisCounty?.number_of_orgs, query)}
                 <br></br>
-                Number of Foster Children: {HighlightText(thisCounty?.number_of_foster_kids, query)}
+                <b>Number of Foster Children: </b>{HighlightText(thisCounty?.number_of_foster_kids, query)}
                 <br></br>
-                Number of Foster Homes: {HighlightText(thisCounty?.number_of_homes, query)}
+                <b>Number of Foster Homes: </b>{HighlightText(thisCounty?.number_of_homes, query)}
                 <br></br>
 
                 </Card.Text>
