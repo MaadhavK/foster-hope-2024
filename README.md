@@ -34,14 +34,14 @@ FosterHope
 | 1     | https://gitlab.com/nathanchengus/cs373-group-22/-/pipelines |
 | 2     | https://gitlab.com/nathanchengus/cs373-group-22/-/pipelines                                                           |
 | 3     | https://gitlab.com/nathanchengus/cs373-group-22/-/pipelines                                                            |
-| 4     |                                                             |
+| 4     | https://gitlab.com/nathanchengus/cs373-group-22/-/pipelines                                                            |
 
 | Phase | Leader      |
 | ----- | ----------- |
 | 1     | Alea Nablan |
 | 2     | Nathan Cheng            |
 | 3     | Raymond Wang             |
-| 4     |             |
+| 4     | Grace Pan            |
 
 Group leader helped coordinate and make sure we all had time to meet. Also helped divide tasks.
 ##Phase 1 Expected vs. Actual Time
@@ -67,6 +67,14 @@ Group leader helped coordinate and make sure we all had time to meet. Also helpe
 - Raymond Wang: Expected 10, Actual 18 hours
 - Grace Pan: Expected 9 hours, actual 15 hours
 - Alea Nablan: Expected 11 hours, Actual 16 hours
+
+##Phase 4 Expected vs. Actual Time
+
+- Maadhav Kothuri: Expected 3 hours, Actual 2 hours
+- Nathan Cheng: Expected 4 hours, actual 4 hours
+- Raymond Wang: Expected 2, Actual 4 hours
+- Grace Pan: Expected 4 hours, actual 3 hours
+- Alea Nablan: Expected 4 hours, Actual 3 hours
 
 ## RFP (Project Proposal)
 
