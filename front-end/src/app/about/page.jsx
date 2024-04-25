@@ -2,10 +2,11 @@
 import Image from "next/image"
 import AboutCard from "./components/aboutCard";
 import ImageCard from "./components/ImageCard";
-import { Row, Col, Container } from "react-bootstrap";
+import { Row, Col, Container, Button } from "react-bootstrap";
 import styles from "../page.module.css";
 import './components/ImageGrid.css'
 import { Lora, Cabin } from "next/font/google";
+import YoutubeEmbed from "../components/youtube";
 
 // Data for group members
 const data = {
@@ -57,8 +58,8 @@ const data = {
     // Add more image data as needed
     { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png', alt: 'Image 1', logo: "React", link: "" },
     { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/800px-Bootstrap_logo.svg.png', alt: 'Image 2', logo: "Bootstrap", link: ""},
-    { src: 'https://yt3.googleusercontent.com/R6P5skGdZJeM1bebvt3ILeU8k-9tiqE5T198RmBH8SoGXH2gk_Lk-45uZoq6X6pW4a4c9Sqn=s900-c-k-c0x00ffffff-no-rj', alt: 'Image 3', logo: "GitLab", link: "https://gitlab.com/nathanchengus/cs373-group-22" },
-    { src: 'https://seeklogo.com/images/P/postman-logo-F43375A2EB-seeklogo.com.png', alt: 'Image 4', logo: "Postman", link: "https://documenter.getpostman.com/view/32909464/2sA2r3ZkjZ" },
+    { src: 'https://yt3.googleusercontent.com/R6P5skGdZJeM1bebvt3ILeU8k-9tiqE5T198RmBH8SoGXH2gk_Lk-45uZoq6X6pW4a4c9Sqn=s900-c-k-c0x00ffffff-no-rj', alt: 'Image 3', logo: "GitLab", link: "" },
+    { src: 'https://seeklogo.com/images/P/postman-logo-F43375A2EB-seeklogo.com.png', alt: 'Image 4', logo: "Postman", link: "" },
     { src: 'https://www.docker.com/wp-content/uploads/2023/05/symbol_blue-docker-logo.png', alt: 'Image 5', logo: "Docker", link: "" },
     { src: 'https://seeklogo.com/images/A/aws-amplify-logo-D68DDB5AB1-seeklogo.com.png', alt: 'Image 6', logo: "AWS Amplify", link: "" },
   ];
@@ -94,6 +95,11 @@ export default function About() {
               that even in smaller counties with population between 25,000 and 50,000, there were more available resources and organizations than expected.
             </p>
           </div>
+
+          <div style={{ display: 'flex', justifyContent: 'center', paddingLeft: '5vw', paddingRight: '5vw', paddingTop: '3vw', color: '#333' }}>
+            <YoutubeEmbed params="https://www.youtube.com/watch?v=FrakkmQrVRw&ab_channel=MaadhavSKothuri"></YoutubeEmbed>
+          </div>
+
           {/* All of the about cards for team members */}
         </Container>
         <div className={styles.aboutgrad}>
@@ -107,10 +113,41 @@ export default function About() {
             </Row>
             
         </Container>
+
+        {/* Gitlab and Postman with Data sources*/}
+        <Container style={{textAlign: 'center'}}>
+          <h1 className={lora.className} style={{ textAlign: 'center', color: "black"}}>Data Sources</h1>
+          <br/>
+
+          <h4 className="centered1" style={{textAlign: 'center', marginBottom: "40px"}}>
+            <a href="https://developers.google.com/maps">Google Maps Platform</a> <br></br>
+            <a href="https://www.eventbrite.com/d/united-states--texas/children-events/">Eventbrite</a> <br></br>
+            <a href="https://www.mediawiki.org/wiki/API:Main_page">Wikipedia</a> <br></br>
+            <a href="https://developers.google.com/youtube/v3/docs">Youtube</a> <br></br>
+            <a href="https://data.texas.gov/browse?q=Foster%20care&sortBy=relevance">Texas Government Data</a> <br></br>
+
+
+          </h4>
+
+          <Row>
+            <Col>
+              <Button style={{ marginRight: '10vw' }} variant="primary" size="lg" href="https://gitlab.com/nathanchengus/cs373-group-22" target="_blank" rel="noopener noreferrer">
+                GitLab
+              </Button>
+              <Button variant="danger" size="lg" href="https://documenter.getpostman.com/view/32909464/2sA2r3ZkjZ" target="_blank" rel="noopener noreferrer">
+                Postman
+              </Button>
+            </Col>
+          </Row>
+          <br/>
+          <br/>
+        </Container>
+
+
         {/* Icons with tools used */}
         
         <Container style={{justifyContent:"space-between", color: "black"}}>
-          <h1 className={lora.className}>Tools Used</h1>
+          <h1 className={lora.className} style={{ textAlign: 'center' }}>Tools Used</h1>
           <br/>
           <Row className="image-grid">
           {imageArray.map((image, index) => (
